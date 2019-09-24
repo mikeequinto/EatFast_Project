@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace EatFast_Project
 {
-    public partial class Form1 : Form
+    public partial class Homepage : Form
     {
-        public Form1()
+        public Homepage()
         {
             InitializeComponent();
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
