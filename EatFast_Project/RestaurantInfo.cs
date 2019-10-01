@@ -12,9 +12,24 @@ namespace EatFast_Project
 {
     public partial class RestaurantInfo : Form
     {
+        private static RestaurantInfo instance;
         public RestaurantInfo()
         {
             InitializeComponent();
+        }
+
+        public static RestaurantInfo getInstance()
+        {
+            if(instance == null || instance.IsDisposed)
+            {
+                instance = new RestaurantInfo();
+            }
+            return instance;
+        }
+
+        private void RestaurantInfo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

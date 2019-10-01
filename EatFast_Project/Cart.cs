@@ -12,9 +12,37 @@ namespace EatFast_Project
 {
     public partial class Cart : Form
     {
-        public Cart()
+        private static Cart instance;
+
+        public static Cart getInstance()
+        {
+            if(instance == null || instance.IsDisposed)
+            {
+                instance = new Cart();
+            }
+            return instance;
+        }
+
+        private Cart()
         {
             InitializeComponent();
+        }
+
+        private void LinkHomeClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Homepage.getInstance().Show();
+            this.Close();
+        }
+
+        private void LinkMenuClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Products.getInstance().Show();
+            this.Close();
+        }
+
+        private void Cart_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

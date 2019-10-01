@@ -12,9 +12,19 @@ namespace EatFast_Project
 {
     public partial class MenuEdit : Form
     {
+        private static MenuEdit instance;
         public MenuEdit()
         {
             InitializeComponent();
+        }
+
+        public static MenuEdit getInstance()
+        {
+            if(instance == null || instance.IsDisposed)
+            {
+                instance = new MenuEdit();
+            }
+            return instance;
         }
 
         private void Label4_Click(object sender, EventArgs e)
@@ -23,6 +33,11 @@ namespace EatFast_Project
         }
 
         private void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuEdit_Load(object sender, EventArgs e)
         {
 
         }

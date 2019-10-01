@@ -69,7 +69,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(50, 197);
+            this.label4.Location = new System.Drawing.Point(50, 181);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 13);
             this.label4.TabIndex = 3;
@@ -84,7 +84,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(250, 190);
+            this.textBox2.Location = new System.Drawing.Point(250, 174);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(300, 80);
@@ -134,6 +134,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RestaurantInfo";
             this.Text = "Restaurant information";
+            this.Load += new System.EventHandler(this.RestaurantInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.linkLabelHome = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,20 +49,22 @@
             this.linkLabel6.AutoSize = true;
             this.linkLabel6.Location = new System.Drawing.Point(642, 40);
             this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(38, 13);
+            this.linkLabel6.Size = new System.Drawing.Size(34, 13);
             this.linkLabel6.TabIndex = 17;
             this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "Cart(0)";
+            this.linkLabel6.Text = "Menu";
+            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkMenuClicked);
             // 
-            // linkLabel5
+            // linkLabelHome
             // 
-            this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Location = new System.Drawing.Point(696, 40);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(35, 13);
-            this.linkLabel5.TabIndex = 16;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "Home";
+            this.linkLabelHome.AutoSize = true;
+            this.linkLabelHome.Location = new System.Drawing.Point(696, 40);
+            this.linkLabelHome.Name = "linkLabelHome";
+            this.linkLabelHome.Size = new System.Drawing.Size(35, 13);
+            this.linkLabelHome.TabIndex = 16;
+            this.linkLabelHome.TabStop = true;
+            this.linkLabelHome.Text = "Home";
+            this.linkLabelHome.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkHomeClicked);
             // 
             // label1
             // 
@@ -190,9 +192,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.linkLabel6);
-            this.Controls.Add(this.linkLabel5);
+            this.Controls.Add(this.linkLabelHome);
             this.Name = "Cart";
             this.Text = "Cart";
+            this.Load += new System.EventHandler(this.Cart_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,7 +204,7 @@
         #endregion
 
         private System.Windows.Forms.LinkLabel linkLabel6;
-        private System.Windows.Forms.LinkLabel linkLabel5;
+        private System.Windows.Forms.LinkLabel linkLabelHome;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

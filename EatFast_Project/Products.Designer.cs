@@ -30,17 +30,17 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
+            this.linkLabelHome = new System.Windows.Forms.LinkLabel();
+            this.linkLabelCart = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -67,6 +67,24 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(77, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "starter_1";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(60, 106);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Add to cart";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -83,15 +101,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(100, 50);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(60, 106);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Add to cart";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -143,42 +152,35 @@
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "Drinks";
             // 
-            // label2
+            // linkLabelHome
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(77, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 13);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "starter_1";
+            this.linkLabelHome.AutoSize = true;
+            this.linkLabelHome.Location = new System.Drawing.Point(703, 23);
+            this.linkLabelHome.Name = "linkLabelHome";
+            this.linkLabelHome.Size = new System.Drawing.Size(35, 13);
+            this.linkLabelHome.TabIndex = 11;
+            this.linkLabelHome.TabStop = true;
+            this.linkLabelHome.Text = "Home";
+            this.linkLabelHome.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkHomeClicked);
             // 
-            // linkLabel5
+            // linkLabelCart
             // 
-            this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Location = new System.Drawing.Point(703, 23);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(35, 13);
-            this.linkLabel5.TabIndex = 11;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "Home";
-            // 
-            // linkLabel6
-            // 
-            this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Location = new System.Drawing.Point(649, 23);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(38, 13);
-            this.linkLabel6.TabIndex = 15;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "Cart(0)";
+            this.linkLabelCart.AutoSize = true;
+            this.linkLabelCart.Location = new System.Drawing.Point(649, 23);
+            this.linkLabelCart.Name = "linkLabelCart";
+            this.linkLabelCart.Size = new System.Drawing.Size(38, 13);
+            this.linkLabelCart.TabIndex = 15;
+            this.linkLabelCart.TabStop = true;
+            this.linkLabelCart.Text = "Cart(0)";
+            this.linkLabelCart.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkCartClicked);
             // 
             // Products
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 658);
-            this.Controls.Add(this.linkLabel6);
-            this.Controls.Add(this.linkLabel5);
+            this.Controls.Add(this.linkLabelCart);
+            this.Controls.Add(this.linkLabelHome);
             this.Controls.Add(this.linkLabel4);
             this.Controls.Add(this.linkLabel3);
             this.Controls.Add(this.linkLabel2);
@@ -187,6 +189,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Products";
             this.Text = "All products";
+            this.Load += new System.EventHandler(this.Products_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -209,7 +212,7 @@
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel5;
-        private System.Windows.Forms.LinkLabel linkLabel6;
+        private System.Windows.Forms.LinkLabel linkLabelHome;
+        private System.Windows.Forms.LinkLabel linkLabelCart;
     }
 }

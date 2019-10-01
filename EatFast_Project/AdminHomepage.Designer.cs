@@ -93,6 +93,7 @@
             this.Controls.Add(this.linkLabel1);
             this.Name = "AdminHomepage";
             this.Text = "Admin Homepage";
+            this.Load += new System.EventHandler(this.AdminHomepage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

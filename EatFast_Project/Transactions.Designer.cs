@@ -46,7 +46,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(56, 111);
+            this.dataGridView1.Location = new System.Drawing.Point(56, 108);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(689, 226);
             this.dataGridView1.TabIndex = 1;
@@ -71,6 +71,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Transactions";
             this.Text = "Transactions";
+            this.Load += new System.EventHandler(this.Transactions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -12,9 +12,24 @@ namespace EatFast_Project
 {
     public partial class Transactions : Form
     {
+        private static Transactions instance;
         public Transactions()
         {
             InitializeComponent();
+        }
+
+        public static Transactions getInstance()
+        {
+            if(instance == null || instance.IsDisposed)
+            {
+                instance = new Transactions();
+            }
+            return instance;
+        }
+
+        private void Transactions_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

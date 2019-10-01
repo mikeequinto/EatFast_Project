@@ -283,6 +283,7 @@
             this.Controls.Add(this.label1);
             this.Name = "MenuEdit";
             this.Text = "Edit menu";
+            this.Load += new System.EventHandler(this.MenuEdit_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
