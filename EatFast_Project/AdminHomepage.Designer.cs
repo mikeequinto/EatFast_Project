@@ -28,72 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabelLogout = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnEditInfo = new System.Windows.Forms.Button();
+            this.btnEditMenu = new System.Windows.Forms.Button();
+            this.btnTransactions = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // linkLabel1
+            // linkLabelLogout
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(705, 21);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(43, 13);
-            this.linkLabel1.TabIndex = 0;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Log out";
+            this.linkLabelLogout.AutoSize = true;
+            this.linkLabelLogout.Location = new System.Drawing.Point(705, 21);
+            this.linkLabelLogout.Name = "linkLabelLogout";
+            this.linkLabelLogout.Size = new System.Drawing.Size(43, 13);
+            this.linkLabelLogout.TabIndex = 0;
+            this.linkLabelLogout.TabStop = true;
+            this.linkLabelLogout.Text = "Log out";
+            this.linkLabelLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLogoutClicked);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(334, 79);
+            this.label1.Location = new System.Drawing.Point(646, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Manage your restaurant";
             // 
-            // button1
+            // btnEditInfo
             // 
-            this.button1.Location = new System.Drawing.Point(303, 121);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Edit restaurant information";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEditInfo.Location = new System.Drawing.Point(615, 135);
+            this.btnEditInfo.Name = "btnEditInfo";
+            this.btnEditInfo.Size = new System.Drawing.Size(172, 23);
+            this.btnEditInfo.TabIndex = 2;
+            this.btnEditInfo.Text = "Edit restaurant information";
+            this.btnEditInfo.UseVisualStyleBackColor = true;
+            this.btnEditInfo.Click += new System.EventHandler(this.BtnEditInfoClicked);
             // 
-            // button2
+            // btnEditMenu
             // 
-            this.button2.Location = new System.Drawing.Point(303, 173);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(172, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Edit menu";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEditMenu.Location = new System.Drawing.Point(615, 187);
+            this.btnEditMenu.Name = "btnEditMenu";
+            this.btnEditMenu.Size = new System.Drawing.Size(172, 23);
+            this.btnEditMenu.TabIndex = 3;
+            this.btnEditMenu.Text = "Edit menu";
+            this.btnEditMenu.UseVisualStyleBackColor = true;
+            this.btnEditMenu.Click += new System.EventHandler(this.BtnEditMenuClicked);
             // 
-            // button3
+            // btnTransactions
             // 
-            this.button3.Location = new System.Drawing.Point(303, 229);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(172, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "View transactions";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnTransactions.Location = new System.Drawing.Point(615, 243);
+            this.btnTransactions.Name = "btnTransactions";
+            this.btnTransactions.Size = new System.Drawing.Size(172, 23);
+            this.btnTransactions.TabIndex = 4;
+            this.btnTransactions.Text = "View transactions";
+            this.btnTransactions.UseVisualStyleBackColor = true;
+            this.btnTransactions.Click += new System.EventHandler(this.BtnTransactionsClicked);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(28, 43);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(200, 100);
+            this.tabControl1.TabIndex = 5;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(192, 74);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(192, 74);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // AdminHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.btnTransactions);
+            this.Controls.Add(this.btnEditMenu);
+            this.Controls.Add(this.btnEditInfo);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.linkLabelLogout);
             this.Name = "AdminHomepage";
             this.Text = "Admin Homepage";
             this.Load += new System.EventHandler(this.AdminHomepage_Load);
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,10 +141,13 @@
 
         #endregion
 
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabelLogout;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnEditInfo;
+        private System.Windows.Forms.Button btnEditMenu;
+        private System.Windows.Forms.Button btnTransactions;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }

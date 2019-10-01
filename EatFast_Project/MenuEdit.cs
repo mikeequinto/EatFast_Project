@@ -41,5 +41,11 @@ namespace EatFast_Project
         {
 
         }
+
+        private void LinkHomeClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AdminHomepage.getInstance().Show();
+            this.Close();
+        }
     }
 }

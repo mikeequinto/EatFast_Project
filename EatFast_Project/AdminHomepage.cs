@@ -31,5 +31,29 @@ namespace EatFast_Project
         {
 
         }
+
+        private void LinkLogoutClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Login.getInstance().Show();
+            this.Close();
+        }
+
+        private void BtnEditInfoClicked(object sender, EventArgs e)
+        {
+            RestaurantInfo.getInstance().Show();
+            this.Hide();
+        }
+
+        private void BtnEditMenuClicked(object sender, EventArgs e)
+        {
+            MenuEdit.getInstance().Show();
+            this.Hide();
+        }
+
+        private void BtnTransactionsClicked(object sender, EventArgs e)
+        {
+            Transactions.getInstance().Show();
+            this.Hide();
+        }
     }
 }
