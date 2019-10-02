@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EatFast_Project
 {
-    public partial class ProductEdit : Form
+    public partial class ProductInfo : Form
     {
-        public ProductEdit()
+        public ProductInfo()
         {
             InitializeComponent();
         }

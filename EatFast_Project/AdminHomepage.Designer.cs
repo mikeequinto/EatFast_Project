@@ -59,7 +59,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnEditProduct = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage8 = new System.Windows.Forms.TabPage();
@@ -68,8 +68,6 @@
             this.button8 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
@@ -88,6 +86,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -118,7 +118,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(504, 21);
+            this.label1.Location = new System.Drawing.Point(499, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 13);
             this.label1.TabIndex = 1;
@@ -372,7 +372,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(171, 129);
+            this.dataGridView1.Location = new System.Drawing.Point(174, 126);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(689, 301);
             this.dataGridView1.TabIndex = 3;
@@ -380,7 +380,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(478, 49);
+            this.label10.Location = new System.Drawing.Point(481, 46);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 13);
             this.label10.TabIndex = 2;
@@ -390,7 +390,7 @@
             // 
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.btnEditProduct);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(20, 16);
@@ -417,14 +417,15 @@
             this.label11.TabIndex = 13;
             this.label11.Text = "product_1";
             // 
-            // button6
+            // btnEditProduct
             // 
-            this.button6.Location = new System.Drawing.Point(28, 102);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Edit product";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnEditProduct.Location = new System.Drawing.Point(28, 102);
+            this.btnEditProduct.Name = "btnEditProduct";
+            this.btnEditProduct.Size = new System.Drawing.Size(75, 23);
+            this.btnEditProduct.TabIndex = 6;
+            this.btnEditProduct.Text = "Edit product";
+            this.btnEditProduct.UseVisualStyleBackColor = true;
+            this.btnEditProduct.Click += new System.EventHandler(this.BtnEditProductClicked);
             // 
             // label12
             // 
@@ -494,30 +495,12 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(305, 100);
+            this.button9.Location = new System.Drawing.Point(308, 97);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(105, 23);
+            this.button9.Size = new System.Drawing.Size(132, 23);
             this.button9.TabIndex = 4;
             this.button9.Text = "Sort by Client";
             this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(461, 100);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(105, 23);
-            this.button10.TabIndex = 5;
-            this.button10.Text = "Sort by Date";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(614, 100);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(105, 23);
-            this.button11.TabIndex = 6;
-            this.button11.Text = "Sort by Amount";
-            this.button11.UseVisualStyleBackColor = true;
             // 
             // tabPage9
             // 
@@ -685,6 +668,24 @@
             this.textBox9.Size = new System.Drawing.Size(514, 20);
             this.textBox9.TabIndex = 22;
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(446, 97);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(132, 23);
+            this.button10.TabIndex = 5;
+            this.button10.Text = "Sort by Date";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(584, 97);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(132, 23);
+            this.button11.TabIndex = 6;
+            this.button11.Text = "Sort by total price";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
             // AdminHomepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -754,7 +755,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnEditProduct;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage tabPage8;
@@ -762,8 +763,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.Button button2;
@@ -783,5 +782,7 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button10;
     }
 }

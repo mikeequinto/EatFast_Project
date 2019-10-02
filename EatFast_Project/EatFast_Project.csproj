@@ -103,6 +103,12 @@
     <Compile Include="ProductEdit.Designer.cs">
       <DependentUpon>ProductEdit.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductInfo.Designer.cs">
+      <DependentUpon>ProductInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Products.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductEdit.resx">
       <DependentUpon>ProductEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductInfo.resx">
+      <DependentUpon>ProductInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Products.resx">
       <DependentUpon>Products.cs</DependentUpon>

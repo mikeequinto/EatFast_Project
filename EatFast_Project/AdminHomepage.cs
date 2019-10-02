@@ -55,5 +55,11 @@ namespace EatFast_Project
             Transactions.getInstance().Show();
             this.Hide();
         }
+
+        private void BtnEditProductClicked(object sender, EventArgs e)
+        {
+            ProductEdit productEdit = new ProductEdit();
+            productEdit.Show();
+        }
     }
 }

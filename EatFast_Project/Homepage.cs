@@ -88,5 +88,11 @@ namespace EatFast_Project
             Products.getInstance().Show();
             this.Close();
         }
+
+        private void BtnInfoClicked(object sender, EventArgs e)
+        {
+            ProductInfo productInfo = new ProductInfo();
+            productInfo.Show();
+        }
     }
 }
