@@ -21,5 +21,47 @@ namespace EatFast_Project
         {
             this.Close();
         }
+
+        private void BtnSaveClicked(object sender, EventArgs e)
+        {
+            //Modification d'un produit
+            if(comboBoxCategory.SelectedIndex != 0)
+            {
+                //Mise à jour du produit
+            }
+
+            if (textBoxName.Text != "")
+            {
+                //Mise à jour du produit
+            }
+
+            if (textBoxDescription.Text != "")
+            {
+                //Mise à jour du produit
+            }
+
+            if (IsDouble(textBoxPrice.Text))
+            {
+                //Mise à jour du produit
+            }
+
+            this.Close();
+        }
+
+        public bool IsDouble(string text)
+        {
+            Double num = 0;
+            bool isDouble = false;
+
+            // Check for empty string.
+            if (string.IsNullOrEmpty(text))
+            {
+                return false;
+            }
+
+            isDouble = Double.TryParse(text, out num);
+
+            return isDouble;
+        }
     }
 }

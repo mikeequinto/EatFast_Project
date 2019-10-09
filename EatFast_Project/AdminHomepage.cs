@@ -59,12 +59,63 @@ namespace EatFast_Project
         private void BtnEditProductClicked(object sender, EventArgs e)
         {
             ProductEdit productEdit = new ProductEdit();
-            productEdit.Show();
+            productEdit.ShowDialog();
         }
 
         private void TabPage3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Label33_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnAddAccountClicked(object sender, EventArgs e)
+        {
+            MessageBox.Show("New account added!");
+
+            //Réinitialisation des champs
+        }
+
+        private void btnAddProductClicked(object sender, EventArgs e)
+        {
+            MessageBox.Show("New product added!");
+
+            //Réinitialisation des champs
+            comboBoxCategory.SelectedIndex = 0;
+            textBoxName.Text = "";
+            textBoxPrice.Text = "";
+            textBoxDescription.Text = "";
+        }
+
+        private void CheckProductInfo(object sender, EventArgs e)
+        {
+            if(comboBoxCategory.SelectedIndex != 0 && textBoxName.Text != "" && IsDouble(textBoxPrice.Text) && textBoxDescription.Text != "")
+            {
+                btnAddProduct.Enabled = true;
+            }
+            else
+            {
+                btnAddProduct.Enabled = false;
+            }
+        }
+
+        public bool IsDouble(string text)
+        {
+            Double num = 0;
+            bool isDouble = false;
+
+            // Check for empty string.
+            if (string.IsNullOrEmpty(text))
+            {
+                return false;
+            }
+
+            isDouble = Double.TryParse(text, out num);
+
+            return isDouble;
         }
     }
 }

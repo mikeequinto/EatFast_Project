@@ -18,5 +18,7 @@ namespace EatFast_Project
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(Login.getInstance());
         }
+
+
     }
 }
