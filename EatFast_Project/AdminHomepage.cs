@@ -74,9 +74,18 @@ namespace EatFast_Project
 
         private void BtnAddAccountClicked(object sender, EventArgs e)
         {
-            MessageBox.Show("New account added!");
+            if (textBoxPassword.Text.Equals(textBoxPasswordConfirm.Text))
+            {
+                MessageBox.Show("New account added!");
 
-            //Réinitialisation des champs
+                //Réinitialisation des champs
+                comboBoxType.SelectedIndex = 0;
+                textBoxUsername.Text = "";
+                textBoxEmail.Text = "";
+                textBoxPassword.Text = "";
+                textBoxPasswordConfirm.Text = "";
+            }
+            
         }
 
         private void btnAddProductClicked(object sender, EventArgs e)
@@ -116,6 +125,57 @@ namespace EatFast_Project
             isDouble = Double.TryParse(text, out num);
 
             return isDouble;
+        }
+
+        private void BtnRemoveClicked(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure?", "Delete product", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                //do something
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                //do something else
+                
+            }
+        }
+
+        private void CheckRestaurantInfo(object sender, EventArgs e)
+        {
+            if(textBoxRestaurantName.Text != "" || textBoxRestaurantDescription.Text != "")
+            {
+                btnSaveRestaurantInfo.Enabled = true;
+            }
+            else
+            {
+                btnSaveRestaurantInfo.Enabled = false;
+            }
+        }
+
+        private void btnSaveRestaurantInfoClicked(object sender, EventArgs e)
+        {
+            if(textBoxRestaurantName.Text != "")
+            {
+                //Mise à jour des informations
+            }
+
+            if (textBoxRestaurantDescription.Text != "")
+            {
+                //Mise à jour des informations
+            }
+        }
+
+        private void CheckAccountInfo(object sender, EventArgs e)
+        {
+            if(comboBoxType.SelectedIndex != 0 && textBoxUsername.Text != "" && textBoxEmail.Text != "" && textBoxPassword.Text != "" && textBoxPasswordConfirm.Text != "")
+            {
+                btnAddAccount.Enabled = true;
+            }
+            else
+            {
+                btnAddAccount.Enabled = false;
+            } 
         }
     }
 }

@@ -67,17 +67,17 @@
             this.tabAccounts = new System.Windows.Forms.TabPage();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBoxPasswordConfirm = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.btnAddAccount = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -102,12 +102,12 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.tabInformation = new System.Windows.Forms.TabPage();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnRestaurantBackground = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnSaveRestaurantInfo = new System.Windows.Forms.Button();
+            this.textBoxRestaurantDescription = new System.Windows.Forms.TextBox();
+            this.textBoxRestaurantName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -273,6 +273,7 @@
             this.btnRemoveProduct.TabIndex = 14;
             this.btnRemoveProduct.Text = "Remove";
             this.btnRemoveProduct.UseVisualStyleBackColor = true;
+            this.btnRemoveProduct.Click += new System.EventHandler(this.BtnRemoveClicked);
             // 
             // lblNomProduit
             // 
@@ -537,17 +538,17 @@
             this.tabAccounts.Controls.Add(this.label25);
             this.tabAccounts.Controls.Add(this.label19);
             this.tabAccounts.Controls.Add(this.label18);
-            this.tabAccounts.Controls.Add(this.textBox8);
+            this.tabAccounts.Controls.Add(this.textBoxPasswordConfirm);
             this.tabAccounts.Controls.Add(this.label17);
-            this.tabAccounts.Controls.Add(this.textBox7);
+            this.tabAccounts.Controls.Add(this.textBoxPassword);
             this.tabAccounts.Controls.Add(this.btnAddAccount);
             this.tabAccounts.Controls.Add(this.label3);
             this.tabAccounts.Controls.Add(this.label14);
-            this.tabAccounts.Controls.Add(this.textBox5);
+            this.tabAccounts.Controls.Add(this.textBoxEmail);
             this.tabAccounts.Controls.Add(this.label15);
-            this.tabAccounts.Controls.Add(this.textBox6);
+            this.tabAccounts.Controls.Add(this.textBoxUsername);
             this.tabAccounts.Controls.Add(this.label16);
-            this.tabAccounts.Controls.Add(this.comboBox2);
+            this.tabAccounts.Controls.Add(this.comboBoxType);
             this.tabAccounts.Controls.Add(this.dataGridView4);
             this.tabAccounts.Controls.Add(this.dataGridView3);
             this.tabAccounts.Location = new System.Drawing.Point(4, 22);
@@ -576,12 +577,14 @@
             this.label18.TabIndex = 33;
             this.label18.Text = "Clients";
             // 
-            // textBox8
+            // textBoxPasswordConfirm
             // 
-            this.textBox8.Location = new System.Drawing.Point(811, 103);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 32;
+            this.textBoxPasswordConfirm.Location = new System.Drawing.Point(811, 103);
+            this.textBoxPasswordConfirm.Name = "textBoxPasswordConfirm";
+            this.textBoxPasswordConfirm.PasswordChar = '*';
+            this.textBoxPasswordConfirm.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPasswordConfirm.TabIndex = 32;
+            this.textBoxPasswordConfirm.TextChanged += new System.EventHandler(this.CheckAccountInfo);
             // 
             // label17
             // 
@@ -592,15 +595,18 @@
             this.label17.TabIndex = 31;
             this.label17.Text = "Password :";
             // 
-            // textBox7
+            // textBoxPassword
             // 
-            this.textBox7.Location = new System.Drawing.Point(583, 103);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 30;
+            this.textBoxPassword.Location = new System.Drawing.Point(583, 103);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPassword.TabIndex = 30;
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.CheckAccountInfo);
             // 
             // btnAddAccount
             // 
+            this.btnAddAccount.Enabled = false;
             this.btnAddAccount.Location = new System.Drawing.Point(39, 139);
             this.btnAddAccount.Name = "btnAddAccount";
             this.btnAddAccount.Size = new System.Drawing.Size(88, 23);
@@ -627,12 +633,13 @@
             this.label14.TabIndex = 26;
             this.label14.Text = "Email :";
             // 
-            // textBox5
+            // textBoxEmail
             // 
-            this.textBox5.Location = new System.Drawing.Point(400, 103);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 25;
+            this.textBoxEmail.Location = new System.Drawing.Point(400, 103);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEmail.TabIndex = 25;
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.CheckAccountInfo);
             // 
             // label15
             // 
@@ -643,12 +650,13 @@
             this.label15.TabIndex = 24;
             this.label15.Text = "Username :";
             // 
-            // textBox6
+            // textBoxUsername
             // 
-            this.textBox6.Location = new System.Drawing.Point(241, 103);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 23;
+            this.textBoxUsername.Location = new System.Drawing.Point(241, 103);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(100, 20);
+            this.textBoxUsername.TabIndex = 23;
+            this.textBoxUsername.TextChanged += new System.EventHandler(this.CheckAccountInfo);
             // 
             // label16
             // 
@@ -659,14 +667,19 @@
             this.label16.TabIndex = 22;
             this.label16.Text = "Add new account";
             // 
-            // comboBox2
+            // comboBoxType
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(39, 103);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 21;
-            this.comboBox2.Text = "- Select type -";
+            this.comboBoxType.FormattingEnabled = true;
+            this.comboBoxType.Items.AddRange(new object[] {
+            "- Select type -",
+            "Client",
+            "Administrator"});
+            this.comboBoxType.Location = new System.Drawing.Point(39, 103);
+            this.comboBoxType.Name = "comboBoxType";
+            this.comboBoxType.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxType.TabIndex = 21;
+            this.comboBoxType.Text = "- Select type -";
+            this.comboBoxType.SelectedIndexChanged += new System.EventHandler(this.CheckAccountInfo);
             // 
             // dataGridView4
             // 
@@ -887,12 +900,12 @@
             // 
             // tabInformation
             // 
-            this.tabInformation.Controls.Add(this.button6);
+            this.tabInformation.Controls.Add(this.btnRestaurantBackground);
             this.tabInformation.Controls.Add(this.label21);
             this.tabInformation.Controls.Add(this.label5);
-            this.tabInformation.Controls.Add(this.button1);
-            this.tabInformation.Controls.Add(this.textBox2);
-            this.tabInformation.Controls.Add(this.textBox1);
+            this.tabInformation.Controls.Add(this.btnSaveRestaurantInfo);
+            this.tabInformation.Controls.Add(this.textBoxRestaurantDescription);
+            this.tabInformation.Controls.Add(this.textBoxRestaurantName);
             this.tabInformation.Controls.Add(this.label4);
             this.tabInformation.Controls.Add(this.label2);
             this.tabInformation.Location = new System.Drawing.Point(4, 22);
@@ -903,14 +916,14 @@
             this.tabInformation.Text = "Information";
             this.tabInformation.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnRestaurantBackground
             // 
-            this.button6.Location = new System.Drawing.Point(386, 317);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(111, 23);
-            this.button6.TabIndex = 55;
-            this.button6.Text = "Choose file";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnRestaurantBackground.Location = new System.Drawing.Point(386, 317);
+            this.btnRestaurantBackground.Name = "btnRestaurantBackground";
+            this.btnRestaurantBackground.Size = new System.Drawing.Size(111, 23);
+            this.btnRestaurantBackground.TabIndex = 55;
+            this.btnRestaurantBackground.Text = "Choose file";
+            this.btnRestaurantBackground.UseVisualStyleBackColor = true;
             // 
             // label21
             // 
@@ -931,29 +944,33 @@
             this.label5.Text = "Edit information";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // btnSaveRestaurantInfo
             // 
-            this.button1.Location = new System.Drawing.Point(458, 420);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 23);
-            this.button1.TabIndex = 52;
-            this.button1.Text = "Save changes";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSaveRestaurantInfo.Enabled = false;
+            this.btnSaveRestaurantInfo.Location = new System.Drawing.Point(464, 419);
+            this.btnSaveRestaurantInfo.Name = "btnSaveRestaurantInfo";
+            this.btnSaveRestaurantInfo.Size = new System.Drawing.Size(111, 23);
+            this.btnSaveRestaurantInfo.TabIndex = 52;
+            this.btnSaveRestaurantInfo.Text = "Save changes";
+            this.btnSaveRestaurantInfo.UseVisualStyleBackColor = true;
+            this.btnSaveRestaurantInfo.Click += new System.EventHandler(this.btnSaveRestaurantInfoClicked);
             // 
-            // textBox2
+            // textBoxRestaurantDescription
             // 
-            this.textBox2.Location = new System.Drawing.Point(386, 181);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(300, 80);
-            this.textBox2.TabIndex = 51;
+            this.textBoxRestaurantDescription.Location = new System.Drawing.Point(386, 181);
+            this.textBoxRestaurantDescription.Multiline = true;
+            this.textBoxRestaurantDescription.Name = "textBoxRestaurantDescription";
+            this.textBoxRestaurantDescription.Size = new System.Drawing.Size(300, 80);
+            this.textBoxRestaurantDescription.TabIndex = 51;
+            this.textBoxRestaurantDescription.TextChanged += new System.EventHandler(this.CheckRestaurantInfo);
             // 
-            // textBox1
+            // textBoxRestaurantName
             // 
-            this.textBox1.Location = new System.Drawing.Point(386, 111);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 50;
+            this.textBoxRestaurantName.Location = new System.Drawing.Point(386, 111);
+            this.textBoxRestaurantName.Name = "textBoxRestaurantName";
+            this.textBoxRestaurantName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxRestaurantName.TabIndex = 50;
+            this.textBoxRestaurantName.TextChanged += new System.EventHandler(this.CheckRestaurantInfo);
             // 
             // label4
             // 
@@ -1169,18 +1186,18 @@
         private System.Windows.Forms.Button btnAddAccount;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxType;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBoxPasswordConfirm;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Button button11;
@@ -1214,12 +1231,12 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnRestaurantBackground;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSaveRestaurantInfo;
+        private System.Windows.Forms.TextBox textBoxRestaurantDescription;
+        private System.Windows.Forms.TextBox textBoxRestaurantName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listBox3;
