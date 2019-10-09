@@ -61,5 +61,10 @@ namespace EatFast_Project
             ProductEdit productEdit = new ProductEdit();
             productEdit.Show();
         }
+
+        private void TabPage3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

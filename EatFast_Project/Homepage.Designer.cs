@@ -68,9 +68,7 @@ namespace EatFast_Project
             this.button7 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label17 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -81,6 +79,9 @@ namespace EatFast_Project
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btnInfo = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -103,7 +104,7 @@ namespace EatFast_Project
             // linkLabelLogout
             // 
             this.linkLabelLogout.AutoSize = true;
-            this.linkLabelLogout.Location = new System.Drawing.Point(869, 25);
+            this.linkLabelLogout.Location = new System.Drawing.Point(869, 34);
             this.linkLabelLogout.Name = "linkLabelLogout";
             this.linkLabelLogout.Size = new System.Drawing.Size(40, 13);
             this.linkLabelLogout.TabIndex = 6;
@@ -141,6 +142,7 @@ namespace EatFast_Project
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.tabControl2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -323,11 +325,11 @@ namespace EatFast_Project
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label16);
             this.tabPage3.Controls.Add(this.panel1);
             this.tabPage3.Controls.Add(this.button7);
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.label15);
-            this.tabPage3.Controls.Add(this.label16);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(853, 454);
@@ -337,8 +339,8 @@ namespace EatFast_Project
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.dataGridView1);
             this.tabPage4.Controls.Add(this.label17);
+            this.tabPage4.Controls.Add(this.dataGridView1);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(853, 454);
@@ -352,7 +354,7 @@ namespace EatFast_Project
             this.tabControl2.Controls.Add(this.tabPage6);
             this.tabControl2.Controls.Add(this.tabPage7);
             this.tabControl2.Controls.Add(this.tabPage8);
-            this.tabControl2.Location = new System.Drawing.Point(75, 53);
+            this.tabControl2.Location = new System.Drawing.Point(80, 87);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
             this.tabControl2.Size = new System.Drawing.Size(702, 349);
@@ -447,7 +449,7 @@ namespace EatFast_Project
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(625, 331);
+            this.button7.Location = new System.Drawing.Point(714, 331);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(81, 23);
             this.button7.TabIndex = 41;
@@ -457,7 +459,7 @@ namespace EatFast_Project
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(141, 336);
+            this.label10.Location = new System.Drawing.Point(58, 336);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(91, 13);
             this.label10.TabIndex = 40;
@@ -466,20 +468,11 @@ namespace EatFast_Project
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(141, 91);
+            this.label15.Location = new System.Drawing.Point(58, 90);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(107, 13);
             this.label15.TabIndex = 31;
             this.label15.Text = "3 item(s) in your cart :";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(401, 46);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(50, 13);
-            this.label16.TabIndex = 30;
-            this.label16.Text = "Your cart";
             // 
             // dataGridView1
             // 
@@ -488,15 +481,6 @@ namespace EatFast_Project
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(689, 226);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(387, 65);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(61, 13);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "Your orders";
             // 
             // panel1
             // 
@@ -508,14 +492,14 @@ namespace EatFast_Project
             this.panel1.Controls.Add(this.button11);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label14);
-            this.panel1.Location = new System.Drawing.Point(116, 127);
+            this.panel1.Location = new System.Drawing.Point(33, 127);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(610, 177);
+            this.panel1.Size = new System.Drawing.Size(780, 177);
             this.panel1.TabIndex = 42;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(508, 62);
+            this.button4.Location = new System.Drawing.Point(681, 62);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(81, 23);
             this.button4.TabIndex = 47;
@@ -524,7 +508,7 @@ namespace EatFast_Project
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(427, 62);
+            this.button5.Location = new System.Drawing.Point(600, 62);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 46;
@@ -533,7 +517,7 @@ namespace EatFast_Project
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(346, 62);
+            this.button8.Location = new System.Drawing.Point(519, 62);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 45;
@@ -542,7 +526,7 @@ namespace EatFast_Project
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(508, 24);
+            this.button9.Location = new System.Drawing.Point(681, 24);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(81, 23);
             this.button9.TabIndex = 44;
@@ -551,7 +535,7 @@ namespace EatFast_Project
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(427, 24);
+            this.button10.Location = new System.Drawing.Point(600, 24);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(75, 23);
             this.button10.TabIndex = 43;
@@ -560,7 +544,7 @@ namespace EatFast_Project
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(346, 24);
+            this.button11.Location = new System.Drawing.Point(519, 24);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(75, 23);
             this.button11.TabIndex = 42;
@@ -595,6 +579,36 @@ namespace EatFast_Project
             this.btnInfo.UseVisualStyleBackColor = true;
             this.btnInfo.Click += new System.EventHandler(this.BtnInfoClicked);
             // 
+            // label16
+            // 
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(0, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(853, 47);
+            this.label16.TabIndex = 43;
+            this.label16.Text = "Your cart";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label17
+            // 
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(-3, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(853, 47);
+            this.label17.TabIndex = 33;
+            this.label17.Text = "Your orders";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(-3, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(853, 47);
+            this.label18.TabIndex = 44;
+            this.label18.Text = "All products";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -621,7 +635,6 @@ namespace EatFast_Project
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
             this.tabControl2.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -678,9 +691,7 @@ namespace EatFast_Project
         private Button button7;
         private Label label10;
         private Label label15;
-        private Label label16;
         private DataGridView dataGridView1;
-        private Label label17;
         private Panel panel1;
         private Button button4;
         private Button button5;
@@ -691,6 +702,9 @@ namespace EatFast_Project
         private Label label13;
         private Label label14;
         private Button btnInfo;
+        private Label label18;
+        private Label label16;
+        private Label label17;
     }
 }
 
