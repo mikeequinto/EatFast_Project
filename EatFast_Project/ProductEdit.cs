@@ -63,5 +63,17 @@ namespace EatFast_Project
 
             return isDouble;
         }
+
+        private void CheckProductInfo(object sender, EventArgs e)
+        {
+            if(comboBoxCategory.SelectedIndex != 0 || textBoxName.Text != "" || textBoxDescription.Text != "" || IsDouble(textBoxPrice.Text))
+            {
+                btnSave.Enabled = true;
+            }
+            else
+            {
+                btnSave.Enabled = false;
+            }
+        }
     }
 }
