@@ -31,7 +31,26 @@
             this.linkLabelLogout = new System.Windows.Forms.LinkLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabGeneral = new System.Windows.Forms.TabPage();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.tabInformation = new System.Windows.Forms.TabPage();
+            this.btnRestaurantBackground = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnSaveRestaurantInfo = new System.Windows.Forms.Button();
+            this.textBoxRestaurantDescription = new System.Windows.Forms.TextBox();
+            this.textBoxRestaurantName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabMenu = new System.Windows.Forms.TabPage();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
@@ -41,10 +60,24 @@
             this.lblNomProduit = new System.Windows.Forms.Label();
             this.btnEditProduct = new System.Windows.Forms.Button();
             this.lblPrixProduit = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.lblNomProduit2 = new System.Windows.Forms.Label();
+            this.button12 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button13 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button14 = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button15 = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.button16 = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -65,6 +98,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabAccounts = new System.Windows.Forms.TabPage();
+            this.label25 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.textBoxPasswordConfirm = new System.Windows.Forms.TextBox();
@@ -81,54 +115,35 @@
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.lblNomProduit2 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button13 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button15 = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
-            this.button16 = new System.Windows.Forms.Button();
-            this.label24 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.tabInformation = new System.Windows.Forms.TabPage();
-            this.btnRestaurantBackground = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnSaveRestaurantInfo = new System.Windows.Forms.Button();
-            this.textBoxRestaurantDescription = new System.Windows.Forms.TextBox();
-            this.textBoxRestaurantName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientOrders = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientAccountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientAccountUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientAccountEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabGeneral.SuspendLayout();
+            this.tabInformation.SuspendLayout();
             this.tabMenu.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage5.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.tabTransactions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabClients.SuspendLayout();
@@ -136,13 +151,10 @@
             this.tabAccounts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.tabInformation.SuspendLayout();
             this.SuspendLayout();
             // 
             // linkLabelLogout
@@ -188,6 +200,203 @@
             this.tabGeneral.Text = "General";
             this.tabGeneral.UseVisualStyleBackColor = true;
             // 
+            // listBox3
+            // 
+            this.listBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 16;
+            this.listBox3.Items.AddRange(new object[] {
+            "order1",
+            "order2",
+            "order3",
+            "order4",
+            ".",
+            ".",
+            "."});
+            this.listBox3.Location = new System.Drawing.Point(711, 223);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(292, 228);
+            this.listBox3.TabIndex = 60;
+            // 
+            // listBox2
+            // 
+            this.listBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 16;
+            this.listBox2.Items.AddRange(new object[] {
+            "client1",
+            "client2",
+            "client3",
+            "client4",
+            ".",
+            ".",
+            "."});
+            this.listBox2.Location = new System.Drawing.Point(372, 223);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(292, 228);
+            this.listBox2.TabIndex = 59;
+            // 
+            // listBox1
+            // 
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Items.AddRange(new object[] {
+            "product1",
+            "product2",
+            "product3",
+            "product4",
+            ".",
+            ".",
+            "."});
+            this.listBox1.Location = new System.Drawing.Point(29, 223);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(292, 228);
+            this.listBox1.TabIndex = 58;
+            // 
+            // label33
+            // 
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(694, 173);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(341, 47);
+            this.label33.TabIndex = 57;
+            this.label33.Text = "Top 10 orders";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label33.Click += new System.EventHandler(this.Label33_Click);
+            // 
+            // label32
+            // 
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(347, 173);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(341, 47);
+            this.label32.TabIndex = 56;
+            this.label32.Text = "Top 10 clients";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label31
+            // 
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(0, 173);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(341, 47);
+            this.label31.TabIndex = 55;
+            this.label31.Text = "Top 10 products";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label29
+            // 
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(0, 84);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(1030, 47);
+            this.label29.TabIndex = 54;
+            this.label29.Text = "Welcome back!";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(0, 3);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(1030, 47);
+            this.label30.TabIndex = 53;
+            this.label30.Text = "Overview";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tabInformation
+            // 
+            this.tabInformation.Controls.Add(this.btnRestaurantBackground);
+            this.tabInformation.Controls.Add(this.label21);
+            this.tabInformation.Controls.Add(this.label5);
+            this.tabInformation.Controls.Add(this.btnSaveRestaurantInfo);
+            this.tabInformation.Controls.Add(this.textBoxRestaurantDescription);
+            this.tabInformation.Controls.Add(this.textBoxRestaurantName);
+            this.tabInformation.Controls.Add(this.label4);
+            this.tabInformation.Controls.Add(this.label2);
+            this.tabInformation.Location = new System.Drawing.Point(4, 22);
+            this.tabInformation.Name = "tabInformation";
+            this.tabInformation.Padding = new System.Windows.Forms.Padding(3);
+            this.tabInformation.Size = new System.Drawing.Size(1033, 564);
+            this.tabInformation.TabIndex = 5;
+            this.tabInformation.Text = "Information";
+            this.tabInformation.UseVisualStyleBackColor = true;
+            // 
+            // btnRestaurantBackground
+            // 
+            this.btnRestaurantBackground.Location = new System.Drawing.Point(386, 317);
+            this.btnRestaurantBackground.Name = "btnRestaurantBackground";
+            this.btnRestaurantBackground.Size = new System.Drawing.Size(111, 23);
+            this.btnRestaurantBackground.TabIndex = 55;
+            this.btnRestaurantBackground.Text = "Choose file";
+            this.btnRestaurantBackground.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(195, 322);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(150, 13);
+            this.label21.TabIndex = 54;
+            this.label21.Text = "Restaurant background image";
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(0, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(1030, 47);
+            this.label5.TabIndex = 53;
+            this.label5.Text = "Edit information";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnSaveRestaurantInfo
+            // 
+            this.btnSaveRestaurantInfo.Enabled = false;
+            this.btnSaveRestaurantInfo.Location = new System.Drawing.Point(464, 419);
+            this.btnSaveRestaurantInfo.Name = "btnSaveRestaurantInfo";
+            this.btnSaveRestaurantInfo.Size = new System.Drawing.Size(111, 23);
+            this.btnSaveRestaurantInfo.TabIndex = 52;
+            this.btnSaveRestaurantInfo.Text = "Save changes";
+            this.btnSaveRestaurantInfo.UseVisualStyleBackColor = true;
+            this.btnSaveRestaurantInfo.Click += new System.EventHandler(this.btnSaveRestaurantInfoClicked);
+            // 
+            // textBoxRestaurantDescription
+            // 
+            this.textBoxRestaurantDescription.Location = new System.Drawing.Point(386, 181);
+            this.textBoxRestaurantDescription.Multiline = true;
+            this.textBoxRestaurantDescription.Name = "textBoxRestaurantDescription";
+            this.textBoxRestaurantDescription.Size = new System.Drawing.Size(300, 80);
+            this.textBoxRestaurantDescription.TabIndex = 51;
+            this.textBoxRestaurantDescription.TextChanged += new System.EventHandler(this.CheckRestaurantInfo);
+            // 
+            // textBoxRestaurantName
+            // 
+            this.textBoxRestaurantName.Location = new System.Drawing.Point(386, 111);
+            this.textBoxRestaurantName.Name = "textBoxRestaurantName";
+            this.textBoxRestaurantName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxRestaurantName.TabIndex = 50;
+            this.textBoxRestaurantName.TextChanged += new System.EventHandler(this.CheckRestaurantInfo);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(186, 188);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 13);
+            this.label4.TabIndex = 49;
+            this.label4.Text = "Restaurant description";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(186, 114);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 13);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Restaurant name";
+            // 
             // tabMenu
             // 
             this.tabMenu.Controls.Add(this.textBoxPrice);
@@ -210,6 +419,24 @@
             this.tabMenu.TabIndex = 1;
             this.tabMenu.Text = "Menu";
             this.tabMenu.UseVisualStyleBackColor = true;
+            // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.Location = new System.Drawing.Point(622, 100);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(60, 20);
+            this.textBoxPrice.TabIndex = 47;
+            this.textBoxPrice.TextChanged += new System.EventHandler(this.CheckProductInfo);
+            // 
+            // label28
+            // 
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(0, 3);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(1030, 47);
+            this.label28.TabIndex = 46;
+            this.label28.Text = "Menu";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label20
             // 
@@ -303,14 +530,6 @@
             this.lblPrixProduit.TabIndex = 1;
             this.lblPrixProduit.Text = "25.00 CHF";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(56, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.groupBox2);
@@ -322,6 +541,55 @@
             this.tabPage5.Text = "Main Dishes";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button5);
+            this.groupBox2.Controls.Add(this.lblNomProduit2);
+            this.groupBox2.Controls.Add(this.button12);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.pictureBox2);
+            this.groupBox2.Location = new System.Drawing.Point(18, 16);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 136);
+            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabStop = false;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(109, 102);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "Remove";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // lblNomProduit2
+            // 
+            this.lblNomProduit2.AutoSize = true;
+            this.lblNomProduit2.Location = new System.Drawing.Point(75, 17);
+            this.lblNomProduit2.Name = "lblNomProduit2";
+            this.lblNomProduit2.Size = new System.Drawing.Size(41, 13);
+            this.lblNomProduit2.TabIndex = 13;
+            this.lblNomProduit2.Text = "main_1";
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(28, 102);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 6;
+            this.button12.Text = "Edit product";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(79, 86);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 13);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "25.00 CHF";
+            // 
             // tabPage6
             // 
             this.tabPage6.Controls.Add(this.groupBox3);
@@ -332,6 +600,55 @@
             this.tabPage6.Text = "Desserts";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button13);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.button14);
+            this.groupBox3.Controls.Add(this.label22);
+            this.groupBox3.Controls.Add(this.pictureBox3);
+            this.groupBox3.Location = new System.Drawing.Point(18, 16);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(200, 136);
+            this.groupBox3.TabIndex = 15;
+            this.groupBox3.TabStop = false;
+            // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(109, 102);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(75, 23);
+            this.button13.TabIndex = 14;
+            this.button13.Text = "Remove";
+            this.button13.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(75, 17);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 13);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "dessert_1";
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(28, 102);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(75, 23);
+            this.button14.TabIndex = 6;
+            this.button14.Text = "Edit product";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(79, 86);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(58, 13);
+            this.label22.TabIndex = 1;
+            this.label22.Text = "25.00 CHF";
+            // 
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.groupBox4);
@@ -341,6 +658,55 @@
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Drinks";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.button15);
+            this.groupBox4.Controls.Add(this.label23);
+            this.groupBox4.Controls.Add(this.button16);
+            this.groupBox4.Controls.Add(this.label24);
+            this.groupBox4.Controls.Add(this.pictureBox4);
+            this.groupBox4.Location = new System.Drawing.Point(18, 16);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(200, 136);
+            this.groupBox4.TabIndex = 15;
+            this.groupBox4.TabStop = false;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(109, 102);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(75, 23);
+            this.button15.TabIndex = 14;
+            this.button15.Text = "Remove";
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(75, 17);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(42, 13);
+            this.label23.TabIndex = 13;
+            this.label23.Text = "drink_1";
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(28, 102);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(75, 23);
+            this.button16.TabIndex = 6;
+            this.button16.Text = "Edit product";
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(79, 86);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(58, 13);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "25.00 CHF";
             // 
             // btnAddProduct
             // 
@@ -478,6 +844,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.OrderDate,
+            this.OrderClient,
+            this.OrderAddress,
+            this.OrderTotal});
             this.dataGridView1.Location = new System.Drawing.Point(174, 126);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(689, 301);
@@ -528,6 +899,10 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ClientName,
+            this.ClientOrders,
+            this.ClientTotal});
             this.dataGridView2.Location = new System.Drawing.Point(173, 123);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(689, 303);
@@ -558,6 +933,16 @@
             this.tabAccounts.TabIndex = 4;
             this.tabAccounts.Text = "Accounts";
             this.tabAccounts.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(0, 3);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(1030, 47);
+            this.label25.TabIndex = 45;
+            this.label25.Text = "Accounts";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label19
             // 
@@ -684,6 +1069,9 @@
             // dataGridView4
             // 
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.AdminUsername,
+            this.AdminEmail});
             this.dataGridView4.Location = new System.Drawing.Point(571, 230);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(422, 275);
@@ -692,6 +1080,10 @@
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ClientAccountName,
+            this.ClientAccountUsername,
+            this.ClientAccountEmail});
             this.dataGridView3.Location = new System.Drawing.Point(40, 230);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(422, 275);
@@ -707,54 +1099,13 @@
             this.label1.Text = "Manage your restaurant";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // groupBox2
+            // pictureBox1
             // 
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.lblNomProduit2);
-            this.groupBox2.Controls.Add(this.button12);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.pictureBox2);
-            this.groupBox2.Location = new System.Drawing.Point(18, 16);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 136);
-            this.groupBox2.TabIndex = 14;
-            this.groupBox2.TabStop = false;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(109, 102);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 14;
-            this.button5.Text = "Remove";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // lblNomProduit2
-            // 
-            this.lblNomProduit2.AutoSize = true;
-            this.lblNomProduit2.Location = new System.Drawing.Point(75, 17);
-            this.lblNomProduit2.Name = "lblNomProduit2";
-            this.lblNomProduit2.Size = new System.Drawing.Size(41, 13);
-            this.lblNomProduit2.TabIndex = 13;
-            this.lblNomProduit2.Text = "main_1";
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(28, 102);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 6;
-            this.button12.Text = "Edit product";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(79, 86);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 13);
-            this.label12.TabIndex = 1;
-            this.label12.Text = "25.00 CHF";
+            this.pictureBox1.Location = new System.Drawing.Point(56, 33);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -764,55 +1115,6 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.button13);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.button14);
-            this.groupBox3.Controls.Add(this.label22);
-            this.groupBox3.Controls.Add(this.pictureBox3);
-            this.groupBox3.Location = new System.Drawing.Point(18, 16);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 136);
-            this.groupBox3.TabIndex = 15;
-            this.groupBox3.TabStop = false;
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(109, 102);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 14;
-            this.button13.Text = "Remove";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(75, 17);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 13);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "dessert_1";
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(28, 102);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 23);
-            this.button14.TabIndex = 6;
-            this.button14.Text = "Edit product";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(79, 86);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(58, 13);
-            this.label22.TabIndex = 1;
-            this.label22.Text = "25.00 CHF";
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Location = new System.Drawing.Point(56, 33);
@@ -820,55 +1122,6 @@
             this.pictureBox3.Size = new System.Drawing.Size(100, 50);
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.button15);
-            this.groupBox4.Controls.Add(this.label23);
-            this.groupBox4.Controls.Add(this.button16);
-            this.groupBox4.Controls.Add(this.label24);
-            this.groupBox4.Controls.Add(this.pictureBox4);
-            this.groupBox4.Location = new System.Drawing.Point(18, 16);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(200, 136);
-            this.groupBox4.TabIndex = 15;
-            this.groupBox4.TabStop = false;
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(109, 102);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(75, 23);
-            this.button15.TabIndex = 14;
-            this.button15.Text = "Remove";
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(75, 17);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(42, 13);
-            this.label23.TabIndex = 13;
-            this.label23.Text = "drink_1";
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(28, 102);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 23);
-            this.button16.TabIndex = 6;
-            this.button16.Text = "Edit product";
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(79, 86);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(58, 13);
-            this.label24.TabIndex = 1;
-            this.label24.Text = "25.00 CHF";
             // 
             // pictureBox4
             // 
@@ -878,230 +1131,65 @@
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
-            // label25
+            // OrderDate
             // 
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(0, 3);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(1030, 47);
-            this.label25.TabIndex = 45;
-            this.label25.Text = "Accounts";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.OrderDate.HeaderText = "Date";
+            this.OrderDate.Name = "OrderDate";
             // 
-            // label28
+            // OrderClient
             // 
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(0, 3);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(1030, 47);
-            this.label28.TabIndex = 46;
-            this.label28.Text = "Menu";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.OrderClient.HeaderText = "Client name";
+            this.OrderClient.Name = "OrderClient";
             // 
-            // tabInformation
+            // OrderAddress
             // 
-            this.tabInformation.Controls.Add(this.btnRestaurantBackground);
-            this.tabInformation.Controls.Add(this.label21);
-            this.tabInformation.Controls.Add(this.label5);
-            this.tabInformation.Controls.Add(this.btnSaveRestaurantInfo);
-            this.tabInformation.Controls.Add(this.textBoxRestaurantDescription);
-            this.tabInformation.Controls.Add(this.textBoxRestaurantName);
-            this.tabInformation.Controls.Add(this.label4);
-            this.tabInformation.Controls.Add(this.label2);
-            this.tabInformation.Location = new System.Drawing.Point(4, 22);
-            this.tabInformation.Name = "tabInformation";
-            this.tabInformation.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformation.Size = new System.Drawing.Size(1033, 564);
-            this.tabInformation.TabIndex = 5;
-            this.tabInformation.Text = "Information";
-            this.tabInformation.UseVisualStyleBackColor = true;
+            this.OrderAddress.HeaderText = "Address";
+            this.OrderAddress.Name = "OrderAddress";
             // 
-            // btnRestaurantBackground
+            // OrderTotal
             // 
-            this.btnRestaurantBackground.Location = new System.Drawing.Point(386, 317);
-            this.btnRestaurantBackground.Name = "btnRestaurantBackground";
-            this.btnRestaurantBackground.Size = new System.Drawing.Size(111, 23);
-            this.btnRestaurantBackground.TabIndex = 55;
-            this.btnRestaurantBackground.Text = "Choose file";
-            this.btnRestaurantBackground.UseVisualStyleBackColor = true;
+            this.OrderTotal.HeaderText = "Total";
+            this.OrderTotal.Name = "OrderTotal";
             // 
-            // label21
+            // ClientName
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(195, 322);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(150, 13);
-            this.label21.TabIndex = 54;
-            this.label21.Text = "Restaurant background image";
+            this.ClientName.HeaderText = "Client name";
+            this.ClientName.Name = "ClientName";
             // 
-            // label5
+            // ClientOrders
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(0, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1030, 47);
-            this.label5.TabIndex = 53;
-            this.label5.Text = "Edit information";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ClientOrders.HeaderText = "Number of orders";
+            this.ClientOrders.Name = "ClientOrders";
             // 
-            // btnSaveRestaurantInfo
+            // ClientTotal
             // 
-            this.btnSaveRestaurantInfo.Enabled = false;
-            this.btnSaveRestaurantInfo.Location = new System.Drawing.Point(464, 419);
-            this.btnSaveRestaurantInfo.Name = "btnSaveRestaurantInfo";
-            this.btnSaveRestaurantInfo.Size = new System.Drawing.Size(111, 23);
-            this.btnSaveRestaurantInfo.TabIndex = 52;
-            this.btnSaveRestaurantInfo.Text = "Save changes";
-            this.btnSaveRestaurantInfo.UseVisualStyleBackColor = true;
-            this.btnSaveRestaurantInfo.Click += new System.EventHandler(this.btnSaveRestaurantInfoClicked);
+            this.ClientTotal.HeaderText = "Total amount";
+            this.ClientTotal.Name = "ClientTotal";
             // 
-            // textBoxRestaurantDescription
+            // ClientAccountName
             // 
-            this.textBoxRestaurantDescription.Location = new System.Drawing.Point(386, 181);
-            this.textBoxRestaurantDescription.Multiline = true;
-            this.textBoxRestaurantDescription.Name = "textBoxRestaurantDescription";
-            this.textBoxRestaurantDescription.Size = new System.Drawing.Size(300, 80);
-            this.textBoxRestaurantDescription.TabIndex = 51;
-            this.textBoxRestaurantDescription.TextChanged += new System.EventHandler(this.CheckRestaurantInfo);
+            this.ClientAccountName.HeaderText = "Name";
+            this.ClientAccountName.Name = "ClientAccountName";
             // 
-            // textBoxRestaurantName
+            // ClientAccountUsername
             // 
-            this.textBoxRestaurantName.Location = new System.Drawing.Point(386, 111);
-            this.textBoxRestaurantName.Name = "textBoxRestaurantName";
-            this.textBoxRestaurantName.Size = new System.Drawing.Size(100, 20);
-            this.textBoxRestaurantName.TabIndex = 50;
-            this.textBoxRestaurantName.TextChanged += new System.EventHandler(this.CheckRestaurantInfo);
+            this.ClientAccountUsername.HeaderText = "Username";
+            this.ClientAccountUsername.Name = "ClientAccountUsername";
             // 
-            // label4
+            // ClientAccountEmail
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(186, 188);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 13);
-            this.label4.TabIndex = 49;
-            this.label4.Text = "Restaurant description";
+            this.ClientAccountEmail.HeaderText = "Email";
+            this.ClientAccountEmail.Name = "ClientAccountEmail";
             // 
-            // label2
+            // AdminUsername
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(186, 114);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 13);
-            this.label2.TabIndex = 48;
-            this.label2.Text = "Restaurant name";
+            this.AdminUsername.HeaderText = "Username";
+            this.AdminUsername.Name = "AdminUsername";
             // 
-            // label30
+            // AdminEmail
             // 
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(0, 3);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(1030, 47);
-            this.label30.TabIndex = 53;
-            this.label30.Text = "Overview";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label29
-            // 
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(0, 84);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(1030, 47);
-            this.label29.TabIndex = 54;
-            this.label29.Text = "Welcome back!";
-            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label31
-            // 
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(0, 173);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(341, 47);
-            this.label31.TabIndex = 55;
-            this.label31.Text = "Top 10 products";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label32
-            // 
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(347, 173);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(341, 47);
-            this.label32.TabIndex = 56;
-            this.label32.Text = "Top 10 clients";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label33
-            // 
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(694, 173);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(341, 47);
-            this.label33.TabIndex = 57;
-            this.label33.Text = "Top 10 orders";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label33.Click += new System.EventHandler(this.Label33_Click);
-            // 
-            // listBox1
-            // 
-            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Items.AddRange(new object[] {
-            "product1",
-            "product2",
-            "product3",
-            "product4",
-            ".",
-            ".",
-            "."});
-            this.listBox1.Location = new System.Drawing.Point(29, 223);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(292, 228);
-            this.listBox1.TabIndex = 58;
-            // 
-            // listBox2
-            // 
-            this.listBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 16;
-            this.listBox2.Items.AddRange(new object[] {
-            "client1",
-            "client2",
-            "client3",
-            "client4",
-            ".",
-            ".",
-            "."});
-            this.listBox2.Location = new System.Drawing.Point(372, 223);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(292, 228);
-            this.listBox2.TabIndex = 59;
-            // 
-            // listBox3
-            // 
-            this.listBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 16;
-            this.listBox3.Items.AddRange(new object[] {
-            "order1",
-            "order2",
-            "order3",
-            "order4",
-            ".",
-            ".",
-            "."});
-            this.listBox3.Location = new System.Drawing.Point(711, 223);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(292, 228);
-            this.listBox3.TabIndex = 60;
-            // 
-            // textBoxPrice
-            // 
-            this.textBoxPrice.Location = new System.Drawing.Point(622, 100);
-            this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(60, 20);
-            this.textBoxPrice.TabIndex = 47;
-            this.textBoxPrice.TextChanged += new System.EventHandler(this.CheckProductInfo);
+            this.AdminEmail.HeaderText = "Email";
+            this.AdminEmail.Name = "AdminEmail";
             // 
             // AdminHomepage
             // 
@@ -1116,16 +1204,23 @@
             this.Load += new System.EventHandler(this.AdminHomepage_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabGeneral.ResumeLayout(false);
+            this.tabInformation.ResumeLayout(false);
+            this.tabInformation.PerformLayout();
             this.tabMenu.ResumeLayout(false);
             this.tabMenu.PerformLayout();
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage5.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.tabPage6.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.tabPage7.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.tabTransactions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabClients.ResumeLayout(false);
@@ -1134,17 +1229,10 @@
             this.tabAccounts.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.tabInformation.ResumeLayout(false);
-            this.tabInformation.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1243,5 +1331,17 @@
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox textBoxPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderClient;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientOrders;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminUsername;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientAccountName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientAccountUsername;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientAccountEmail;
     }
 }
