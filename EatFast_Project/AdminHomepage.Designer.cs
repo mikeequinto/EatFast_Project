@@ -425,7 +425,7 @@
             this.textBoxPrice.Location = new System.Drawing.Point(622, 100);
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(60, 20);
-            this.textBoxPrice.TabIndex = 47;
+            this.textBoxPrice.TabIndex = 15;
             this.textBoxPrice.TextChanged += new System.EventHandler(this.CheckProductInfo);
             // 
             // label28
@@ -453,7 +453,7 @@
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(514, 40);
-            this.textBoxDescription.TabIndex = 22;
+            this.textBoxDescription.TabIndex = 17;
             this.textBoxDescription.TextChanged += new System.EventHandler(this.CheckProductInfo);
             // 
             // tabControl2
@@ -714,7 +714,7 @@
             this.btnAddProduct.Location = new System.Drawing.Point(793, 156);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(75, 23);
-            this.btnAddProduct.TabIndex = 20;
+            this.btnAddProduct.TabIndex = 18;
             this.btnAddProduct.Text = "Add product";
             this.btnAddProduct.UseVisualStyleBackColor = true;
             this.btnAddProduct.Click += new System.EventHandler(this.btnAddProductClicked);
@@ -724,7 +724,7 @@
             this.button4.Location = new System.Drawing.Point(793, 98);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 19;
+            this.button4.TabIndex = 16;
             this.button4.Text = "Choose file";
             this.button4.UseVisualStyleBackColor = true;
             // 
@@ -968,7 +968,7 @@
             this.textBoxPasswordConfirm.Name = "textBoxPasswordConfirm";
             this.textBoxPasswordConfirm.PasswordChar = '*';
             this.textBoxPasswordConfirm.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPasswordConfirm.TabIndex = 32;
+            this.textBoxPasswordConfirm.TabIndex = 4;
             this.textBoxPasswordConfirm.TextChanged += new System.EventHandler(this.CheckAccountInfo);
             // 
             // label17
@@ -986,7 +986,7 @@
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPassword.TabIndex = 30;
+            this.textBoxPassword.TabIndex = 3;
             this.textBoxPassword.TextChanged += new System.EventHandler(this.CheckAccountInfo);
             // 
             // btnAddAccount
@@ -995,7 +995,7 @@
             this.btnAddAccount.Location = new System.Drawing.Point(39, 139);
             this.btnAddAccount.Name = "btnAddAccount";
             this.btnAddAccount.Size = new System.Drawing.Size(88, 23);
-            this.btnAddAccount.TabIndex = 29;
+            this.btnAddAccount.TabIndex = 5;
             this.btnAddAccount.Text = "Add account";
             this.btnAddAccount.UseVisualStyleBackColor = true;
             this.btnAddAccount.Click += new System.EventHandler(this.BtnAddAccountClicked);
@@ -1023,7 +1023,7 @@
             this.textBoxEmail.Location = new System.Drawing.Point(400, 103);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(100, 20);
-            this.textBoxEmail.TabIndex = 25;
+            this.textBoxEmail.TabIndex = 2;
             this.textBoxEmail.TextChanged += new System.EventHandler(this.CheckAccountInfo);
             // 
             // label15
@@ -1040,7 +1040,7 @@
             this.textBoxUsername.Location = new System.Drawing.Point(241, 103);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(100, 20);
-            this.textBoxUsername.TabIndex = 23;
+            this.textBoxUsername.TabIndex = 1;
             this.textBoxUsername.TextChanged += new System.EventHandler(this.CheckAccountInfo);
             // 
             // label16
@@ -1062,7 +1062,7 @@
             this.comboBoxType.Location = new System.Drawing.Point(39, 103);
             this.comboBoxType.Name = "comboBoxType";
             this.comboBoxType.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxType.TabIndex = 21;
+            this.comboBoxType.TabIndex = 0;
             this.comboBoxType.Text = "- Select type -";
             this.comboBoxType.SelectedIndexChanged += new System.EventHandler(this.CheckAccountInfo);
             // 
@@ -1075,7 +1075,7 @@
             this.dataGridView4.Location = new System.Drawing.Point(571, 230);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(422, 275);
-            this.dataGridView4.TabIndex = 1;
+            this.dataGridView4.TabIndex = 7;
             // 
             // dataGridView3
             // 
@@ -1087,7 +1087,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(40, 230);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(422, 275);
-            this.dataGridView3.TabIndex = 0;
+            this.dataGridView3.TabIndex = 6;
             // 
             // label1
             // 
