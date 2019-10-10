@@ -21,5 +21,10 @@ namespace EatFast_Project
         {
             this.Close();
         }
+
+        private void BtnBackClicked(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
