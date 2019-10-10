@@ -94,5 +94,11 @@ namespace EatFast_Project
             ProductInfo productInfo = new ProductInfo();
             productInfo.Show();
         }
+
+        private void BtnCheckoutClicked(object sender, EventArgs e)
+        {
+            Checkout checkout = new Checkout();
+            checkout.ShowDialog();
+        }
     }
 }
