@@ -100,5 +100,10 @@ namespace EatFast_Project
             Checkout checkout = new Checkout();
             checkout.ShowDialog();
         }
+
+        private void BtnAddCartClicked(object sender, EventArgs e)
+        {
+            MessageBox.Show("Product added!");
+        }
     }
 }

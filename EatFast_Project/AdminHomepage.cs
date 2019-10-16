@@ -164,6 +164,9 @@ namespace EatFast_Project
             {
                 //Mise à jour des informations
             }
+
+            textBoxRestaurantName.Text = "";
+            textBoxRestaurantDescription.Text = "";
         }
 
         private void CheckAccountInfo(object sender, EventArgs e)

@@ -26,5 +26,44 @@ namespace EatFast_Project
         {
             this.Close();
         }
+
+        private void CheckCardInformation(object sender, EventArgs e)
+        {
+            var cardOk = true;
+
+            if(textBoxCardName.Text != "" && textBoxCardNumber.Text != "")
+            {
+                cardOk = false;
+            }
+
+            if((numericUpDownMonth.Value > 0 && numericUpDownMonth.Value <= 12))
+            {
+                cardOk = false;
+            }
+
+            DateTime dt = DateTime.Now;
+            Int32 annee = Int32.Parse(dt.ToString("yy"));
+
+            if (numericUpDownYear.Value < annee)
+            {
+                cardOk = false;
+            }
+
+            /*Int32 cvv = Int32.Parse(textBoxCardCVV.Text);
+
+            if(cvv < 0 || cvv > 999)
+            {
+                cardOk = false;
+            }*/
+
+            if (cardOk)
+            {
+                btnSubmitPayment.Enabled = true;
+            }
+            else
+            {
+                btnSubmitPayment.Enabled = false;
+            }
+        }
     }
 }

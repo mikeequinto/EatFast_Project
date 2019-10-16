@@ -33,16 +33,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.textBoxCardName = new System.Windows.Forms.TextBox();
+            this.textBoxCardNumber = new System.Windows.Forms.TextBox();
+            this.numericUpDownMonth = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownYear = new System.Windows.Forms.NumericUpDown();
+            this.textBoxCardCVV = new System.Windows.Forms.TextBox();
+            this.btnSubmitPayment = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMonth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYear)).BeginInit();
             this.SuspendLayout();
             // 
             // label16
@@ -95,50 +95,52 @@
             this.label4.Text = "CVV / CVC";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // textBoxCardName
             // 
-            this.textBox1.Location = new System.Drawing.Point(95, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(209, 20);
-            this.textBox1.TabIndex = 49;
+            this.textBoxCardName.Location = new System.Drawing.Point(95, 106);
+            this.textBoxCardName.Name = "textBoxCardName";
+            this.textBoxCardName.Size = new System.Drawing.Size(209, 20);
+            this.textBoxCardName.TabIndex = 49;
+            this.textBoxCardName.TextChanged += new System.EventHandler(this.CheckCardInformation);
             // 
-            // textBox2
+            // textBoxCardNumber
             // 
-            this.textBox2.Location = new System.Drawing.Point(95, 179);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(209, 20);
-            this.textBox2.TabIndex = 50;
+            this.textBoxCardNumber.Location = new System.Drawing.Point(95, 179);
+            this.textBoxCardNumber.Name = "textBoxCardNumber";
+            this.textBoxCardNumber.Size = new System.Drawing.Size(209, 20);
+            this.textBoxCardNumber.TabIndex = 50;
             // 
-            // numericUpDown1
+            // numericUpDownMonth
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(157, 253);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(40, 20);
-            this.numericUpDown1.TabIndex = 51;
+            this.numericUpDownMonth.Location = new System.Drawing.Point(157, 253);
+            this.numericUpDownMonth.Name = "numericUpDownMonth";
+            this.numericUpDownMonth.Size = new System.Drawing.Size(40, 20);
+            this.numericUpDownMonth.TabIndex = 51;
             // 
-            // numericUpDown2
+            // numericUpDownYear
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(203, 253);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(40, 20);
-            this.numericUpDown2.TabIndex = 52;
+            this.numericUpDownYear.Location = new System.Drawing.Point(203, 253);
+            this.numericUpDownYear.Name = "numericUpDownYear";
+            this.numericUpDownYear.Size = new System.Drawing.Size(40, 20);
+            this.numericUpDownYear.TabIndex = 52;
             // 
-            // textBox3
+            // textBoxCardCVV
             // 
-            this.textBox3.Location = new System.Drawing.Point(172, 335);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(59, 20);
-            this.textBox3.TabIndex = 53;
+            this.textBoxCardCVV.Location = new System.Drawing.Point(172, 335);
+            this.textBoxCardCVV.Name = "textBoxCardCVV";
+            this.textBoxCardCVV.Size = new System.Drawing.Size(59, 20);
+            this.textBoxCardCVV.TabIndex = 53;
             // 
-            // button1
+            // btnSubmitPayment
             // 
-            this.button1.Location = new System.Drawing.Point(130, 408);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 23);
-            this.button1.TabIndex = 54;
-            this.button1.Text = "Submit payment";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.BtnSubmitClicked);
+            this.btnSubmitPayment.Enabled = false;
+            this.btnSubmitPayment.Location = new System.Drawing.Point(130, 408);
+            this.btnSubmitPayment.Name = "btnSubmitPayment";
+            this.btnSubmitPayment.Size = new System.Drawing.Size(144, 23);
+            this.btnSubmitPayment.TabIndex = 54;
+            this.btnSubmitPayment.Text = "Submit payment";
+            this.btnSubmitPayment.UseVisualStyleBackColor = true;
+            this.btnSubmitPayment.Click += new System.EventHandler(this.BtnSubmitClicked);
             // 
             // label5
             // 
@@ -167,12 +169,12 @@
             this.ClientSize = new System.Drawing.Size(407, 475);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnSubmitPayment);
+            this.Controls.Add(this.textBoxCardCVV);
+            this.Controls.Add(this.numericUpDownYear);
+            this.Controls.Add(this.numericUpDownMonth);
+            this.Controls.Add(this.textBoxCardNumber);
+            this.Controls.Add(this.textBoxCardName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -180,8 +182,8 @@
             this.Controls.Add(this.label16);
             this.Name = "Checkout";
             this.Text = "Checkout";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMonth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYear)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,12 +196,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxCardName;
+        private System.Windows.Forms.TextBox textBoxCardNumber;
+        private System.Windows.Forms.NumericUpDown numericUpDownMonth;
+        private System.Windows.Forms.NumericUpDown numericUpDownYear;
+        private System.Windows.Forms.TextBox textBoxCardCVV;
+        private System.Windows.Forms.Button btnSubmitPayment;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
     }
