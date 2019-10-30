@@ -30,31 +30,60 @@ namespace EatFast_Project
         private void CheckCardInformation(object sender, EventArgs e)
         {
             var cardOk = true;
-
-            if(textBoxCardName.Text != "" && textBoxCardNumber.Text != "")
+            
+            if(textBoxCardName.Text == "")
             {
                 cardOk = false;
             }
 
-            if((numericUpDownMonth.Value > 0 && numericUpDownMonth.Value <= 12))
+            if (!long.TryParse(textBoxCardNumber.Text, out long cardNo))
+            {
+                cardOk = false;
+            }
+
+            if((numericUpDownMonth.Value < 0 || numericUpDownMonth.Value > 12))
             {
                 cardOk = false;
             }
 
             DateTime dt = DateTime.Now;
+            Int32 mois = Int32.Parse(dt.ToString("MM"));
             Int32 annee = Int32.Parse(dt.ToString("yy"));
 
             if (numericUpDownYear.Value < annee)
             {
                 cardOk = false;
+            } else if(numericUpDownYear.Value == annee)
+            {
+                if (numericUpDownMonth.Value < mois)
+                {
+                    cardOk = false;
+                }
             }
 
-            /*Int32 cvv = Int32.Parse(textBoxCardCVV.Text);
-
-            if(cvv < 0 || cvv > 999)
+            if(textBoxCardCVV.Text != "")
+            {
+                if (!Int32.TryParse(textBoxCardCVV.Text, out int cvv))
+                {
+                    cardOk = false;
+                }
+                else
+                {
+                    if (cvv < 100 || cvv > 999)
+                    {
+                        cardOk = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("String could not be parsed.");
+                    }
+                }
+              
+            }
+            else
             {
                 cardOk = false;
-            }*/
+            }
 
             if (cardOk)
             {

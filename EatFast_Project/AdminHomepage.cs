@@ -88,45 +88,6 @@ namespace EatFast_Project
             
         }
 
-        private void btnAddProductClicked(object sender, EventArgs e)
-        {
-            MessageBox.Show("New product added!");
-
-            //Réinitialisation des champs
-            comboBoxCategory.SelectedIndex = 0;
-            textBoxName.Text = "";
-            textBoxPrice.Text = "";
-            textBoxDescription.Text = "";
-        }
-
-        private void CheckProductInfo(object sender, EventArgs e)
-        {
-            if(comboBoxCategory.SelectedIndex != 0 && textBoxName.Text != "" && IsDouble(textBoxPrice.Text) && textBoxDescription.Text != "")
-            {
-                btnAddProduct.Enabled = true;
-            }
-            else
-            {
-                btnAddProduct.Enabled = false;
-            }
-        }
-
-        public bool IsDouble(string text)
-        {
-            Double num = 0;
-            bool isDouble = false;
-
-            // Check for empty string.
-            if (string.IsNullOrEmpty(text))
-            {
-                return false;
-            }
-
-            isDouble = Double.TryParse(text, out num);
-
-            return isDouble;
-        }
-
         private void BtnRemoveClicked(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure?", "Delete product", MessageBoxButtons.YesNo);
@@ -165,13 +126,28 @@ namespace EatFast_Project
                 //Mise à jour des informations
             }
 
+            if (lblFileName.Text != "File name")
+            {
+                //Mise à jour des informations 
+            }
+
+            ResetRestaurantInfo();
+        }
+
+        private void ResetRestaurantInfo()
+        {
             textBoxRestaurantName.Text = "";
             textBoxRestaurantDescription.Text = "";
+            lblFileName.Text = "File name";
+            picBoxRestoBackground.ImageLocation = "";
+            btnSaveRestaurantInfo.Enabled = false;
         }
 
         private void CheckAccountInfo(object sender, EventArgs e)
         {
-            if(comboBoxType.SelectedIndex != 0 && textBoxUsername.Text != "" && textBoxEmail.Text != "" && textBoxPassword.Text != "" && textBoxPasswordConfirm.Text != "")
+            if(comboBoxType.SelectedIndex != 0 && textBoxUsername.Text != "" 
+                && textBoxEmail.Text != "" && textBoxPassword.Text != "" 
+                && textBoxPasswordConfirm.Text != "")
             {
                 btnAddAccount.Enabled = true;
             }
@@ -179,6 +155,46 @@ namespace EatFast_Project
             {
                 btnAddAccount.Enabled = false;
             } 
+        }
+
+        private void btnRestaurantBackground_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            //openFileDialog1.InitialDirectory = "c:\\";
+            openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
+            //openFileDialog1.FilterIndex = 0;
+            //openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string selectedFileName = openFileDialog1.FileName;
+                //...
+                lblFileName.Text = selectedFileName;
+                picBoxRestoBackground.ImageLocation = selectedFileName;
+                btnSaveRestaurantInfo.Enabled = true;
+            }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnAddProductClicked(object sender, EventArgs e)
+        {
+            AddProduct addProduct = new AddProduct();
+            addProduct.ShowDialog();
+        }
+
+        private void tabInformation_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnClearRestauInfoClicked(object sender, EventArgs e)
+        {
+            ResetRestaurantInfo();
         }
     }
 }
