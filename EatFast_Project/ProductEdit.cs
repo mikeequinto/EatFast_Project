@@ -45,7 +45,26 @@ namespace EatFast_Project
                 //Mise à jour du produit
             }
 
-            this.Close();
+            if (lblFilename.Text != "File name")
+            {
+                //Mise à jour du produit
+            }
+
+            ResetProductInfo();
+
+            MessageBox.Show("Product information updated!", "Information");
+
+        }
+
+        private void ResetProductInfo()
+        {
+            comboBoxCategory.SelectedIndex = 0;
+            textBoxName.Text = "";
+            textBoxDescription.Text = "";
+            textBoxPrice.Text = "";
+            lblFilename.Text = "";
+            picBoxProductImage.ImageLocation = "";
+            btnSave.Enabled = false;
         }
 
         public bool IsDouble(string text)
@@ -66,13 +85,39 @@ namespace EatFast_Project
 
         private void CheckProductInfo(object sender, EventArgs e)
         {
-            if(comboBoxCategory.SelectedIndex != 0 || textBoxName.Text != "" || textBoxDescription.Text != "" || IsDouble(textBoxPrice.Text))
+            if(comboBoxCategory.SelectedIndex != 0 || textBoxName.Text != "" 
+                || textBoxDescription.Text != "" || IsDouble(textBoxPrice.Text)
+                || lblFilename.Text != "File name")
             {
                 btnSave.Enabled = true;
             }
             else
             {
                 btnSave.Enabled = false;
+            }
+        }
+
+        private void BtnClearClicked(object sender, EventArgs e)
+        {
+            ResetProductInfo();
+        }
+
+        private void BtnChooseFileClicked(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+
+            //openFileDialog1.InitialDirectory = "c:\\";
+            openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
+            //openFileDialog1.FilterIndex = 0;
+            //openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string selectedFileName = openFileDialog1.FileName;
+                //...
+                lblFilename.Text = selectedFileName;
+                picBoxProductImage.ImageLocation = selectedFileName;
+                btnSave.Enabled = true;
             }
         }
     }

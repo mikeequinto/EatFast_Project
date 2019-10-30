@@ -39,11 +39,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblFilename = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.picBoxProductImage = new System.Windows.Forms.PictureBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxProductImage)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -104,6 +105,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Choose file";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.BtnChooseFileClicked);
             // 
             // label4
             // 
@@ -137,44 +139,35 @@
             // btnSave
             // 
             this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(543, 490);
+            this.btnSave.Location = new System.Drawing.Point(221, 685);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 28);
-            this.btnSave.TabIndex = 12;
+            this.btnSave.TabIndex = 9;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.BtnSaveClicked);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(651, 490);
+            this.btnClose.Location = new System.Drawing.Point(437, 685);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 28);
-            this.btnClose.TabIndex = 13;
+            this.btnClose.TabIndex = 11;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.BtnCloseClicked);
             // 
-            // pictureBox1
+            // lblFilename
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(705, 73);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(488, 305);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(876, 404);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(151, 17);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Product image preview";
+            this.lblFilename.AutoSize = true;
+            this.lblFilename.Location = new System.Drawing.Point(357, 426);
+            this.lblFilename.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFilename.Name = "lblFilename";
+            this.lblFilename.Size = new System.Drawing.Size(69, 17);
+            this.lblFilename.TabIndex = 15;
+            this.lblFilename.Text = "File name";
             // 
             // label7
             // 
@@ -204,15 +197,37 @@
             this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.CheckProductInfo);
             this.comboBoxCategory.Click += new System.EventHandler(this.CheckProductInfo);
             // 
+            // picBoxProductImage
+            // 
+            this.picBoxProductImage.Location = new System.Drawing.Point(243, 495);
+            this.picBoxProductImage.Margin = new System.Windows.Forms.Padding(4);
+            this.picBoxProductImage.Name = "picBoxProductImage";
+            this.picBoxProductImage.Size = new System.Drawing.Size(271, 149);
+            this.picBoxProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxProductImage.TabIndex = 14;
+            this.picBoxProductImage.TabStop = false;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(329, 685);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(100, 28);
+            this.btnClear.TabIndex = 10;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.BtnClearClicked);
+            // 
             // ProductEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1275, 554);
+            this.ClientSize = new System.Drawing.Size(754, 757);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.comboBoxCategory);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblFilename);
+            this.Controls.Add(this.picBoxProductImage);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label5);
@@ -227,7 +242,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ProductEdit";
             this.Text = "Edit product";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxProductImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,9 +261,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox picBoxProductImage;
+        private System.Windows.Forms.Label lblFilename;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBoxCategory;
+        private System.Windows.Forms.Button btnClear;
     }
 }

@@ -132,6 +132,8 @@ namespace EatFast_Project
             }
 
             ResetRestaurantInfo();
+
+            MessageBox.Show("Restaurant information updated!", "Information");
         }
 
         private void ResetRestaurantInfo()

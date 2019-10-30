@@ -21,11 +21,18 @@ namespace EatFast_Project
         {
             MessageBox.Show("New product added!");
 
+            ResetProductInfo();
+        }
+
+        private void ResetProductInfo()
+        {
             //Réinitialisation des champs
             comboBoxCategory.SelectedIndex = 0;
             textBoxName.Text = "";
             textBoxPrice.Text = "";
             textBoxDescription.Text = "";
+
+            btnAddProduct.Enabled = false;
         }
 
         private void CheckProductInfo(object sender, EventArgs e)
