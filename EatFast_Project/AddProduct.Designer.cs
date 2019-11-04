@@ -69,7 +69,7 @@
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(350, 73);
-            this.textBoxDescription.TabIndex = 30;
+            this.textBoxDescription.TabIndex = 28;
             // 
             // btnAddProduct
             // 
@@ -78,7 +78,7 @@
             this.btnAddProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(100, 28);
-            this.btnAddProduct.TabIndex = 32;
+            this.btnAddProduct.TabIndex = 30;
             this.btnAddProduct.Text = "Add product";
             this.btnAddProduct.UseVisualStyleBackColor = true;
             // 
@@ -147,12 +147,14 @@
             this.comboBoxCategory.Size = new System.Drawing.Size(160, 24);
             this.comboBoxCategory.TabIndex = 24;
             this.comboBoxCategory.Text = "- Select category -";
+            this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.CheckProductInfo);
             // 
             // picBoxProduct
             // 
             this.picBoxProduct.Location = new System.Drawing.Point(209, 457);
             this.picBoxProduct.Name = "picBoxProduct";
             this.picBoxProduct.Size = new System.Drawing.Size(251, 135);
+            this.picBoxProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxProduct.TabIndex = 35;
             this.picBoxProduct.TabStop = false;
             // 
@@ -165,6 +167,7 @@
             this.labelFilename.Size = new System.Drawing.Size(69, 17);
             this.labelFilename.TabIndex = 36;
             this.labelFilename.Text = "File name";
+            this.labelFilename.TextChanged += new System.EventHandler(this.CheckProductInfo);
             // 
             // label28
             // 

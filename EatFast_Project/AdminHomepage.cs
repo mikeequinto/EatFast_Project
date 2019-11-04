@@ -76,7 +76,7 @@ namespace EatFast_Project
         {
             if (textBoxPassword.Text.Equals(textBoxPasswordConfirm.Text))
             {
-                MessageBox.Show("New account added!");
+                MessageBox.Show("New account added!", "Information");
 
                 //Réinitialisation des champs
                 comboBoxType.SelectedIndex = 0;
@@ -84,6 +84,10 @@ namespace EatFast_Project
                 textBoxEmail.Text = "";
                 textBoxPassword.Text = "";
                 textBoxPasswordConfirm.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("The passwords do not match", "Information");
             }
             
         }
