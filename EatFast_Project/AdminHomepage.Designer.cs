@@ -163,6 +163,7 @@
             this.linkLabelLogout.TabStop = true;
             this.linkLabelLogout.Text = "Log out";
             this.linkLabelLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLogoutClicked);
+            this.linkLabelLogout.Click += new System.EventHandler(this.linkLabelLogout_Click);
             // 
             // tabControl1
             // 

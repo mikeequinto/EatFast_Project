@@ -37,21 +37,48 @@ namespace EatFast_Project
       
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Homepage.getInstance().Show();
-            //this.Close();
+            if(textBoxLoginUsername.Text == "client")
+            {
+                this.Hide();
+                Homepage.getInstance().Show();
+            }else if (textBoxLoginUsername.Text == "admin")
+            {
+                this.Hide();
+                AdminHomepage.getInstance().Show();
+            }
+            else
+            {
+                MessageBox.Show("The username or password is incorrect", "Information");
+            }
+
         }
 
         private void BtnSignup_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AdminHomepage.getInstance().Show();
+            if (!textBoxSignupPassword.Text.Equals(textBoxSignupConfirm.Text))
+            {
+                MessageBox.Show("The passwords do not match", "Information");
+            }
+            else
+            {
+                this.Hide();
+                Homepage.getInstance().Show();
+            }
             //this.Close();
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void CheckNewUserInfo(object sender, EventArgs e)
+        {
+            if(textBoxSignupUsername.Text != "" && textBoxSignupEmail.Text != "" 
+                && textBoxSignupPassword.Text != "" && textBoxSignupConfirm.Text != "")
+            {
+                btnSignup.Enabled = true;
+            }
         }
     }
 }

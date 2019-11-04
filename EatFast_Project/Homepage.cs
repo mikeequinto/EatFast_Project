@@ -43,7 +43,7 @@ namespace EatFast_Project
         {
             Login.getInstance().Show();
             this.Close();
-            MessageBox.Show("You have been logged out");
+            MessageBox.Show("You have been logged out", "Information");
         }
 
         private void Homepage_Load(object sender, EventArgs e)
@@ -103,7 +103,7 @@ namespace EatFast_Project
 
         private void BtnAddCartClicked(object sender, EventArgs e)
         {
-            MessageBox.Show("Product added!");
+            MessageBox.Show("Product added!", "Information");
         }
     }
 }

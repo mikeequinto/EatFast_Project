@@ -36,6 +36,7 @@ namespace EatFast_Project
         {
             Login.getInstance().Show();
             this.Close();
+            MessageBox.Show("You have been logged out", "Information");
         }
 
         private void BtnEditInfoClicked(object sender, EventArgs e)
@@ -201,6 +202,11 @@ namespace EatFast_Project
         private void BtnClearRestauInfoClicked(object sender, EventArgs e)
         {
             ResetRestaurantInfo();
+        }
+
+        private void linkLabelLogout_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
