@@ -77,22 +77,10 @@
             this.label24 = new System.Windows.Forms.Label();
             this.tabTransactions = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabClients = new System.Windows.Forms.TabPage();
             this.label13 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClientOrders = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClientTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabAccounts = new System.Windows.Forms.TabPage();
             this.label25 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -109,22 +97,33 @@
             this.label16 = new System.Windows.Forms.Label();
             this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.AdminUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AdminEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.ClientAccountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClientAccountUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClientAccountEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.lblFileName = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnClearRestauInfo = new System.Windows.Forms.Button();
             this.picBoxRestoBackground = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnClearRestauInfo = new System.Windows.Forms.Button();
+            this.AdminUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AdminEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeleteAdminAccount = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ClientAccountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientAccountEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeleteAccount = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientOrders = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClientTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabGeneral.SuspendLayout();
             this.tabInformation.SuspendLayout();
@@ -173,6 +172,7 @@
             this.tabControl1.Controls.Add(this.tabTransactions);
             this.tabControl1.Controls.Add(this.tabClients);
             this.tabControl1.Controls.Add(this.tabAccounts);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(55, 75);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
@@ -728,9 +728,6 @@
             // tabTransactions
             // 
             this.tabTransactions.Controls.Add(this.label10);
-            this.tabTransactions.Controls.Add(this.button11);
-            this.tabTransactions.Controls.Add(this.button10);
-            this.tabTransactions.Controls.Add(this.button9);
             this.tabTransactions.Controls.Add(this.dataGridView1);
             this.tabTransactions.Location = new System.Drawing.Point(4, 25);
             this.tabTransactions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -753,36 +750,6 @@
             this.label10.Text = "Transactions";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(779, 119);
-            this.button11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(176, 28);
-            this.button11.TabIndex = 6;
-            this.button11.Text = "Sort by total price";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(595, 119);
-            this.button10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(176, 28);
-            this.button10.TabIndex = 5;
-            this.button10.Text = "Sort by Date";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(411, 119);
-            this.button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(176, 28);
-            this.button9.TabIndex = 4;
-            this.button9.Text = "Sort by Client";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -798,39 +765,9 @@
             this.dataGridView1.Size = new System.Drawing.Size(919, 370);
             this.dataGridView1.TabIndex = 3;
             // 
-            // OrderDate
-            // 
-            this.OrderDate.HeaderText = "Date";
-            this.OrderDate.MinimumWidth = 6;
-            this.OrderDate.Name = "OrderDate";
-            this.OrderDate.Width = 125;
-            // 
-            // OrderClient
-            // 
-            this.OrderClient.HeaderText = "Client name";
-            this.OrderClient.MinimumWidth = 6;
-            this.OrderClient.Name = "OrderClient";
-            this.OrderClient.Width = 125;
-            // 
-            // OrderAddress
-            // 
-            this.OrderAddress.HeaderText = "Address";
-            this.OrderAddress.MinimumWidth = 6;
-            this.OrderAddress.Name = "OrderAddress";
-            this.OrderAddress.Width = 125;
-            // 
-            // OrderTotal
-            // 
-            this.OrderTotal.HeaderText = "Total";
-            this.OrderTotal.MinimumWidth = 6;
-            this.OrderTotal.Name = "OrderTotal";
-            this.OrderTotal.Width = 125;
-            // 
             // tabClients
             // 
             this.tabClients.Controls.Add(this.label13);
-            this.tabClients.Controls.Add(this.button8);
-            this.tabClients.Controls.Add(this.button7);
             this.tabClients.Controls.Add(this.dataGridView2);
             this.tabClients.Location = new System.Drawing.Point(4, 25);
             this.tabClients.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -852,31 +789,13 @@
             this.label13.Text = "Your clients";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(707, 116);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(201, 28);
-            this.button8.TabIndex = 6;
-            this.button8.Text = "Sort by number of orders";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(460, 116);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(201, 28);
-            this.button7.TabIndex = 5;
-            this.button7.Text = "Sort by name";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ClientName,
+            this.ClientEmail,
+            this.ClientAddress,
             this.ClientOrders,
             this.ClientTotal});
             this.dataGridView2.Location = new System.Drawing.Point(231, 151);
@@ -885,27 +804,6 @@
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.Size = new System.Drawing.Size(919, 373);
             this.dataGridView2.TabIndex = 4;
-            // 
-            // ClientName
-            // 
-            this.ClientName.HeaderText = "Client name";
-            this.ClientName.MinimumWidth = 6;
-            this.ClientName.Name = "ClientName";
-            this.ClientName.Width = 125;
-            // 
-            // ClientOrders
-            // 
-            this.ClientOrders.HeaderText = "Number of orders";
-            this.ClientOrders.MinimumWidth = 6;
-            this.ClientOrders.Name = "ClientOrders";
-            this.ClientOrders.Width = 125;
-            // 
-            // ClientTotal
-            // 
-            this.ClientTotal.HeaderText = "Total amount";
-            this.ClientTotal.MinimumWidth = 6;
-            this.ClientTotal.Name = "ClientTotal";
-            this.ClientTotal.Width = 125;
             // 
             // tabAccounts
             // 
@@ -967,7 +865,7 @@
             // 
             // textBoxPasswordConfirm
             // 
-            this.textBoxPasswordConfirm.Location = new System.Drawing.Point(1081, 127);
+            this.textBoxPasswordConfirm.Location = new System.Drawing.Point(1053, 127);
             this.textBoxPasswordConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxPasswordConfirm.Name = "textBoxPasswordConfirm";
             this.textBoxPasswordConfirm.PasswordChar = '*';
@@ -978,7 +876,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(691, 130);
+            this.label17.Location = new System.Drawing.Point(663, 130);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(77, 17);
@@ -987,7 +885,7 @@
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(777, 127);
+            this.textBoxPassword.Location = new System.Drawing.Point(749, 127);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
@@ -1010,7 +908,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(945, 130);
+            this.label3.Location = new System.Drawing.Point(917, 130);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 17);
@@ -1020,7 +918,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(475, 130);
+            this.label14.Location = new System.Drawing.Point(447, 130);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(50, 17);
@@ -1029,7 +927,7 @@
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(533, 127);
+            this.textBoxEmail.Location = new System.Drawing.Point(505, 127);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(132, 22);
@@ -1042,13 +940,13 @@
             this.label15.Location = new System.Drawing.Point(232, 130);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(81, 17);
+            this.label15.Size = new System.Drawing.Size(53, 17);
             this.label15.TabIndex = 24;
-            this.label15.Text = "Username :";
+            this.label15.Text = "Name :";
             // 
             // textBoxUsername
             // 
-            this.textBoxUsername.Location = new System.Drawing.Point(321, 127);
+            this.textBoxUsername.Location = new System.Drawing.Point(293, 127);
             this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(132, 22);
@@ -1085,7 +983,8 @@
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AdminUsername,
-            this.AdminEmail});
+            this.AdminEmail,
+            this.DeleteAdminAccount});
             this.dataGridView4.Location = new System.Drawing.Point(761, 283);
             this.dataGridView4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView4.Name = "dataGridView4";
@@ -1093,54 +992,19 @@
             this.dataGridView4.Size = new System.Drawing.Size(563, 338);
             this.dataGridView4.TabIndex = 7;
             // 
-            // AdminUsername
-            // 
-            this.AdminUsername.HeaderText = "Username";
-            this.AdminUsername.MinimumWidth = 6;
-            this.AdminUsername.Name = "AdminUsername";
-            this.AdminUsername.Width = 125;
-            // 
-            // AdminEmail
-            // 
-            this.AdminEmail.HeaderText = "Email";
-            this.AdminEmail.MinimumWidth = 6;
-            this.AdminEmail.Name = "AdminEmail";
-            this.AdminEmail.Width = 125;
-            // 
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ClientAccountName,
-            this.ClientAccountUsername,
-            this.ClientAccountEmail});
+            this.ClientAccountEmail,
+            this.DeleteAccount});
             this.dataGridView3.Location = new System.Drawing.Point(53, 283);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.Size = new System.Drawing.Size(563, 338);
             this.dataGridView3.TabIndex = 6;
-            // 
-            // ClientAccountName
-            // 
-            this.ClientAccountName.HeaderText = "Name";
-            this.ClientAccountName.MinimumWidth = 6;
-            this.ClientAccountName.Name = "ClientAccountName";
-            this.ClientAccountName.Width = 125;
-            // 
-            // ClientAccountUsername
-            // 
-            this.ClientAccountUsername.HeaderText = "Username";
-            this.ClientAccountUsername.MinimumWidth = 6;
-            this.ClientAccountUsername.Name = "ClientAccountUsername";
-            this.ClientAccountUsername.Width = 125;
-            // 
-            // ClientAccountEmail
-            // 
-            this.ClientAccountEmail.HeaderText = "Email";
-            this.ClientAccountEmail.MinimumWidth = 6;
-            this.ClientAccountEmail.Name = "ClientAccountEmail";
-            this.ClientAccountEmail.Width = 125;
             // 
             // label1
             // 
@@ -1171,6 +1035,27 @@
             this.lblFileName.Size = new System.Drawing.Size(69, 17);
             this.lblFileName.TabIndex = 58;
             this.lblFileName.Text = "File name";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(236, 105);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(147, 31);
+            this.button1.TabIndex = 47;
+            this.button1.Text = "Add new product";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.BtnAddProductClicked);
+            // 
+            // btnClearRestauInfo
+            // 
+            this.btnClearRestauInfo.Location = new System.Drawing.Point(695, 645);
+            this.btnClearRestauInfo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClearRestauInfo.Name = "btnClearRestauInfo";
+            this.btnClearRestauInfo.Size = new System.Drawing.Size(148, 28);
+            this.btnClearRestauInfo.TabIndex = 59;
+            this.btnClearRestauInfo.Text = "Clear";
+            this.btnClearRestauInfo.UseVisualStyleBackColor = true;
+            this.btnClearRestauInfo.Click += new System.EventHandler(this.BtnClearRestauInfoClicked);
             // 
             // picBoxRestoBackground
             // 
@@ -1218,26 +1103,124 @@
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
-            // button1
+            // AdminUsername
             // 
-            this.button1.Location = new System.Drawing.Point(236, 105);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 31);
-            this.button1.TabIndex = 47;
-            this.button1.Text = "Add new product";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.BtnAddProductClicked);
+            this.AdminUsername.HeaderText = "Name";
+            this.AdminUsername.MinimumWidth = 6;
+            this.AdminUsername.Name = "AdminUsername";
+            this.AdminUsername.Width = 125;
             // 
-            // btnClearRestauInfo
+            // AdminEmail
             // 
-            this.btnClearRestauInfo.Location = new System.Drawing.Point(695, 645);
-            this.btnClearRestauInfo.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClearRestauInfo.Name = "btnClearRestauInfo";
-            this.btnClearRestauInfo.Size = new System.Drawing.Size(148, 28);
-            this.btnClearRestauInfo.TabIndex = 59;
-            this.btnClearRestauInfo.Text = "Clear";
-            this.btnClearRestauInfo.UseVisualStyleBackColor = true;
-            this.btnClearRestauInfo.Click += new System.EventHandler(this.BtnClearRestauInfoClicked);
+            this.AdminEmail.HeaderText = "Email";
+            this.AdminEmail.MinimumWidth = 6;
+            this.AdminEmail.Name = "AdminEmail";
+            this.AdminEmail.Width = 200;
+            // 
+            // DeleteAdminAccount
+            // 
+            this.DeleteAdminAccount.HeaderText = "Delete account";
+            this.DeleteAdminAccount.MinimumWidth = 6;
+            this.DeleteAdminAccount.Name = "DeleteAdminAccount";
+            this.DeleteAdminAccount.Text = "Delete";
+            this.DeleteAdminAccount.Width = 125;
+            // 
+            // ClientAccountName
+            // 
+            this.ClientAccountName.HeaderText = "Name";
+            this.ClientAccountName.MinimumWidth = 6;
+            this.ClientAccountName.Name = "ClientAccountName";
+            this.ClientAccountName.Width = 125;
+            // 
+            // ClientAccountEmail
+            // 
+            this.ClientAccountEmail.HeaderText = "Email";
+            this.ClientAccountEmail.MinimumWidth = 6;
+            this.ClientAccountEmail.Name = "ClientAccountEmail";
+            this.ClientAccountEmail.Width = 200;
+            // 
+            // DeleteAccount
+            // 
+            this.DeleteAccount.HeaderText = "Delete account";
+            this.DeleteAccount.MinimumWidth = 6;
+            this.DeleteAccount.Name = "DeleteAccount";
+            this.DeleteAccount.Text = "Delete";
+            this.DeleteAccount.Width = 125;
+            // 
+            // ClientName
+            // 
+            this.ClientName.HeaderText = "Client name";
+            this.ClientName.MinimumWidth = 6;
+            this.ClientName.Name = "ClientName";
+            this.ClientName.Width = 125;
+            // 
+            // ClientEmail
+            // 
+            this.ClientEmail.HeaderText = "Client email";
+            this.ClientEmail.MinimumWidth = 6;
+            this.ClientEmail.Name = "ClientEmail";
+            this.ClientEmail.ReadOnly = true;
+            this.ClientEmail.Width = 200;
+            // 
+            // ClientAddress
+            // 
+            this.ClientAddress.HeaderText = "Delivery address";
+            this.ClientAddress.MinimumWidth = 6;
+            this.ClientAddress.Name = "ClientAddress";
+            this.ClientAddress.ReadOnly = true;
+            this.ClientAddress.Width = 250;
+            // 
+            // ClientOrders
+            // 
+            this.ClientOrders.HeaderText = "Number of orders";
+            this.ClientOrders.MinimumWidth = 6;
+            this.ClientOrders.Name = "ClientOrders";
+            this.ClientOrders.Width = 125;
+            // 
+            // ClientTotal
+            // 
+            this.ClientTotal.HeaderText = "Total amount";
+            this.ClientTotal.MinimumWidth = 6;
+            this.ClientTotal.Name = "ClientTotal";
+            this.ClientTotal.Width = 125;
+            // 
+            // OrderDate
+            // 
+            this.OrderDate.HeaderText = "Date";
+            this.OrderDate.MinimumWidth = 6;
+            this.OrderDate.Name = "OrderDate";
+            this.OrderDate.Width = 125;
+            // 
+            // OrderClient
+            // 
+            this.OrderClient.HeaderText = "Client name";
+            this.OrderClient.MinimumWidth = 6;
+            this.OrderClient.Name = "OrderClient";
+            this.OrderClient.Width = 125;
+            // 
+            // OrderAddress
+            // 
+            this.OrderAddress.HeaderText = "Delivery address";
+            this.OrderAddress.MinimumWidth = 6;
+            this.OrderAddress.Name = "OrderAddress";
+            this.OrderAddress.Width = 250;
+            // 
+            // OrderTotal
+            // 
+            this.OrderTotal.HeaderText = "Total";
+            this.OrderTotal.MinimumWidth = 6;
+            this.OrderTotal.Name = "OrderTotal";
+            this.OrderTotal.Width = 125;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1380, 697);
+            this.tabPage1.TabIndex = 6;
+            this.tabPage1.Text = "Your account";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // AdminHomepage
             // 
@@ -1307,10 +1290,7 @@
         private System.Windows.Forms.Label lblPrixProduit;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage tabClients;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TabPage tabAccounts;
         private System.Windows.Forms.Button btnAddAccount;
         private System.Windows.Forms.Label label3;
@@ -1327,8 +1307,6 @@
         private System.Windows.Forms.TextBox textBoxPasswordConfirm;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBoxPassword;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label1;
@@ -1369,22 +1347,26 @@
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderClient;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderAddress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClientName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClientOrders;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClientTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminUsername;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClientAccountName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClientAccountUsername;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClientAccountEmail;
         private System.Windows.Forms.PictureBox picBoxRestoBackground;
         private System.Windows.Forms.Label lblFileName;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnClearRestauInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderClient;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OrderTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientOrders;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminUsername;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdminEmail;
+        private System.Windows.Forms.DataGridViewButtonColumn DeleteAdminAccount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientAccountName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClientAccountEmail;
+        private System.Windows.Forms.DataGridViewButtonColumn DeleteAccount;
+        private System.Windows.Forms.TabPage tabPage1;
     }
 }

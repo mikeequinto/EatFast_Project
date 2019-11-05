@@ -33,7 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxLoginUsername = new System.Windows.Forms.TextBox();
             this.textBoxLoginPassword = new System.Windows.Forms.TextBox();
-            this.textBoxSignupUsername = new System.Windows.Forms.TextBox();
+            this.textBoxSignupName = new System.Windows.Forms.TextBox();
             this.textBoxSignupEmail = new System.Windows.Forms.TextBox();
             this.textBoxSignupConfirm = new System.Windows.Forms.TextBox();
             this.textBoxSignupPassword = new System.Windows.Forms.TextBox();
@@ -85,7 +85,7 @@
             // textBoxLoginUsername
             // 
             this.textBoxLoginUsername.Location = new System.Drawing.Point(171, 148);
-            this.textBoxLoginUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxLoginUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxLoginUsername.Name = "textBoxLoginUsername";
             this.textBoxLoginUsername.Size = new System.Drawing.Size(171, 22);
             this.textBoxLoginUsername.TabIndex = 1;
@@ -94,25 +94,25 @@
             // textBoxLoginPassword
             // 
             this.textBoxLoginPassword.Location = new System.Drawing.Point(171, 198);
-            this.textBoxLoginPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxLoginPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxLoginPassword.Name = "textBoxLoginPassword";
             this.textBoxLoginPassword.PasswordChar = '*';
             this.textBoxLoginPassword.Size = new System.Drawing.Size(171, 22);
             this.textBoxLoginPassword.TabIndex = 2;
             // 
-            // textBoxSignupUsername
+            // textBoxSignupName
             // 
-            this.textBoxSignupUsername.Location = new System.Drawing.Point(708, 148);
-            this.textBoxSignupUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBoxSignupUsername.Name = "textBoxSignupUsername";
-            this.textBoxSignupUsername.Size = new System.Drawing.Size(171, 22);
-            this.textBoxSignupUsername.TabIndex = 4;
-            this.textBoxSignupUsername.TextChanged += new System.EventHandler(this.CheckNewUserInfo);
+            this.textBoxSignupName.Location = new System.Drawing.Point(708, 148);
+            this.textBoxSignupName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxSignupName.Name = "textBoxSignupName";
+            this.textBoxSignupName.Size = new System.Drawing.Size(171, 22);
+            this.textBoxSignupName.TabIndex = 4;
+            this.textBoxSignupName.TextChanged += new System.EventHandler(this.CheckNewUserInfo);
             // 
             // textBoxSignupEmail
             // 
             this.textBoxSignupEmail.Location = new System.Drawing.Point(708, 198);
-            this.textBoxSignupEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSignupEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSignupEmail.Name = "textBoxSignupEmail";
             this.textBoxSignupEmail.Size = new System.Drawing.Size(171, 22);
             this.textBoxSignupEmail.TabIndex = 5;
@@ -121,7 +121,7 @@
             // textBoxSignupConfirm
             // 
             this.textBoxSignupConfirm.Location = new System.Drawing.Point(708, 304);
-            this.textBoxSignupConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSignupConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSignupConfirm.Name = "textBoxSignupConfirm";
             this.textBoxSignupConfirm.PasswordChar = '*';
             this.textBoxSignupConfirm.Size = new System.Drawing.Size(171, 22);
@@ -132,7 +132,7 @@
             // textBoxSignupPassword
             // 
             this.textBoxSignupPassword.Location = new System.Drawing.Point(708, 254);
-            this.textBoxSignupPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSignupPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSignupPassword.Name = "textBoxSignupPassword";
             this.textBoxSignupPassword.PasswordChar = '*';
             this.textBoxSignupPassword.Size = new System.Drawing.Size(171, 22);
@@ -166,9 +166,9 @@
             this.label6.Location = new System.Drawing.Point(704, 128);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 17);
+            this.label6.Size = new System.Drawing.Size(45, 17);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Username";
+            this.label6.Text = "Name";
             // 
             // label7
             // 
@@ -203,7 +203,7 @@
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(205, 250);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 28);
             this.btnLogin.TabIndex = 3;
@@ -215,7 +215,7 @@
             // 
             this.btnSignup.Enabled = false;
             this.btnSignup.Location = new System.Drawing.Point(745, 352);
-            this.btnSignup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSignup.Margin = new System.Windows.Forms.Padding(4);
             this.btnSignup.Name = "btnSignup";
             this.btnSignup.Size = new System.Drawing.Size(100, 28);
             this.btnSignup.TabIndex = 8;
@@ -237,7 +237,7 @@
             // 
             this.pictureBox2.Image = global::EatFast_Project.Properties.Resources.facebook_profile_image;
             this.pictureBox2.Location = new System.Drawing.Point(455, 271);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(136, 110);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -248,7 +248,7 @@
             // 
             this.pictureBox1.Image = global::EatFast_Project.Properties.Resources.facebook_profile_image1;
             this.pictureBox1.Location = new System.Drawing.Point(455, 430);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(136, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -274,13 +274,13 @@
             this.Controls.Add(this.textBoxSignupPassword);
             this.Controls.Add(this.textBoxSignupConfirm);
             this.Controls.Add(this.textBoxSignupEmail);
-            this.Controls.Add(this.textBoxSignupUsername);
+            this.Controls.Add(this.textBoxSignupName);
             this.Controls.Add(this.textBoxLoginPassword);
             this.Controls.Add(this.textBoxLoginUsername);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
@@ -298,7 +298,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxLoginUsername;
         private System.Windows.Forms.TextBox textBoxLoginPassword;
-        private System.Windows.Forms.TextBox textBoxSignupUsername;
+        private System.Windows.Forms.TextBox textBoxSignupName;
         private System.Windows.Forms.TextBox textBoxSignupEmail;
         private System.Windows.Forms.TextBox textBoxSignupConfirm;
         private System.Windows.Forms.TextBox textBoxSignupPassword;

@@ -77,7 +77,7 @@ namespace EatFast_Project
 
         private void CheckNewUserInfo(object sender, EventArgs e)
         {
-            if(textBoxSignupUsername.Text != "" && textBoxSignupEmail.Text != "" 
+            if(textBoxSignupName.Text != "" && textBoxSignupEmail.Text != "" 
                 && textBoxSignupPassword.Text != "" && textBoxSignupConfirm.Text != "")
             {
                 btnSignup.Enabled = true;

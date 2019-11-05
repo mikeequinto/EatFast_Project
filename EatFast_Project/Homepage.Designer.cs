@@ -38,17 +38,14 @@ namespace EatFast_Project
             this.label8 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnAddToCart = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,30 +58,17 @@ namespace EatFast_Project
             this.label11 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label16 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label17 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.lblUsername = new System.Windows.Forms.Label();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
@@ -95,26 +79,42 @@ namespace EatFast_Project
             this.label19 = new System.Windows.Forms.Label();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.btnSaveAccount = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IncreaseProduct = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.DecreaseProduct = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.RemoveProduct = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tabPage3.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // linkLabelLogout
@@ -205,15 +205,6 @@ namespace EatFast_Project
             this.label9.TabIndex = 1;
             this.label9.Text = "25.00 CHF";
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(71, 46);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(133, 62);
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label5);
@@ -259,15 +250,6 @@ namespace EatFast_Project
             this.label7.TabIndex = 1;
             this.label7.Text = "25.00 CHF";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(71, 46);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(133, 62);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label3);
@@ -312,15 +294,6 @@ namespace EatFast_Project
             this.label4.Size = new System.Drawing.Size(75, 17);
             this.label4.TabIndex = 1;
             this.label4.Text = "25.00 CHF";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(71, 46);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 62);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // label6
             // 
@@ -461,15 +434,6 @@ namespace EatFast_Project
             this.label12.TabIndex = 1;
             this.label12.Text = "25.00 CHF";
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Location = new System.Drawing.Point(75, 41);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(133, 62);
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
-            // 
             // tabPage6
             // 
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
@@ -503,8 +467,11 @@ namespace EatFast_Project
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label20);
+            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.Controls.Add(this.label13);
+            this.tabPage3.Controls.Add(this.dataGridView2);
             this.tabPage3.Controls.Add(this.label16);
-            this.tabPage3.Controls.Add(this.panel1);
             this.tabPage3.Controls.Add(this.button7);
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.label15);
@@ -527,104 +494,6 @@ namespace EatFast_Project
             this.label16.Text = "Your cart";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.label21);
-            this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.button11);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Location = new System.Drawing.Point(44, 156);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1040, 218);
-            this.panel1.TabIndex = 42;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(908, 76);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(108, 28);
-            this.button4.TabIndex = 47;
-            this.button4.Text = "Remove item";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(800, 76);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 28);
-            this.button5.TabIndex = 46;
-            this.button5.Text = "-";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(692, 76);
-            this.button8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(100, 28);
-            this.button8.TabIndex = 45;
-            this.button8.Text = "+";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(908, 30);
-            this.button9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(108, 28);
-            this.button9.TabIndex = 44;
-            this.button9.Text = "Remove item";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(800, 30);
-            this.button10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(100, 28);
-            this.button10.TabIndex = 43;
-            this.button10.Text = "-";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(692, 30);
-            this.button11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(100, 28);
-            this.button11.TabIndex = 42;
-            this.button11.Text = "+";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(33, 82);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(279, 17);
-            this.label13.TabIndex = 41;
-            this.label13.Text = "Product 2, Unit price : 14.00.- , Quantity : 1";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(33, 36);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(108, 17);
-            this.label14.TabIndex = 40;
-            this.label14.Text = "Product 1 name";
-            // 
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(952, 407);
@@ -642,19 +511,19 @@ namespace EatFast_Project
             this.label10.Location = new System.Drawing.Point(77, 414);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(119, 17);
+            this.label10.Size = new System.Drawing.Size(48, 17);
             this.label10.TabIndex = 40;
-            this.label10.Text = "Total : 29.50 CHF";
+            this.label10.Text = "Total :";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(77, 111);
+            this.label15.Location = new System.Drawing.Point(219, 111);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(146, 17);
+            this.label15.Size = new System.Drawing.Size(16, 17);
             this.label15.TabIndex = 31;
-            this.label15.Text = "3 item(s) in your cart :";
+            this.label15.Text = "1";
             // 
             // tabPage4
             // 
@@ -687,7 +556,8 @@ namespace EatFast_Project
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.OrderDate,
             this.OrderAddress,
-            this.OrderTotal});
+            this.OrderTotal,
+            this.Status});
             this.dataGridView1.Location = new System.Drawing.Point(105, 138);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
@@ -695,30 +565,6 @@ namespace EatFast_Project
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(919, 278);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // OrderDate
-            // 
-            this.OrderDate.HeaderText = "Date";
-            this.OrderDate.MinimumWidth = 6;
-            this.OrderDate.Name = "OrderDate";
-            this.OrderDate.ReadOnly = true;
-            this.OrderDate.Width = 125;
-            // 
-            // OrderAddress
-            // 
-            this.OrderAddress.HeaderText = "Address";
-            this.OrderAddress.MinimumWidth = 6;
-            this.OrderAddress.Name = "OrderAddress";
-            this.OrderAddress.ReadOnly = true;
-            this.OrderAddress.Width = 125;
-            // 
-            // OrderTotal
-            // 
-            this.OrderTotal.HeaderText = "Total";
-            this.OrderTotal.MinimumWidth = 6;
-            this.OrderTotal.Name = "OrderTotal";
-            this.OrderTotal.ReadOnly = true;
-            this.OrderTotal.Width = 125;
             // 
             // tabPage9
             // 
@@ -831,25 +677,171 @@ namespace EatFast_Project
             this.btnSaveAccount.UseVisualStyleBackColor = true;
             this.btnSaveAccount.Click += new System.EventHandler(this.BtnSaveAccountClicked);
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductName,
+            this.ProductPrice,
+            this.ProductQuantity,
+            this.IncreaseProduct,
+            this.DecreaseProduct,
+            this.RemoveProduct});
+            this.dataGridView2.Location = new System.Drawing.Point(80, 146);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(980, 230);
+            this.dataGridView2.TabIndex = 44;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Location = new System.Drawing.Point(71, 46);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(133, 62);
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(71, 46);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(133, 62);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(71, 46);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(133, 62);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Location = new System.Drawing.Point(75, 41);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(133, 62);
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            // 
+            // ProductName
+            // 
+            this.ProductName.HeaderText = "Product name";
+            this.ProductName.MinimumWidth = 6;
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
+            this.ProductName.Width = 200;
+            // 
+            // ProductPrice
+            // 
+            this.ProductPrice.HeaderText = "Product price";
+            this.ProductPrice.MinimumWidth = 6;
+            this.ProductPrice.Name = "ProductPrice";
+            this.ProductPrice.ReadOnly = true;
+            this.ProductPrice.Width = 75;
+            // 
+            // ProductQuantity
+            // 
+            this.ProductQuantity.HeaderText = "Product quantity";
+            this.ProductQuantity.MinimumWidth = 6;
+            this.ProductQuantity.Name = "ProductQuantity";
+            this.ProductQuantity.ReadOnly = true;
+            this.ProductQuantity.Width = 75;
+            // 
+            // IncreaseProduct
+            // 
+            this.IncreaseProduct.HeaderText = "Increase";
+            this.IncreaseProduct.MinimumWidth = 6;
+            this.IncreaseProduct.Name = "IncreaseProduct";
+            this.IncreaseProduct.Text = "+";
+            this.IncreaseProduct.UseColumnTextForButtonValue = true;
+            this.IncreaseProduct.Width = 75;
+            // 
+            // DecreaseProduct
+            // 
+            this.DecreaseProduct.HeaderText = "Decrease";
+            this.DecreaseProduct.MinimumWidth = 6;
+            this.DecreaseProduct.Name = "DecreaseProduct";
+            this.DecreaseProduct.Text = "-";
+            this.DecreaseProduct.UseColumnTextForButtonValue = true;
+            this.DecreaseProduct.Width = 75;
+            // 
+            // RemoveProduct
+            // 
+            this.RemoveProduct.HeaderText = "Remove";
+            this.RemoveProduct.MinimumWidth = 6;
+            this.RemoveProduct.Name = "RemoveProduct";
+            this.RemoveProduct.Text = "Remove";
+            this.RemoveProduct.UseColumnTextForButtonValue = true;
+            this.RemoveProduct.Width = 125;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(77, 111);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(134, 17);
+            this.label13.TabIndex = 45;
+            this.label13.Text = "Item(s) in your cart :";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(133, 413);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(44, 17);
+            this.label14.TabIndex = 46;
+            this.label14.Text = "29.50";
+            // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(320, 36);
+            this.label20.Location = new System.Drawing.Point(190, 414);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(80, 17);
-            this.label20.TabIndex = 48;
-            this.label20.Text = "Unit price : ";
+            this.label20.Size = new System.Drawing.Size(35, 17);
+            this.label20.TabIndex = 47;
+            this.label20.Text = "CHF";
             // 
-            // label21
+            // OrderDate
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(396, 36);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(279, 17);
-            this.label21.TabIndex = 49;
-            this.label21.Text = "Product 2, Unit price : 14.00.- , Quantity : 1";
+            this.OrderDate.HeaderText = "Date";
+            this.OrderDate.MinimumWidth = 6;
+            this.OrderDate.Name = "OrderDate";
+            this.OrderDate.ReadOnly = true;
+            this.OrderDate.Width = 125;
+            // 
+            // OrderAddress
+            // 
+            this.OrderAddress.HeaderText = "Address";
+            this.OrderAddress.MinimumWidth = 6;
+            this.OrderAddress.Name = "OrderAddress";
+            this.OrderAddress.ReadOnly = true;
+            this.OrderAddress.Width = 250;
+            // 
+            // OrderTotal
+            // 
+            this.OrderTotal.HeaderText = "Total";
+            this.OrderTotal.MinimumWidth = 6;
+            this.OrderTotal.Name = "OrderTotal";
+            this.OrderTotal.ReadOnly = true;
+            this.OrderTotal.Width = 125;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Delivery status";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Width = 125;
             // 
             // Homepage
             // 
@@ -867,27 +859,26 @@ namespace EatFast_Project
             this.tabPage1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -937,22 +928,10 @@ namespace EatFast_Project
         private Label label10;
         private Label label15;
         private DataGridView dataGridView1;
-        private Panel panel1;
-        private Button button4;
-        private Button button5;
-        private Button button8;
-        private Button button9;
-        private Button button10;
-        private Button button11;
-        private Label label13;
-        private Label label14;
         private Button btnInfo;
         private Label label18;
         private Label label16;
         private Label label17;
-        private DataGridViewTextBoxColumn OrderDate;
-        private DataGridViewTextBoxColumn OrderAddress;
-        private DataGridViewTextBoxColumn OrderTotal;
         private TabPage tabPage9;
         private Label label19;
         private TextBox textBoxUsername;
@@ -963,8 +942,20 @@ namespace EatFast_Project
         private Label lblEmail;
         private Button btnSaveAccount;
         private Button btnChangePassword;
-        private Label label21;
+        private DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn ProductName;
+        private DataGridViewTextBoxColumn ProductPrice;
+        private DataGridViewTextBoxColumn ProductQuantity;
+        private DataGridViewButtonColumn IncreaseProduct;
+        private DataGridViewButtonColumn DecreaseProduct;
+        private DataGridViewButtonColumn RemoveProduct;
         private Label label20;
+        private Label label14;
+        private Label label13;
+        private DataGridViewTextBoxColumn OrderDate;
+        private DataGridViewTextBoxColumn OrderAddress;
+        private DataGridViewTextBoxColumn OrderTotal;
+        private DataGridViewTextBoxColumn Status;
     }
 }
 
