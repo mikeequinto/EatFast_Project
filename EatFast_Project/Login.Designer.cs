@@ -126,7 +126,6 @@
             this.textBoxSignupConfirm.PasswordChar = '*';
             this.textBoxSignupConfirm.Size = new System.Drawing.Size(171, 22);
             this.textBoxSignupConfirm.TabIndex = 7;
-            this.textBoxSignupConfirm.Text = "Password";
             this.textBoxSignupConfirm.TextChanged += new System.EventHandler(this.CheckNewUserInfo);
             // 
             // textBoxSignupPassword
@@ -137,7 +136,6 @@
             this.textBoxSignupPassword.PasswordChar = '*';
             this.textBoxSignupPassword.Size = new System.Drawing.Size(171, 22);
             this.textBoxSignupPassword.TabIndex = 6;
-            this.textBoxSignupPassword.Text = "Password";
             this.textBoxSignupPassword.TextChanged += new System.EventHandler(this.CheckNewUserInfo);
             // 
             // label4

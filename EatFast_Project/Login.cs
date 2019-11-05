@@ -68,11 +68,18 @@ namespace EatFast_Project
             }
             else
             {
-                this.Hide();
-                Homepage.getInstance().Show();
+                if (textBoxSignupPassword.Text.Length < 8)
+                {
+                    MessageBox.Show("Your password needs to be at least 8 characters long", "Information");
+                }
+                else
+                {
+                    this.Hide();
+                    Homepage.getInstance().Show();
 
-                NewUser newUser = new NewUser();
-                newUser.ShowDialog();
+                    NewUser newUser = new NewUser();
+                    newUser.ShowDialog();
+                }
             
             }
             //this.Close();

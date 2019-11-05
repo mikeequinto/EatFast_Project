@@ -41,9 +41,7 @@ namespace EatFast_Project
 
         private void LinkLogoutClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Login.getInstance().Show();
             this.Close();
-            MessageBox.Show("You have been logged out", "Information");
         }
 
         private void Homepage_Load(object sender, EventArgs e)
