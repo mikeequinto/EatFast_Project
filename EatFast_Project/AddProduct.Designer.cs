@@ -78,7 +78,7 @@
             // btnAddProduct
             // 
             this.btnAddProduct.Enabled = false;
-            this.btnAddProduct.Location = new System.Drawing.Point(176, 636);
+            this.btnAddProduct.Location = new System.Drawing.Point(183, 636);
             this.btnAddProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(100, 28);
@@ -178,7 +178,7 @@
             // 
             // picBoxProduct
             // 
-            this.picBoxProduct.Location = new System.Drawing.Point(209, 457);
+            this.picBoxProduct.Location = new System.Drawing.Point(216, 457);
             this.picBoxProduct.Name = "picBoxProduct";
             this.picBoxProduct.Size = new System.Drawing.Size(251, 135);
             this.picBoxProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -187,7 +187,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(284, 636);
+            this.btnClear.Location = new System.Drawing.Point(291, 636);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 28);
@@ -198,7 +198,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(392, 636);
+            this.btnClose.Location = new System.Drawing.Point(399, 636);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(100, 28);
