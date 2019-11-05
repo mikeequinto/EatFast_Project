@@ -209,6 +209,7 @@
             this.Controls.Add(this.label16);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Checkout";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Checkout";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMonth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYear)).EndInit();

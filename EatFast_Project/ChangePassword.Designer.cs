@@ -1,6 +1,6 @@
 ﻿namespace EatFast_Project
 {
-    partial class ClientPassword
+    partial class ChangePassword
     {
         /// <summary>
         /// Required designer variable.
@@ -121,7 +121,7 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancelClicked);
             // 
-            // ClientPassword
+            // ChangePassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,7 +134,8 @@
             this.Controls.Add(this.label17);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.label3);
-            this.Name = "ClientPassword";
+            this.Name = "ChangePassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Change your password";
             this.Load += new System.EventHandler(this.ClientPassword_Load);
             this.ResumeLayout(false);

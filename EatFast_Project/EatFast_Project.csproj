@@ -79,11 +79,11 @@
     <Compile Include="Checkout.Designer.cs">
       <DependentUpon>Checkout.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientPassword.cs">
+    <Compile Include="ChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientPassword.Designer.cs">
-      <DependentUpon>ClientPassword.cs</DependentUpon>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="Homepage.cs">
       <SubType>Form</SubType>
@@ -126,8 +126,8 @@
     <EmbeddedResource Include="Checkout.resx">
       <DependentUpon>Checkout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientPassword.resx">
-      <DependentUpon>ClientPassword.cs</DependentUpon>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Homepage.resx">
       <DependentUpon>Homepage.cs</DependentUpon>

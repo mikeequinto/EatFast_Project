@@ -38,9 +38,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
-            this.picBoxProduct = new System.Windows.Forms.PictureBox();
             this.labelFilename = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.picBoxProduct = new System.Windows.Forms.PictureBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxProduct)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,6 +53,7 @@
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(79, 22);
             this.textBoxPrice.TabIndex = 27;
+            this.textBoxPrice.TextChanged += new System.EventHandler(this.CheckProductInfo);
             // 
             // label20
             // 
@@ -70,17 +73,19 @@
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.Size = new System.Drawing.Size(350, 73);
             this.textBoxDescription.TabIndex = 28;
+            this.textBoxDescription.TextChanged += new System.EventHandler(this.CheckProductInfo);
             // 
             // btnAddProduct
             // 
             this.btnAddProduct.Enabled = false;
-            this.btnAddProduct.Location = new System.Drawing.Point(290, 635);
+            this.btnAddProduct.Location = new System.Drawing.Point(176, 636);
             this.btnAddProduct.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(100, 28);
             this.btnAddProduct.TabIndex = 30;
             this.btnAddProduct.Text = "Add product";
             this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProductClicked);
             // 
             // btnProductImage
             // 
@@ -149,15 +154,6 @@
             this.comboBoxCategory.Text = "- Select category -";
             this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.CheckProductInfo);
             // 
-            // picBoxProduct
-            // 
-            this.picBoxProduct.Location = new System.Drawing.Point(209, 457);
-            this.picBoxProduct.Name = "picBoxProduct";
-            this.picBoxProduct.Size = new System.Drawing.Size(251, 135);
-            this.picBoxProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxProduct.TabIndex = 35;
-            this.picBoxProduct.TabStop = false;
-            // 
             // labelFilename
             // 
             this.labelFilename.AutoSize = true;
@@ -180,11 +176,44 @@
             this.label28.Text = "Add product";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // picBoxProduct
+            // 
+            this.picBoxProduct.Location = new System.Drawing.Point(209, 457);
+            this.picBoxProduct.Name = "picBoxProduct";
+            this.picBoxProduct.Size = new System.Drawing.Size(251, 135);
+            this.picBoxProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxProduct.TabIndex = 35;
+            this.picBoxProduct.TabStop = false;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(284, 636);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(100, 28);
+            this.btnClear.TabIndex = 48;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.BtnClearClicked);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(392, 636);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(100, 28);
+            this.btnClose.TabIndex = 49;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.BtnCloseClicked);
+            // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 704);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.labelFilename);
             this.Controls.Add(this.picBoxProduct);
@@ -199,6 +228,7 @@
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.comboBoxCategory);
             this.Name = "AddProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add product";
             ((System.ComponentModel.ISupportInitialize)(this.picBoxProduct)).EndInit();
             this.ResumeLayout(false);
@@ -221,5 +251,7 @@
         private System.Windows.Forms.PictureBox picBoxProduct;
         private System.Windows.Forms.Label labelFilename;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnClose;
     }
 }

@@ -53,22 +53,16 @@ namespace EatFast_Project
 
         private void Homepage_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (this.DialogResult == DialogResult.Cancel)
+            switch (MessageBox.Show(this, "Are you sure you want to log out?", "Logging out", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
             {
-                MessageBox.Show("You have clicked the x button");
-                // Assume that X has been clicked and act accordingly.
-                // Confirm user wants to close
-                switch (MessageBox.Show(this, "Are you sure?", "Do you still want ... ?", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-                {
-                    //Stay on this form
-                    case DialogResult.No:
-                        e.Cancel = true;
-                        break;
-                    default:
-                        break;
-                }
+                //Stay on this form
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    Login.getInstance().Show();
+                    break;
             }
-
         }
 
         private void BtnInfoClicked(object sender, EventArgs e)
@@ -90,7 +84,7 @@ namespace EatFast_Project
 
         private void CheckAccountInfo(object sender, EventArgs e)
         {
-            if(textBoxUsername.Text != "" || textBoxEmail.Text != "" || textBoxAddress.Text != "")
+            if(textBoxName.Text != "" || textBoxEmail.Text != "" || textBoxAddress.Text != "")
             {
                 btnSaveAccount.Enabled = true;
             }
@@ -102,13 +96,13 @@ namespace EatFast_Project
 
         private void BtnChangePasswordClicked(object sender, EventArgs e)
         {
-            ClientPassword clientPassword = new ClientPassword();
+            ChangePassword clientPassword = new ChangePassword();
             clientPassword.ShowDialog();
         }
 
         private void BtnSaveAccountClicked(object sender, EventArgs e)
         {
-            textBoxUsername.Text = "";
+            textBoxName.Text = "";
             textBoxEmail.Text = "";
             textBoxAddress.Text = "";
 

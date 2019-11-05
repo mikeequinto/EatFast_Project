@@ -42,8 +42,8 @@
             this.lblFilename = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
-            this.picBoxProductImage = new System.Windows.Forms.PictureBox();
             this.btnClear = new System.Windows.Forms.Button();
+            this.picBoxProductImage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxProductImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -197,16 +197,6 @@
             this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.CheckProductInfo);
             this.comboBoxCategory.Click += new System.EventHandler(this.CheckProductInfo);
             // 
-            // picBoxProductImage
-            // 
-            this.picBoxProductImage.Location = new System.Drawing.Point(243, 495);
-            this.picBoxProductImage.Margin = new System.Windows.Forms.Padding(4);
-            this.picBoxProductImage.Name = "picBoxProductImage";
-            this.picBoxProductImage.Size = new System.Drawing.Size(271, 149);
-            this.picBoxProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxProductImage.TabIndex = 14;
-            this.picBoxProductImage.TabStop = false;
-            // 
             // btnClear
             // 
             this.btnClear.Location = new System.Drawing.Point(329, 685);
@@ -217,6 +207,16 @@
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.BtnClearClicked);
+            // 
+            // picBoxProductImage
+            // 
+            this.picBoxProductImage.Location = new System.Drawing.Point(243, 495);
+            this.picBoxProductImage.Margin = new System.Windows.Forms.Padding(4);
+            this.picBoxProductImage.Name = "picBoxProductImage";
+            this.picBoxProductImage.Size = new System.Drawing.Size(271, 149);
+            this.picBoxProductImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxProductImage.TabIndex = 14;
+            this.picBoxProductImage.TabStop = false;
             // 
             // ProductEdit
             // 
@@ -241,6 +241,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ProductEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit product";
             this.Load += new System.EventHandler(this.ProductEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxProductImage)).EndInit();

@@ -21,5 +21,17 @@ namespace EatFast_Project
         {
             this.Close();
         }
+
+        private void CheckAddress(object sender, EventArgs e)
+        {
+            if(textBoxAddress.Text != "")
+            {
+                btnSubmit.Enabled = true;
+            }
+            else
+            {
+                btnSubmit.Enabled = false;
+            }
+        }
     }
 }

@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxLoginUsername = new System.Windows.Forms.TextBox();
+            this.textBoxLoginEmail = new System.Windows.Forms.TextBox();
             this.textBoxLoginPassword = new System.Windows.Forms.TextBox();
             this.textBoxSignupName = new System.Windows.Forms.TextBox();
             this.textBoxSignupEmail = new System.Windows.Forms.TextBox();
@@ -82,14 +82,14 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Sign up";
             // 
-            // textBoxLoginUsername
+            // textBoxLoginEmail
             // 
-            this.textBoxLoginUsername.Location = new System.Drawing.Point(171, 148);
-            this.textBoxLoginUsername.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxLoginUsername.Name = "textBoxLoginUsername";
-            this.textBoxLoginUsername.Size = new System.Drawing.Size(171, 22);
-            this.textBoxLoginUsername.TabIndex = 1;
-            this.textBoxLoginUsername.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            this.textBoxLoginEmail.Location = new System.Drawing.Point(171, 148);
+            this.textBoxLoginEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxLoginEmail.Name = "textBoxLoginEmail";
+            this.textBoxLoginEmail.Size = new System.Drawing.Size(171, 22);
+            this.textBoxLoginEmail.TabIndex = 1;
+            this.textBoxLoginEmail.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // textBoxLoginPassword
             // 
@@ -176,9 +176,9 @@
             this.label7.Location = new System.Drawing.Point(167, 128);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 17);
+            this.label7.Size = new System.Drawing.Size(42, 17);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Username";
+            this.label7.Text = "Email";
             // 
             // label8
             // 
@@ -276,12 +276,13 @@
             this.Controls.Add(this.textBoxSignupEmail);
             this.Controls.Add(this.textBoxSignupName);
             this.Controls.Add(this.textBoxLoginPassword);
-            this.Controls.Add(this.textBoxLoginUsername);
+            this.Controls.Add(this.textBoxLoginEmail);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -296,7 +297,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxLoginUsername;
+        private System.Windows.Forms.TextBox textBoxLoginEmail;
         private System.Windows.Forms.TextBox textBoxLoginPassword;
         private System.Windows.Forms.TextBox textBoxSignupName;
         private System.Windows.Forms.TextBox textBoxSignupEmail;

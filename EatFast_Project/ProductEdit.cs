@@ -62,7 +62,7 @@ namespace EatFast_Project
             textBoxName.Text = "";
             textBoxDescription.Text = "";
             textBoxPrice.Text = "";
-            lblFilename.Text = "";
+            lblFilename.Text = "File name";
             picBoxProductImage.ImageLocation = "";
             btnSave.Enabled = false;
         }
@@ -86,15 +86,23 @@ namespace EatFast_Project
         private void CheckProductInfo(object sender, EventArgs e)
         {
             if(comboBoxCategory.SelectedIndex != 0 || textBoxName.Text != "" 
-                || textBoxDescription.Text != "" || IsDouble(textBoxPrice.Text)
-                || lblFilename.Text != "File name")
+                || textBoxDescription.Text != "" || lblFilename.Text != "File name"
+                || IsDouble(textBoxPrice.Text))
             {
-                btnSave.Enabled = true;
+                if (IsDouble(textBoxPrice.Text) || textBoxPrice.Text == "")
+                {
+                    btnSave.Enabled = true;
+                }
+                else
+                {
+                    btnSave.Enabled = false;
+                }
             }
             else
             {
                 btnSave.Enabled = false;
             }
+           
         }
 
         private void BtnClearClicked(object sender, EventArgs e)

@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace EatFast_Project
 {
-    public partial class ClientPassword : Form
+    public partial class ChangePassword : Form
     {
 
-        public ClientPassword()
+        public ChangePassword()
         {
             InitializeComponent();
         }

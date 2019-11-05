@@ -35,6 +35,7 @@
             // 
             // btnSubmit
             // 
+            this.btnSubmit.Enabled = false;
             this.btnSubmit.Location = new System.Drawing.Point(234, 133);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(85, 29);
@@ -49,6 +50,7 @@
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(349, 22);
             this.textBoxAddress.TabIndex = 1;
+            this.textBoxAddress.TextChanged += new System.EventHandler(this.CheckAddress);
             // 
             // label16
             // 
@@ -70,6 +72,7 @@
             this.Controls.Add(this.textBoxAddress);
             this.Controls.Add(this.btnSubmit);
             this.Name = "NewUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delivery address";
             this.ResumeLayout(false);
             this.PerformLayout();

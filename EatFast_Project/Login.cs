@@ -36,18 +36,26 @@ namespace EatFast_Project
       
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if(textBoxLoginUsername.Text == "client")
+            if(textBoxLoginEmail.Text == "" || textBoxLoginPassword.Text == "")
             {
-                this.Hide();
-                Homepage.getInstance().Show();
-            }else if (textBoxLoginUsername.Text == "admin")
-            {
-                this.Hide();
-                AdminHomepage.getInstance().Show();
+                MessageBox.Show("The username or password is incorrect", "Information");
             }
             else
             {
-                MessageBox.Show("The username or password is incorrect", "Information");
+                if (textBoxLoginEmail.Text == "client")
+                {
+                    this.Hide();
+                    Homepage.getInstance().Show();
+                }
+                else if (textBoxLoginEmail.Text == "admin")
+                {
+                    this.Hide();
+                    AdminHomepage.getInstance().Show();
+                }
+                else
+                {
+                    MessageBox.Show("The username or password is incorrect", "Information");
+                }
             }
 
         }

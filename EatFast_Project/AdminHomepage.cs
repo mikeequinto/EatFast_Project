@@ -59,14 +59,23 @@ namespace EatFast_Project
         {
             if (textBoxPassword.Text.Equals(textBoxPasswordConfirm.Text))
             {
-                MessageBox.Show("New account added!", "Information");
+                if(textBoxPassword.Text.Length < 8)
+                {
+                    MessageBox.Show("Your password needs to be at least 8 characters long", "Information");
+                }
+                else
+                {
+                    MessageBox.Show("New account added!", "Information");
 
-                //Réinitialisation des champs
-                comboBoxType.SelectedIndex = 0;
-                textBoxUsername.Text = "";
-                textBoxEmail.Text = "";
-                textBoxPassword.Text = "";
-                textBoxPasswordConfirm.Text = "";
+                    //Réinitialisation des champs
+                    comboBoxType.SelectedIndex = 0;
+                    textBoxName.Text = "";
+                    textBoxEmail.Text = "";
+                    textBoxPassword.Text = "";
+                    textBoxPasswordConfirm.Text = "";
+                }
+
+                
             }
             else
             {
@@ -134,7 +143,7 @@ namespace EatFast_Project
 
         private void CheckAccountInfo(object sender, EventArgs e)
         {
-            if(comboBoxType.SelectedIndex != 0 && textBoxUsername.Text != "" 
+            if(comboBoxType.SelectedIndex != 0 && textBoxName.Text != "" 
                 && textBoxEmail.Text != "" && textBoxPassword.Text != "" 
                 && textBoxPasswordConfirm.Text != "")
             {
@@ -189,6 +198,47 @@ namespace EatFast_Project
         private void linkLabelLogout_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CheckUserAccountInfo(object sender, EventArgs e)
+        {
+            if (textBoxAccountName.Text != "" || textBoxAccountEmail.Text != "" || textBoxAccountAddress.Text != "")
+            {
+                btnSaveAccount.Enabled = true;
+            }
+            else
+            {
+                btnSaveAccount.Enabled = false;
+            }
+        }
+
+        private void BtnChangePasswordClicked(object sender, EventArgs e)
+        {
+            ChangePassword changePassword = new ChangePassword();
+            changePassword.ShowDialog();
+        }
+
+        private void BtnSaveClicked(object sender, EventArgs e)
+        {
+            textBoxAccountName.Text = "";
+            textBoxAccountEmail.Text = "";
+            textBoxAccountAddress.Text = "";
+
+            MessageBox.Show("Your account information has been saved!", "Information");
+        }
+
+        private void AdminHomepage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            switch (MessageBox.Show(this, "Are you sure you want to log out?", "Logging out", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                //Stay on this form
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    Login.getInstance().Show();
+                    break;
+            }
         }
     }
 }

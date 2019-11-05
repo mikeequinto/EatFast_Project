@@ -31,6 +31,8 @@ namespace EatFast_Project
             textBoxName.Text = "";
             textBoxPrice.Text = "";
             textBoxDescription.Text = "";
+            labelFilename.Text = "File name";
+            picBoxProduct.ImageLocation = "";
 
             btnAddProduct.Enabled = false;
         }
@@ -39,7 +41,7 @@ namespace EatFast_Project
         {
             if (comboBoxCategory.SelectedIndex != 0 && textBoxName.Text != ""
                 && IsDouble(textBoxPrice.Text) && textBoxDescription.Text != ""
-                && labelFilename.Text != "")
+                && labelFilename.Text != "File name")
             {
                 btnAddProduct.Enabled = true;
             }
@@ -69,10 +71,7 @@ namespace EatFast_Project
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
-            //openFileDialog1.InitialDirectory = "c:\\";
             openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
-            //openFileDialog1.FilterIndex = 0;
-            //openFileDialog1.RestoreDirectory = true;
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -81,6 +80,16 @@ namespace EatFast_Project
                 labelFilename.Text = selectedFileName;
                 picBoxProduct.ImageLocation = selectedFileName;
             }
+        }
+
+        private void BtnClearClicked(object sender, EventArgs e)
+        {
+            ResetProductInfo();
+        }
+
+        private void BtnCloseClicked(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
