@@ -7,13 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace EatFast_Project
 {
     public partial class Login : Form
     {
-        private AdminHomepage adminHomepage;   
-        private Homepage clientHomepage;
         private static Login instance;
 
         private Login()
@@ -63,6 +62,10 @@ namespace EatFast_Project
             {
                 this.Hide();
                 Homepage.getInstance().Show();
+
+                NewUser newUser = new NewUser();
+                newUser.ShowDialog();
+            
             }
             //this.Close();
         }

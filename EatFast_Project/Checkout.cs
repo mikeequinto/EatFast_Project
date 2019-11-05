@@ -19,6 +19,7 @@ namespace EatFast_Project
 
         private void BtnSubmitClicked(object sender, EventArgs e)
         {
+            MessageBox.Show("Your order is on the way!", "Payment successful");
             this.Close();
         }
 

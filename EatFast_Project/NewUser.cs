@@ -10,21 +10,16 @@ using System.Windows.Forms;
 
 namespace EatFast_Project
 {
-    public partial class ProductInfo : Form
+    public partial class NewUser : Form
     {
-        public ProductInfo()
+        public NewUser()
         {
             InitializeComponent();
         }
 
-        private void BtnCloseClicked(object sender, EventArgs e)
+        private void BtnSubmitClicked(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void ProductInfo_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

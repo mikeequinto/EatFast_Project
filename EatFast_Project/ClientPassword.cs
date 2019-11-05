@@ -12,6 +12,7 @@ namespace EatFast_Project
 {
     public partial class ClientPassword : Form
     {
+
         public ClientPassword()
         {
             InitializeComponent();
@@ -33,14 +34,27 @@ namespace EatFast_Project
             }
             else
             {
-                this.Close();
-                MessageBox.Show("Your password has been updated!", "Information");
+                if(textBoxPassword.Text.Length < 8)
+                {
+                    MessageBox.Show("Your password needs to be at least 8 characters long", "Information");
+                }
+                else
+                {
+                    this.Close();
+                    MessageBox.Show("Your password has been updated!", "Information");
+                }
+                
             }
         }
 
         private void BtnCancelClicked(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ClientPassword_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

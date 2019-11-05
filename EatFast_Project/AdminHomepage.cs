@@ -39,24 +39,6 @@ namespace EatFast_Project
             MessageBox.Show("You have been logged out", "Information");
         }
 
-        private void BtnEditInfoClicked(object sender, EventArgs e)
-        {
-            RestaurantInfo.getInstance().Show();
-            this.Hide();
-        }
-
-        private void BtnEditMenuClicked(object sender, EventArgs e)
-        {
-            MenuEdit.getInstance().Show();
-            this.Hide();
-        }
-
-        private void BtnTransactionsClicked(object sender, EventArgs e)
-        {
-            Transactions.getInstance().Show();
-            this.Hide();
-        }
-
         private void BtnEditProductClicked(object sender, EventArgs e)
         {
             ProductEdit productEdit = new ProductEdit();

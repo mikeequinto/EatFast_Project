@@ -87,14 +87,16 @@ namespace EatFast_Project
             this.OrderTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.textBoxDescription = new System.Windows.Forms.TextBox();
+            this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
-            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnChangePassword = new System.Windows.Forms.Button();
+            this.btnSaveAccount = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -527,6 +529,8 @@ namespace EatFast_Project
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label21);
+            this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button8);
@@ -617,9 +621,9 @@ namespace EatFast_Project
             this.label14.Location = new System.Drawing.Point(33, 36);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(279, 17);
+            this.label14.Size = new System.Drawing.Size(108, 17);
             this.label14.TabIndex = 40;
-            this.label14.Text = "Product 1, Unit price : 15.50.- , Quantity : 1";
+            this.label14.Text = "Product 1 name";
             // 
             // button7
             // 
@@ -718,14 +722,14 @@ namespace EatFast_Project
             // 
             // tabPage9
             // 
-            this.tabPage9.Controls.Add(this.button1);
-            this.tabPage9.Controls.Add(this.btnSave);
+            this.tabPage9.Controls.Add(this.btnSaveAccount);
+            this.tabPage9.Controls.Add(this.btnChangePassword);
             this.tabPage9.Controls.Add(this.label19);
-            this.tabPage9.Controls.Add(this.textBox1);
+            this.tabPage9.Controls.Add(this.textBoxUsername);
             this.tabPage9.Controls.Add(this.lblUsername);
-            this.tabPage9.Controls.Add(this.textBoxDescription);
+            this.tabPage9.Controls.Add(this.textBoxAddress);
             this.tabPage9.Controls.Add(this.lblAddress);
-            this.tabPage9.Controls.Add(this.textBoxName);
+            this.tabPage9.Controls.Add(this.textBoxEmail);
             this.tabPage9.Controls.Add(this.lblEmail);
             this.tabPage9.Location = new System.Drawing.Point(4, 25);
             this.tabPage9.Name = "tabPage9";
@@ -745,14 +749,15 @@ namespace EatFast_Project
             this.lblUsername.TabIndex = 25;
             this.lblUsername.Text = "Username :";
             // 
-            // textBoxDescription
+            // textBoxAddress
             // 
-            this.textBoxDescription.Location = new System.Drawing.Point(448, 266);
-            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxDescription.Multiline = true;
-            this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.Size = new System.Drawing.Size(399, 20);
-            this.textBoxDescription.TabIndex = 21;
+            this.textBoxAddress.Location = new System.Drawing.Point(448, 266);
+            this.textBoxAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxAddress.Multiline = true;
+            this.textBoxAddress.Name = "textBoxAddress";
+            this.textBoxAddress.Size = new System.Drawing.Size(399, 20);
+            this.textBoxAddress.TabIndex = 21;
+            this.textBoxAddress.TextChanged += new System.EventHandler(this.CheckAccountInfo);
             // 
             // lblAddress
             // 
@@ -764,13 +769,14 @@ namespace EatFast_Project
             this.lblAddress.TabIndex = 20;
             this.lblAddress.Text = "Delivery address :";
             // 
-            // textBoxName
+            // textBoxEmail
             // 
-            this.textBoxName.Location = new System.Drawing.Point(448, 197);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(216, 22);
-            this.textBoxName.TabIndex = 19;
+            this.textBoxEmail.Location = new System.Drawing.Point(448, 197);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(216, 22);
+            this.textBoxEmail.TabIndex = 19;
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.CheckAccountInfo);
             // 
             // lblEmail
             // 
@@ -782,13 +788,14 @@ namespace EatFast_Project
             this.lblEmail.TabIndex = 18;
             this.lblEmail.Text = "Email :";
             // 
-            // textBox1
+            // textBoxUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(448, 130);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(216, 22);
-            this.textBox1.TabIndex = 26;
+            this.textBoxUsername.Location = new System.Drawing.Point(448, 130);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.Size = new System.Drawing.Size(216, 22);
+            this.textBoxUsername.TabIndex = 26;
+            this.textBoxUsername.TextChanged += new System.EventHandler(this.CheckAccountInfo);
             // 
             // label19
             // 
@@ -801,27 +808,48 @@ namespace EatFast_Project
             this.label19.Text = "Your account";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnSave
+            // btnChangePassword
             // 
-            this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(300, 340);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(143, 28);
-            this.btnSave.TabIndex = 35;
-            this.btnSave.Text = "Change password";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnChangePassword.Location = new System.Drawing.Point(300, 340);
+            this.btnChangePassword.Margin = new System.Windows.Forms.Padding(4);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(143, 28);
+            this.btnChangePassword.TabIndex = 35;
+            this.btnChangePassword.Text = "Change password";
+            this.btnChangePassword.UseVisualStyleBackColor = true;
+            this.btnChangePassword.Click += new System.EventHandler(this.BtnChangePasswordClicked);
             // 
-            // button1
+            // btnSaveAccount
             // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(507, 434);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 28);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSaveAccount.Enabled = false;
+            this.btnSaveAccount.Location = new System.Drawing.Point(507, 434);
+            this.btnSaveAccount.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSaveAccount.Name = "btnSaveAccount";
+            this.btnSaveAccount.Size = new System.Drawing.Size(116, 28);
+            this.btnSaveAccount.TabIndex = 36;
+            this.btnSaveAccount.Text = "Save";
+            this.btnSaveAccount.UseVisualStyleBackColor = true;
+            this.btnSaveAccount.Click += new System.EventHandler(this.BtnSaveAccountClicked);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(320, 36);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(80, 17);
+            this.label20.TabIndex = 48;
+            this.label20.Text = "Unit price : ";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(396, 36);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(279, 17);
+            this.label21.TabIndex = 49;
+            this.label21.Text = "Product 2, Unit price : 14.00.- , Quantity : 1";
             // 
             // Homepage
             // 
@@ -927,14 +955,16 @@ namespace EatFast_Project
         private DataGridViewTextBoxColumn OrderTotal;
         private TabPage tabPage9;
         private Label label19;
-        private TextBox textBox1;
+        private TextBox textBoxUsername;
         private Label lblUsername;
-        private TextBox textBoxDescription;
+        private TextBox textBoxAddress;
         private Label lblAddress;
-        private TextBox textBoxName;
+        private TextBox textBoxEmail;
         private Label lblEmail;
-        private Button button1;
-        private Button btnSave;
+        private Button btnSaveAccount;
+        private Button btnChangePassword;
+        private Label label21;
+        private Label label20;
     }
 }
 

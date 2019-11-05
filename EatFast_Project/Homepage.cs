@@ -71,24 +71,6 @@ namespace EatFast_Project
 
         }
 
-        private void LinkCartClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Cart.getInstance().Show();
-            this.Close();
-        }
-
-        private void LinkProductsClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Products.getInstance().Show();
-            this.Close();
-        }
-
-        private void LinkMenuClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Products.getInstance().Show();
-            this.Close();
-        }
-
         private void BtnInfoClicked(object sender, EventArgs e)
         {
             ProductInfo productInfo = new ProductInfo();
@@ -104,6 +86,33 @@ namespace EatFast_Project
         private void BtnAddCartClicked(object sender, EventArgs e)
         {
             MessageBox.Show("Product added!", "Information");
+        }
+
+        private void CheckAccountInfo(object sender, EventArgs e)
+        {
+            if(textBoxUsername.Text != "" || textBoxEmail.Text != "" || textBoxAddress.Text != "")
+            {
+                btnSaveAccount.Enabled = true;
+            }
+            else
+            {
+                btnSaveAccount.Enabled = false;
+            }
+        }
+
+        private void BtnChangePasswordClicked(object sender, EventArgs e)
+        {
+            ClientPassword clientPassword = new ClientPassword();
+            clientPassword.ShowDialog();
+        }
+
+        private void BtnSaveAccountClicked(object sender, EventArgs e)
+        {
+            textBoxUsername.Text = "";
+            textBoxEmail.Text = "";
+            textBoxAddress.Text = "";
+
+            MessageBox.Show("Your account information has been saved!", "Information");
         }
     }
 }

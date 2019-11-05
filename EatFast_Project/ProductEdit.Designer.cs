@@ -242,6 +242,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ProductEdit";
             this.Text = "Edit product";
+            this.Load += new System.EventHandler(this.ProductEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxProductImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

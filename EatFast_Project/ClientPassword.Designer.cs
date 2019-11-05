@@ -112,7 +112,6 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Enabled = false;
             this.btnCancel.Location = new System.Drawing.Point(225, 258);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
@@ -137,6 +136,7 @@
             this.Controls.Add(this.label3);
             this.Name = "ClientPassword";
             this.Text = "Change your password";
+            this.Load += new System.EventHandler(this.ClientPassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

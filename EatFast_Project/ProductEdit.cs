@@ -120,5 +120,10 @@ namespace EatFast_Project
                 btnSave.Enabled = true;
             }
         }
+
+        private void ProductEdit_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
