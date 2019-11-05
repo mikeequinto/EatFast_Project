@@ -61,6 +61,7 @@ namespace EatFast_Project
                     break;
                 default:
                     Login.getInstance().Show();
+                    MessageBox.Show("You have been logged out", "Information");
                     break;
             }
         }

@@ -298,7 +298,7 @@ namespace EatFast_Project
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 244);
+            this.label6.Location = new System.Drawing.Point(9, 243);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(1120, 32);
@@ -601,7 +601,7 @@ namespace EatFast_Project
             this.textBoxAddress.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(399, 20);
+            this.textBoxAddress.Size = new System.Drawing.Size(399, 22);
             this.textBoxAddress.TabIndex = 21;
             this.textBoxAddress.TextChanged += new System.EventHandler(this.CheckAccountInfo);
             // 

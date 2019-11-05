@@ -128,8 +128,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxAccountName = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.textBoxAccountAddress = new System.Windows.Forms.TextBox();
-            this.lblAddress = new System.Windows.Forms.Label();
             this.textBoxAccountEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -922,11 +920,11 @@
             this.ClientAddress,
             this.ClientOrders,
             this.ClientTotal});
-            this.dataGridView2.Location = new System.Drawing.Point(231, 151);
+            this.dataGridView2.Location = new System.Drawing.Point(71, 151);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.Size = new System.Drawing.Size(919, 373);
+            this.dataGridView2.Size = new System.Drawing.Size(1241, 373);
             this.dataGridView2.TabIndex = 4;
             // 
             // ClientName
@@ -1007,7 +1005,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(757, 252);
+            this.label19.Location = new System.Drawing.Point(714, 211);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(98, 17);
@@ -1017,7 +1015,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(49, 252);
+            this.label18.Location = new System.Drawing.Point(17, 211);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(50, 17);
@@ -1026,7 +1024,7 @@
             // 
             // textBoxPasswordConfirm
             // 
-            this.textBoxPasswordConfirm.Location = new System.Drawing.Point(1053, 127);
+            this.textBoxPasswordConfirm.Location = new System.Drawing.Point(1014, 128);
             this.textBoxPasswordConfirm.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPasswordConfirm.Name = "textBoxPasswordConfirm";
             this.textBoxPasswordConfirm.PasswordChar = '*';
@@ -1037,7 +1035,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(663, 130);
+            this.label17.Location = new System.Drawing.Point(632, 131);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(77, 17);
@@ -1046,7 +1044,7 @@
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(749, 127);
+            this.textBoxPassword.Location = new System.Drawing.Point(718, 128);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
@@ -1057,7 +1055,7 @@
             // btnAddAccount
             // 
             this.btnAddAccount.Enabled = false;
-            this.btnAddAccount.Location = new System.Drawing.Point(52, 171);
+            this.btnAddAccount.Location = new System.Drawing.Point(1168, 125);
             this.btnAddAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddAccount.Name = "btnAddAccount";
             this.btnAddAccount.Size = new System.Drawing.Size(117, 28);
@@ -1069,7 +1067,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(917, 130);
+            this.label3.Location = new System.Drawing.Point(878, 131);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 17);
@@ -1079,7 +1077,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(447, 130);
+            this.label14.Location = new System.Drawing.Point(416, 131);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(50, 17);
@@ -1088,7 +1086,7 @@
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(505, 127);
+            this.textBoxEmail.Location = new System.Drawing.Point(474, 128);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(132, 22);
@@ -1098,7 +1096,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(232, 130);
+            this.label15.Location = new System.Drawing.Point(201, 131);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(53, 17);
@@ -1107,7 +1105,7 @@
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(293, 127);
+            this.textBoxName.Location = new System.Drawing.Point(262, 128);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(132, 22);
@@ -1117,7 +1115,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(48, 95);
+            this.label16.Location = new System.Drawing.Point(18, 97);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(116, 17);
@@ -1131,7 +1129,7 @@
             "- Select type -",
             "Client",
             "Administrator"});
-            this.comboBoxType.Location = new System.Drawing.Point(52, 127);
+            this.comboBoxType.Location = new System.Drawing.Point(21, 128);
             this.comboBoxType.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxType.Name = "comboBoxType";
             this.comboBoxType.Size = new System.Drawing.Size(160, 24);
@@ -1146,11 +1144,11 @@
             this.AdminUsername,
             this.AdminEmail,
             this.DeleteAdminAccount});
-            this.dataGridView4.Location = new System.Drawing.Point(761, 283);
+            this.dataGridView4.Location = new System.Drawing.Point(717, 242);
             this.dataGridView4.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 51;
-            this.dataGridView4.Size = new System.Drawing.Size(563, 338);
+            this.dataGridView4.Size = new System.Drawing.Size(644, 338);
             this.dataGridView4.TabIndex = 7;
             // 
             // AdminUsername
@@ -1182,11 +1180,11 @@
             this.ClientAccountName,
             this.ClientAccountEmail,
             this.DeleteAccount});
-            this.dataGridView3.Location = new System.Drawing.Point(53, 283);
+            this.dataGridView3.Location = new System.Drawing.Point(21, 242);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.Size = new System.Drawing.Size(563, 338);
+            this.dataGridView3.Size = new System.Drawing.Size(642, 338);
             this.dataGridView3.TabIndex = 6;
             // 
             // ClientAccountName
@@ -1218,8 +1216,6 @@
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.textBoxAccountName);
             this.tabPage1.Controls.Add(this.lblUsername);
-            this.tabPage1.Controls.Add(this.textBoxAccountAddress);
-            this.tabPage1.Controls.Add(this.lblAddress);
             this.tabPage1.Controls.Add(this.textBoxAccountEmail);
             this.tabPage1.Controls.Add(this.lblEmail);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -1233,7 +1229,7 @@
             // btnSaveAccount
             // 
             this.btnSaveAccount.Enabled = false;
-            this.btnSaveAccount.Location = new System.Drawing.Point(643, 429);
+            this.btnSaveAccount.Location = new System.Drawing.Point(635, 344);
             this.btnSaveAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveAccount.Name = "btnSaveAccount";
             this.btnSaveAccount.Size = new System.Drawing.Size(116, 28);
@@ -1244,7 +1240,7 @@
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.Location = new System.Drawing.Point(436, 335);
+            this.btnChangePassword.Location = new System.Drawing.Point(436, 265);
             this.btnChangePassword.Margin = new System.Windows.Forms.Padding(4);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(143, 28);
@@ -1282,26 +1278,6 @@
             this.lblUsername.Size = new System.Drawing.Size(53, 17);
             this.lblUsername.TabIndex = 41;
             this.lblUsername.Text = "Name :";
-            // 
-            // textBoxAccountAddress
-            // 
-            this.textBoxAccountAddress.Location = new System.Drawing.Point(584, 261);
-            this.textBoxAccountAddress.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxAccountAddress.Multiline = true;
-            this.textBoxAccountAddress.Name = "textBoxAccountAddress";
-            this.textBoxAccountAddress.Size = new System.Drawing.Size(399, 20);
-            this.textBoxAccountAddress.TabIndex = 40;
-            this.textBoxAccountAddress.TextChanged += new System.EventHandler(this.CheckUserAccountInfo);
-            // 
-            // lblAddress
-            // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(433, 264);
-            this.lblAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(122, 17);
-            this.lblAddress.TabIndex = 39;
-            this.lblAddress.Text = "Delivery address :";
             // 
             // textBoxAccountEmail
             // 
@@ -1488,8 +1464,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxAccountName;
         private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.TextBox textBoxAccountAddress;
-        private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.TextBox textBoxAccountEmail;
         private System.Windows.Forms.Label lblEmail;
     }

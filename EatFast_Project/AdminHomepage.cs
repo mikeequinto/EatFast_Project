@@ -202,7 +202,7 @@ namespace EatFast_Project
 
         private void CheckUserAccountInfo(object sender, EventArgs e)
         {
-            if (textBoxAccountName.Text != "" || textBoxAccountEmail.Text != "" || textBoxAccountAddress.Text != "")
+            if (textBoxAccountName.Text != "" || textBoxAccountEmail.Text != "")
             {
                 btnSaveAccount.Enabled = true;
             }
@@ -220,9 +220,19 @@ namespace EatFast_Project
 
         private void BtnSaveClicked(object sender, EventArgs e)
         {
+
+            if(textBoxAccountName.Text != "")
+            {
+                //Update changes
+            }
+
+            if (textBoxAccountEmail.Text != "")
+            {
+                //Update changes
+            }
+
             textBoxAccountName.Text = "";
             textBoxAccountEmail.Text = "";
-            textBoxAccountAddress.Text = "";
 
             MessageBox.Show("Your account information has been saved!", "Information");
         }
@@ -237,6 +247,7 @@ namespace EatFast_Project
                     break;
                 default:
                     Login.getInstance().Show();
+                    MessageBox.Show("You have been logged out", "Information");
                     break;
             }
         }
