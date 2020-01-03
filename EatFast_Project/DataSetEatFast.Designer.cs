@@ -24,19 +24,21 @@ namespace EatFast_Project {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class DataSetEatFast : global::System.Data.DataSet {
         
-        private CONTIENTDataTable tableCONTIENT;
+        private EATFAST_CONTAINSDataTable tableEATFAST_CONTAINS;
         
-        private ORDER1DataTable tableORDER1;
+        private EATFAST_ORDERDataTable tableEATFAST_ORDER;
         
-        private PERSONDataTable tablePERSON;
+        private EATFAST_PERSONDataTable tableEATFAST_PERSON;
         
-        private PRODUCTDataTable tablePRODUCT;
+        private EATFAST_PRODUCTDataTable tableEATFAST_PRODUCT;
         
-        private global::System.Data.DataRelation relationFK_CONTIENT_ORDER1;
+        private EATFAST_RESTAURANTDataTable tableEATFAST_RESTAURANT;
         
-        private global::System.Data.DataRelation relationFK_CONTIENT_PRODUCT;
+        private global::System.Data.DataRelation relationFK_EATFAST_CONTAINS_EATFAST_OR;
         
-        private global::System.Data.DataRelation relationFK_ORDER1_PERSON;
+        private global::System.Data.DataRelation relationFK_EATFAST_CONTAINS_EATFAST_PR;
+        
+        private global::System.Data.DataRelation relationFK_EATFAST_ORDER_EATFAST_PERSO;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -66,17 +68,20 @@ namespace EatFast_Project {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["CONTIENT"] != null)) {
-                    base.Tables.Add(new CONTIENTDataTable(ds.Tables["CONTIENT"]));
+                if ((ds.Tables["EATFAST_CONTAINS"] != null)) {
+                    base.Tables.Add(new EATFAST_CONTAINSDataTable(ds.Tables["EATFAST_CONTAINS"]));
                 }
-                if ((ds.Tables["ORDER1"] != null)) {
-                    base.Tables.Add(new ORDER1DataTable(ds.Tables["ORDER1"]));
+                if ((ds.Tables["EATFAST_ORDER"] != null)) {
+                    base.Tables.Add(new EATFAST_ORDERDataTable(ds.Tables["EATFAST_ORDER"]));
                 }
-                if ((ds.Tables["PERSON"] != null)) {
-                    base.Tables.Add(new PERSONDataTable(ds.Tables["PERSON"]));
+                if ((ds.Tables["EATFAST_PERSON"] != null)) {
+                    base.Tables.Add(new EATFAST_PERSONDataTable(ds.Tables["EATFAST_PERSON"]));
                 }
-                if ((ds.Tables["PRODUCT"] != null)) {
-                    base.Tables.Add(new PRODUCTDataTable(ds.Tables["PRODUCT"]));
+                if ((ds.Tables["EATFAST_PRODUCT"] != null)) {
+                    base.Tables.Add(new EATFAST_PRODUCTDataTable(ds.Tables["EATFAST_PRODUCT"]));
+                }
+                if ((ds.Tables["EATFAST_RESTAURANT"] != null)) {
+                    base.Tables.Add(new EATFAST_RESTAURANTDataTable(ds.Tables["EATFAST_RESTAURANT"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -100,9 +105,9 @@ namespace EatFast_Project {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public CONTIENTDataTable CONTIENT {
+        public EATFAST_CONTAINSDataTable EATFAST_CONTAINS {
             get {
-                return this.tableCONTIENT;
+                return this.tableEATFAST_CONTAINS;
             }
         }
         
@@ -110,9 +115,9 @@ namespace EatFast_Project {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ORDER1DataTable ORDER1 {
+        public EATFAST_ORDERDataTable EATFAST_ORDER {
             get {
-                return this.tableORDER1;
+                return this.tableEATFAST_ORDER;
             }
         }
         
@@ -120,9 +125,9 @@ namespace EatFast_Project {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PERSONDataTable PERSON {
+        public EATFAST_PERSONDataTable EATFAST_PERSON {
             get {
-                return this.tablePERSON;
+                return this.tableEATFAST_PERSON;
             }
         }
         
@@ -130,9 +135,19 @@ namespace EatFast_Project {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PRODUCTDataTable PRODUCT {
+        public EATFAST_PRODUCTDataTable EATFAST_PRODUCT {
             get {
-                return this.tablePRODUCT;
+                return this.tableEATFAST_PRODUCT;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public EATFAST_RESTAURANTDataTable EATFAST_RESTAURANT {
+            get {
+                return this.tableEATFAST_RESTAURANT;
             }
         }
         
@@ -203,17 +218,20 @@ namespace EatFast_Project {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["CONTIENT"] != null)) {
-                    base.Tables.Add(new CONTIENTDataTable(ds.Tables["CONTIENT"]));
+                if ((ds.Tables["EATFAST_CONTAINS"] != null)) {
+                    base.Tables.Add(new EATFAST_CONTAINSDataTable(ds.Tables["EATFAST_CONTAINS"]));
                 }
-                if ((ds.Tables["ORDER1"] != null)) {
-                    base.Tables.Add(new ORDER1DataTable(ds.Tables["ORDER1"]));
+                if ((ds.Tables["EATFAST_ORDER"] != null)) {
+                    base.Tables.Add(new EATFAST_ORDERDataTable(ds.Tables["EATFAST_ORDER"]));
                 }
-                if ((ds.Tables["PERSON"] != null)) {
-                    base.Tables.Add(new PERSONDataTable(ds.Tables["PERSON"]));
+                if ((ds.Tables["EATFAST_PERSON"] != null)) {
+                    base.Tables.Add(new EATFAST_PERSONDataTable(ds.Tables["EATFAST_PERSON"]));
                 }
-                if ((ds.Tables["PRODUCT"] != null)) {
-                    base.Tables.Add(new PRODUCTDataTable(ds.Tables["PRODUCT"]));
+                if ((ds.Tables["EATFAST_PRODUCT"] != null)) {
+                    base.Tables.Add(new EATFAST_PRODUCTDataTable(ds.Tables["EATFAST_PRODUCT"]));
+                }
+                if ((ds.Tables["EATFAST_RESTAURANT"] != null)) {
+                    base.Tables.Add(new EATFAST_RESTAURANTDataTable(ds.Tables["EATFAST_RESTAURANT"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -248,33 +266,39 @@ namespace EatFast_Project {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableCONTIENT = ((CONTIENTDataTable)(base.Tables["CONTIENT"]));
+            this.tableEATFAST_CONTAINS = ((EATFAST_CONTAINSDataTable)(base.Tables["EATFAST_CONTAINS"]));
             if ((initTable == true)) {
-                if ((this.tableCONTIENT != null)) {
-                    this.tableCONTIENT.InitVars();
+                if ((this.tableEATFAST_CONTAINS != null)) {
+                    this.tableEATFAST_CONTAINS.InitVars();
                 }
             }
-            this.tableORDER1 = ((ORDER1DataTable)(base.Tables["ORDER1"]));
+            this.tableEATFAST_ORDER = ((EATFAST_ORDERDataTable)(base.Tables["EATFAST_ORDER"]));
             if ((initTable == true)) {
-                if ((this.tableORDER1 != null)) {
-                    this.tableORDER1.InitVars();
+                if ((this.tableEATFAST_ORDER != null)) {
+                    this.tableEATFAST_ORDER.InitVars();
                 }
             }
-            this.tablePERSON = ((PERSONDataTable)(base.Tables["PERSON"]));
+            this.tableEATFAST_PERSON = ((EATFAST_PERSONDataTable)(base.Tables["EATFAST_PERSON"]));
             if ((initTable == true)) {
-                if ((this.tablePERSON != null)) {
-                    this.tablePERSON.InitVars();
+                if ((this.tableEATFAST_PERSON != null)) {
+                    this.tableEATFAST_PERSON.InitVars();
                 }
             }
-            this.tablePRODUCT = ((PRODUCTDataTable)(base.Tables["PRODUCT"]));
+            this.tableEATFAST_PRODUCT = ((EATFAST_PRODUCTDataTable)(base.Tables["EATFAST_PRODUCT"]));
             if ((initTable == true)) {
-                if ((this.tablePRODUCT != null)) {
-                    this.tablePRODUCT.InitVars();
+                if ((this.tableEATFAST_PRODUCT != null)) {
+                    this.tableEATFAST_PRODUCT.InitVars();
                 }
             }
-            this.relationFK_CONTIENT_ORDER1 = this.Relations["FK_CONTIENT_ORDER1"];
-            this.relationFK_CONTIENT_PRODUCT = this.Relations["FK_CONTIENT_PRODUCT"];
-            this.relationFK_ORDER1_PERSON = this.Relations["FK_ORDER1_PERSON"];
+            this.tableEATFAST_RESTAURANT = ((EATFAST_RESTAURANTDataTable)(base.Tables["EATFAST_RESTAURANT"]));
+            if ((initTable == true)) {
+                if ((this.tableEATFAST_RESTAURANT != null)) {
+                    this.tableEATFAST_RESTAURANT.InitVars();
+                }
+            }
+            this.relationFK_EATFAST_CONTAINS_EATFAST_OR = this.Relations["FK_EATFAST_CONTAINS_EATFAST_OR"];
+            this.relationFK_EATFAST_CONTAINS_EATFAST_PR = this.Relations["FK_EATFAST_CONTAINS_EATFAST_PR"];
+            this.relationFK_EATFAST_ORDER_EATFAST_PERSO = this.Relations["FK_EATFAST_ORDER_EATFAST_PERSO"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -285,49 +309,57 @@ namespace EatFast_Project {
             this.Namespace = "http://tempuri.org/DataSetEatFast.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableCONTIENT = new CONTIENTDataTable();
-            base.Tables.Add(this.tableCONTIENT);
-            this.tableORDER1 = new ORDER1DataTable();
-            base.Tables.Add(this.tableORDER1);
-            this.tablePERSON = new PERSONDataTable();
-            base.Tables.Add(this.tablePERSON);
-            this.tablePRODUCT = new PRODUCTDataTable();
-            base.Tables.Add(this.tablePRODUCT);
-            this.relationFK_CONTIENT_ORDER1 = new global::System.Data.DataRelation("FK_CONTIENT_ORDER1", new global::System.Data.DataColumn[] {
-                        this.tableORDER1.ORDIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCONTIENT.ORDIDColumn}, false);
-            this.Relations.Add(this.relationFK_CONTIENT_ORDER1);
-            this.relationFK_CONTIENT_PRODUCT = new global::System.Data.DataRelation("FK_CONTIENT_PRODUCT", new global::System.Data.DataColumn[] {
-                        this.tablePRODUCT.PROIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCONTIENT.PROIDColumn}, false);
-            this.Relations.Add(this.relationFK_CONTIENT_PRODUCT);
-            this.relationFK_ORDER1_PERSON = new global::System.Data.DataRelation("FK_ORDER1_PERSON", new global::System.Data.DataColumn[] {
-                        this.tablePERSON.PERIDColumn}, new global::System.Data.DataColumn[] {
-                        this.tableORDER1.PERIDColumn}, false);
-            this.Relations.Add(this.relationFK_ORDER1_PERSON);
+            this.tableEATFAST_CONTAINS = new EATFAST_CONTAINSDataTable();
+            base.Tables.Add(this.tableEATFAST_CONTAINS);
+            this.tableEATFAST_ORDER = new EATFAST_ORDERDataTable();
+            base.Tables.Add(this.tableEATFAST_ORDER);
+            this.tableEATFAST_PERSON = new EATFAST_PERSONDataTable();
+            base.Tables.Add(this.tableEATFAST_PERSON);
+            this.tableEATFAST_PRODUCT = new EATFAST_PRODUCTDataTable();
+            base.Tables.Add(this.tableEATFAST_PRODUCT);
+            this.tableEATFAST_RESTAURANT = new EATFAST_RESTAURANTDataTable();
+            base.Tables.Add(this.tableEATFAST_RESTAURANT);
+            this.relationFK_EATFAST_CONTAINS_EATFAST_OR = new global::System.Data.DataRelation("FK_EATFAST_CONTAINS_EATFAST_OR", new global::System.Data.DataColumn[] {
+                        this.tableEATFAST_ORDER.ORD_IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEATFAST_CONTAINS.ORD_IDColumn}, false);
+            this.Relations.Add(this.relationFK_EATFAST_CONTAINS_EATFAST_OR);
+            this.relationFK_EATFAST_CONTAINS_EATFAST_PR = new global::System.Data.DataRelation("FK_EATFAST_CONTAINS_EATFAST_PR", new global::System.Data.DataColumn[] {
+                        this.tableEATFAST_PRODUCT.PRO_IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEATFAST_CONTAINS.PRO_IDColumn}, false);
+            this.Relations.Add(this.relationFK_EATFAST_CONTAINS_EATFAST_PR);
+            this.relationFK_EATFAST_ORDER_EATFAST_PERSO = new global::System.Data.DataRelation("FK_EATFAST_ORDER_EATFAST_PERSO", new global::System.Data.DataColumn[] {
+                        this.tableEATFAST_PERSON.PER_IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEATFAST_ORDER.PER_IDColumn}, false);
+            this.Relations.Add(this.relationFK_EATFAST_ORDER_EATFAST_PERSO);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeCONTIENT() {
+        private bool ShouldSerializeEATFAST_CONTAINS() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeORDER1() {
+        private bool ShouldSerializeEATFAST_ORDER() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializePERSON() {
+        private bool ShouldSerializeEATFAST_PERSON() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializePRODUCT() {
+        private bool ShouldSerializeEATFAST_PRODUCT() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeEATFAST_RESTAURANT() {
             return false;
         }
         
@@ -387,36 +419,39 @@ namespace EatFast_Project {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void CONTIENTRowChangeEventHandler(object sender, CONTIENTRowChangeEvent e);
+        public delegate void EATFAST_CONTAINSRowChangeEventHandler(object sender, EATFAST_CONTAINSRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void ORDER1RowChangeEventHandler(object sender, ORDER1RowChangeEvent e);
+        public delegate void EATFAST_ORDERRowChangeEventHandler(object sender, EATFAST_ORDERRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void PERSONRowChangeEventHandler(object sender, PERSONRowChangeEvent e);
+        public delegate void EATFAST_PERSONRowChangeEventHandler(object sender, EATFAST_PERSONRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void PRODUCTRowChangeEventHandler(object sender, PRODUCTRowChangeEvent e);
+        public delegate void EATFAST_PRODUCTRowChangeEventHandler(object sender, EATFAST_PRODUCTRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void EATFAST_RESTAURANTRowChangeEventHandler(object sender, EATFAST_RESTAURANTRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class CONTIENTDataTable : global::System.Data.TypedTableBase<CONTIENTRow> {
+        public partial class EATFAST_CONTAINSDataTable : global::System.Data.TypedTableBase<EATFAST_CONTAINSRow> {
             
-            private global::System.Data.DataColumn columnORDID;
+            private global::System.Data.DataColumn columnORD_ID;
             
-            private global::System.Data.DataColumn columnPROID;
+            private global::System.Data.DataColumn columnPRO_ID;
             
-            private global::System.Data.DataColumn columnPRIX;
+            private global::System.Data.DataColumn columnPRICE;
             
-            private global::System.Data.DataColumn columnQUANTITE;
+            private global::System.Data.DataColumn columnQUANTITY;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CONTIENTDataTable() {
-                this.TableName = "CONTIENT";
+            public EATFAST_CONTAINSDataTable() {
+                this.TableName = "EATFAST_CONTAINS";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -424,7 +459,7 @@ namespace EatFast_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal CONTIENTDataTable(global::System.Data.DataTable table) {
+            internal EATFAST_CONTAINSDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -441,40 +476,40 @@ namespace EatFast_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected CONTIENTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected EATFAST_CONTAINSDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ORDIDColumn {
+            public global::System.Data.DataColumn ORD_IDColumn {
                 get {
-                    return this.columnORDID;
+                    return this.columnORD_ID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PROIDColumn {
+            public global::System.Data.DataColumn PRO_IDColumn {
                 get {
-                    return this.columnPROID;
+                    return this.columnPRO_ID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PRIXColumn {
+            public global::System.Data.DataColumn PRICEColumn {
                 get {
-                    return this.columnPRIX;
+                    return this.columnPRICE;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn QUANTITEColumn {
+            public global::System.Data.DataColumn QUANTITYColumn {
                 get {
-                    return this.columnQUANTITE;
+                    return this.columnQUANTITY;
                 }
             }
             
@@ -489,62 +524,62 @@ namespace EatFast_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CONTIENTRow this[int index] {
+            public EATFAST_CONTAINSRow this[int index] {
                 get {
-                    return ((CONTIENTRow)(this.Rows[index]));
+                    return ((EATFAST_CONTAINSRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event CONTIENTRowChangeEventHandler CONTIENTRowChanging;
+            public event EATFAST_CONTAINSRowChangeEventHandler EATFAST_CONTAINSRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event CONTIENTRowChangeEventHandler CONTIENTRowChanged;
+            public event EATFAST_CONTAINSRowChangeEventHandler EATFAST_CONTAINSRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event CONTIENTRowChangeEventHandler CONTIENTRowDeleting;
+            public event EATFAST_CONTAINSRowChangeEventHandler EATFAST_CONTAINSRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event CONTIENTRowChangeEventHandler CONTIENTRowDeleted;
+            public event EATFAST_CONTAINSRowChangeEventHandler EATFAST_CONTAINSRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddCONTIENTRow(CONTIENTRow row) {
+            public void AddEATFAST_CONTAINSRow(EATFAST_CONTAINSRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CONTIENTRow AddCONTIENTRow(ORDER1Row parentORDER1RowByFK_CONTIENT_ORDER1, PRODUCTRow parentPRODUCTRowByFK_CONTIENT_PRODUCT, double PRIX, short QUANTITE) {
-                CONTIENTRow rowCONTIENTRow = ((CONTIENTRow)(this.NewRow()));
+            public EATFAST_CONTAINSRow AddEATFAST_CONTAINSRow(EATFAST_ORDERRow parentEATFAST_ORDERRowByFK_EATFAST_CONTAINS_EATFAST_OR, EATFAST_PRODUCTRow parentEATFAST_PRODUCTRowByFK_EATFAST_CONTAINS_EATFAST_PR, float PRICE, float QUANTITY) {
+                EATFAST_CONTAINSRow rowEATFAST_CONTAINSRow = ((EATFAST_CONTAINSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        PRIX,
-                        QUANTITE};
-                if ((parentORDER1RowByFK_CONTIENT_ORDER1 != null)) {
-                    columnValuesArray[0] = parentORDER1RowByFK_CONTIENT_ORDER1[0];
+                        PRICE,
+                        QUANTITY};
+                if ((parentEATFAST_ORDERRowByFK_EATFAST_CONTAINS_EATFAST_OR != null)) {
+                    columnValuesArray[0] = parentEATFAST_ORDERRowByFK_EATFAST_CONTAINS_EATFAST_OR[0];
                 }
-                if ((parentPRODUCTRowByFK_CONTIENT_PRODUCT != null)) {
-                    columnValuesArray[1] = parentPRODUCTRowByFK_CONTIENT_PRODUCT[0];
+                if ((parentEATFAST_PRODUCTRowByFK_EATFAST_CONTAINS_EATFAST_PR != null)) {
+                    columnValuesArray[1] = parentEATFAST_PRODUCTRowByFK_EATFAST_CONTAINS_EATFAST_PR[0];
                 }
-                rowCONTIENTRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowCONTIENTRow);
-                return rowCONTIENTRow;
+                rowEATFAST_CONTAINSRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowEATFAST_CONTAINSRow);
+                return rowEATFAST_CONTAINSRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CONTIENTRow FindByORDIDPROID(short ORDID, short PROID) {
-                return ((CONTIENTRow)(this.Rows.Find(new object[] {
-                            ORDID,
-                            PROID})));
+            public EATFAST_CONTAINSRow FindByORD_IDPRO_ID(int ORD_ID, int PRO_ID) {
+                return ((EATFAST_CONTAINSRow)(this.Rows.Find(new object[] {
+                            ORD_ID,
+                            PRO_ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                CONTIENTDataTable cln = ((CONTIENTDataTable)(base.Clone()));
+                EATFAST_CONTAINSDataTable cln = ((EATFAST_CONTAINSDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -552,60 +587,60 @@ namespace EatFast_Project {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new CONTIENTDataTable();
+                return new EATFAST_CONTAINSDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnORDID = base.Columns["ORDID"];
-                this.columnPROID = base.Columns["PROID"];
-                this.columnPRIX = base.Columns["PRIX"];
-                this.columnQUANTITE = base.Columns["QUANTITE"];
+                this.columnORD_ID = base.Columns["ORD_ID"];
+                this.columnPRO_ID = base.Columns["PRO_ID"];
+                this.columnPRICE = base.Columns["PRICE"];
+                this.columnQUANTITY = base.Columns["QUANTITY"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnORDID = new global::System.Data.DataColumn("ORDID", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnORDID);
-                this.columnPROID = new global::System.Data.DataColumn("PROID", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPROID);
-                this.columnPRIX = new global::System.Data.DataColumn("PRIX", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPRIX);
-                this.columnQUANTITE = new global::System.Data.DataColumn("QUANTITE", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnQUANTITE);
+                this.columnORD_ID = new global::System.Data.DataColumn("ORD_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnORD_ID);
+                this.columnPRO_ID = new global::System.Data.DataColumn("PRO_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPRO_ID);
+                this.columnPRICE = new global::System.Data.DataColumn("PRICE", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPRICE);
+                this.columnQUANTITY = new global::System.Data.DataColumn("QUANTITY", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQUANTITY);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnORDID,
-                                this.columnPROID}, true));
-                this.columnORDID.AllowDBNull = false;
-                this.columnPROID.AllowDBNull = false;
+                                this.columnORD_ID,
+                                this.columnPRO_ID}, true));
+                this.columnORD_ID.AllowDBNull = false;
+                this.columnPRO_ID.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CONTIENTRow NewCONTIENTRow() {
-                return ((CONTIENTRow)(this.NewRow()));
+            public EATFAST_CONTAINSRow NewEATFAST_CONTAINSRow() {
+                return ((EATFAST_CONTAINSRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new CONTIENTRow(builder);
+                return new EATFAST_CONTAINSRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(CONTIENTRow);
+                return typeof(EATFAST_CONTAINSRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.CONTIENTRowChanged != null)) {
-                    this.CONTIENTRowChanged(this, new CONTIENTRowChangeEvent(((CONTIENTRow)(e.Row)), e.Action));
+                if ((this.EATFAST_CONTAINSRowChanged != null)) {
+                    this.EATFAST_CONTAINSRowChanged(this, new EATFAST_CONTAINSRowChangeEvent(((EATFAST_CONTAINSRow)(e.Row)), e.Action));
                 }
             }
             
@@ -613,8 +648,8 @@ namespace EatFast_Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.CONTIENTRowChanging != null)) {
-                    this.CONTIENTRowChanging(this, new CONTIENTRowChangeEvent(((CONTIENTRow)(e.Row)), e.Action));
+                if ((this.EATFAST_CONTAINSRowChanging != null)) {
+                    this.EATFAST_CONTAINSRowChanging(this, new EATFAST_CONTAINSRowChangeEvent(((EATFAST_CONTAINSRow)(e.Row)), e.Action));
                 }
             }
             
@@ -622,8 +657,8 @@ namespace EatFast_Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.CONTIENTRowDeleted != null)) {
-                    this.CONTIENTRowDeleted(this, new CONTIENTRowChangeEvent(((CONTIENTRow)(e.Row)), e.Action));
+                if ((this.EATFAST_CONTAINSRowDeleted != null)) {
+                    this.EATFAST_CONTAINSRowDeleted(this, new EATFAST_CONTAINSRowChangeEvent(((EATFAST_CONTAINSRow)(e.Row)), e.Action));
                 }
             }
             
@@ -631,14 +666,14 @@ namespace EatFast_Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.CONTIENTRowDeleting != null)) {
-                    this.CONTIENTRowDeleting(this, new CONTIENTRowChangeEvent(((CONTIENTRow)(e.Row)), e.Action));
+                if ((this.EATFAST_CONTAINSRowDeleting != null)) {
+                    this.EATFAST_CONTAINSRowDeleting(this, new EATFAST_CONTAINSRowChangeEvent(((EATFAST_CONTAINSRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveCONTIENTRow(CONTIENTRow row) {
+            public void RemoveEATFAST_CONTAINSRow(EATFAST_CONTAINSRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -665,7 +700,7 @@ namespace EatFast_Project {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "CONTIENTDataTable";
+                attribute2.FixedValue = "EATFAST_CONTAINSDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -711,26 +746,26 @@ namespace EatFast_Project {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ORDER1DataTable : global::System.Data.TypedTableBase<ORDER1Row> {
+        public partial class EATFAST_ORDERDataTable : global::System.Data.TypedTableBase<EATFAST_ORDERRow> {
             
-            private global::System.Data.DataColumn columnORDID;
+            private global::System.Data.DataColumn columnORD_ID;
             
-            private global::System.Data.DataColumn columnPERID;
+            private global::System.Data.DataColumn columnPER_ID;
             
-            private global::System.Data.DataColumn columnORDDATE;
+            private global::System.Data.DataColumn columnORD_DATE;
             
-            private global::System.Data.DataColumn columnORDSTATUS;
+            private global::System.Data.DataColumn columnORD_STATUS;
             
-            private global::System.Data.DataColumn columnORDDELIVERYADDRESS;
+            private global::System.Data.DataColumn columnORD_DELIVERYADDRESS;
             
-            private global::System.Data.DataColumn columnORDTOTAL;
+            private global::System.Data.DataColumn columnORD_TOTAL;
             
-            private global::System.Data.DataColumn columnORDPAYMENTSTATUS;
+            private global::System.Data.DataColumn columnORD_PAYMENTSTATUS;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ORDER1DataTable() {
-                this.TableName = "ORDER1";
+            public EATFAST_ORDERDataTable() {
+                this.TableName = "EATFAST_ORDER";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -738,7 +773,7 @@ namespace EatFast_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal ORDER1DataTable(global::System.Data.DataTable table) {
+            internal EATFAST_ORDERDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -755,64 +790,64 @@ namespace EatFast_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected ORDER1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected EATFAST_ORDERDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ORDIDColumn {
+            public global::System.Data.DataColumn ORD_IDColumn {
                 get {
-                    return this.columnORDID;
+                    return this.columnORD_ID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PERIDColumn {
+            public global::System.Data.DataColumn PER_IDColumn {
                 get {
-                    return this.columnPERID;
+                    return this.columnPER_ID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ORDDATEColumn {
+            public global::System.Data.DataColumn ORD_DATEColumn {
                 get {
-                    return this.columnORDDATE;
+                    return this.columnORD_DATE;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ORDSTATUSColumn {
+            public global::System.Data.DataColumn ORD_STATUSColumn {
                 get {
-                    return this.columnORDSTATUS;
+                    return this.columnORD_STATUS;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ORDDELIVERYADDRESSColumn {
+            public global::System.Data.DataColumn ORD_DELIVERYADDRESSColumn {
                 get {
-                    return this.columnORDDELIVERYADDRESS;
+                    return this.columnORD_DELIVERYADDRESS;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ORDTOTALColumn {
+            public global::System.Data.DataColumn ORD_TOTALColumn {
                 get {
-                    return this.columnORDTOTAL;
+                    return this.columnORD_TOTAL;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ORDPAYMENTSTATUSColumn {
+            public global::System.Data.DataColumn ORD_PAYMENTSTATUSColumn {
                 get {
-                    return this.columnORDPAYMENTSTATUS;
+                    return this.columnORD_PAYMENTSTATUS;
                 }
             }
             
@@ -827,61 +862,61 @@ namespace EatFast_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ORDER1Row this[int index] {
+            public EATFAST_ORDERRow this[int index] {
                 get {
-                    return ((ORDER1Row)(this.Rows[index]));
+                    return ((EATFAST_ORDERRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ORDER1RowChangeEventHandler ORDER1RowChanging;
+            public event EATFAST_ORDERRowChangeEventHandler EATFAST_ORDERRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ORDER1RowChangeEventHandler ORDER1RowChanged;
+            public event EATFAST_ORDERRowChangeEventHandler EATFAST_ORDERRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ORDER1RowChangeEventHandler ORDER1RowDeleting;
+            public event EATFAST_ORDERRowChangeEventHandler EATFAST_ORDERRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event ORDER1RowChangeEventHandler ORDER1RowDeleted;
+            public event EATFAST_ORDERRowChangeEventHandler EATFAST_ORDERRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddORDER1Row(ORDER1Row row) {
+            public void AddEATFAST_ORDERRow(EATFAST_ORDERRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ORDER1Row AddORDER1Row(short ORDID, PERSONRow parentPERSONRowByFK_ORDER1_PERSON, System.DateTime ORDDATE, string ORDSTATUS, string ORDDELIVERYADDRESS, double ORDTOTAL, string ORDPAYMENTSTATUS) {
-                ORDER1Row rowORDER1Row = ((ORDER1Row)(this.NewRow()));
+            public EATFAST_ORDERRow AddEATFAST_ORDERRow(int ORD_ID, EATFAST_PERSONRow parentEATFAST_PERSONRowByFK_EATFAST_ORDER_EATFAST_PERSO, System.DateTime ORD_DATE, string ORD_STATUS, string ORD_DELIVERYADDRESS, float ORD_TOTAL, string ORD_PAYMENTSTATUS) {
+                EATFAST_ORDERRow rowEATFAST_ORDERRow = ((EATFAST_ORDERRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ORDID,
+                        ORD_ID,
                         null,
-                        ORDDATE,
-                        ORDSTATUS,
-                        ORDDELIVERYADDRESS,
-                        ORDTOTAL,
-                        ORDPAYMENTSTATUS};
-                if ((parentPERSONRowByFK_ORDER1_PERSON != null)) {
-                    columnValuesArray[1] = parentPERSONRowByFK_ORDER1_PERSON[0];
+                        ORD_DATE,
+                        ORD_STATUS,
+                        ORD_DELIVERYADDRESS,
+                        ORD_TOTAL,
+                        ORD_PAYMENTSTATUS};
+                if ((parentEATFAST_PERSONRowByFK_EATFAST_ORDER_EATFAST_PERSO != null)) {
+                    columnValuesArray[1] = parentEATFAST_PERSONRowByFK_EATFAST_ORDER_EATFAST_PERSO[0];
                 }
-                rowORDER1Row.ItemArray = columnValuesArray;
-                this.Rows.Add(rowORDER1Row);
-                return rowORDER1Row;
+                rowEATFAST_ORDERRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowEATFAST_ORDERRow);
+                return rowEATFAST_ORDERRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ORDER1Row FindByORDID(short ORDID) {
-                return ((ORDER1Row)(this.Rows.Find(new object[] {
-                            ORDID})));
+            public EATFAST_ORDERRow FindByORD_ID(int ORD_ID) {
+                return ((EATFAST_ORDERRow)(this.Rows.Find(new object[] {
+                            ORD_ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ORDER1DataTable cln = ((ORDER1DataTable)(base.Clone()));
+                EATFAST_ORDERDataTable cln = ((EATFAST_ORDERDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -889,72 +924,72 @@ namespace EatFast_Project {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ORDER1DataTable();
+                return new EATFAST_ORDERDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnORDID = base.Columns["ORDID"];
-                this.columnPERID = base.Columns["PERID"];
-                this.columnORDDATE = base.Columns["ORDDATE"];
-                this.columnORDSTATUS = base.Columns["ORDSTATUS"];
-                this.columnORDDELIVERYADDRESS = base.Columns["ORDDELIVERYADDRESS"];
-                this.columnORDTOTAL = base.Columns["ORDTOTAL"];
-                this.columnORDPAYMENTSTATUS = base.Columns["ORDPAYMENTSTATUS"];
+                this.columnORD_ID = base.Columns["ORD_ID"];
+                this.columnPER_ID = base.Columns["PER_ID"];
+                this.columnORD_DATE = base.Columns["ORD_DATE"];
+                this.columnORD_STATUS = base.Columns["ORD_STATUS"];
+                this.columnORD_DELIVERYADDRESS = base.Columns["ORD_DELIVERYADDRESS"];
+                this.columnORD_TOTAL = base.Columns["ORD_TOTAL"];
+                this.columnORD_PAYMENTSTATUS = base.Columns["ORD_PAYMENTSTATUS"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnORDID = new global::System.Data.DataColumn("ORDID", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnORDID);
-                this.columnPERID = new global::System.Data.DataColumn("PERID", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPERID);
-                this.columnORDDATE = new global::System.Data.DataColumn("ORDDATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnORDDATE);
-                this.columnORDSTATUS = new global::System.Data.DataColumn("ORDSTATUS", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnORDSTATUS);
-                this.columnORDDELIVERYADDRESS = new global::System.Data.DataColumn("ORDDELIVERYADDRESS", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnORDDELIVERYADDRESS);
-                this.columnORDTOTAL = new global::System.Data.DataColumn("ORDTOTAL", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnORDTOTAL);
-                this.columnORDPAYMENTSTATUS = new global::System.Data.DataColumn("ORDPAYMENTSTATUS", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnORDPAYMENTSTATUS);
+                this.columnORD_ID = new global::System.Data.DataColumn("ORD_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnORD_ID);
+                this.columnPER_ID = new global::System.Data.DataColumn("PER_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPER_ID);
+                this.columnORD_DATE = new global::System.Data.DataColumn("ORD_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnORD_DATE);
+                this.columnORD_STATUS = new global::System.Data.DataColumn("ORD_STATUS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnORD_STATUS);
+                this.columnORD_DELIVERYADDRESS = new global::System.Data.DataColumn("ORD_DELIVERYADDRESS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnORD_DELIVERYADDRESS);
+                this.columnORD_TOTAL = new global::System.Data.DataColumn("ORD_TOTAL", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnORD_TOTAL);
+                this.columnORD_PAYMENTSTATUS = new global::System.Data.DataColumn("ORD_PAYMENTSTATUS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnORD_PAYMENTSTATUS);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnORDID}, true));
-                this.columnORDID.AllowDBNull = false;
-                this.columnORDID.Unique = true;
-                this.columnPERID.AllowDBNull = false;
-                this.columnORDSTATUS.MaxLength = 32;
-                this.columnORDDELIVERYADDRESS.MaxLength = 250;
-                this.columnORDPAYMENTSTATUS.MaxLength = 32;
+                                this.columnORD_ID}, true));
+                this.columnORD_ID.AllowDBNull = false;
+                this.columnORD_ID.Unique = true;
+                this.columnPER_ID.AllowDBNull = false;
+                this.columnORD_STATUS.MaxLength = 32;
+                this.columnORD_DELIVERYADDRESS.MaxLength = 128;
+                this.columnORD_PAYMENTSTATUS.MaxLength = 32;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ORDER1Row NewORDER1Row() {
-                return ((ORDER1Row)(this.NewRow()));
+            public EATFAST_ORDERRow NewEATFAST_ORDERRow() {
+                return ((EATFAST_ORDERRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ORDER1Row(builder);
+                return new EATFAST_ORDERRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ORDER1Row);
+                return typeof(EATFAST_ORDERRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ORDER1RowChanged != null)) {
-                    this.ORDER1RowChanged(this, new ORDER1RowChangeEvent(((ORDER1Row)(e.Row)), e.Action));
+                if ((this.EATFAST_ORDERRowChanged != null)) {
+                    this.EATFAST_ORDERRowChanged(this, new EATFAST_ORDERRowChangeEvent(((EATFAST_ORDERRow)(e.Row)), e.Action));
                 }
             }
             
@@ -962,8 +997,8 @@ namespace EatFast_Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ORDER1RowChanging != null)) {
-                    this.ORDER1RowChanging(this, new ORDER1RowChangeEvent(((ORDER1Row)(e.Row)), e.Action));
+                if ((this.EATFAST_ORDERRowChanging != null)) {
+                    this.EATFAST_ORDERRowChanging(this, new EATFAST_ORDERRowChangeEvent(((EATFAST_ORDERRow)(e.Row)), e.Action));
                 }
             }
             
@@ -971,8 +1006,8 @@ namespace EatFast_Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ORDER1RowDeleted != null)) {
-                    this.ORDER1RowDeleted(this, new ORDER1RowChangeEvent(((ORDER1Row)(e.Row)), e.Action));
+                if ((this.EATFAST_ORDERRowDeleted != null)) {
+                    this.EATFAST_ORDERRowDeleted(this, new EATFAST_ORDERRowChangeEvent(((EATFAST_ORDERRow)(e.Row)), e.Action));
                 }
             }
             
@@ -980,14 +1015,14 @@ namespace EatFast_Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ORDER1RowDeleting != null)) {
-                    this.ORDER1RowDeleting(this, new ORDER1RowChangeEvent(((ORDER1Row)(e.Row)), e.Action));
+                if ((this.EATFAST_ORDERRowDeleting != null)) {
+                    this.EATFAST_ORDERRowDeleting(this, new EATFAST_ORDERRowChangeEvent(((EATFAST_ORDERRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveORDER1Row(ORDER1Row row) {
+            public void RemoveEATFAST_ORDERRow(EATFAST_ORDERRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1014,7 +1049,7 @@ namespace EatFast_Project {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ORDER1DataTable";
+                attribute2.FixedValue = "EATFAST_ORDERDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1060,24 +1095,24 @@ namespace EatFast_Project {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PERSONDataTable : global::System.Data.TypedTableBase<PERSONRow> {
+        public partial class EATFAST_PERSONDataTable : global::System.Data.TypedTableBase<EATFAST_PERSONRow> {
             
-            private global::System.Data.DataColumn columnPERID;
+            private global::System.Data.DataColumn columnPER_ID;
             
-            private global::System.Data.DataColumn columnPERNAME;
+            private global::System.Data.DataColumn columnPER_NAME;
             
-            private global::System.Data.DataColumn columnPEREMAIL;
+            private global::System.Data.DataColumn columnPER_EMAIL;
             
-            private global::System.Data.DataColumn columnPERPASSWORD;
+            private global::System.Data.DataColumn columnPER_PASSWORD;
             
-            private global::System.Data.DataColumn columnPERADDRESS;
+            private global::System.Data.DataColumn columnPER_ADDRESS;
             
-            private global::System.Data.DataColumn columnPERACCOUNTTYPE;
+            private global::System.Data.DataColumn columnPER_ACCOUNTTYPE;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PERSONDataTable() {
-                this.TableName = "PERSON";
+            public EATFAST_PERSONDataTable() {
+                this.TableName = "EATFAST_PERSON";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1085,7 +1120,7 @@ namespace EatFast_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal PERSONDataTable(global::System.Data.DataTable table) {
+            internal EATFAST_PERSONDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1102,56 +1137,56 @@ namespace EatFast_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected PERSONDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected EATFAST_PERSONDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PERIDColumn {
+            public global::System.Data.DataColumn PER_IDColumn {
                 get {
-                    return this.columnPERID;
+                    return this.columnPER_ID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PERNAMEColumn {
+            public global::System.Data.DataColumn PER_NAMEColumn {
                 get {
-                    return this.columnPERNAME;
+                    return this.columnPER_NAME;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PEREMAILColumn {
+            public global::System.Data.DataColumn PER_EMAILColumn {
                 get {
-                    return this.columnPEREMAIL;
+                    return this.columnPER_EMAIL;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PERPASSWORDColumn {
+            public global::System.Data.DataColumn PER_PASSWORDColumn {
                 get {
-                    return this.columnPERPASSWORD;
+                    return this.columnPER_PASSWORD;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PERADDRESSColumn {
+            public global::System.Data.DataColumn PER_ADDRESSColumn {
                 get {
-                    return this.columnPERADDRESS;
+                    return this.columnPER_ADDRESS;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PERACCOUNTTYPEColumn {
+            public global::System.Data.DataColumn PER_ACCOUNTTYPEColumn {
                 get {
-                    return this.columnPERACCOUNTTYPE;
+                    return this.columnPER_ACCOUNTTYPE;
                 }
             }
             
@@ -1166,57 +1201,57 @@ namespace EatFast_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PERSONRow this[int index] {
+            public EATFAST_PERSONRow this[int index] {
                 get {
-                    return ((PERSONRow)(this.Rows[index]));
+                    return ((EATFAST_PERSONRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PERSONRowChangeEventHandler PERSONRowChanging;
+            public event EATFAST_PERSONRowChangeEventHandler EATFAST_PERSONRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PERSONRowChangeEventHandler PERSONRowChanged;
+            public event EATFAST_PERSONRowChangeEventHandler EATFAST_PERSONRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PERSONRowChangeEventHandler PERSONRowDeleting;
+            public event EATFAST_PERSONRowChangeEventHandler EATFAST_PERSONRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PERSONRowChangeEventHandler PERSONRowDeleted;
+            public event EATFAST_PERSONRowChangeEventHandler EATFAST_PERSONRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddPERSONRow(PERSONRow row) {
+            public void AddEATFAST_PERSONRow(EATFAST_PERSONRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PERSONRow AddPERSONRow(short PERID, string PERNAME, string PEREMAIL, string PERPASSWORD, string PERADDRESS, string PERACCOUNTTYPE) {
-                PERSONRow rowPERSONRow = ((PERSONRow)(this.NewRow()));
+            public EATFAST_PERSONRow AddEATFAST_PERSONRow(int PER_ID, string PER_NAME, string PER_EMAIL, string PER_PASSWORD, string PER_ADDRESS, string PER_ACCOUNTTYPE) {
+                EATFAST_PERSONRow rowEATFAST_PERSONRow = ((EATFAST_PERSONRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        PERID,
-                        PERNAME,
-                        PEREMAIL,
-                        PERPASSWORD,
-                        PERADDRESS,
-                        PERACCOUNTTYPE};
-                rowPERSONRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPERSONRow);
-                return rowPERSONRow;
+                        PER_ID,
+                        PER_NAME,
+                        PER_EMAIL,
+                        PER_PASSWORD,
+                        PER_ADDRESS,
+                        PER_ACCOUNTTYPE};
+                rowEATFAST_PERSONRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowEATFAST_PERSONRow);
+                return rowEATFAST_PERSONRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PERSONRow FindByPERID(short PERID) {
-                return ((PERSONRow)(this.Rows.Find(new object[] {
-                            PERID})));
+            public EATFAST_PERSONRow FindByPER_ID(int PER_ID) {
+                return ((EATFAST_PERSONRow)(this.Rows.Find(new object[] {
+                            PER_ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PERSONDataTable cln = ((PERSONDataTable)(base.Clone()));
+                EATFAST_PERSONDataTable cln = ((EATFAST_PERSONDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1224,70 +1259,70 @@ namespace EatFast_Project {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PERSONDataTable();
+                return new EATFAST_PERSONDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnPERID = base.Columns["PERID"];
-                this.columnPERNAME = base.Columns["PERNAME"];
-                this.columnPEREMAIL = base.Columns["PEREMAIL"];
-                this.columnPERPASSWORD = base.Columns["PERPASSWORD"];
-                this.columnPERADDRESS = base.Columns["PERADDRESS"];
-                this.columnPERACCOUNTTYPE = base.Columns["PERACCOUNTTYPE"];
+                this.columnPER_ID = base.Columns["PER_ID"];
+                this.columnPER_NAME = base.Columns["PER_NAME"];
+                this.columnPER_EMAIL = base.Columns["PER_EMAIL"];
+                this.columnPER_PASSWORD = base.Columns["PER_PASSWORD"];
+                this.columnPER_ADDRESS = base.Columns["PER_ADDRESS"];
+                this.columnPER_ACCOUNTTYPE = base.Columns["PER_ACCOUNTTYPE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnPERID = new global::System.Data.DataColumn("PERID", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPERID);
-                this.columnPERNAME = new global::System.Data.DataColumn("PERNAME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPERNAME);
-                this.columnPEREMAIL = new global::System.Data.DataColumn("PEREMAIL", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPEREMAIL);
-                this.columnPERPASSWORD = new global::System.Data.DataColumn("PERPASSWORD", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPERPASSWORD);
-                this.columnPERADDRESS = new global::System.Data.DataColumn("PERADDRESS", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPERADDRESS);
-                this.columnPERACCOUNTTYPE = new global::System.Data.DataColumn("PERACCOUNTTYPE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPERACCOUNTTYPE);
+                this.columnPER_ID = new global::System.Data.DataColumn("PER_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPER_ID);
+                this.columnPER_NAME = new global::System.Data.DataColumn("PER_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPER_NAME);
+                this.columnPER_EMAIL = new global::System.Data.DataColumn("PER_EMAIL", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPER_EMAIL);
+                this.columnPER_PASSWORD = new global::System.Data.DataColumn("PER_PASSWORD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPER_PASSWORD);
+                this.columnPER_ADDRESS = new global::System.Data.DataColumn("PER_ADDRESS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPER_ADDRESS);
+                this.columnPER_ACCOUNTTYPE = new global::System.Data.DataColumn("PER_ACCOUNTTYPE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPER_ACCOUNTTYPE);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnPERID}, true));
-                this.columnPERID.AllowDBNull = false;
-                this.columnPERID.Unique = true;
-                this.columnPERNAME.MaxLength = 50;
-                this.columnPEREMAIL.MaxLength = 128;
-                this.columnPERPASSWORD.MaxLength = 50;
-                this.columnPERADDRESS.MaxLength = 250;
-                this.columnPERACCOUNTTYPE.MaxLength = 32;
+                                this.columnPER_ID}, true));
+                this.columnPER_ID.AllowDBNull = false;
+                this.columnPER_ID.Unique = true;
+                this.columnPER_NAME.MaxLength = 32;
+                this.columnPER_EMAIL.MaxLength = 128;
+                this.columnPER_PASSWORD.MaxLength = 128;
+                this.columnPER_ADDRESS.MaxLength = 250;
+                this.columnPER_ACCOUNTTYPE.MaxLength = 32;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PERSONRow NewPERSONRow() {
-                return ((PERSONRow)(this.NewRow()));
+            public EATFAST_PERSONRow NewEATFAST_PERSONRow() {
+                return ((EATFAST_PERSONRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PERSONRow(builder);
+                return new EATFAST_PERSONRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PERSONRow);
+                return typeof(EATFAST_PERSONRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PERSONRowChanged != null)) {
-                    this.PERSONRowChanged(this, new PERSONRowChangeEvent(((PERSONRow)(e.Row)), e.Action));
+                if ((this.EATFAST_PERSONRowChanged != null)) {
+                    this.EATFAST_PERSONRowChanged(this, new EATFAST_PERSONRowChangeEvent(((EATFAST_PERSONRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1295,8 +1330,8 @@ namespace EatFast_Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PERSONRowChanging != null)) {
-                    this.PERSONRowChanging(this, new PERSONRowChangeEvent(((PERSONRow)(e.Row)), e.Action));
+                if ((this.EATFAST_PERSONRowChanging != null)) {
+                    this.EATFAST_PERSONRowChanging(this, new EATFAST_PERSONRowChangeEvent(((EATFAST_PERSONRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1304,8 +1339,8 @@ namespace EatFast_Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PERSONRowDeleted != null)) {
-                    this.PERSONRowDeleted(this, new PERSONRowChangeEvent(((PERSONRow)(e.Row)), e.Action));
+                if ((this.EATFAST_PERSONRowDeleted != null)) {
+                    this.EATFAST_PERSONRowDeleted(this, new EATFAST_PERSONRowChangeEvent(((EATFAST_PERSONRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1313,14 +1348,14 @@ namespace EatFast_Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PERSONRowDeleting != null)) {
-                    this.PERSONRowDeleting(this, new PERSONRowChangeEvent(((PERSONRow)(e.Row)), e.Action));
+                if ((this.EATFAST_PERSONRowDeleting != null)) {
+                    this.EATFAST_PERSONRowDeleting(this, new EATFAST_PERSONRowChangeEvent(((EATFAST_PERSONRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemovePERSONRow(PERSONRow row) {
+            public void RemoveEATFAST_PERSONRow(EATFAST_PERSONRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1347,7 +1382,7 @@ namespace EatFast_Project {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PERSONDataTable";
+                attribute2.FixedValue = "EATFAST_PERSONDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1393,24 +1428,24 @@ namespace EatFast_Project {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PRODUCTDataTable : global::System.Data.TypedTableBase<PRODUCTRow> {
+        public partial class EATFAST_PRODUCTDataTable : global::System.Data.TypedTableBase<EATFAST_PRODUCTRow> {
             
-            private global::System.Data.DataColumn columnPROID;
+            private global::System.Data.DataColumn columnPRO_ID;
             
-            private global::System.Data.DataColumn columnPRONAME;
+            private global::System.Data.DataColumn columnPRO_NAME;
             
-            private global::System.Data.DataColumn columnPRODESCRIPTION;
+            private global::System.Data.DataColumn columnPRO_DESCRIPTION;
             
-            private global::System.Data.DataColumn columnPROIMAGE;
+            private global::System.Data.DataColumn columnPRO_IMAGE;
             
-            private global::System.Data.DataColumn columnPROPRICE;
+            private global::System.Data.DataColumn columnPRO_PRICE;
             
-            private global::System.Data.DataColumn columnPROCATEGORY;
+            private global::System.Data.DataColumn columnPRO_CATEGORY;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PRODUCTDataTable() {
-                this.TableName = "PRODUCT";
+            public EATFAST_PRODUCTDataTable() {
+                this.TableName = "EATFAST_PRODUCT";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1418,7 +1453,7 @@ namespace EatFast_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal PRODUCTDataTable(global::System.Data.DataTable table) {
+            internal EATFAST_PRODUCTDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1435,56 +1470,56 @@ namespace EatFast_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected PRODUCTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected EATFAST_PRODUCTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PROIDColumn {
+            public global::System.Data.DataColumn PRO_IDColumn {
                 get {
-                    return this.columnPROID;
+                    return this.columnPRO_ID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PRONAMEColumn {
+            public global::System.Data.DataColumn PRO_NAMEColumn {
                 get {
-                    return this.columnPRONAME;
+                    return this.columnPRO_NAME;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PRODESCRIPTIONColumn {
+            public global::System.Data.DataColumn PRO_DESCRIPTIONColumn {
                 get {
-                    return this.columnPRODESCRIPTION;
+                    return this.columnPRO_DESCRIPTION;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PROIMAGEColumn {
+            public global::System.Data.DataColumn PRO_IMAGEColumn {
                 get {
-                    return this.columnPROIMAGE;
+                    return this.columnPRO_IMAGE;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PROPRICEColumn {
+            public global::System.Data.DataColumn PRO_PRICEColumn {
                 get {
-                    return this.columnPROPRICE;
+                    return this.columnPRO_PRICE;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn PROCATEGORYColumn {
+            public global::System.Data.DataColumn PRO_CATEGORYColumn {
                 get {
-                    return this.columnPROCATEGORY;
+                    return this.columnPRO_CATEGORY;
                 }
             }
             
@@ -1499,57 +1534,57 @@ namespace EatFast_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PRODUCTRow this[int index] {
+            public EATFAST_PRODUCTRow this[int index] {
                 get {
-                    return ((PRODUCTRow)(this.Rows[index]));
+                    return ((EATFAST_PRODUCTRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PRODUCTRowChangeEventHandler PRODUCTRowChanging;
+            public event EATFAST_PRODUCTRowChangeEventHandler EATFAST_PRODUCTRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PRODUCTRowChangeEventHandler PRODUCTRowChanged;
+            public event EATFAST_PRODUCTRowChangeEventHandler EATFAST_PRODUCTRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PRODUCTRowChangeEventHandler PRODUCTRowDeleting;
+            public event EATFAST_PRODUCTRowChangeEventHandler EATFAST_PRODUCTRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PRODUCTRowChangeEventHandler PRODUCTRowDeleted;
+            public event EATFAST_PRODUCTRowChangeEventHandler EATFAST_PRODUCTRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddPRODUCTRow(PRODUCTRow row) {
+            public void AddEATFAST_PRODUCTRow(EATFAST_PRODUCTRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PRODUCTRow AddPRODUCTRow(short PROID, string PRONAME, string PRODESCRIPTION, string PROIMAGE, double PROPRICE, string PROCATEGORY) {
-                PRODUCTRow rowPRODUCTRow = ((PRODUCTRow)(this.NewRow()));
+            public EATFAST_PRODUCTRow AddEATFAST_PRODUCTRow(int PRO_ID, string PRO_NAME, string PRO_DESCRIPTION, string PRO_IMAGE, float PRO_PRICE, string PRO_CATEGORY) {
+                EATFAST_PRODUCTRow rowEATFAST_PRODUCTRow = ((EATFAST_PRODUCTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        PROID,
-                        PRONAME,
-                        PRODESCRIPTION,
-                        PROIMAGE,
-                        PROPRICE,
-                        PROCATEGORY};
-                rowPRODUCTRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPRODUCTRow);
-                return rowPRODUCTRow;
+                        PRO_ID,
+                        PRO_NAME,
+                        PRO_DESCRIPTION,
+                        PRO_IMAGE,
+                        PRO_PRICE,
+                        PRO_CATEGORY};
+                rowEATFAST_PRODUCTRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowEATFAST_PRODUCTRow);
+                return rowEATFAST_PRODUCTRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PRODUCTRow FindByPROID(short PROID) {
-                return ((PRODUCTRow)(this.Rows.Find(new object[] {
-                            PROID})));
+            public EATFAST_PRODUCTRow FindByPRO_ID(int PRO_ID) {
+                return ((EATFAST_PRODUCTRow)(this.Rows.Find(new object[] {
+                            PRO_ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PRODUCTDataTable cln = ((PRODUCTDataTable)(base.Clone()));
+                EATFAST_PRODUCTDataTable cln = ((EATFAST_PRODUCTDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1557,69 +1592,69 @@ namespace EatFast_Project {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PRODUCTDataTable();
+                return new EATFAST_PRODUCTDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnPROID = base.Columns["PROID"];
-                this.columnPRONAME = base.Columns["PRONAME"];
-                this.columnPRODESCRIPTION = base.Columns["PRODESCRIPTION"];
-                this.columnPROIMAGE = base.Columns["PROIMAGE"];
-                this.columnPROPRICE = base.Columns["PROPRICE"];
-                this.columnPROCATEGORY = base.Columns["PROCATEGORY"];
+                this.columnPRO_ID = base.Columns["PRO_ID"];
+                this.columnPRO_NAME = base.Columns["PRO_NAME"];
+                this.columnPRO_DESCRIPTION = base.Columns["PRO_DESCRIPTION"];
+                this.columnPRO_IMAGE = base.Columns["PRO_IMAGE"];
+                this.columnPRO_PRICE = base.Columns["PRO_PRICE"];
+                this.columnPRO_CATEGORY = base.Columns["PRO_CATEGORY"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnPROID = new global::System.Data.DataColumn("PROID", typeof(short), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPROID);
-                this.columnPRONAME = new global::System.Data.DataColumn("PRONAME", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPRONAME);
-                this.columnPRODESCRIPTION = new global::System.Data.DataColumn("PRODESCRIPTION", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPRODESCRIPTION);
-                this.columnPROIMAGE = new global::System.Data.DataColumn("PROIMAGE", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPROIMAGE);
-                this.columnPROPRICE = new global::System.Data.DataColumn("PROPRICE", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPROPRICE);
-                this.columnPROCATEGORY = new global::System.Data.DataColumn("PROCATEGORY", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPROCATEGORY);
+                this.columnPRO_ID = new global::System.Data.DataColumn("PRO_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPRO_ID);
+                this.columnPRO_NAME = new global::System.Data.DataColumn("PRO_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPRO_NAME);
+                this.columnPRO_DESCRIPTION = new global::System.Data.DataColumn("PRO_DESCRIPTION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPRO_DESCRIPTION);
+                this.columnPRO_IMAGE = new global::System.Data.DataColumn("PRO_IMAGE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPRO_IMAGE);
+                this.columnPRO_PRICE = new global::System.Data.DataColumn("PRO_PRICE", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPRO_PRICE);
+                this.columnPRO_CATEGORY = new global::System.Data.DataColumn("PRO_CATEGORY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPRO_CATEGORY);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnPROID}, true));
-                this.columnPROID.AllowDBNull = false;
-                this.columnPROID.Unique = true;
-                this.columnPRONAME.MaxLength = 50;
-                this.columnPRODESCRIPTION.MaxLength = 500;
-                this.columnPROIMAGE.MaxLength = 150;
-                this.columnPROCATEGORY.MaxLength = 50;
+                                this.columnPRO_ID}, true));
+                this.columnPRO_ID.AllowDBNull = false;
+                this.columnPRO_ID.Unique = true;
+                this.columnPRO_NAME.MaxLength = 32;
+                this.columnPRO_DESCRIPTION.MaxLength = 250;
+                this.columnPRO_IMAGE.MaxLength = 128;
+                this.columnPRO_CATEGORY.MaxLength = 32;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PRODUCTRow NewPRODUCTRow() {
-                return ((PRODUCTRow)(this.NewRow()));
+            public EATFAST_PRODUCTRow NewEATFAST_PRODUCTRow() {
+                return ((EATFAST_PRODUCTRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PRODUCTRow(builder);
+                return new EATFAST_PRODUCTRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PRODUCTRow);
+                return typeof(EATFAST_PRODUCTRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PRODUCTRowChanged != null)) {
-                    this.PRODUCTRowChanged(this, new PRODUCTRowChangeEvent(((PRODUCTRow)(e.Row)), e.Action));
+                if ((this.EATFAST_PRODUCTRowChanged != null)) {
+                    this.EATFAST_PRODUCTRowChanged(this, new EATFAST_PRODUCTRowChangeEvent(((EATFAST_PRODUCTRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1627,8 +1662,8 @@ namespace EatFast_Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PRODUCTRowChanging != null)) {
-                    this.PRODUCTRowChanging(this, new PRODUCTRowChangeEvent(((PRODUCTRow)(e.Row)), e.Action));
+                if ((this.EATFAST_PRODUCTRowChanging != null)) {
+                    this.EATFAST_PRODUCTRowChanging(this, new EATFAST_PRODUCTRowChangeEvent(((EATFAST_PRODUCTRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1636,8 +1671,8 @@ namespace EatFast_Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PRODUCTRowDeleted != null)) {
-                    this.PRODUCTRowDeleted(this, new PRODUCTRowChangeEvent(((PRODUCTRow)(e.Row)), e.Action));
+                if ((this.EATFAST_PRODUCTRowDeleted != null)) {
+                    this.EATFAST_PRODUCTRowDeleted(this, new EATFAST_PRODUCTRowChangeEvent(((EATFAST_PRODUCTRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1645,14 +1680,14 @@ namespace EatFast_Project {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PRODUCTRowDeleting != null)) {
-                    this.PRODUCTRowDeleting(this, new PRODUCTRowChangeEvent(((PRODUCTRow)(e.Row)), e.Action));
+                if ((this.EATFAST_PRODUCTRowDeleting != null)) {
+                    this.EATFAST_PRODUCTRowDeleting(this, new EATFAST_PRODUCTRowChangeEvent(((EATFAST_PRODUCTRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemovePRODUCTRow(PRODUCTRow row) {
+            public void RemoveEATFAST_PRODUCTRow(EATFAST_PRODUCTRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1679,7 +1714,310 @@ namespace EatFast_Project {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PRODUCTDataTable";
+                attribute2.FixedValue = "EATFAST_PRODUCTDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class EATFAST_RESTAURANTDataTable : global::System.Data.TypedTableBase<EATFAST_RESTAURANTRow> {
+            
+            private global::System.Data.DataColumn columnRES_ID;
+            
+            private global::System.Data.DataColumn columnRES_NAME;
+            
+            private global::System.Data.DataColumn columnRES_DESCRIPTION;
+            
+            private global::System.Data.DataColumn columnRES_IMAGE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_RESTAURANTDataTable() {
+                this.TableName = "EATFAST_RESTAURANT";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal EATFAST_RESTAURANTDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected EATFAST_RESTAURANTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn RES_IDColumn {
+                get {
+                    return this.columnRES_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn RES_NAMEColumn {
+                get {
+                    return this.columnRES_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn RES_DESCRIPTIONColumn {
+                get {
+                    return this.columnRES_DESCRIPTION;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn RES_IMAGEColumn {
+                get {
+                    return this.columnRES_IMAGE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_RESTAURANTRow this[int index] {
+                get {
+                    return ((EATFAST_RESTAURANTRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event EATFAST_RESTAURANTRowChangeEventHandler EATFAST_RESTAURANTRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event EATFAST_RESTAURANTRowChangeEventHandler EATFAST_RESTAURANTRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event EATFAST_RESTAURANTRowChangeEventHandler EATFAST_RESTAURANTRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event EATFAST_RESTAURANTRowChangeEventHandler EATFAST_RESTAURANTRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddEATFAST_RESTAURANTRow(EATFAST_RESTAURANTRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_RESTAURANTRow AddEATFAST_RESTAURANTRow(short RES_ID, string RES_NAME, string RES_DESCRIPTION, string RES_IMAGE) {
+                EATFAST_RESTAURANTRow rowEATFAST_RESTAURANTRow = ((EATFAST_RESTAURANTRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        RES_ID,
+                        RES_NAME,
+                        RES_DESCRIPTION,
+                        RES_IMAGE};
+                rowEATFAST_RESTAURANTRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowEATFAST_RESTAURANTRow);
+                return rowEATFAST_RESTAURANTRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_RESTAURANTRow FindByRES_ID(short RES_ID) {
+                return ((EATFAST_RESTAURANTRow)(this.Rows.Find(new object[] {
+                            RES_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                EATFAST_RESTAURANTDataTable cln = ((EATFAST_RESTAURANTDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new EATFAST_RESTAURANTDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnRES_ID = base.Columns["RES_ID"];
+                this.columnRES_NAME = base.Columns["RES_NAME"];
+                this.columnRES_DESCRIPTION = base.Columns["RES_DESCRIPTION"];
+                this.columnRES_IMAGE = base.Columns["RES_IMAGE"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnRES_ID = new global::System.Data.DataColumn("RES_ID", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRES_ID);
+                this.columnRES_NAME = new global::System.Data.DataColumn("RES_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRES_NAME);
+                this.columnRES_DESCRIPTION = new global::System.Data.DataColumn("RES_DESCRIPTION", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRES_DESCRIPTION);
+                this.columnRES_IMAGE = new global::System.Data.DataColumn("RES_IMAGE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRES_IMAGE);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnRES_ID}, true));
+                this.columnRES_ID.AllowDBNull = false;
+                this.columnRES_ID.Unique = true;
+                this.columnRES_NAME.MaxLength = 32;
+                this.columnRES_DESCRIPTION.MaxLength = 250;
+                this.columnRES_IMAGE.MaxLength = 128;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_RESTAURANTRow NewEATFAST_RESTAURANTRow() {
+                return ((EATFAST_RESTAURANTRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new EATFAST_RESTAURANTRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(EATFAST_RESTAURANTRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.EATFAST_RESTAURANTRowChanged != null)) {
+                    this.EATFAST_RESTAURANTRowChanged(this, new EATFAST_RESTAURANTRowChangeEvent(((EATFAST_RESTAURANTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.EATFAST_RESTAURANTRowChanging != null)) {
+                    this.EATFAST_RESTAURANTRowChanging(this, new EATFAST_RESTAURANTRowChangeEvent(((EATFAST_RESTAURANTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.EATFAST_RESTAURANTRowDeleted != null)) {
+                    this.EATFAST_RESTAURANTRowDeleted(this, new EATFAST_RESTAURANTRowChangeEvent(((EATFAST_RESTAURANTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.EATFAST_RESTAURANTRowDeleting != null)) {
+                    this.EATFAST_RESTAURANTRowDeleting(this, new EATFAST_RESTAURANTRowChangeEvent(((EATFAST_RESTAURANTRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveEATFAST_RESTAURANTRow(EATFAST_RESTAURANTRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetEatFast ds = new DataSetEatFast();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "EATFAST_RESTAURANTDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1723,490 +2061,313 @@ namespace EatFast_Project {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class CONTIENTRow : global::System.Data.DataRow {
+        public partial class EATFAST_CONTAINSRow : global::System.Data.DataRow {
             
-            private CONTIENTDataTable tableCONTIENT;
+            private EATFAST_CONTAINSDataTable tableEATFAST_CONTAINS;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal CONTIENTRow(global::System.Data.DataRowBuilder rb) : 
+            internal EATFAST_CONTAINSRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableCONTIENT = ((CONTIENTDataTable)(this.Table));
+                this.tableEATFAST_CONTAINS = ((EATFAST_CONTAINSDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public short ORDID {
+            public int ORD_ID {
                 get {
-                    return ((short)(this[this.tableCONTIENT.ORDIDColumn]));
+                    return ((int)(this[this.tableEATFAST_CONTAINS.ORD_IDColumn]));
                 }
                 set {
-                    this[this.tableCONTIENT.ORDIDColumn] = value;
+                    this[this.tableEATFAST_CONTAINS.ORD_IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public short PROID {
+            public int PRO_ID {
                 get {
-                    return ((short)(this[this.tableCONTIENT.PROIDColumn]));
+                    return ((int)(this[this.tableEATFAST_CONTAINS.PRO_IDColumn]));
                 }
                 set {
-                    this[this.tableCONTIENT.PROIDColumn] = value;
+                    this[this.tableEATFAST_CONTAINS.PRO_IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double PRIX {
-                get {
-                    try {
-                        return ((double)(this[this.tableCONTIENT.PRIXColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PRIX\' in table \'CONTIENT\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCONTIENT.PRIXColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public short QUANTITE {
+            public float PRICE {
                 get {
                     try {
-                        return ((short)(this[this.tableCONTIENT.QUANTITEColumn]));
+                        return ((float)(this[this.tableEATFAST_CONTAINS.PRICEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'QUANTITE\' in table \'CONTIENT\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRICE\' in table \'EATFAST_CONTAINS\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCONTIENT.QUANTITEColumn] = value;
+                    this[this.tableEATFAST_CONTAINS.PRICEColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ORDER1Row ORDER1Row {
+            public float QUANTITY {
                 get {
-                    return ((ORDER1Row)(this.GetParentRow(this.Table.ParentRelations["FK_CONTIENT_ORDER1"])));
+                    try {
+                        return ((float)(this[this.tableEATFAST_CONTAINS.QUANTITYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'QUANTITY\' in table \'EATFAST_CONTAINS\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_CONTIENT_ORDER1"]);
+                    this[this.tableEATFAST_CONTAINS.QUANTITYColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PRODUCTRow PRODUCTRow {
+            public EATFAST_ORDERRow EATFAST_ORDERRow {
                 get {
-                    return ((PRODUCTRow)(this.GetParentRow(this.Table.ParentRelations["FK_CONTIENT_PRODUCT"])));
+                    return ((EATFAST_ORDERRow)(this.GetParentRow(this.Table.ParentRelations["FK_EATFAST_CONTAINS_EATFAST_OR"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_CONTIENT_PRODUCT"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_EATFAST_CONTAINS_EATFAST_OR"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsPRIXNull() {
-                return this.IsNull(this.tableCONTIENT.PRIXColumn);
+            public EATFAST_PRODUCTRow EATFAST_PRODUCTRow {
+                get {
+                    return ((EATFAST_PRODUCTRow)(this.GetParentRow(this.Table.ParentRelations["FK_EATFAST_CONTAINS_EATFAST_PR"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_EATFAST_CONTAINS_EATFAST_PR"]);
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetPRIXNull() {
-                this[this.tableCONTIENT.PRIXColumn] = global::System.Convert.DBNull;
+            public bool IsPRICENull() {
+                return this.IsNull(this.tableEATFAST_CONTAINS.PRICEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsQUANTITENull() {
-                return this.IsNull(this.tableCONTIENT.QUANTITEColumn);
+            public void SetPRICENull() {
+                this[this.tableEATFAST_CONTAINS.PRICEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetQUANTITENull() {
-                this[this.tableCONTIENT.QUANTITEColumn] = global::System.Convert.DBNull;
+            public bool IsQUANTITYNull() {
+                return this.IsNull(this.tableEATFAST_CONTAINS.QUANTITYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetQUANTITYNull() {
+                this[this.tableEATFAST_CONTAINS.QUANTITYColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ORDER1Row : global::System.Data.DataRow {
+        public partial class EATFAST_ORDERRow : global::System.Data.DataRow {
             
-            private ORDER1DataTable tableORDER1;
+            private EATFAST_ORDERDataTable tableEATFAST_ORDER;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal ORDER1Row(global::System.Data.DataRowBuilder rb) : 
+            internal EATFAST_ORDERRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableORDER1 = ((ORDER1DataTable)(this.Table));
+                this.tableEATFAST_ORDER = ((EATFAST_ORDERDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public short ORDID {
+            public int ORD_ID {
                 get {
-                    return ((short)(this[this.tableORDER1.ORDIDColumn]));
+                    return ((int)(this[this.tableEATFAST_ORDER.ORD_IDColumn]));
                 }
                 set {
-                    this[this.tableORDER1.ORDIDColumn] = value;
+                    this[this.tableEATFAST_ORDER.ORD_IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public short PERID {
+            public int PER_ID {
                 get {
-                    return ((short)(this[this.tableORDER1.PERIDColumn]));
+                    return ((int)(this[this.tableEATFAST_ORDER.PER_IDColumn]));
                 }
                 set {
-                    this[this.tableORDER1.PERIDColumn] = value;
+                    this[this.tableEATFAST_ORDER.PER_IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime ORDDATE {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableORDER1.ORDDATEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORDDATE\' in table \'ORDER1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableORDER1.ORDDATEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string ORDSTATUS {
+            public System.DateTime ORD_DATE {
                 get {
                     try {
-                        return ((string)(this[this.tableORDER1.ORDSTATUSColumn]));
+                        return ((global::System.DateTime)(this[this.tableEATFAST_ORDER.ORD_DATEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORDSTATUS\' in table \'ORDER1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_DATE\' in table \'EATFAST_ORDER\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableORDER1.ORDSTATUSColumn] = value;
+                    this[this.tableEATFAST_ORDER.ORD_DATEColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string ORDDELIVERYADDRESS {
+            public string ORD_STATUS {
                 get {
                     try {
-                        return ((string)(this[this.tableORDER1.ORDDELIVERYADDRESSColumn]));
+                        return ((string)(this[this.tableEATFAST_ORDER.ORD_STATUSColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORDDELIVERYADDRESS\' in table \'ORDER1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_STATUS\' in table \'EATFAST_ORDER\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableORDER1.ORDDELIVERYADDRESSColumn] = value;
+                    this[this.tableEATFAST_ORDER.ORD_STATUSColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double ORDTOTAL {
+            public string ORD_DELIVERYADDRESS {
                 get {
                     try {
-                        return ((double)(this[this.tableORDER1.ORDTOTALColumn]));
+                        return ((string)(this[this.tableEATFAST_ORDER.ORD_DELIVERYADDRESSColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORDTOTAL\' in table \'ORDER1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_DELIVERYADDRESS\' in table \'EATFAST_ORDER\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableORDER1.ORDTOTALColumn] = value;
+                    this[this.tableEATFAST_ORDER.ORD_DELIVERYADDRESSColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string ORDPAYMENTSTATUS {
+            public float ORD_TOTAL {
                 get {
                     try {
-                        return ((string)(this[this.tableORDER1.ORDPAYMENTSTATUSColumn]));
+                        return ((float)(this[this.tableEATFAST_ORDER.ORD_TOTALColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ORDPAYMENTSTATUS\' in table \'ORDER1\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_TOTAL\' in table \'EATFAST_ORDER\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableORDER1.ORDPAYMENTSTATUSColumn] = value;
+                    this[this.tableEATFAST_ORDER.ORD_TOTALColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PERSONRow PERSONRow {
+            public string ORD_PAYMENTSTATUS {
                 get {
-                    return ((PERSONRow)(this.GetParentRow(this.Table.ParentRelations["FK_ORDER1_PERSON"])));
+                    try {
+                        return ((string)(this[this.tableEATFAST_ORDER.ORD_PAYMENTSTATUSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_PAYMENTSTATUS\' in table \'EATFAST_ORDER\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_ORDER1_PERSON"]);
+                    this[this.tableEATFAST_ORDER.ORD_PAYMENTSTATUSColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsORDDATENull() {
-                return this.IsNull(this.tableORDER1.ORDDATEColumn);
+            public EATFAST_PERSONRow EATFAST_PERSONRow {
+                get {
+                    return ((EATFAST_PERSONRow)(this.GetParentRow(this.Table.ParentRelations["FK_EATFAST_ORDER_EATFAST_PERSO"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_EATFAST_ORDER_EATFAST_PERSO"]);
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetORDDATENull() {
-                this[this.tableORDER1.ORDDATEColumn] = global::System.Convert.DBNull;
+            public bool IsORD_DATENull() {
+                return this.IsNull(this.tableEATFAST_ORDER.ORD_DATEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsORDSTATUSNull() {
-                return this.IsNull(this.tableORDER1.ORDSTATUSColumn);
+            public void SetORD_DATENull() {
+                this[this.tableEATFAST_ORDER.ORD_DATEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetORDSTATUSNull() {
-                this[this.tableORDER1.ORDSTATUSColumn] = global::System.Convert.DBNull;
+            public bool IsORD_STATUSNull() {
+                return this.IsNull(this.tableEATFAST_ORDER.ORD_STATUSColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsORDDELIVERYADDRESSNull() {
-                return this.IsNull(this.tableORDER1.ORDDELIVERYADDRESSColumn);
+            public void SetORD_STATUSNull() {
+                this[this.tableEATFAST_ORDER.ORD_STATUSColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetORDDELIVERYADDRESSNull() {
-                this[this.tableORDER1.ORDDELIVERYADDRESSColumn] = global::System.Convert.DBNull;
+            public bool IsORD_DELIVERYADDRESSNull() {
+                return this.IsNull(this.tableEATFAST_ORDER.ORD_DELIVERYADDRESSColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsORDTOTALNull() {
-                return this.IsNull(this.tableORDER1.ORDTOTALColumn);
+            public void SetORD_DELIVERYADDRESSNull() {
+                this[this.tableEATFAST_ORDER.ORD_DELIVERYADDRESSColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetORDTOTALNull() {
-                this[this.tableORDER1.ORDTOTALColumn] = global::System.Convert.DBNull;
+            public bool IsORD_TOTALNull() {
+                return this.IsNull(this.tableEATFAST_ORDER.ORD_TOTALColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsORDPAYMENTSTATUSNull() {
-                return this.IsNull(this.tableORDER1.ORDPAYMENTSTATUSColumn);
+            public void SetORD_TOTALNull() {
+                this[this.tableEATFAST_ORDER.ORD_TOTALColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetORDPAYMENTSTATUSNull() {
-                this[this.tableORDER1.ORDPAYMENTSTATUSColumn] = global::System.Convert.DBNull;
+            public bool IsORD_PAYMENTSTATUSNull() {
+                return this.IsNull(this.tableEATFAST_ORDER.ORD_PAYMENTSTATUSColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CONTIENTRow[] GetCONTIENTRows() {
-                if ((this.Table.ChildRelations["FK_CONTIENT_ORDER1"] == null)) {
-                    return new CONTIENTRow[0];
+            public void SetORD_PAYMENTSTATUSNull() {
+                this[this.tableEATFAST_ORDER.ORD_PAYMENTSTATUSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_CONTAINSRow[] GetEATFAST_CONTAINSRows() {
+                if ((this.Table.ChildRelations["FK_EATFAST_CONTAINS_EATFAST_OR"] == null)) {
+                    return new EATFAST_CONTAINSRow[0];
                 }
                 else {
-                    return ((CONTIENTRow[])(base.GetChildRows(this.Table.ChildRelations["FK_CONTIENT_ORDER1"])));
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class PERSONRow : global::System.Data.DataRow {
-            
-            private PERSONDataTable tablePERSON;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal PERSONRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tablePERSON = ((PERSONDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public short PERID {
-                get {
-                    return ((short)(this[this.tablePERSON.PERIDColumn]));
-                }
-                set {
-                    this[this.tablePERSON.PERIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string PERNAME {
-                get {
-                    try {
-                        return ((string)(this[this.tablePERSON.PERNAMEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PERNAME\' in table \'PERSON\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePERSON.PERNAMEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string PEREMAIL {
-                get {
-                    try {
-                        return ((string)(this[this.tablePERSON.PEREMAILColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PEREMAIL\' in table \'PERSON\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePERSON.PEREMAILColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string PERPASSWORD {
-                get {
-                    try {
-                        return ((string)(this[this.tablePERSON.PERPASSWORDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PERPASSWORD\' in table \'PERSON\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePERSON.PERPASSWORDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string PERADDRESS {
-                get {
-                    try {
-                        return ((string)(this[this.tablePERSON.PERADDRESSColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PERADDRESS\' in table \'PERSON\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePERSON.PERADDRESSColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string PERACCOUNTTYPE {
-                get {
-                    try {
-                        return ((string)(this[this.tablePERSON.PERACCOUNTTYPEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PERACCOUNTTYPE\' in table \'PERSON\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePERSON.PERACCOUNTTYPEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsPERNAMENull() {
-                return this.IsNull(this.tablePERSON.PERNAMEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetPERNAMENull() {
-                this[this.tablePERSON.PERNAMEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsPEREMAILNull() {
-                return this.IsNull(this.tablePERSON.PEREMAILColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetPEREMAILNull() {
-                this[this.tablePERSON.PEREMAILColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsPERPASSWORDNull() {
-                return this.IsNull(this.tablePERSON.PERPASSWORDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetPERPASSWORDNull() {
-                this[this.tablePERSON.PERPASSWORDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsPERADDRESSNull() {
-                return this.IsNull(this.tablePERSON.PERADDRESSColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetPERADDRESSNull() {
-                this[this.tablePERSON.PERADDRESSColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsPERACCOUNTTYPENull() {
-                return this.IsNull(this.tablePERSON.PERACCOUNTTYPEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetPERACCOUNTTYPENull() {
-                this[this.tablePERSON.PERACCOUNTTYPEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ORDER1Row[] GetORDER1Rows() {
-                if ((this.Table.ChildRelations["FK_ORDER1_PERSON"] == null)) {
-                    return new ORDER1Row[0];
-                }
-                else {
-                    return ((ORDER1Row[])(base.GetChildRows(this.Table.ChildRelations["FK_ORDER1_PERSON"])));
+                    return ((EATFAST_CONTAINSRow[])(base.GetChildRows(this.Table.ChildRelations["FK_EATFAST_CONTAINS_EATFAST_OR"])));
                 }
             }
         }
@@ -2214,177 +2375,464 @@ namespace EatFast_Project {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PRODUCTRow : global::System.Data.DataRow {
+        public partial class EATFAST_PERSONRow : global::System.Data.DataRow {
             
-            private PRODUCTDataTable tablePRODUCT;
+            private EATFAST_PERSONDataTable tableEATFAST_PERSON;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal PRODUCTRow(global::System.Data.DataRowBuilder rb) : 
+            internal EATFAST_PERSONRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePRODUCT = ((PRODUCTDataTable)(this.Table));
+                this.tableEATFAST_PERSON = ((EATFAST_PERSONDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public short PROID {
+            public int PER_ID {
                 get {
-                    return ((short)(this[this.tablePRODUCT.PROIDColumn]));
+                    return ((int)(this[this.tableEATFAST_PERSON.PER_IDColumn]));
                 }
                 set {
-                    this[this.tablePRODUCT.PROIDColumn] = value;
+                    this[this.tableEATFAST_PERSON.PER_IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string PRONAME {
-                get {
-                    try {
-                        return ((string)(this[this.tablePRODUCT.PRONAMEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PRONAME\' in table \'PRODUCT\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePRODUCT.PRONAMEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string PRODESCRIPTION {
+            public string PER_NAME {
                 get {
                     try {
-                        return ((string)(this[this.tablePRODUCT.PRODESCRIPTIONColumn]));
+                        return ((string)(this[this.tableEATFAST_PERSON.PER_NAMEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PRODESCRIPTION\' in table \'PRODUCT\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PER_NAME\' in table \'EATFAST_PERSON\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePRODUCT.PRODESCRIPTIONColumn] = value;
+                    this[this.tableEATFAST_PERSON.PER_NAMEColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string PROIMAGE {
+            public string PER_EMAIL {
                 get {
                     try {
-                        return ((string)(this[this.tablePRODUCT.PROIMAGEColumn]));
+                        return ((string)(this[this.tableEATFAST_PERSON.PER_EMAILColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PROIMAGE\' in table \'PRODUCT\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PER_EMAIL\' in table \'EATFAST_PERSON\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePRODUCT.PROIMAGEColumn] = value;
+                    this[this.tableEATFAST_PERSON.PER_EMAILColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double PROPRICE {
+            public string PER_PASSWORD {
                 get {
                     try {
-                        return ((double)(this[this.tablePRODUCT.PROPRICEColumn]));
+                        return ((string)(this[this.tableEATFAST_PERSON.PER_PASSWORDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PROPRICE\' in table \'PRODUCT\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PER_PASSWORD\' in table \'EATFAST_PERSON\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePRODUCT.PROPRICEColumn] = value;
+                    this[this.tableEATFAST_PERSON.PER_PASSWORDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string PROCATEGORY {
+            public string PER_ADDRESS {
                 get {
                     try {
-                        return ((string)(this[this.tablePRODUCT.PROCATEGORYColumn]));
+                        return ((string)(this[this.tableEATFAST_PERSON.PER_ADDRESSColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PROCATEGORY\' in table \'PRODUCT\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PER_ADDRESS\' in table \'EATFAST_PERSON\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePRODUCT.PROCATEGORYColumn] = value;
+                    this[this.tableEATFAST_PERSON.PER_ADDRESSColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsPRONAMENull() {
-                return this.IsNull(this.tablePRODUCT.PRONAMEColumn);
+            public string PER_ACCOUNTTYPE {
+                get {
+                    try {
+                        return ((string)(this[this.tableEATFAST_PERSON.PER_ACCOUNTTYPEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PER_ACCOUNTTYPE\' in table \'EATFAST_PERSON\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEATFAST_PERSON.PER_ACCOUNTTYPEColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetPRONAMENull() {
-                this[this.tablePRODUCT.PRONAMEColumn] = global::System.Convert.DBNull;
+            public bool IsPER_NAMENull() {
+                return this.IsNull(this.tableEATFAST_PERSON.PER_NAMEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsPRODESCRIPTIONNull() {
-                return this.IsNull(this.tablePRODUCT.PRODESCRIPTIONColumn);
+            public void SetPER_NAMENull() {
+                this[this.tableEATFAST_PERSON.PER_NAMEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetPRODESCRIPTIONNull() {
-                this[this.tablePRODUCT.PRODESCRIPTIONColumn] = global::System.Convert.DBNull;
+            public bool IsPER_EMAILNull() {
+                return this.IsNull(this.tableEATFAST_PERSON.PER_EMAILColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsPROIMAGENull() {
-                return this.IsNull(this.tablePRODUCT.PROIMAGEColumn);
+            public void SetPER_EMAILNull() {
+                this[this.tableEATFAST_PERSON.PER_EMAILColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetPROIMAGENull() {
-                this[this.tablePRODUCT.PROIMAGEColumn] = global::System.Convert.DBNull;
+            public bool IsPER_PASSWORDNull() {
+                return this.IsNull(this.tableEATFAST_PERSON.PER_PASSWORDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsPROPRICENull() {
-                return this.IsNull(this.tablePRODUCT.PROPRICEColumn);
+            public void SetPER_PASSWORDNull() {
+                this[this.tableEATFAST_PERSON.PER_PASSWORDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetPROPRICENull() {
-                this[this.tablePRODUCT.PROPRICEColumn] = global::System.Convert.DBNull;
+            public bool IsPER_ADDRESSNull() {
+                return this.IsNull(this.tableEATFAST_PERSON.PER_ADDRESSColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsPROCATEGORYNull() {
-                return this.IsNull(this.tablePRODUCT.PROCATEGORYColumn);
+            public void SetPER_ADDRESSNull() {
+                this[this.tableEATFAST_PERSON.PER_ADDRESSColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetPROCATEGORYNull() {
-                this[this.tablePRODUCT.PROCATEGORYColumn] = global::System.Convert.DBNull;
+            public bool IsPER_ACCOUNTTYPENull() {
+                return this.IsNull(this.tableEATFAST_PERSON.PER_ACCOUNTTYPEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CONTIENTRow[] GetCONTIENTRows() {
-                if ((this.Table.ChildRelations["FK_CONTIENT_PRODUCT"] == null)) {
-                    return new CONTIENTRow[0];
+            public void SetPER_ACCOUNTTYPENull() {
+                this[this.tableEATFAST_PERSON.PER_ACCOUNTTYPEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_ORDERRow[] GetEATFAST_ORDERRows() {
+                if ((this.Table.ChildRelations["FK_EATFAST_ORDER_EATFAST_PERSO"] == null)) {
+                    return new EATFAST_ORDERRow[0];
                 }
                 else {
-                    return ((CONTIENTRow[])(base.GetChildRows(this.Table.ChildRelations["FK_CONTIENT_PRODUCT"])));
+                    return ((EATFAST_ORDERRow[])(base.GetChildRows(this.Table.ChildRelations["FK_EATFAST_ORDER_EATFAST_PERSO"])));
                 }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class EATFAST_PRODUCTRow : global::System.Data.DataRow {
+            
+            private EATFAST_PRODUCTDataTable tableEATFAST_PRODUCT;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal EATFAST_PRODUCTRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableEATFAST_PRODUCT = ((EATFAST_PRODUCTDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int PRO_ID {
+                get {
+                    return ((int)(this[this.tableEATFAST_PRODUCT.PRO_IDColumn]));
+                }
+                set {
+                    this[this.tableEATFAST_PRODUCT.PRO_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string PRO_NAME {
+                get {
+                    try {
+                        return ((string)(this[this.tableEATFAST_PRODUCT.PRO_NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRO_NAME\' in table \'EATFAST_PRODUCT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEATFAST_PRODUCT.PRO_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string PRO_DESCRIPTION {
+                get {
+                    try {
+                        return ((string)(this[this.tableEATFAST_PRODUCT.PRO_DESCRIPTIONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRO_DESCRIPTION\' in table \'EATFAST_PRODUCT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEATFAST_PRODUCT.PRO_DESCRIPTIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string PRO_IMAGE {
+                get {
+                    try {
+                        return ((string)(this[this.tableEATFAST_PRODUCT.PRO_IMAGEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRO_IMAGE\' in table \'EATFAST_PRODUCT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEATFAST_PRODUCT.PRO_IMAGEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public float PRO_PRICE {
+                get {
+                    try {
+                        return ((float)(this[this.tableEATFAST_PRODUCT.PRO_PRICEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRO_PRICE\' in table \'EATFAST_PRODUCT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEATFAST_PRODUCT.PRO_PRICEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string PRO_CATEGORY {
+                get {
+                    try {
+                        return ((string)(this[this.tableEATFAST_PRODUCT.PRO_CATEGORYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRO_CATEGORY\' in table \'EATFAST_PRODUCT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEATFAST_PRODUCT.PRO_CATEGORYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsPRO_NAMENull() {
+                return this.IsNull(this.tableEATFAST_PRODUCT.PRO_NAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetPRO_NAMENull() {
+                this[this.tableEATFAST_PRODUCT.PRO_NAMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsPRO_DESCRIPTIONNull() {
+                return this.IsNull(this.tableEATFAST_PRODUCT.PRO_DESCRIPTIONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetPRO_DESCRIPTIONNull() {
+                this[this.tableEATFAST_PRODUCT.PRO_DESCRIPTIONColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsPRO_IMAGENull() {
+                return this.IsNull(this.tableEATFAST_PRODUCT.PRO_IMAGEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetPRO_IMAGENull() {
+                this[this.tableEATFAST_PRODUCT.PRO_IMAGEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsPRO_PRICENull() {
+                return this.IsNull(this.tableEATFAST_PRODUCT.PRO_PRICEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetPRO_PRICENull() {
+                this[this.tableEATFAST_PRODUCT.PRO_PRICEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsPRO_CATEGORYNull() {
+                return this.IsNull(this.tableEATFAST_PRODUCT.PRO_CATEGORYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetPRO_CATEGORYNull() {
+                this[this.tableEATFAST_PRODUCT.PRO_CATEGORYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_CONTAINSRow[] GetEATFAST_CONTAINSRows() {
+                if ((this.Table.ChildRelations["FK_EATFAST_CONTAINS_EATFAST_PR"] == null)) {
+                    return new EATFAST_CONTAINSRow[0];
+                }
+                else {
+                    return ((EATFAST_CONTAINSRow[])(base.GetChildRows(this.Table.ChildRelations["FK_EATFAST_CONTAINS_EATFAST_PR"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class EATFAST_RESTAURANTRow : global::System.Data.DataRow {
+            
+            private EATFAST_RESTAURANTDataTable tableEATFAST_RESTAURANT;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal EATFAST_RESTAURANTRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableEATFAST_RESTAURANT = ((EATFAST_RESTAURANTDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public short RES_ID {
+                get {
+                    return ((short)(this[this.tableEATFAST_RESTAURANT.RES_IDColumn]));
+                }
+                set {
+                    this[this.tableEATFAST_RESTAURANT.RES_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string RES_NAME {
+                get {
+                    try {
+                        return ((string)(this[this.tableEATFAST_RESTAURANT.RES_NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RES_NAME\' in table \'EATFAST_RESTAURANT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEATFAST_RESTAURANT.RES_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string RES_DESCRIPTION {
+                get {
+                    try {
+                        return ((string)(this[this.tableEATFAST_RESTAURANT.RES_DESCRIPTIONColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RES_DESCRIPTION\' in table \'EATFAST_RESTAURANT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEATFAST_RESTAURANT.RES_DESCRIPTIONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string RES_IMAGE {
+                get {
+                    try {
+                        return ((string)(this[this.tableEATFAST_RESTAURANT.RES_IMAGEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RES_IMAGE\' in table \'EATFAST_RESTAURANT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEATFAST_RESTAURANT.RES_IMAGEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsRES_NAMENull() {
+                return this.IsNull(this.tableEATFAST_RESTAURANT.RES_NAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetRES_NAMENull() {
+                this[this.tableEATFAST_RESTAURANT.RES_NAMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsRES_DESCRIPTIONNull() {
+                return this.IsNull(this.tableEATFAST_RESTAURANT.RES_DESCRIPTIONColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetRES_DESCRIPTIONNull() {
+                this[this.tableEATFAST_RESTAURANT.RES_DESCRIPTIONColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsRES_IMAGENull() {
+                return this.IsNull(this.tableEATFAST_RESTAURANT.RES_IMAGEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetRES_IMAGENull() {
+                this[this.tableEATFAST_RESTAURANT.RES_IMAGEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2392,22 +2840,22 @@ namespace EatFast_Project {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class CONTIENTRowChangeEvent : global::System.EventArgs {
+        public class EATFAST_CONTAINSRowChangeEvent : global::System.EventArgs {
             
-            private CONTIENTRow eventRow;
+            private EATFAST_CONTAINSRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CONTIENTRowChangeEvent(CONTIENTRow row, global::System.Data.DataRowAction action) {
+            public EATFAST_CONTAINSRowChangeEvent(EATFAST_CONTAINSRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CONTIENTRow Row {
+            public EATFAST_CONTAINSRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2426,22 +2874,22 @@ namespace EatFast_Project {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class ORDER1RowChangeEvent : global::System.EventArgs {
+        public class EATFAST_ORDERRowChangeEvent : global::System.EventArgs {
             
-            private ORDER1Row eventRow;
+            private EATFAST_ORDERRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ORDER1RowChangeEvent(ORDER1Row row, global::System.Data.DataRowAction action) {
+            public EATFAST_ORDERRowChangeEvent(EATFAST_ORDERRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ORDER1Row Row {
+            public EATFAST_ORDERRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2460,22 +2908,22 @@ namespace EatFast_Project {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class PERSONRowChangeEvent : global::System.EventArgs {
+        public class EATFAST_PERSONRowChangeEvent : global::System.EventArgs {
             
-            private PERSONRow eventRow;
+            private EATFAST_PERSONRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PERSONRowChangeEvent(PERSONRow row, global::System.Data.DataRowAction action) {
+            public EATFAST_PERSONRowChangeEvent(EATFAST_PERSONRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PERSONRow Row {
+            public EATFAST_PERSONRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2494,22 +2942,56 @@ namespace EatFast_Project {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class PRODUCTRowChangeEvent : global::System.EventArgs {
+        public class EATFAST_PRODUCTRowChangeEvent : global::System.EventArgs {
             
-            private PRODUCTRow eventRow;
+            private EATFAST_PRODUCTRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PRODUCTRowChangeEvent(PRODUCTRow row, global::System.Data.DataRowAction action) {
+            public EATFAST_PRODUCTRowChangeEvent(EATFAST_PRODUCTRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PRODUCTRow Row {
+            public EATFAST_PRODUCTRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class EATFAST_RESTAURANTRowChangeEvent : global::System.EventArgs {
+            
+            private EATFAST_RESTAURANTRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_RESTAURANTRowChangeEvent(EATFAST_RESTAURANTRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_RESTAURANTRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2537,7 +3019,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class CONTIENTTableAdapter : global::System.ComponentModel.Component {
+    public partial class EATFAST_CONTAINSTableAdapter : global::System.ComponentModel.Component {
         
         private global::Oracle.ManagedDataAccess.Client.OracleDataAdapter _adapter;
         
@@ -2551,7 +3033,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public CONTIENTTableAdapter() {
+        public EATFAST_CONTAINSTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -2648,199 +3130,199 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
             this._adapter = new global::Oracle.ManagedDataAccess.Client.OracleDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "CONTIENT";
-            tableMapping.ColumnMappings.Add("ORDID", "ORDID");
-            tableMapping.ColumnMappings.Add("PROID", "PROID");
-            tableMapping.ColumnMappings.Add("PRIX", "PRIX");
-            tableMapping.ColumnMappings.Add("QUANTITE", "QUANTITE");
+            tableMapping.DataSetTable = "EATFAST_CONTAINS";
+            tableMapping.ColumnMappings.Add("ORD_ID", "ORD_ID");
+            tableMapping.ColumnMappings.Add("PRO_ID", "PRO_ID");
+            tableMapping.ColumnMappings.Add("PRICE", "PRICE");
+            tableMapping.ColumnMappings.Add("QUANTITY", "QUANTITY");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""EATFAST_DATA"".""CONTIENT"" WHERE ((""ORDID"" = :Original_ORDID) AND (""PROID"" = :Original_PROID) AND ((:IsNull_PRIX = 1 AND ""PRIX"" IS NULL) OR (""PRIX"" = :Original_PRIX)) AND ((:IsNull_QUANTITE = 1 AND ""QUANTITE"" IS NULL) OR (""QUANTITE"" = :Original_QUANTITE)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""EATFAST_DATA"".""EATFAST_CONTAINS"" WHERE ((""ORD_ID"" = :Original_ORD_ID) AND (""PRO_ID"" = :Original_PRO_ID) AND ((:IsNull_PRICE = 1 AND ""PRICE"" IS NULL) OR (""PRICE"" = :Original_PRICE)) AND ((:IsNull_QUANTITY = 1 AND ""QUANTITY"" IS NULL) OR (""QUANTITY"" = :Original_QUANTITY)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORDID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "ORDID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PROID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PROID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PRIX";
+            param.ParameterName = "Original_ORD_ID";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "PRIX";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PRIX";
-            param.DbType = global::System.Data.DbType.Double;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Double;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PRIX";
+            param.SourceColumn = "ORD_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_QUANTITE";
+            param.ParameterName = "Original_PRO_ID";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "QUANTITE";
+            param.SourceColumn = "PRO_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PRICE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRICE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_QUANTITE";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.ParameterName = "Original_PRICE";
+            param.DbType = global::System.Data.DbType.Single;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "QUANTITE";
+            param.SourceColumn = "PRICE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_QUANTITY";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "QUANTITY";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_QUANTITY";
+            param.DbType = global::System.Data.DbType.Single;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "QUANTITY";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"EATFAST_DATA\".\"CONTIENT\" (\"ORDID\", \"PROID\", \"PRIX\", \"QUANTITE\") VALU" +
-                "ES (:ORDID, :PROID, :PRIX, :QUANTITE)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"EATFAST_DATA\".\"EATFAST_CONTAINS\" (\"ORD_ID\", \"PRO_ID\", \"PRICE\", \"QUAN" +
+                "TITY\") VALUES (:ORD_ID, :PRO_ID, :PRICE, :QUANTITY)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORDID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.ParameterName = "ORD_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "ORDID";
+            param.SourceColumn = "ORD_ID";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PROID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.ParameterName = "PRO_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "PROID";
+            param.SourceColumn = "PRO_ID";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PRIX";
-            param.DbType = global::System.Data.DbType.Double;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Double;
+            param.ParameterName = "PRICE";
+            param.DbType = global::System.Data.DbType.Single;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "PRIX";
+            param.SourceColumn = "PRICE";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "QUANTITE";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.ParameterName = "QUANTITY";
+            param.DbType = global::System.Data.DbType.Single;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "QUANTITE";
+            param.SourceColumn = "QUANTITY";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""EATFAST_DATA"".""CONTIENT"" SET ""ORDID"" = :ORDID, ""PROID"" = :PROID, ""PRIX"" = :PRIX, ""QUANTITE"" = :QUANTITE WHERE ((""ORDID"" = :Original_ORDID) AND (""PROID"" = :Original_PROID) AND ((:IsNull_PRIX = 1 AND ""PRIX"" IS NULL) OR (""PRIX"" = :Original_PRIX)) AND ((:IsNull_QUANTITE = 1 AND ""QUANTITE"" IS NULL) OR (""QUANTITE"" = :Original_QUANTITE)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""EATFAST_DATA"".""EATFAST_CONTAINS"" SET ""ORD_ID"" = :ORD_ID, ""PRO_ID"" = :PRO_ID, ""PRICE"" = :PRICE, ""QUANTITY"" = :QUANTITY WHERE ((""ORD_ID"" = :Original_ORD_ID) AND (""PRO_ID"" = :Original_PRO_ID) AND ((:IsNull_PRICE = 1 AND ""PRICE"" IS NULL) OR (""PRICE"" = :Original_PRICE)) AND ((:IsNull_QUANTITY = 1 AND ""QUANTITY"" IS NULL) OR (""QUANTITY"" = :Original_QUANTITY)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORDID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "ORDID";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PROID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PROID";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PRIX";
-            param.DbType = global::System.Data.DbType.Double;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Double;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PRIX";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "QUANTITE";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "QUANTITE";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORDID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "ORDID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PROID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PROID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PRIX";
+            param.ParameterName = "ORD_ID";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "PRIX";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
+            param.SourceColumn = "ORD_ID";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PRIX";
-            param.DbType = global::System.Data.DbType.Double;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Double;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PRIX";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_QUANTITE";
+            param.ParameterName = "PRO_ID";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "QUANTITE";
+            param.SourceColumn = "PRO_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PRICE";
+            param.DbType = global::System.Data.DbType.Single;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRICE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "QUANTITY";
+            param.DbType = global::System.Data.DbType.Single;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "QUANTITY";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_ORD_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "ORD_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PRO_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PRICE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRICE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_QUANTITE";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.ParameterName = "Original_PRICE";
+            param.DbType = global::System.Data.DbType.Single;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "QUANTITE";
+            param.SourceColumn = "PRICE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_QUANTITY";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "QUANTITY";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_QUANTITY";
+            param.DbType = global::System.Data.DbType.Single;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "QUANTITY";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -2858,7 +3340,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
             this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ORDID, PROID, PRIX, QUANTITE FROM EATFAST_DATA.CONTIENT";
+            this._commandCollection[0].CommandText = "SELECT ORD_ID, PRO_ID, PRICE, QUANTITY FROM EATFAST_DATA.EATFAST_CONTAINS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2866,7 +3348,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetEatFast.CONTIENTDataTable dataTable) {
+        public virtual int Fill(DataSetEatFast.EATFAST_CONTAINSDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2879,9 +3361,9 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetEatFast.CONTIENTDataTable GetData() {
+        public virtual DataSetEatFast.EATFAST_CONTAINSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSetEatFast.CONTIENTDataTable dataTable = new DataSetEatFast.CONTIENTDataTable();
+            DataSetEatFast.EATFAST_CONTAINSDataTable dataTable = new DataSetEatFast.EATFAST_CONTAINSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2889,7 +3371,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetEatFast.CONTIENTDataTable dataTable) {
+        public virtual int Update(DataSetEatFast.EATFAST_CONTAINSDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -2897,7 +3379,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DataSetEatFast dataSet) {
-            return this.Adapter.Update(dataSet, "CONTIENT");
+            return this.Adapter.Update(dataSet, "EATFAST_CONTAINS");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2919,20 +3401,20 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(short Original_ORDID, short Original_PROID, global::System.Nullable<double> Original_PRIX, global::System.Nullable<short> Original_QUANTITE) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((short)(Original_ORDID));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((short)(Original_PROID));
-            if ((Original_PRIX.HasValue == true)) {
+        public virtual int Delete(int Original_ORD_ID, int Original_PRO_ID, global::System.Nullable<float> Original_PRICE, global::System.Nullable<float> Original_QUANTITY) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ORD_ID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_PRO_ID));
+            if ((Original_PRICE.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((double)(Original_PRIX.Value));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((float)(Original_PRICE.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Original_QUANTITE.HasValue == true)) {
+            if ((Original_QUANTITY.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((short)(Original_QUANTITE.Value));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((float)(Original_QUANTITY.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
@@ -2958,17 +3440,17 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(short ORDID, short PROID, global::System.Nullable<double> PRIX, global::System.Nullable<short> QUANTITE) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((short)(ORDID));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((short)(PROID));
-            if ((PRIX.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((double)(PRIX.Value));
+        public virtual int Insert(int ORD_ID, int PRO_ID, global::System.Nullable<float> PRICE, global::System.Nullable<float> QUANTITY) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ORD_ID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(PRO_ID));
+            if ((PRICE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((float)(PRICE.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((QUANTITE.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((short)(QUANTITE.Value));
+            if ((QUANTITY.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((float)(QUANTITY.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
@@ -2993,34 +3475,34 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(short ORDID, short PROID, global::System.Nullable<double> PRIX, global::System.Nullable<short> QUANTITE, short Original_ORDID, short Original_PROID, global::System.Nullable<double> Original_PRIX, global::System.Nullable<short> Original_QUANTITE) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((short)(ORDID));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((short)(PROID));
-            if ((PRIX.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((double)(PRIX.Value));
+        public virtual int Update(int ORD_ID, int PRO_ID, global::System.Nullable<float> PRICE, global::System.Nullable<float> QUANTITY, int Original_ORD_ID, int Original_PRO_ID, global::System.Nullable<float> Original_PRICE, global::System.Nullable<float> Original_QUANTITY) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ORD_ID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(PRO_ID));
+            if ((PRICE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((float)(PRICE.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((QUANTITE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((short)(QUANTITE.Value));
+            if ((QUANTITY.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((float)(QUANTITY.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((short)(Original_ORDID));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((short)(Original_PROID));
-            if ((Original_PRIX.HasValue == true)) {
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ORD_ID));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_PRO_ID));
+            if ((Original_PRICE.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((double)(Original_PRIX.Value));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((float)(Original_PRICE.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Original_QUANTITE.HasValue == true)) {
+            if ((Original_QUANTITY.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((short)(Original_QUANTITE.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((float)(Original_QUANTITY.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
@@ -3046,8 +3528,8 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<double> PRIX, global::System.Nullable<short> QUANTITE, short Original_ORDID, short Original_PROID, global::System.Nullable<double> Original_PRIX, global::System.Nullable<short> Original_QUANTITE) {
-            return this.Update(Original_ORDID, Original_PROID, PRIX, QUANTITE, Original_ORDID, Original_PROID, Original_PRIX, Original_QUANTITE);
+        public virtual int Update(global::System.Nullable<float> PRICE, global::System.Nullable<float> QUANTITY, int Original_ORD_ID, int Original_PRO_ID, global::System.Nullable<float> Original_PRICE, global::System.Nullable<float> Original_QUANTITY) {
+            return this.Update(Original_ORD_ID, Original_PRO_ID, PRICE, QUANTITY, Original_ORD_ID, Original_PRO_ID, Original_PRICE, Original_QUANTITY);
         }
     }
     
@@ -3060,7 +3542,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ORDER1TableAdapter : global::System.ComponentModel.Component {
+    public partial class EATFAST_ORDERTableAdapter : global::System.ComponentModel.Component {
         
         private global::Oracle.ManagedDataAccess.Client.OracleDataAdapter _adapter;
         
@@ -3074,7 +3556,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public ORDER1TableAdapter() {
+        public EATFAST_ORDERTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -3171,353 +3653,354 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
             this._adapter = new global::Oracle.ManagedDataAccess.Client.OracleDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "ORDER1";
-            tableMapping.ColumnMappings.Add("ORDID", "ORDID");
-            tableMapping.ColumnMappings.Add("PERID", "PERID");
-            tableMapping.ColumnMappings.Add("ORDDATE", "ORDDATE");
-            tableMapping.ColumnMappings.Add("ORDSTATUS", "ORDSTATUS");
-            tableMapping.ColumnMappings.Add("ORDDELIVERYADDRESS", "ORDDELIVERYADDRESS");
-            tableMapping.ColumnMappings.Add("ORDTOTAL", "ORDTOTAL");
-            tableMapping.ColumnMappings.Add("ORDPAYMENTSTATUS", "ORDPAYMENTSTATUS");
+            tableMapping.DataSetTable = "EATFAST_ORDER";
+            tableMapping.ColumnMappings.Add("ORD_ID", "ORD_ID");
+            tableMapping.ColumnMappings.Add("PER_ID", "PER_ID");
+            tableMapping.ColumnMappings.Add("ORD_DATE", "ORD_DATE");
+            tableMapping.ColumnMappings.Add("ORD_STATUS", "ORD_STATUS");
+            tableMapping.ColumnMappings.Add("ORD_DELIVERYADDRESS", "ORD_DELIVERYADDRESS");
+            tableMapping.ColumnMappings.Add("ORD_TOTAL", "ORD_TOTAL");
+            tableMapping.ColumnMappings.Add("ORD_PAYMENTSTATUS", "ORD_PAYMENTSTATUS");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""EATFAST_DATA"".""ORDER1"" WHERE ((""ORDID"" = :Original_ORDID) AND (""PERID"" = :Original_PERID) AND ((:IsNull_ORDDATE = 1 AND ""ORDDATE"" IS NULL) OR (""ORDDATE"" = :Original_ORDDATE)) AND ((:IsNull_ORDSTATUS = 1 AND ""ORDSTATUS"" IS NULL) OR (""ORDSTATUS"" = :Original_ORDSTATUS)) AND ((:IsNull_ORDDELIVERYADDRESS = 1 AND ""ORDDELIVERYADDRESS"" IS NULL) OR (""ORDDELIVERYADDRESS"" = :Original_ORDDELIVERYADDRESS)) AND ((:IsNull_ORDTOTAL = 1 AND ""ORDTOTAL"" IS NULL) OR (""ORDTOTAL"" = :Original_ORDTOTAL)) AND ((:IsNull_ORDPAYMENTSTATUS = 1 AND ""ORDPAYMENTSTATUS"" IS NULL) OR (""ORDPAYMENTSTATUS"" = :Original_ORDPAYMENTSTATUS)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""EATFAST_DATA"".""EATFAST_ORDER"" WHERE ((""ORD_ID"" = :Original_ORD_ID) AND (""PER_ID"" = :Original_PER_ID) AND ((:IsNull_ORD_DATE = 1 AND ""ORD_DATE"" IS NULL) OR (""ORD_DATE"" = :Original_ORD_DATE)) AND ((:IsNull_ORD_STATUS = 1 AND ""ORD_STATUS"" IS NULL) OR (""ORD_STATUS"" = :Original_ORD_STATUS)) AND ((:IsNull_ORD_DELIVERYADDRESS = 1 AND ""ORD_DELIVERYADDRESS"" IS NULL) OR (""ORD_DELIVERYADDRESS"" = :Original_ORD_DELIVERYADDRESS)) AND ((:IsNull_ORD_TOTAL = 1 AND ""ORD_TOTAL"" IS NULL) OR (""ORD_TOTAL"" = :Original_ORD_TOTAL)) AND ((:IsNull_ORD_PAYMENTSTATUS = 1 AND ""ORD_PAYMENTSTATUS"" IS NULL) OR (""ORD_PAYMENTSTATUS"" = :Original_ORD_PAYMENTSTATUS)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORDID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.ParameterName = "Original_ORD_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "ORDID";
+            param.SourceColumn = "ORD_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PERID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.ParameterName = "Original_PER_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "PERID";
+            param.SourceColumn = "PER_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORDDATE";
+            param.ParameterName = "IsNull_ORD_DATE";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 7;
             param.IsNullable = true;
-            param.SourceColumn = "ORDDATE";
+            param.SourceColumn = "ORD_DATE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORDDATE";
+            param.ParameterName = "Original_ORD_DATE";
             param.DbType = global::System.Data.DbType.Date;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
             param.Size = 7;
             param.IsNullable = true;
-            param.SourceColumn = "ORDDATE";
+            param.SourceColumn = "ORD_DATE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORDSTATUS";
+            param.ParameterName = "IsNull_ORD_STATUS";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "ORDSTATUS";
+            param.SourceColumn = "ORD_STATUS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORDSTATUS";
+            param.ParameterName = "Original_ORD_STATUS";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "ORDSTATUS";
+            param.SourceColumn = "ORD_STATUS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORDDELIVERYADDRESS";
+            param.ParameterName = "IsNull_ORD_DELIVERYADDRESS";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 250;
+            param.Size = 128;
             param.IsNullable = true;
-            param.SourceColumn = "ORDDELIVERYADDRESS";
+            param.SourceColumn = "ORD_DELIVERYADDRESS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORDDELIVERYADDRESS";
+            param.ParameterName = "Original_ORD_DELIVERYADDRESS";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 250;
+            param.Size = 128;
             param.IsNullable = true;
-            param.SourceColumn = "ORDDELIVERYADDRESS";
+            param.SourceColumn = "ORD_DELIVERYADDRESS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORDTOTAL";
+            param.ParameterName = "IsNull_ORD_TOTAL";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "ORDTOTAL";
+            param.SourceColumn = "ORD_TOTAL";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORDTOTAL";
-            param.DbType = global::System.Data.DbType.Double;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Double;
+            param.ParameterName = "Original_ORD_TOTAL";
+            param.DbType = global::System.Data.DbType.Single;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "ORDTOTAL";
+            param.SourceColumn = "ORD_TOTAL";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORDPAYMENTSTATUS";
+            param.ParameterName = "IsNull_ORD_PAYMENTSTATUS";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "ORDPAYMENTSTATUS";
+            param.SourceColumn = "ORD_PAYMENTSTATUS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORDPAYMENTSTATUS";
+            param.ParameterName = "Original_ORD_PAYMENTSTATUS";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "ORDPAYMENTSTATUS";
+            param.SourceColumn = "ORD_PAYMENTSTATUS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"EATFAST_DATA\".\"ORDER1\" (\"ORDID\", \"PERID\", \"ORDDATE\", \"ORDSTATUS\", \"O" +
-                "RDDELIVERYADDRESS\", \"ORDTOTAL\", \"ORDPAYMENTSTATUS\") VALUES (:ORDID, :PERID, :ORD" +
-                "DATE, :ORDSTATUS, :ORDDELIVERYADDRESS, :ORDTOTAL, :ORDPAYMENTSTATUS)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"EATFAST_DATA\".\"EATFAST_ORDER\" (\"ORD_ID\", \"PER_ID\", \"ORD_DATE\", \"ORD_" +
+                "STATUS\", \"ORD_DELIVERYADDRESS\", \"ORD_TOTAL\", \"ORD_PAYMENTSTATUS\") VALUES (:ORD_I" +
+                "D, :PER_ID, :ORD_DATE, :ORD_STATUS, :ORD_DELIVERYADDRESS, :ORD_TOTAL, :ORD_PAYME" +
+                "NTSTATUS)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORDID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.ParameterName = "ORD_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "ORDID";
+            param.SourceColumn = "ORD_ID";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PERID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.ParameterName = "PER_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "PERID";
+            param.SourceColumn = "PER_ID";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORDDATE";
+            param.ParameterName = "ORD_DATE";
             param.DbType = global::System.Data.DbType.Date;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
             param.Size = 7;
             param.IsNullable = true;
-            param.SourceColumn = "ORDDATE";
+            param.SourceColumn = "ORD_DATE";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORDSTATUS";
+            param.ParameterName = "ORD_STATUS";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "ORDSTATUS";
+            param.SourceColumn = "ORD_STATUS";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORDDELIVERYADDRESS";
+            param.ParameterName = "ORD_DELIVERYADDRESS";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 250;
+            param.Size = 128;
             param.IsNullable = true;
-            param.SourceColumn = "ORDDELIVERYADDRESS";
+            param.SourceColumn = "ORD_DELIVERYADDRESS";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORDTOTAL";
-            param.DbType = global::System.Data.DbType.Double;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Double;
+            param.ParameterName = "ORD_TOTAL";
+            param.DbType = global::System.Data.DbType.Single;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "ORDTOTAL";
+            param.SourceColumn = "ORD_TOTAL";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORDPAYMENTSTATUS";
+            param.ParameterName = "ORD_PAYMENTSTATUS";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "ORDPAYMENTSTATUS";
+            param.SourceColumn = "ORD_PAYMENTSTATUS";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""EATFAST_DATA"".""ORDER1"" SET ""ORDID"" = :ORDID, ""PERID"" = :PERID, ""ORDDATE"" = :ORDDATE, ""ORDSTATUS"" = :ORDSTATUS, ""ORDDELIVERYADDRESS"" = :ORDDELIVERYADDRESS, ""ORDTOTAL"" = :ORDTOTAL, ""ORDPAYMENTSTATUS"" = :ORDPAYMENTSTATUS WHERE ((""ORDID"" = :Original_ORDID) AND (""PERID"" = :Original_PERID) AND ((:IsNull_ORDDATE = 1 AND ""ORDDATE"" IS NULL) OR (""ORDDATE"" = :Original_ORDDATE)) AND ((:IsNull_ORDSTATUS = 1 AND ""ORDSTATUS"" IS NULL) OR (""ORDSTATUS"" = :Original_ORDSTATUS)) AND ((:IsNull_ORDDELIVERYADDRESS = 1 AND ""ORDDELIVERYADDRESS"" IS NULL) OR (""ORDDELIVERYADDRESS"" = :Original_ORDDELIVERYADDRESS)) AND ((:IsNull_ORDTOTAL = 1 AND ""ORDTOTAL"" IS NULL) OR (""ORDTOTAL"" = :Original_ORDTOTAL)) AND ((:IsNull_ORDPAYMENTSTATUS = 1 AND ""ORDPAYMENTSTATUS"" IS NULL) OR (""ORDPAYMENTSTATUS"" = :Original_ORDPAYMENTSTATUS)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""EATFAST_DATA"".""EATFAST_ORDER"" SET ""ORD_ID"" = :ORD_ID, ""PER_ID"" = :PER_ID, ""ORD_DATE"" = :ORD_DATE, ""ORD_STATUS"" = :ORD_STATUS, ""ORD_DELIVERYADDRESS"" = :ORD_DELIVERYADDRESS, ""ORD_TOTAL"" = :ORD_TOTAL, ""ORD_PAYMENTSTATUS"" = :ORD_PAYMENTSTATUS WHERE ((""ORD_ID"" = :Original_ORD_ID) AND (""PER_ID"" = :Original_PER_ID) AND ((:IsNull_ORD_DATE = 1 AND ""ORD_DATE"" IS NULL) OR (""ORD_DATE"" = :Original_ORD_DATE)) AND ((:IsNull_ORD_STATUS = 1 AND ""ORD_STATUS"" IS NULL) OR (""ORD_STATUS"" = :Original_ORD_STATUS)) AND ((:IsNull_ORD_DELIVERYADDRESS = 1 AND ""ORD_DELIVERYADDRESS"" IS NULL) OR (""ORD_DELIVERYADDRESS"" = :Original_ORD_DELIVERYADDRESS)) AND ((:IsNull_ORD_TOTAL = 1 AND ""ORD_TOTAL"" IS NULL) OR (""ORD_TOTAL"" = :Original_ORD_TOTAL)) AND ((:IsNull_ORD_PAYMENTSTATUS = 1 AND ""ORD_PAYMENTSTATUS"" IS NULL) OR (""ORD_PAYMENTSTATUS"" = :Original_ORD_PAYMENTSTATUS)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORDID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.ParameterName = "ORD_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "ORDID";
+            param.SourceColumn = "ORD_ID";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PERID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.ParameterName = "PER_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "PERID";
+            param.SourceColumn = "PER_ID";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORDDATE";
+            param.ParameterName = "ORD_DATE";
             param.DbType = global::System.Data.DbType.Date;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
             param.Size = 7;
             param.IsNullable = true;
-            param.SourceColumn = "ORDDATE";
+            param.SourceColumn = "ORD_DATE";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORDSTATUS";
+            param.ParameterName = "ORD_STATUS";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "ORDSTATUS";
+            param.SourceColumn = "ORD_STATUS";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORDDELIVERYADDRESS";
+            param.ParameterName = "ORD_DELIVERYADDRESS";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 250;
+            param.Size = 128;
             param.IsNullable = true;
-            param.SourceColumn = "ORDDELIVERYADDRESS";
+            param.SourceColumn = "ORD_DELIVERYADDRESS";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORDTOTAL";
-            param.DbType = global::System.Data.DbType.Double;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Double;
+            param.ParameterName = "ORD_TOTAL";
+            param.DbType = global::System.Data.DbType.Single;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "ORDTOTAL";
+            param.SourceColumn = "ORD_TOTAL";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORDPAYMENTSTATUS";
+            param.ParameterName = "ORD_PAYMENTSTATUS";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "ORDPAYMENTSTATUS";
+            param.SourceColumn = "ORD_PAYMENTSTATUS";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORDID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.ParameterName = "Original_ORD_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "ORDID";
+            param.SourceColumn = "ORD_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PERID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.ParameterName = "Original_PER_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "PERID";
+            param.SourceColumn = "PER_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORDDATE";
+            param.ParameterName = "IsNull_ORD_DATE";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 7;
             param.IsNullable = true;
-            param.SourceColumn = "ORDDATE";
+            param.SourceColumn = "ORD_DATE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORDDATE";
+            param.ParameterName = "Original_ORD_DATE";
             param.DbType = global::System.Data.DbType.Date;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
             param.Size = 7;
             param.IsNullable = true;
-            param.SourceColumn = "ORDDATE";
+            param.SourceColumn = "ORD_DATE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORDSTATUS";
+            param.ParameterName = "IsNull_ORD_STATUS";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "ORDSTATUS";
+            param.SourceColumn = "ORD_STATUS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORDSTATUS";
+            param.ParameterName = "Original_ORD_STATUS";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "ORDSTATUS";
+            param.SourceColumn = "ORD_STATUS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORDDELIVERYADDRESS";
+            param.ParameterName = "IsNull_ORD_DELIVERYADDRESS";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 250;
+            param.Size = 128;
             param.IsNullable = true;
-            param.SourceColumn = "ORDDELIVERYADDRESS";
+            param.SourceColumn = "ORD_DELIVERYADDRESS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORDDELIVERYADDRESS";
+            param.ParameterName = "Original_ORD_DELIVERYADDRESS";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 250;
+            param.Size = 128;
             param.IsNullable = true;
-            param.SourceColumn = "ORDDELIVERYADDRESS";
+            param.SourceColumn = "ORD_DELIVERYADDRESS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORDTOTAL";
+            param.ParameterName = "IsNull_ORD_TOTAL";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "ORDTOTAL";
+            param.SourceColumn = "ORD_TOTAL";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORDTOTAL";
-            param.DbType = global::System.Data.DbType.Double;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Double;
+            param.ParameterName = "Original_ORD_TOTAL";
+            param.DbType = global::System.Data.DbType.Single;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "ORDTOTAL";
+            param.SourceColumn = "ORD_TOTAL";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORDPAYMENTSTATUS";
+            param.ParameterName = "IsNull_ORD_PAYMENTSTATUS";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "ORDPAYMENTSTATUS";
+            param.SourceColumn = "ORD_PAYMENTSTATUS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORDPAYMENTSTATUS";
+            param.ParameterName = "Original_ORD_PAYMENTSTATUS";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "ORDPAYMENTSTATUS";
+            param.SourceColumn = "ORD_PAYMENTSTATUS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -3535,8 +4018,8 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
             this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ORDID, PERID, ORDDATE, ORDSTATUS, ORDDELIVERYADDRESS, ORDTOTAL, ORDPAYMENT" +
-                "STATUS FROM EATFAST_DATA.ORDER1";
+            this._commandCollection[0].CommandText = "SELECT ORD_ID, PER_ID, ORD_DATE, ORD_STATUS, ORD_DELIVERYADDRESS, ORD_TOTAL, ORD_" +
+                "PAYMENTSTATUS FROM EATFAST_DATA.EATFAST_ORDER";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3544,7 +4027,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetEatFast.ORDER1DataTable dataTable) {
+        public virtual int Fill(DataSetEatFast.EATFAST_ORDERDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3557,9 +4040,9 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetEatFast.ORDER1DataTable GetData() {
+        public virtual DataSetEatFast.EATFAST_ORDERDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSetEatFast.ORDER1DataTable dataTable = new DataSetEatFast.ORDER1DataTable();
+            DataSetEatFast.EATFAST_ORDERDataTable dataTable = new DataSetEatFast.EATFAST_ORDERDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3567,7 +4050,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetEatFast.ORDER1DataTable dataTable) {
+        public virtual int Update(DataSetEatFast.EATFAST_ORDERDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -3575,7 +4058,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DataSetEatFast dataSet) {
-            return this.Adapter.Update(dataSet, "ORDER1");
+            return this.Adapter.Update(dataSet, "EATFAST_ORDER");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3597,48 +4080,48 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(short Original_ORDID, short Original_PERID, global::System.Nullable<global::System.DateTime> Original_ORDDATE, string Original_ORDSTATUS, string Original_ORDDELIVERYADDRESS, global::System.Nullable<double> Original_ORDTOTAL, string Original_ORDPAYMENTSTATUS) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((short)(Original_ORDID));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((short)(Original_PERID));
-            if ((Original_ORDDATE.HasValue == true)) {
+        public virtual int Delete(int Original_ORD_ID, int Original_PER_ID, global::System.Nullable<global::System.DateTime> Original_ORD_DATE, string Original_ORD_STATUS, string Original_ORD_DELIVERYADDRESS, global::System.Nullable<float> Original_ORD_TOTAL, string Original_ORD_PAYMENTSTATUS) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ORD_ID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_PER_ID));
+            if ((Original_ORD_DATE.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_ORDDATE.Value));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_ORD_DATE.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Original_ORDSTATUS == null)) {
+            if ((Original_ORD_STATUS == null)) {
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_ORDSTATUS));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_ORD_STATUS));
             }
-            if ((Original_ORDDELIVERYADDRESS == null)) {
+            if ((Original_ORD_DELIVERYADDRESS == null)) {
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_ORDDELIVERYADDRESS));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_ORD_DELIVERYADDRESS));
             }
-            if ((Original_ORDTOTAL.HasValue == true)) {
+            if ((Original_ORD_TOTAL.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((double)(Original_ORDTOTAL.Value));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((float)(Original_ORD_TOTAL.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Original_ORDPAYMENTSTATUS == null)) {
+            if ((Original_ORD_PAYMENTSTATUS == null)) {
                 this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_ORDPAYMENTSTATUS));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_ORD_PAYMENTSTATUS));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3660,38 +4143,38 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(short ORDID, short PERID, global::System.Nullable<global::System.DateTime> ORDDATE, string ORDSTATUS, string ORDDELIVERYADDRESS, global::System.Nullable<double> ORDTOTAL, string ORDPAYMENTSTATUS) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((short)(ORDID));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((short)(PERID));
-            if ((ORDDATE.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(ORDDATE.Value));
+        public virtual int Insert(int ORD_ID, int PER_ID, global::System.Nullable<global::System.DateTime> ORD_DATE, string ORD_STATUS, string ORD_DELIVERYADDRESS, global::System.Nullable<float> ORD_TOTAL, string ORD_PAYMENTSTATUS) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ORD_ID));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(PER_ID));
+            if ((ORD_DATE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(ORD_DATE.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((ORDSTATUS == null)) {
+            if ((ORD_STATUS == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ORDSTATUS));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ORD_STATUS));
             }
-            if ((ORDDELIVERYADDRESS == null)) {
+            if ((ORD_DELIVERYADDRESS == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(ORDDELIVERYADDRESS));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(ORD_DELIVERYADDRESS));
             }
-            if ((ORDTOTAL.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((double)(ORDTOTAL.Value));
+            if ((ORD_TOTAL.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((float)(ORD_TOTAL.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((ORDPAYMENTSTATUS == null)) {
+            if ((ORD_PAYMENTSTATUS == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(ORDPAYMENTSTATUS));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(ORD_PAYMENTSTATUS));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3713,80 +4196,80 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(short ORDID, short PERID, global::System.Nullable<global::System.DateTime> ORDDATE, string ORDSTATUS, string ORDDELIVERYADDRESS, global::System.Nullable<double> ORDTOTAL, string ORDPAYMENTSTATUS, short Original_ORDID, short Original_PERID, global::System.Nullable<global::System.DateTime> Original_ORDDATE, string Original_ORDSTATUS, string Original_ORDDELIVERYADDRESS, global::System.Nullable<double> Original_ORDTOTAL, string Original_ORDPAYMENTSTATUS) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((short)(ORDID));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((short)(PERID));
-            if ((ORDDATE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(ORDDATE.Value));
+        public virtual int Update(int ORD_ID, int PER_ID, global::System.Nullable<global::System.DateTime> ORD_DATE, string ORD_STATUS, string ORD_DELIVERYADDRESS, global::System.Nullable<float> ORD_TOTAL, string ORD_PAYMENTSTATUS, int Original_ORD_ID, int Original_PER_ID, global::System.Nullable<global::System.DateTime> Original_ORD_DATE, string Original_ORD_STATUS, string Original_ORD_DELIVERYADDRESS, global::System.Nullable<float> Original_ORD_TOTAL, string Original_ORD_PAYMENTSTATUS) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ORD_ID));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(PER_ID));
+            if ((ORD_DATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(ORD_DATE.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((ORDSTATUS == null)) {
+            if ((ORD_STATUS == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(ORDSTATUS));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(ORD_STATUS));
             }
-            if ((ORDDELIVERYADDRESS == null)) {
+            if ((ORD_DELIVERYADDRESS == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(ORDDELIVERYADDRESS));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(ORD_DELIVERYADDRESS));
             }
-            if ((ORDTOTAL.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((double)(ORDTOTAL.Value));
+            if ((ORD_TOTAL.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((float)(ORD_TOTAL.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((ORDPAYMENTSTATUS == null)) {
+            if ((ORD_PAYMENTSTATUS == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(ORDPAYMENTSTATUS));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(ORD_PAYMENTSTATUS));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((short)(Original_ORDID));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((short)(Original_PERID));
-            if ((Original_ORDDATE.HasValue == true)) {
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ORD_ID));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_PER_ID));
+            if ((Original_ORD_DATE.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_ORDDATE.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_ORD_DATE.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_ORDSTATUS == null)) {
+            if ((Original_ORD_STATUS == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_ORDSTATUS));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_ORD_STATUS));
             }
-            if ((Original_ORDDELIVERYADDRESS == null)) {
+            if ((Original_ORD_DELIVERYADDRESS == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_ORDDELIVERYADDRESS));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_ORD_DELIVERYADDRESS));
             }
-            if ((Original_ORDTOTAL.HasValue == true)) {
+            if ((Original_ORD_TOTAL.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((double)(Original_ORDTOTAL.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((float)(Original_ORD_TOTAL.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Original_ORDPAYMENTSTATUS == null)) {
+            if ((Original_ORD_PAYMENTSTATUS == null)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_ORDPAYMENTSTATUS));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_ORD_PAYMENTSTATUS));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3808,8 +4291,8 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(short PERID, global::System.Nullable<global::System.DateTime> ORDDATE, string ORDSTATUS, string ORDDELIVERYADDRESS, global::System.Nullable<double> ORDTOTAL, string ORDPAYMENTSTATUS, short Original_ORDID, short Original_PERID, global::System.Nullable<global::System.DateTime> Original_ORDDATE, string Original_ORDSTATUS, string Original_ORDDELIVERYADDRESS, global::System.Nullable<double> Original_ORDTOTAL, string Original_ORDPAYMENTSTATUS) {
-            return this.Update(Original_ORDID, PERID, ORDDATE, ORDSTATUS, ORDDELIVERYADDRESS, ORDTOTAL, ORDPAYMENTSTATUS, Original_ORDID, Original_PERID, Original_ORDDATE, Original_ORDSTATUS, Original_ORDDELIVERYADDRESS, Original_ORDTOTAL, Original_ORDPAYMENTSTATUS);
+        public virtual int Update(int PER_ID, global::System.Nullable<global::System.DateTime> ORD_DATE, string ORD_STATUS, string ORD_DELIVERYADDRESS, global::System.Nullable<float> ORD_TOTAL, string ORD_PAYMENTSTATUS, int Original_ORD_ID, int Original_PER_ID, global::System.Nullable<global::System.DateTime> Original_ORD_DATE, string Original_ORD_STATUS, string Original_ORD_DELIVERYADDRESS, global::System.Nullable<float> Original_ORD_TOTAL, string Original_ORD_PAYMENTSTATUS) {
+            return this.Update(Original_ORD_ID, PER_ID, ORD_DATE, ORD_STATUS, ORD_DELIVERYADDRESS, ORD_TOTAL, ORD_PAYMENTSTATUS, Original_ORD_ID, Original_PER_ID, Original_ORD_DATE, Original_ORD_STATUS, Original_ORD_DELIVERYADDRESS, Original_ORD_TOTAL, Original_ORD_PAYMENTSTATUS);
         }
     }
     
@@ -3822,7 +4305,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PERSONTableAdapter : global::System.ComponentModel.Component {
+    public partial class EATFAST_PERSONTableAdapter : global::System.ComponentModel.Component {
         
         private global::Oracle.ManagedDataAccess.Client.OracleDataAdapter _adapter;
         
@@ -3836,7 +4319,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public PERSONTableAdapter() {
+        public EATFAST_PERSONTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -3933,310 +4416,310 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
             this._adapter = new global::Oracle.ManagedDataAccess.Client.OracleDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "PERSON";
-            tableMapping.ColumnMappings.Add("PERID", "PERID");
-            tableMapping.ColumnMappings.Add("PERNAME", "PERNAME");
-            tableMapping.ColumnMappings.Add("PEREMAIL", "PEREMAIL");
-            tableMapping.ColumnMappings.Add("PERPASSWORD", "PERPASSWORD");
-            tableMapping.ColumnMappings.Add("PERADDRESS", "PERADDRESS");
-            tableMapping.ColumnMappings.Add("PERACCOUNTTYPE", "PERACCOUNTTYPE");
+            tableMapping.DataSetTable = "EATFAST_PERSON";
+            tableMapping.ColumnMappings.Add("PER_ID", "PER_ID");
+            tableMapping.ColumnMappings.Add("PER_NAME", "PER_NAME");
+            tableMapping.ColumnMappings.Add("PER_EMAIL", "PER_EMAIL");
+            tableMapping.ColumnMappings.Add("PER_PASSWORD", "PER_PASSWORD");
+            tableMapping.ColumnMappings.Add("PER_ADDRESS", "PER_ADDRESS");
+            tableMapping.ColumnMappings.Add("PER_ACCOUNTTYPE", "PER_ACCOUNTTYPE");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""EATFAST_DATA"".""PERSON"" WHERE ((""PERID"" = :Original_PERID) AND ((:IsNull_PERNAME = 1 AND ""PERNAME"" IS NULL) OR (""PERNAME"" = :Original_PERNAME)) AND ((:IsNull_PEREMAIL = 1 AND ""PEREMAIL"" IS NULL) OR (""PEREMAIL"" = :Original_PEREMAIL)) AND ((:IsNull_PERPASSWORD = 1 AND ""PERPASSWORD"" IS NULL) OR (""PERPASSWORD"" = :Original_PERPASSWORD)) AND ((:IsNull_PERADDRESS = 1 AND ""PERADDRESS"" IS NULL) OR (""PERADDRESS"" = :Original_PERADDRESS)) AND ((:IsNull_PERACCOUNTTYPE = 1 AND ""PERACCOUNTTYPE"" IS NULL) OR (""PERACCOUNTTYPE"" = :Original_PERACCOUNTTYPE)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""EATFAST_DATA"".""EATFAST_PERSON"" WHERE ((""PER_ID"" = :Original_PER_ID) AND ((:IsNull_PER_NAME = 1 AND ""PER_NAME"" IS NULL) OR (""PER_NAME"" = :Original_PER_NAME)) AND ((:IsNull_PER_EMAIL = 1 AND ""PER_EMAIL"" IS NULL) OR (""PER_EMAIL"" = :Original_PER_EMAIL)) AND ((:IsNull_PER_PASSWORD = 1 AND ""PER_PASSWORD"" IS NULL) OR (""PER_PASSWORD"" = :Original_PER_PASSWORD)) AND ((:IsNull_PER_ADDRESS = 1 AND ""PER_ADDRESS"" IS NULL) OR (""PER_ADDRESS"" = :Original_PER_ADDRESS)) AND ((:IsNull_PER_ACCOUNTTYPE = 1 AND ""PER_ACCOUNTTYPE"" IS NULL) OR (""PER_ACCOUNTTYPE"" = :Original_PER_ACCOUNTTYPE)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PERID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.ParameterName = "Original_PER_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "PERID";
+            param.SourceColumn = "PER_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PERNAME";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "PERNAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PERNAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "PERNAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PEREMAIL";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 128;
-            param.IsNullable = true;
-            param.SourceColumn = "PEREMAIL";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PEREMAIL";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 128;
-            param.IsNullable = true;
-            param.SourceColumn = "PEREMAIL";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PERPASSWORD";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "PERPASSWORD";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PERPASSWORD";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "PERPASSWORD";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PERADDRESS";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 250;
-            param.IsNullable = true;
-            param.SourceColumn = "PERADDRESS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PERADDRESS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 250;
-            param.IsNullable = true;
-            param.SourceColumn = "PERADDRESS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PERACCOUNTTYPE";
+            param.ParameterName = "IsNull_PER_NAME";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "PERACCOUNTTYPE";
+            param.SourceColumn = "PER_NAME";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PERACCOUNTTYPE";
+            param.ParameterName = "Original_PER_NAME";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "PERACCOUNTTYPE";
+            param.SourceColumn = "PER_NAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PER_EMAIL";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_EMAIL";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PER_EMAIL";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_EMAIL";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PER_PASSWORD";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_PASSWORD";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PER_PASSWORD";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_PASSWORD";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PER_ADDRESS";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 250;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_ADDRESS";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PER_ADDRESS";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 250;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_ADDRESS";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PER_ACCOUNTTYPE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_ACCOUNTTYPE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PER_ACCOUNTTYPE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_ACCOUNTTYPE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"EATFAST_DATA\".\"PERSON\" (\"PERID\", \"PERNAME\", \"PEREMAIL\", \"PERPASSWORD" +
-                "\", \"PERADDRESS\", \"PERACCOUNTTYPE\") VALUES (:PERID, :PERNAME, :PEREMAIL, :PERPASS" +
-                "WORD, :PERADDRESS, :PERACCOUNTTYPE)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"EATFAST_DATA\".\"EATFAST_PERSON\" (\"PER_ID\", \"PER_NAME\", \"PER_EMAIL\", \"" +
+                "PER_PASSWORD\", \"PER_ADDRESS\", \"PER_ACCOUNTTYPE\") VALUES (:PER_ID, :PER_NAME, :PE" +
+                "R_EMAIL, :PER_PASSWORD, :PER_ADDRESS, :PER_ACCOUNTTYPE)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PERID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.ParameterName = "PER_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "PERID";
+            param.SourceColumn = "PER_ID";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PERNAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "PERNAME";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PEREMAIL";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 128;
-            param.IsNullable = true;
-            param.SourceColumn = "PEREMAIL";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PERPASSWORD";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "PERPASSWORD";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PERADDRESS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 250;
-            param.IsNullable = true;
-            param.SourceColumn = "PERADDRESS";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PERACCOUNTTYPE";
+            param.ParameterName = "PER_NAME";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "PERACCOUNTTYPE";
+            param.SourceColumn = "PER_NAME";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PER_EMAIL";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_EMAIL";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PER_PASSWORD";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_PASSWORD";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PER_ADDRESS";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 250;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_ADDRESS";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PER_ACCOUNTTYPE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_ACCOUNTTYPE";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""EATFAST_DATA"".""PERSON"" SET ""PERID"" = :PERID, ""PERNAME"" = :PERNAME, ""PEREMAIL"" = :PEREMAIL, ""PERPASSWORD"" = :PERPASSWORD, ""PERADDRESS"" = :PERADDRESS, ""PERACCOUNTTYPE"" = :PERACCOUNTTYPE WHERE ((""PERID"" = :Original_PERID) AND ((:IsNull_PERNAME = 1 AND ""PERNAME"" IS NULL) OR (""PERNAME"" = :Original_PERNAME)) AND ((:IsNull_PEREMAIL = 1 AND ""PEREMAIL"" IS NULL) OR (""PEREMAIL"" = :Original_PEREMAIL)) AND ((:IsNull_PERPASSWORD = 1 AND ""PERPASSWORD"" IS NULL) OR (""PERPASSWORD"" = :Original_PERPASSWORD)) AND ((:IsNull_PERADDRESS = 1 AND ""PERADDRESS"" IS NULL) OR (""PERADDRESS"" = :Original_PERADDRESS)) AND ((:IsNull_PERACCOUNTTYPE = 1 AND ""PERACCOUNTTYPE"" IS NULL) OR (""PERACCOUNTTYPE"" = :Original_PERACCOUNTTYPE)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""EATFAST_DATA"".""EATFAST_PERSON"" SET ""PER_ID"" = :PER_ID, ""PER_NAME"" = :PER_NAME, ""PER_EMAIL"" = :PER_EMAIL, ""PER_PASSWORD"" = :PER_PASSWORD, ""PER_ADDRESS"" = :PER_ADDRESS, ""PER_ACCOUNTTYPE"" = :PER_ACCOUNTTYPE WHERE ((""PER_ID"" = :Original_PER_ID) AND ((:IsNull_PER_NAME = 1 AND ""PER_NAME"" IS NULL) OR (""PER_NAME"" = :Original_PER_NAME)) AND ((:IsNull_PER_EMAIL = 1 AND ""PER_EMAIL"" IS NULL) OR (""PER_EMAIL"" = :Original_PER_EMAIL)) AND ((:IsNull_PER_PASSWORD = 1 AND ""PER_PASSWORD"" IS NULL) OR (""PER_PASSWORD"" = :Original_PER_PASSWORD)) AND ((:IsNull_PER_ADDRESS = 1 AND ""PER_ADDRESS"" IS NULL) OR (""PER_ADDRESS"" = :Original_PER_ADDRESS)) AND ((:IsNull_PER_ACCOUNTTYPE = 1 AND ""PER_ACCOUNTTYPE"" IS NULL) OR (""PER_ACCOUNTTYPE"" = :Original_PER_ACCOUNTTYPE)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PERID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.ParameterName = "PER_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "PERID";
+            param.SourceColumn = "PER_ID";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PERNAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "PERNAME";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PEREMAIL";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 128;
-            param.IsNullable = true;
-            param.SourceColumn = "PEREMAIL";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PERPASSWORD";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "PERPASSWORD";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PERADDRESS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 250;
-            param.IsNullable = true;
-            param.SourceColumn = "PERADDRESS";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PERACCOUNTTYPE";
+            param.ParameterName = "PER_NAME";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "PERACCOUNTTYPE";
+            param.SourceColumn = "PER_NAME";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PERID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.ParameterName = "PER_EMAIL";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_EMAIL";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PER_PASSWORD";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_PASSWORD";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PER_ADDRESS";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 250;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_ADDRESS";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PER_ACCOUNTTYPE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_ACCOUNTTYPE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PER_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "PERID";
+            param.SourceColumn = "PER_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PERNAME";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "PERNAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PERNAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "PERNAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PEREMAIL";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 128;
-            param.IsNullable = true;
-            param.SourceColumn = "PEREMAIL";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PEREMAIL";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 128;
-            param.IsNullable = true;
-            param.SourceColumn = "PEREMAIL";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PERPASSWORD";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "PERPASSWORD";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PERPASSWORD";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "PERPASSWORD";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PERADDRESS";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 250;
-            param.IsNullable = true;
-            param.SourceColumn = "PERADDRESS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PERADDRESS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 250;
-            param.IsNullable = true;
-            param.SourceColumn = "PERADDRESS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PERACCOUNTTYPE";
+            param.ParameterName = "IsNull_PER_NAME";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "PERACCOUNTTYPE";
+            param.SourceColumn = "PER_NAME";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PERACCOUNTTYPE";
+            param.ParameterName = "Original_PER_NAME";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "PERACCOUNTTYPE";
+            param.SourceColumn = "PER_NAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PER_EMAIL";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_EMAIL";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PER_EMAIL";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_EMAIL";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PER_PASSWORD";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_PASSWORD";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PER_PASSWORD";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_PASSWORD";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PER_ADDRESS";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 250;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_ADDRESS";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PER_ADDRESS";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 250;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_ADDRESS";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PER_ACCOUNTTYPE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_ACCOUNTTYPE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PER_ACCOUNTTYPE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_ACCOUNTTYPE";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -4254,8 +4737,8 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
             this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT PERID, PERNAME, PEREMAIL, PERPASSWORD, PERADDRESS, PERACCOUNTTYPE FROM EAT" +
-                "FAST_DATA.PERSON";
+            this._commandCollection[0].CommandText = "SELECT PER_ID, PER_NAME, PER_EMAIL, PER_PASSWORD, PER_ADDRESS, PER_ACCOUNTTYPE FR" +
+                "OM EATFAST_DATA.EATFAST_PERSON";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4263,7 +4746,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetEatFast.PERSONDataTable dataTable) {
+        public virtual int Fill(DataSetEatFast.EATFAST_PERSONDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4276,9 +4759,9 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetEatFast.PERSONDataTable GetData() {
+        public virtual DataSetEatFast.EATFAST_PERSONDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSetEatFast.PERSONDataTable dataTable = new DataSetEatFast.PERSONDataTable();
+            DataSetEatFast.EATFAST_PERSONDataTable dataTable = new DataSetEatFast.EATFAST_PERSONDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4286,7 +4769,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetEatFast.PERSONDataTable dataTable) {
+        public virtual int Update(DataSetEatFast.EATFAST_PERSONDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -4294,7 +4777,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DataSetEatFast dataSet) {
-            return this.Adapter.Update(dataSet, "PERSON");
+            return this.Adapter.Update(dataSet, "EATFAST_PERSON");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4316,47 +4799,47 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(short Original_PERID, string Original_PERNAME, string Original_PEREMAIL, string Original_PERPASSWORD, string Original_PERADDRESS, string Original_PERACCOUNTTYPE) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((short)(Original_PERID));
-            if ((Original_PERNAME == null)) {
+        public virtual int Delete(int Original_PER_ID, string Original_PER_NAME, string Original_PER_EMAIL, string Original_PER_PASSWORD, string Original_PER_ADDRESS, string Original_PER_ACCOUNTTYPE) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PER_ID));
+            if ((Original_PER_NAME == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_PERNAME));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_PER_NAME));
             }
-            if ((Original_PEREMAIL == null)) {
+            if ((Original_PER_EMAIL == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_PEREMAIL));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_PER_EMAIL));
             }
-            if ((Original_PERPASSWORD == null)) {
+            if ((Original_PER_PASSWORD == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_PERPASSWORD));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_PER_PASSWORD));
             }
-            if ((Original_PERADDRESS == null)) {
+            if ((Original_PER_ADDRESS == null)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_PERADDRESS));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_PER_ADDRESS));
             }
-            if ((Original_PERACCOUNTTYPE == null)) {
+            if ((Original_PER_ACCOUNTTYPE == null)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_PERACCOUNTTYPE));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_PER_ACCOUNTTYPE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4378,37 +4861,37 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(short PERID, string PERNAME, string PEREMAIL, string PERPASSWORD, string PERADDRESS, string PERACCOUNTTYPE) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((short)(PERID));
-            if ((PERNAME == null)) {
+        public virtual int Insert(int PER_ID, string PER_NAME, string PER_EMAIL, string PER_PASSWORD, string PER_ADDRESS, string PER_ACCOUNTTYPE) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(PER_ID));
+            if ((PER_NAME == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(PERNAME));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(PER_NAME));
             }
-            if ((PEREMAIL == null)) {
+            if ((PER_EMAIL == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PEREMAIL));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PER_EMAIL));
             }
-            if ((PERPASSWORD == null)) {
+            if ((PER_PASSWORD == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(PERPASSWORD));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(PER_PASSWORD));
             }
-            if ((PERADDRESS == null)) {
+            if ((PER_ADDRESS == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(PERADDRESS));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(PER_ADDRESS));
             }
-            if ((PERACCOUNTTYPE == null)) {
+            if ((PER_ACCOUNTTYPE == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(PERACCOUNTTYPE));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(PER_ACCOUNTTYPE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4430,78 +4913,78 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(short PERID, string PERNAME, string PEREMAIL, string PERPASSWORD, string PERADDRESS, string PERACCOUNTTYPE, short Original_PERID, string Original_PERNAME, string Original_PEREMAIL, string Original_PERPASSWORD, string Original_PERADDRESS, string Original_PERACCOUNTTYPE) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((short)(PERID));
-            if ((PERNAME == null)) {
+        public virtual int Update(int PER_ID, string PER_NAME, string PER_EMAIL, string PER_PASSWORD, string PER_ADDRESS, string PER_ACCOUNTTYPE, int Original_PER_ID, string Original_PER_NAME, string Original_PER_EMAIL, string Original_PER_PASSWORD, string Original_PER_ADDRESS, string Original_PER_ACCOUNTTYPE) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(PER_ID));
+            if ((PER_NAME == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(PERNAME));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(PER_NAME));
             }
-            if ((PEREMAIL == null)) {
+            if ((PER_EMAIL == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(PEREMAIL));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(PER_EMAIL));
             }
-            if ((PERPASSWORD == null)) {
+            if ((PER_PASSWORD == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(PERPASSWORD));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(PER_PASSWORD));
             }
-            if ((PERADDRESS == null)) {
+            if ((PER_ADDRESS == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(PERADDRESS));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(PER_ADDRESS));
             }
-            if ((PERACCOUNTTYPE == null)) {
+            if ((PER_ACCOUNTTYPE == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(PERACCOUNTTYPE));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(PER_ACCOUNTTYPE));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((short)(Original_PERID));
-            if ((Original_PERNAME == null)) {
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_PER_ID));
+            if ((Original_PER_NAME == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_PERNAME));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_PER_NAME));
             }
-            if ((Original_PEREMAIL == null)) {
+            if ((Original_PER_EMAIL == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_PEREMAIL));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_PER_EMAIL));
             }
-            if ((Original_PERPASSWORD == null)) {
+            if ((Original_PER_PASSWORD == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_PERPASSWORD));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_PER_PASSWORD));
             }
-            if ((Original_PERADDRESS == null)) {
+            if ((Original_PER_ADDRESS == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_PERADDRESS));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_PER_ADDRESS));
             }
-            if ((Original_PERACCOUNTTYPE == null)) {
+            if ((Original_PER_ACCOUNTTYPE == null)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_PERACCOUNTTYPE));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_PER_ACCOUNTTYPE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4523,8 +5006,8 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string PERNAME, string PEREMAIL, string PERPASSWORD, string PERADDRESS, string PERACCOUNTTYPE, short Original_PERID, string Original_PERNAME, string Original_PEREMAIL, string Original_PERPASSWORD, string Original_PERADDRESS, string Original_PERACCOUNTTYPE) {
-            return this.Update(Original_PERID, PERNAME, PEREMAIL, PERPASSWORD, PERADDRESS, PERACCOUNTTYPE, Original_PERID, Original_PERNAME, Original_PEREMAIL, Original_PERPASSWORD, Original_PERADDRESS, Original_PERACCOUNTTYPE);
+        public virtual int Update(string PER_NAME, string PER_EMAIL, string PER_PASSWORD, string PER_ADDRESS, string PER_ACCOUNTTYPE, int Original_PER_ID, string Original_PER_NAME, string Original_PER_EMAIL, string Original_PER_PASSWORD, string Original_PER_ADDRESS, string Original_PER_ACCOUNTTYPE) {
+            return this.Update(Original_PER_ID, PER_NAME, PER_EMAIL, PER_PASSWORD, PER_ADDRESS, PER_ACCOUNTTYPE, Original_PER_ID, Original_PER_NAME, Original_PER_EMAIL, Original_PER_PASSWORD, Original_PER_ADDRESS, Original_PER_ACCOUNTTYPE);
         }
     }
     
@@ -4537,7 +5020,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PRODUCTTableAdapter : global::System.ComponentModel.Component {
+    public partial class EATFAST_PRODUCTTableAdapter : global::System.ComponentModel.Component {
         
         private global::Oracle.ManagedDataAccess.Client.OracleDataAdapter _adapter;
         
@@ -4551,7 +5034,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public PRODUCTTableAdapter() {
+        public EATFAST_PRODUCTTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -4648,314 +5131,314 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
             this._adapter = new global::Oracle.ManagedDataAccess.Client.OracleDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "PRODUCT";
-            tableMapping.ColumnMappings.Add("PROID", "PROID");
-            tableMapping.ColumnMappings.Add("PRONAME", "PRONAME");
-            tableMapping.ColumnMappings.Add("PRODESCRIPTION", "PRODESCRIPTION");
-            tableMapping.ColumnMappings.Add("PROIMAGE", "PROIMAGE");
-            tableMapping.ColumnMappings.Add("PROPRICE", "PROPRICE");
-            tableMapping.ColumnMappings.Add("PROCATEGORY", "PROCATEGORY");
+            tableMapping.DataSetTable = "EATFAST_PRODUCT";
+            tableMapping.ColumnMappings.Add("PRO_ID", "PRO_ID");
+            tableMapping.ColumnMappings.Add("PRO_NAME", "PRO_NAME");
+            tableMapping.ColumnMappings.Add("PRO_DESCRIPTION", "PRO_DESCRIPTION");
+            tableMapping.ColumnMappings.Add("PRO_IMAGE", "PRO_IMAGE");
+            tableMapping.ColumnMappings.Add("PRO_PRICE", "PRO_PRICE");
+            tableMapping.ColumnMappings.Add("PRO_CATEGORY", "PRO_CATEGORY");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""EATFAST_DATA"".""PRODUCT"" WHERE ((""PROID"" = :Original_PROID) AND ((:IsNull_PRONAME = 1 AND ""PRONAME"" IS NULL) OR (""PRONAME"" = :Original_PRONAME)) AND ((:IsNull_PRODESCRIPTION = 1 AND ""PRODESCRIPTION"" IS NULL) OR (""PRODESCRIPTION"" = :Original_PRODESCRIPTION)) AND ((:IsNull_PROIMAGE = 1 AND ""PROIMAGE"" IS NULL) OR (""PROIMAGE"" = :Original_PROIMAGE)) AND ((:IsNull_PROPRICE = 1 AND ""PROPRICE"" IS NULL) OR (""PROPRICE"" = :Original_PROPRICE)) AND ((:IsNull_PROCATEGORY = 1 AND ""PROCATEGORY"" IS NULL) OR (""PROCATEGORY"" = :Original_PROCATEGORY)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""EATFAST_DATA"".""EATFAST_PRODUCT"" WHERE ((""PRO_ID"" = :Original_PRO_ID) AND ((:IsNull_PRO_NAME = 1 AND ""PRO_NAME"" IS NULL) OR (""PRO_NAME"" = :Original_PRO_NAME)) AND ((:IsNull_PRO_DESCRIPTION = 1 AND ""PRO_DESCRIPTION"" IS NULL) OR (""PRO_DESCRIPTION"" = :Original_PRO_DESCRIPTION)) AND ((:IsNull_PRO_IMAGE = 1 AND ""PRO_IMAGE"" IS NULL) OR (""PRO_IMAGE"" = :Original_PRO_IMAGE)) AND ((:IsNull_PRO_PRICE = 1 AND ""PRO_PRICE"" IS NULL) OR (""PRO_PRICE"" = :Original_PRO_PRICE)) AND ((:IsNull_PRO_CATEGORY = 1 AND ""PRO_CATEGORY"" IS NULL) OR (""PRO_CATEGORY"" = :Original_PRO_CATEGORY)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PROID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PROID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PRONAME";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "PRONAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PRONAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "PRONAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PRODESCRIPTION";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 500;
-            param.IsNullable = true;
-            param.SourceColumn = "PRODESCRIPTION";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PRODESCRIPTION";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 500;
-            param.IsNullable = true;
-            param.SourceColumn = "PRODESCRIPTION";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PROIMAGE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 150;
-            param.IsNullable = true;
-            param.SourceColumn = "PROIMAGE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PROIMAGE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 150;
-            param.IsNullable = true;
-            param.SourceColumn = "PROIMAGE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PROPRICE";
+            param.ParameterName = "Original_PRO_ID";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "PROPRICE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PROPRICE";
-            param.DbType = global::System.Data.DbType.Double;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Double;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PROPRICE";
+            param.SourceColumn = "PRO_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PROCATEGORY";
+            param.ParameterName = "IsNull_PRO_NAME";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 50;
+            param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "PROCATEGORY";
+            param.SourceColumn = "PRO_NAME";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PROCATEGORY";
+            param.ParameterName = "Original_PRO_NAME";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 50;
+            param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "PROCATEGORY";
+            param.SourceColumn = "PRO_NAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PRO_DESCRIPTION";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 250;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_DESCRIPTION";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PRO_DESCRIPTION";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 250;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_DESCRIPTION";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PRO_IMAGE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_IMAGE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PRO_IMAGE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_IMAGE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PRO_PRICE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_PRICE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PRO_PRICE";
+            param.DbType = global::System.Data.DbType.Single;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_PRICE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PRO_CATEGORY";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_CATEGORY";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PRO_CATEGORY";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_CATEGORY";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"EATFAST_DATA\".\"PRODUCT\" (\"PROID\", \"PRONAME\", \"PRODESCRIPTION\", \"PROI" +
-                "MAGE\", \"PROPRICE\", \"PROCATEGORY\") VALUES (:PROID, :PRONAME, :PRODESCRIPTION, :PR" +
-                "OIMAGE, :PROPRICE, :PROCATEGORY)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"EATFAST_DATA\".\"EATFAST_PRODUCT\" (\"PRO_ID\", \"PRO_NAME\", \"PRO_DESCRIPT" +
+                "ION\", \"PRO_IMAGE\", \"PRO_PRICE\", \"PRO_CATEGORY\") VALUES (:PRO_ID, :PRO_NAME, :PRO" +
+                "_DESCRIPTION, :PRO_IMAGE, :PRO_PRICE, :PRO_CATEGORY)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PROID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.ParameterName = "PRO_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "PROID";
+            param.SourceColumn = "PRO_ID";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PRONAME";
+            param.ParameterName = "PRO_NAME";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 50;
+            param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "PRONAME";
+            param.SourceColumn = "PRO_NAME";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PRODESCRIPTION";
+            param.ParameterName = "PRO_DESCRIPTION";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 500;
+            param.Size = 250;
             param.IsNullable = true;
-            param.SourceColumn = "PRODESCRIPTION";
+            param.SourceColumn = "PRO_DESCRIPTION";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PROIMAGE";
+            param.ParameterName = "PRO_IMAGE";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 150;
+            param.Size = 128;
             param.IsNullable = true;
-            param.SourceColumn = "PROIMAGE";
+            param.SourceColumn = "PRO_IMAGE";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PROPRICE";
-            param.DbType = global::System.Data.DbType.Double;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Double;
+            param.ParameterName = "PRO_PRICE";
+            param.DbType = global::System.Data.DbType.Single;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "PROPRICE";
+            param.SourceColumn = "PRO_PRICE";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PROCATEGORY";
+            param.ParameterName = "PRO_CATEGORY";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 50;
+            param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "PROCATEGORY";
+            param.SourceColumn = "PRO_CATEGORY";
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""EATFAST_DATA"".""PRODUCT"" SET ""PROID"" = :PROID, ""PRONAME"" = :PRONAME, ""PRODESCRIPTION"" = :PRODESCRIPTION, ""PROIMAGE"" = :PROIMAGE, ""PROPRICE"" = :PROPRICE, ""PROCATEGORY"" = :PROCATEGORY WHERE ((""PROID"" = :Original_PROID) AND ((:IsNull_PRONAME = 1 AND ""PRONAME"" IS NULL) OR (""PRONAME"" = :Original_PRONAME)) AND ((:IsNull_PRODESCRIPTION = 1 AND ""PRODESCRIPTION"" IS NULL) OR (""PRODESCRIPTION"" = :Original_PRODESCRIPTION)) AND ((:IsNull_PROIMAGE = 1 AND ""PROIMAGE"" IS NULL) OR (""PROIMAGE"" = :Original_PROIMAGE)) AND ((:IsNull_PROPRICE = 1 AND ""PROPRICE"" IS NULL) OR (""PROPRICE"" = :Original_PROPRICE)) AND ((:IsNull_PROCATEGORY = 1 AND ""PROCATEGORY"" IS NULL) OR (""PROCATEGORY"" = :Original_PROCATEGORY)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""EATFAST_DATA"".""EATFAST_PRODUCT"" SET ""PRO_ID"" = :PRO_ID, ""PRO_NAME"" = :PRO_NAME, ""PRO_DESCRIPTION"" = :PRO_DESCRIPTION, ""PRO_IMAGE"" = :PRO_IMAGE, ""PRO_PRICE"" = :PRO_PRICE, ""PRO_CATEGORY"" = :PRO_CATEGORY WHERE ((""PRO_ID"" = :Original_PRO_ID) AND ((:IsNull_PRO_NAME = 1 AND ""PRO_NAME"" IS NULL) OR (""PRO_NAME"" = :Original_PRO_NAME)) AND ((:IsNull_PRO_DESCRIPTION = 1 AND ""PRO_DESCRIPTION"" IS NULL) OR (""PRO_DESCRIPTION"" = :Original_PRO_DESCRIPTION)) AND ((:IsNull_PRO_IMAGE = 1 AND ""PRO_IMAGE"" IS NULL) OR (""PRO_IMAGE"" = :Original_PRO_IMAGE)) AND ((:IsNull_PRO_PRICE = 1 AND ""PRO_PRICE"" IS NULL) OR (""PRO_PRICE"" = :Original_PRO_PRICE)) AND ((:IsNull_PRO_CATEGORY = 1 AND ""PRO_CATEGORY"" IS NULL) OR (""PRO_CATEGORY"" = :Original_PRO_CATEGORY)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PROID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PROID";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PRONAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "PRONAME";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PRODESCRIPTION";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 500;
-            param.IsNullable = true;
-            param.SourceColumn = "PRODESCRIPTION";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PROIMAGE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 150;
-            param.IsNullable = true;
-            param.SourceColumn = "PROIMAGE";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PROPRICE";
-            param.DbType = global::System.Data.DbType.Double;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Double;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PROPRICE";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PROCATEGORY";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "PROCATEGORY";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PROID";
-            param.DbType = global::System.Data.DbType.Int16;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PROID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PRONAME";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "PRONAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PRONAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceColumn = "PRONAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PRODESCRIPTION";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 500;
-            param.IsNullable = true;
-            param.SourceColumn = "PRODESCRIPTION";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PRODESCRIPTION";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 500;
-            param.IsNullable = true;
-            param.SourceColumn = "PRODESCRIPTION";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PROIMAGE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 150;
-            param.IsNullable = true;
-            param.SourceColumn = "PROIMAGE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PROIMAGE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 150;
-            param.IsNullable = true;
-            param.SourceColumn = "PROIMAGE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PROPRICE";
+            param.ParameterName = "PRO_ID";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "PROPRICE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
+            param.SourceColumn = "PRO_ID";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PROPRICE";
-            param.DbType = global::System.Data.DbType.Double;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Double;
+            param.ParameterName = "PRO_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_NAME";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PRO_DESCRIPTION";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 250;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_DESCRIPTION";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PRO_IMAGE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_IMAGE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PRO_PRICE";
+            param.DbType = global::System.Data.DbType.Single;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
             param.Size = 22;
             param.IsNullable = true;
-            param.SourceColumn = "PROPRICE";
+            param.SourceColumn = "PRO_PRICE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "PRO_CATEGORY";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_CATEGORY";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PRO_ID";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PROCATEGORY";
+            param.ParameterName = "IsNull_PRO_NAME";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 50;
+            param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "PROCATEGORY";
+            param.SourceColumn = "PRO_NAME";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PROCATEGORY";
+            param.ParameterName = "Original_PRO_NAME";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 50;
+            param.Size = 32;
             param.IsNullable = true;
-            param.SourceColumn = "PROCATEGORY";
+            param.SourceColumn = "PRO_NAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PRO_DESCRIPTION";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 250;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_DESCRIPTION";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PRO_DESCRIPTION";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 250;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_DESCRIPTION";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PRO_IMAGE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_IMAGE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PRO_IMAGE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_IMAGE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PRO_PRICE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_PRICE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PRO_PRICE";
+            param.DbType = global::System.Data.DbType.Single;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_PRICE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_PRO_CATEGORY";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_CATEGORY";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_PRO_CATEGORY";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = "PRO_CATEGORY";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -4973,8 +5456,8 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
             this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT PROID, PRONAME, PRODESCRIPTION, PROIMAGE, PROPRICE, PROCATEGORY FROM EATFA" +
-                "ST_DATA.PRODUCT";
+            this._commandCollection[0].CommandText = "SELECT PRO_ID, PRO_NAME, PRO_DESCRIPTION, PRO_IMAGE, PRO_PRICE, PRO_CATEGORY FROM" +
+                " EATFAST_DATA.EATFAST_PRODUCT";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4982,7 +5465,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetEatFast.PRODUCTDataTable dataTable) {
+        public virtual int Fill(DataSetEatFast.EATFAST_PRODUCTDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4995,9 +5478,9 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetEatFast.PRODUCTDataTable GetData() {
+        public virtual DataSetEatFast.EATFAST_PRODUCTDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSetEatFast.PRODUCTDataTable dataTable = new DataSetEatFast.PRODUCTDataTable();
+            DataSetEatFast.EATFAST_PRODUCTDataTable dataTable = new DataSetEatFast.EATFAST_PRODUCTDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5005,7 +5488,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetEatFast.PRODUCTDataTable dataTable) {
+        public virtual int Update(DataSetEatFast.EATFAST_PRODUCTDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -5013,7 +5496,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DataSetEatFast dataSet) {
-            return this.Adapter.Update(dataSet, "PRODUCT");
+            return this.Adapter.Update(dataSet, "EATFAST_PRODUCT");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5035,47 +5518,47 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(short Original_PROID, string Original_PRONAME, string Original_PRODESCRIPTION, string Original_PROIMAGE, global::System.Nullable<double> Original_PROPRICE, string Original_PROCATEGORY) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((short)(Original_PROID));
-            if ((Original_PRONAME == null)) {
+        public virtual int Delete(int Original_PRO_ID, string Original_PRO_NAME, string Original_PRO_DESCRIPTION, string Original_PRO_IMAGE, global::System.Nullable<float> Original_PRO_PRICE, string Original_PRO_CATEGORY) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PRO_ID));
+            if ((Original_PRO_NAME == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_PRONAME));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_PRO_NAME));
             }
-            if ((Original_PRODESCRIPTION == null)) {
+            if ((Original_PRO_DESCRIPTION == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_PRODESCRIPTION));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_PRO_DESCRIPTION));
             }
-            if ((Original_PROIMAGE == null)) {
+            if ((Original_PRO_IMAGE == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_PROIMAGE));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_PRO_IMAGE));
             }
-            if ((Original_PROPRICE.HasValue == true)) {
+            if ((Original_PRO_PRICE.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((double)(Original_PROPRICE.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((float)(Original_PRO_PRICE.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Original_PROCATEGORY == null)) {
+            if ((Original_PRO_CATEGORY == null)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_PROCATEGORY));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_PRO_CATEGORY));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5097,37 +5580,37 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(short PROID, string PRONAME, string PRODESCRIPTION, string PROIMAGE, global::System.Nullable<double> PROPRICE, string PROCATEGORY) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((short)(PROID));
-            if ((PRONAME == null)) {
+        public virtual int Insert(int PRO_ID, string PRO_NAME, string PRO_DESCRIPTION, string PRO_IMAGE, global::System.Nullable<float> PRO_PRICE, string PRO_CATEGORY) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(PRO_ID));
+            if ((PRO_NAME == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(PRONAME));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(PRO_NAME));
             }
-            if ((PRODESCRIPTION == null)) {
+            if ((PRO_DESCRIPTION == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PRODESCRIPTION));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PRO_DESCRIPTION));
             }
-            if ((PROIMAGE == null)) {
+            if ((PRO_IMAGE == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(PROIMAGE));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(PRO_IMAGE));
             }
-            if ((PROPRICE.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((double)(PROPRICE.Value));
+            if ((PRO_PRICE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((float)(PRO_PRICE.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((PROCATEGORY == null)) {
+            if ((PRO_CATEGORY == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(PROCATEGORY));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(PRO_CATEGORY));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5149,78 +5632,78 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(short PROID, string PRONAME, string PRODESCRIPTION, string PROIMAGE, global::System.Nullable<double> PROPRICE, string PROCATEGORY, short Original_PROID, string Original_PRONAME, string Original_PRODESCRIPTION, string Original_PROIMAGE, global::System.Nullable<double> Original_PROPRICE, string Original_PROCATEGORY) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((short)(PROID));
-            if ((PRONAME == null)) {
+        public virtual int Update(int PRO_ID, string PRO_NAME, string PRO_DESCRIPTION, string PRO_IMAGE, global::System.Nullable<float> PRO_PRICE, string PRO_CATEGORY, int Original_PRO_ID, string Original_PRO_NAME, string Original_PRO_DESCRIPTION, string Original_PRO_IMAGE, global::System.Nullable<float> Original_PRO_PRICE, string Original_PRO_CATEGORY) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(PRO_ID));
+            if ((PRO_NAME == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(PRONAME));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(PRO_NAME));
             }
-            if ((PRODESCRIPTION == null)) {
+            if ((PRO_DESCRIPTION == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(PRODESCRIPTION));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(PRO_DESCRIPTION));
             }
-            if ((PROIMAGE == null)) {
+            if ((PRO_IMAGE == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(PROIMAGE));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(PRO_IMAGE));
             }
-            if ((PROPRICE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((double)(PROPRICE.Value));
+            if ((PRO_PRICE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((float)(PRO_PRICE.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((PROCATEGORY == null)) {
+            if ((PRO_CATEGORY == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(PROCATEGORY));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(PRO_CATEGORY));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((short)(Original_PROID));
-            if ((Original_PRONAME == null)) {
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_PRO_ID));
+            if ((Original_PRO_NAME == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_PRONAME));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_PRO_NAME));
             }
-            if ((Original_PRODESCRIPTION == null)) {
+            if ((Original_PRO_DESCRIPTION == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_PRODESCRIPTION));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_PRO_DESCRIPTION));
             }
-            if ((Original_PROIMAGE == null)) {
+            if ((Original_PRO_IMAGE == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_PROIMAGE));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_PRO_IMAGE));
             }
-            if ((Original_PROPRICE.HasValue == true)) {
+            if ((Original_PRO_PRICE.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((double)(Original_PROPRICE.Value));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((float)(Original_PRO_PRICE.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Original_PROCATEGORY == null)) {
+            if ((Original_PRO_CATEGORY == null)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_PROCATEGORY));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_PRO_CATEGORY));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5242,8 +5725,564 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string PRONAME, string PRODESCRIPTION, string PROIMAGE, global::System.Nullable<double> PROPRICE, string PROCATEGORY, short Original_PROID, string Original_PRONAME, string Original_PRODESCRIPTION, string Original_PROIMAGE, global::System.Nullable<double> Original_PROPRICE, string Original_PROCATEGORY) {
-            return this.Update(Original_PROID, PRONAME, PRODESCRIPTION, PROIMAGE, PROPRICE, PROCATEGORY, Original_PROID, Original_PRONAME, Original_PRODESCRIPTION, Original_PROIMAGE, Original_PROPRICE, Original_PROCATEGORY);
+        public virtual int Update(string PRO_NAME, string PRO_DESCRIPTION, string PRO_IMAGE, global::System.Nullable<float> PRO_PRICE, string PRO_CATEGORY, int Original_PRO_ID, string Original_PRO_NAME, string Original_PRO_DESCRIPTION, string Original_PRO_IMAGE, global::System.Nullable<float> Original_PRO_PRICE, string Original_PRO_CATEGORY) {
+            return this.Update(Original_PRO_ID, PRO_NAME, PRO_DESCRIPTION, PRO_IMAGE, PRO_PRICE, PRO_CATEGORY, Original_PRO_ID, Original_PRO_NAME, Original_PRO_DESCRIPTION, Original_PRO_IMAGE, Original_PRO_PRICE, Original_PRO_CATEGORY);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class EATFAST_RESTAURANTTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleDataAdapter _adapter;
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleConnection _connection;
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleTransaction _transaction;
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public EATFAST_RESTAURANTTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::Oracle.ManagedDataAccess.Client.OracleDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::Oracle.ManagedDataAccess.Client.OracleConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::Oracle.ManagedDataAccess.Client.OracleTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::Oracle.ManagedDataAccess.Client.OracleCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::Oracle.ManagedDataAccess.Client.OracleDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "EATFAST_RESTAURANT";
+            tableMapping.ColumnMappings.Add("RES_ID", "RES_ID");
+            tableMapping.ColumnMappings.Add("RES_NAME", "RES_NAME");
+            tableMapping.ColumnMappings.Add("RES_DESCRIPTION", "RES_DESCRIPTION");
+            tableMapping.ColumnMappings.Add("RES_IMAGE", "RES_IMAGE");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""EATFAST_DATA"".""EATFAST_RESTAURANT"" WHERE ((""RES_ID"" = :Original_RES_ID) AND ((:IsNull_RES_NAME = 1 AND ""RES_NAME"" IS NULL) OR (""RES_NAME"" = :Original_RES_NAME)) AND ((:IsNull_RES_DESCRIPTION = 1 AND ""RES_DESCRIPTION"" IS NULL) OR (""RES_DESCRIPTION"" = :Original_RES_DESCRIPTION)) AND ((:IsNull_RES_IMAGE = 1 AND ""RES_IMAGE"" IS NULL) OR (""RES_IMAGE"" = :Original_RES_IMAGE)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_RES_ID";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_RES_NAME";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_NAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_RES_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_NAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_RES_DESCRIPTION";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 250;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_DESCRIPTION";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_RES_DESCRIPTION";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 250;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_DESCRIPTION";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_RES_IMAGE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_IMAGE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_RES_IMAGE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_IMAGE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"EATFAST_DATA\".\"EATFAST_RESTAURANT\" (\"RES_ID\", \"RES_NAME\", \"RES_DESCR" +
+                "IPTION\", \"RES_IMAGE\") VALUES (:RES_ID, :RES_NAME, :RES_DESCRIPTION, :RES_IMAGE)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "RES_ID";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_ID";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "RES_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_NAME";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "RES_DESCRIPTION";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 250;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_DESCRIPTION";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "RES_IMAGE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_IMAGE";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""EATFAST_DATA"".""EATFAST_RESTAURANT"" SET ""RES_ID"" = :RES_ID, ""RES_NAME"" = :RES_NAME, ""RES_DESCRIPTION"" = :RES_DESCRIPTION, ""RES_IMAGE"" = :RES_IMAGE WHERE ((""RES_ID"" = :Original_RES_ID) AND ((:IsNull_RES_NAME = 1 AND ""RES_NAME"" IS NULL) OR (""RES_NAME"" = :Original_RES_NAME)) AND ((:IsNull_RES_DESCRIPTION = 1 AND ""RES_DESCRIPTION"" IS NULL) OR (""RES_DESCRIPTION"" = :Original_RES_DESCRIPTION)) AND ((:IsNull_RES_IMAGE = 1 AND ""RES_IMAGE"" IS NULL) OR (""RES_IMAGE"" = :Original_RES_IMAGE)))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "RES_ID";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_ID";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "RES_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_NAME";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "RES_DESCRIPTION";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 250;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_DESCRIPTION";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "RES_IMAGE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_IMAGE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_RES_ID";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_RES_NAME";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_NAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_RES_NAME";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 32;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_NAME";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_RES_DESCRIPTION";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 250;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_DESCRIPTION";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_RES_DESCRIPTION";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 250;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_DESCRIPTION";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_RES_IMAGE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_IMAGE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_RES_IMAGE";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "RES_IMAGE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::Oracle.ManagedDataAccess.Client.OracleConnection();
+            this._connection.ConnectionString = global::EatFast_Project.Properties.Settings.Default.ConnectionOdpSystem;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
+            this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT RES_ID, RES_NAME, RES_DESCRIPTION, RES_IMAGE FROM EATFAST_DATA.EATFAST_RES" +
+                "TAURANT";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSetEatFast.EATFAST_RESTAURANTDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSetEatFast.EATFAST_RESTAURANTDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSetEatFast.EATFAST_RESTAURANTDataTable dataTable = new DataSetEatFast.EATFAST_RESTAURANTDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSetEatFast.EATFAST_RESTAURANTDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSetEatFast dataSet) {
+            return this.Adapter.Update(dataSet, "EATFAST_RESTAURANT");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(short Original_RES_ID, string Original_RES_NAME, string Original_RES_DESCRIPTION, string Original_RES_IMAGE) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((short)(Original_RES_ID));
+            if ((Original_RES_NAME == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_RES_NAME));
+            }
+            if ((Original_RES_DESCRIPTION == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_RES_DESCRIPTION));
+            }
+            if ((Original_RES_IMAGE == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_RES_IMAGE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(short RES_ID, string RES_NAME, string RES_DESCRIPTION, string RES_IMAGE) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((short)(RES_ID));
+            if ((RES_NAME == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(RES_NAME));
+            }
+            if ((RES_DESCRIPTION == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(RES_DESCRIPTION));
+            }
+            if ((RES_IMAGE == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(RES_IMAGE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(short RES_ID, string RES_NAME, string RES_DESCRIPTION, string RES_IMAGE, short Original_RES_ID, string Original_RES_NAME, string Original_RES_DESCRIPTION, string Original_RES_IMAGE) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((short)(RES_ID));
+            if ((RES_NAME == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(RES_NAME));
+            }
+            if ((RES_DESCRIPTION == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(RES_DESCRIPTION));
+            }
+            if ((RES_IMAGE == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(RES_IMAGE));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((short)(Original_RES_ID));
+            if ((Original_RES_NAME == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_RES_NAME));
+            }
+            if ((Original_RES_DESCRIPTION == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_RES_DESCRIPTION));
+            }
+            if ((Original_RES_IMAGE == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_RES_IMAGE));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string RES_NAME, string RES_DESCRIPTION, string RES_IMAGE, short Original_RES_ID, string Original_RES_NAME, string Original_RES_DESCRIPTION, string Original_RES_IMAGE) {
+            return this.Update(Original_RES_ID, RES_NAME, RES_DESCRIPTION, RES_IMAGE, Original_RES_ID, Original_RES_NAME, Original_RES_DESCRIPTION, Original_RES_IMAGE);
         }
     }
     
@@ -5259,13 +6298,15 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private CONTIENTTableAdapter _cONTIENTTableAdapter;
+        private EATFAST_CONTAINSTableAdapter _eATFAST_CONTAINSTableAdapter;
         
-        private ORDER1TableAdapter _oRDER1TableAdapter;
+        private EATFAST_ORDERTableAdapter _eATFAST_ORDERTableAdapter;
         
-        private PERSONTableAdapter _pERSONTableAdapter;
+        private EATFAST_PERSONTableAdapter _eATFAST_PERSONTableAdapter;
         
-        private PRODUCTTableAdapter _pRODUCTTableAdapter;
+        private EATFAST_PRODUCTTableAdapter _eATFAST_PRODUCTTableAdapter;
+        
+        private EATFAST_RESTAURANTTableAdapter _eATFAST_RESTAURANTTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -5287,12 +6328,12 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public CONTIENTTableAdapter CONTIENTTableAdapter {
+        public EATFAST_CONTAINSTableAdapter EATFAST_CONTAINSTableAdapter {
             get {
-                return this._cONTIENTTableAdapter;
+                return this._eATFAST_CONTAINSTableAdapter;
             }
             set {
-                this._cONTIENTTableAdapter = value;
+                this._eATFAST_CONTAINSTableAdapter = value;
             }
         }
         
@@ -5301,12 +6342,12 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public ORDER1TableAdapter ORDER1TableAdapter {
+        public EATFAST_ORDERTableAdapter EATFAST_ORDERTableAdapter {
             get {
-                return this._oRDER1TableAdapter;
+                return this._eATFAST_ORDERTableAdapter;
             }
             set {
-                this._oRDER1TableAdapter = value;
+                this._eATFAST_ORDERTableAdapter = value;
             }
         }
         
@@ -5315,12 +6356,12 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public PERSONTableAdapter PERSONTableAdapter {
+        public EATFAST_PERSONTableAdapter EATFAST_PERSONTableAdapter {
             get {
-                return this._pERSONTableAdapter;
+                return this._eATFAST_PERSONTableAdapter;
             }
             set {
-                this._pERSONTableAdapter = value;
+                this._eATFAST_PERSONTableAdapter = value;
             }
         }
         
@@ -5329,12 +6370,26 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public PRODUCTTableAdapter PRODUCTTableAdapter {
+        public EATFAST_PRODUCTTableAdapter EATFAST_PRODUCTTableAdapter {
             get {
-                return this._pRODUCTTableAdapter;
+                return this._eATFAST_PRODUCTTableAdapter;
             }
             set {
-                this._pRODUCTTableAdapter = value;
+                this._eATFAST_PRODUCTTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public EATFAST_RESTAURANTTableAdapter EATFAST_RESTAURANTTableAdapter {
+            get {
+                return this._eATFAST_RESTAURANTTableAdapter;
+            }
+            set {
+                this._eATFAST_RESTAURANTTableAdapter = value;
             }
         }
         
@@ -5357,21 +6412,25 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._cONTIENTTableAdapter != null) 
-                            && (this._cONTIENTTableAdapter.Connection != null))) {
-                    return this._cONTIENTTableAdapter.Connection;
+                if (((this._eATFAST_CONTAINSTableAdapter != null) 
+                            && (this._eATFAST_CONTAINSTableAdapter.Connection != null))) {
+                    return this._eATFAST_CONTAINSTableAdapter.Connection;
                 }
-                if (((this._oRDER1TableAdapter != null) 
-                            && (this._oRDER1TableAdapter.Connection != null))) {
-                    return this._oRDER1TableAdapter.Connection;
+                if (((this._eATFAST_ORDERTableAdapter != null) 
+                            && (this._eATFAST_ORDERTableAdapter.Connection != null))) {
+                    return this._eATFAST_ORDERTableAdapter.Connection;
                 }
-                if (((this._pERSONTableAdapter != null) 
-                            && (this._pERSONTableAdapter.Connection != null))) {
-                    return this._pERSONTableAdapter.Connection;
+                if (((this._eATFAST_PERSONTableAdapter != null) 
+                            && (this._eATFAST_PERSONTableAdapter.Connection != null))) {
+                    return this._eATFAST_PERSONTableAdapter.Connection;
                 }
-                if (((this._pRODUCTTableAdapter != null) 
-                            && (this._pRODUCTTableAdapter.Connection != null))) {
-                    return this._pRODUCTTableAdapter.Connection;
+                if (((this._eATFAST_PRODUCTTableAdapter != null) 
+                            && (this._eATFAST_PRODUCTTableAdapter.Connection != null))) {
+                    return this._eATFAST_PRODUCTTableAdapter.Connection;
+                }
+                if (((this._eATFAST_RESTAURANTTableAdapter != null) 
+                            && (this._eATFAST_RESTAURANTTableAdapter.Connection != null))) {
+                    return this._eATFAST_RESTAURANTTableAdapter.Connection;
                 }
                 return null;
             }
@@ -5386,16 +6445,19 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._cONTIENTTableAdapter != null)) {
+                if ((this._eATFAST_CONTAINSTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._oRDER1TableAdapter != null)) {
+                if ((this._eATFAST_ORDERTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._pERSONTableAdapter != null)) {
+                if ((this._eATFAST_PERSONTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._pRODUCTTableAdapter != null)) {
+                if ((this._eATFAST_PRODUCTTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._eATFAST_RESTAURANTTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -5409,39 +6471,48 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateUpdatedRows(DataSetEatFast dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._pERSONTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PERSON.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._eATFAST_PERSONTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.EATFAST_PERSON.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._pERSONTableAdapter.Update(updatedRows));
+                    result = (result + this._eATFAST_PERSONTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._oRDER1TableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ORDER1.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._eATFAST_ORDERTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.EATFAST_ORDER.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._oRDER1TableAdapter.Update(updatedRows));
+                    result = (result + this._eATFAST_ORDERTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._pRODUCTTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PRODUCT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._eATFAST_PRODUCTTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.EATFAST_PRODUCT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._pRODUCTTableAdapter.Update(updatedRows));
+                    result = (result + this._eATFAST_PRODUCTTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._cONTIENTTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.CONTIENT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._eATFAST_CONTAINSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.EATFAST_CONTAINS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._cONTIENTTableAdapter.Update(updatedRows));
+                    result = (result + this._eATFAST_CONTAINSTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._eATFAST_RESTAURANTTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.EATFAST_RESTAURANT.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._eATFAST_RESTAURANTTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -5455,35 +6526,43 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateInsertedRows(DataSetEatFast dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._pERSONTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PERSON.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._eATFAST_PERSONTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.EATFAST_PERSON.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._pERSONTableAdapter.Update(addedRows));
+                    result = (result + this._eATFAST_PERSONTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._oRDER1TableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ORDER1.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._eATFAST_ORDERTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.EATFAST_ORDER.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._oRDER1TableAdapter.Update(addedRows));
+                    result = (result + this._eATFAST_ORDERTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._pRODUCTTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PRODUCT.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._eATFAST_PRODUCTTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.EATFAST_PRODUCT.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._pRODUCTTableAdapter.Update(addedRows));
+                    result = (result + this._eATFAST_PRODUCTTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._cONTIENTTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.CONTIENT.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._eATFAST_CONTAINSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.EATFAST_CONTAINS.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._cONTIENTTableAdapter.Update(addedRows));
+                    result = (result + this._eATFAST_CONTAINSTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._eATFAST_RESTAURANTTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.EATFAST_RESTAURANT.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._eATFAST_RESTAURANTTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -5497,35 +6576,43 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(DataSetEatFast dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._cONTIENTTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.CONTIENT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._eATFAST_RESTAURANTTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.EATFAST_RESTAURANT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._cONTIENTTableAdapter.Update(deletedRows));
+                    result = (result + this._eATFAST_RESTAURANTTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._pRODUCTTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PRODUCT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._eATFAST_CONTAINSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.EATFAST_CONTAINS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._pRODUCTTableAdapter.Update(deletedRows));
+                    result = (result + this._eATFAST_CONTAINSTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._oRDER1TableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ORDER1.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._eATFAST_PRODUCTTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.EATFAST_PRODUCT.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._oRDER1TableAdapter.Update(deletedRows));
+                    result = (result + this._eATFAST_PRODUCTTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._pERSONTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PERSON.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._eATFAST_ORDERTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.EATFAST_ORDER.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._pERSONTableAdapter.Update(deletedRows));
+                    result = (result + this._eATFAST_ORDERTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._eATFAST_PERSONTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.EATFAST_PERSON.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._eATFAST_PERSONTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -5568,23 +6655,28 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._cONTIENTTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._cONTIENTTableAdapter.Connection) == false))) {
+            if (((this._eATFAST_CONTAINSTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._eATFAST_CONTAINSTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._oRDER1TableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._oRDER1TableAdapter.Connection) == false))) {
+            if (((this._eATFAST_ORDERTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._eATFAST_ORDERTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._pERSONTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._pERSONTableAdapter.Connection) == false))) {
+            if (((this._eATFAST_PERSONTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._eATFAST_PERSONTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._pRODUCTTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._pRODUCTTableAdapter.Connection) == false))) {
+            if (((this._eATFAST_PRODUCTTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._eATFAST_PRODUCTTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._eATFAST_RESTAURANTTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._eATFAST_RESTAURANTTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -5620,40 +6712,49 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._cONTIENTTableAdapter != null)) {
-                    revertConnections.Add(this._cONTIENTTableAdapter, this._cONTIENTTableAdapter.Connection);
-                    this._cONTIENTTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
-                    this._cONTIENTTableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
-                    if (this._cONTIENTTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._cONTIENTTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._cONTIENTTableAdapter.Adapter);
+                if ((this._eATFAST_CONTAINSTableAdapter != null)) {
+                    revertConnections.Add(this._eATFAST_CONTAINSTableAdapter, this._eATFAST_CONTAINSTableAdapter.Connection);
+                    this._eATFAST_CONTAINSTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
+                    this._eATFAST_CONTAINSTableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
+                    if (this._eATFAST_CONTAINSTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._eATFAST_CONTAINSTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._eATFAST_CONTAINSTableAdapter.Adapter);
                     }
                 }
-                if ((this._oRDER1TableAdapter != null)) {
-                    revertConnections.Add(this._oRDER1TableAdapter, this._oRDER1TableAdapter.Connection);
-                    this._oRDER1TableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
-                    this._oRDER1TableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
-                    if (this._oRDER1TableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._oRDER1TableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._oRDER1TableAdapter.Adapter);
+                if ((this._eATFAST_ORDERTableAdapter != null)) {
+                    revertConnections.Add(this._eATFAST_ORDERTableAdapter, this._eATFAST_ORDERTableAdapter.Connection);
+                    this._eATFAST_ORDERTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
+                    this._eATFAST_ORDERTableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
+                    if (this._eATFAST_ORDERTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._eATFAST_ORDERTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._eATFAST_ORDERTableAdapter.Adapter);
                     }
                 }
-                if ((this._pERSONTableAdapter != null)) {
-                    revertConnections.Add(this._pERSONTableAdapter, this._pERSONTableAdapter.Connection);
-                    this._pERSONTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
-                    this._pERSONTableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
-                    if (this._pERSONTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._pERSONTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._pERSONTableAdapter.Adapter);
+                if ((this._eATFAST_PERSONTableAdapter != null)) {
+                    revertConnections.Add(this._eATFAST_PERSONTableAdapter, this._eATFAST_PERSONTableAdapter.Connection);
+                    this._eATFAST_PERSONTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
+                    this._eATFAST_PERSONTableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
+                    if (this._eATFAST_PERSONTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._eATFAST_PERSONTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._eATFAST_PERSONTableAdapter.Adapter);
                     }
                 }
-                if ((this._pRODUCTTableAdapter != null)) {
-                    revertConnections.Add(this._pRODUCTTableAdapter, this._pRODUCTTableAdapter.Connection);
-                    this._pRODUCTTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
-                    this._pRODUCTTableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
-                    if (this._pRODUCTTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._pRODUCTTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._pRODUCTTableAdapter.Adapter);
+                if ((this._eATFAST_PRODUCTTableAdapter != null)) {
+                    revertConnections.Add(this._eATFAST_PRODUCTTableAdapter, this._eATFAST_PRODUCTTableAdapter.Connection);
+                    this._eATFAST_PRODUCTTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
+                    this._eATFAST_PRODUCTTableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
+                    if (this._eATFAST_PRODUCTTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._eATFAST_PRODUCTTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._eATFAST_PRODUCTTableAdapter.Adapter);
+                    }
+                }
+                if ((this._eATFAST_RESTAURANTTableAdapter != null)) {
+                    revertConnections.Add(this._eATFAST_RESTAURANTTableAdapter, this._eATFAST_RESTAURANTTableAdapter.Connection);
+                    this._eATFAST_RESTAURANTTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
+                    this._eATFAST_RESTAURANTTableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
+                    if (this._eATFAST_RESTAURANTTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._eATFAST_RESTAURANTTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._eATFAST_RESTAURANTTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -5714,21 +6815,25 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._cONTIENTTableAdapter != null)) {
-                    this._cONTIENTTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._cONTIENTTableAdapter]));
-                    this._cONTIENTTableAdapter.Transaction = null;
+                if ((this._eATFAST_CONTAINSTableAdapter != null)) {
+                    this._eATFAST_CONTAINSTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._eATFAST_CONTAINSTableAdapter]));
+                    this._eATFAST_CONTAINSTableAdapter.Transaction = null;
                 }
-                if ((this._oRDER1TableAdapter != null)) {
-                    this._oRDER1TableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._oRDER1TableAdapter]));
-                    this._oRDER1TableAdapter.Transaction = null;
+                if ((this._eATFAST_ORDERTableAdapter != null)) {
+                    this._eATFAST_ORDERTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._eATFAST_ORDERTableAdapter]));
+                    this._eATFAST_ORDERTableAdapter.Transaction = null;
                 }
-                if ((this._pERSONTableAdapter != null)) {
-                    this._pERSONTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._pERSONTableAdapter]));
-                    this._pERSONTableAdapter.Transaction = null;
+                if ((this._eATFAST_PERSONTableAdapter != null)) {
+                    this._eATFAST_PERSONTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._eATFAST_PERSONTableAdapter]));
+                    this._eATFAST_PERSONTableAdapter.Transaction = null;
                 }
-                if ((this._pRODUCTTableAdapter != null)) {
-                    this._pRODUCTTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._pRODUCTTableAdapter]));
-                    this._pRODUCTTableAdapter.Transaction = null;
+                if ((this._eATFAST_PRODUCTTableAdapter != null)) {
+                    this._eATFAST_PRODUCTTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._eATFAST_PRODUCTTableAdapter]));
+                    this._eATFAST_PRODUCTTableAdapter.Transaction = null;
+                }
+                if ((this._eATFAST_RESTAURANTTableAdapter != null)) {
+                    this._eATFAST_RESTAURANTTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._eATFAST_RESTAURANTTableAdapter]));
+                    this._eATFAST_RESTAURANTTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
