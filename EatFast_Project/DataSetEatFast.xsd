@@ -146,7 +146,16 @@
               <Mapping SourceColumn="ORD_TOTAL" DataSetColumn="ORD_TOTAL" />
               <Mapping SourceColumn="ORD_PAYMENTSTATUS" DataSetColumn="ORD_PAYMENTSTATUS" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="ConnectionOdpSystem (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByOrder" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByOrder" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByOrder">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ORD_ID, PER_ID, ORD_DATE, ORD_STATUS, ORD_DELIVERYADDRESS, ORD_TOTAL, ORD_PAYMENTSTATUS FROM EATFAST_DATA.EATFAST_ORDER</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EATFAST_PERSONTableAdapter" GeneratorDataComponentClassName="EATFAST_PERSONTableAdapter" Name="EATFAST_PERSON" UserDataComponentName="EATFAST_PERSONTableAdapter">
             <MainSource>
@@ -222,7 +231,36 @@
               <Mapping SourceColumn="PER_ADDRESS" DataSetColumn="PER_ADDRESS" />
               <Mapping SourceColumn="PER_ACCOUNTTYPE" DataSetColumn="PER_ACCOUNTTYPE" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="ConnectionOdpSystem (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT PER_ID, PER_NAME, PER_EMAIL, PER_PASSWORD, PER_ADDRESS, PER_ACCOUNTTYPE FROM EATFAST_DATA.EATFAST_PERSON</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ConnectionOdpSystem (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByAccountTypeAdmin" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByAccountTypeAdmin" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByAccountTypeAdmin">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        PER_ID, PER_NAME, PER_EMAIL, PER_PASSWORD, PER_ADDRESS, PER_ACCOUNTTYPE
+FROM            EATFAST_DATA.EATFAST_PERSON
+WHERE        (PER_ACCOUNTTYPE = 'Admin')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ConnectionOdpSystem (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByAccountTypeClient" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByAccountTypeClient" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByAccountTypeClient">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        PER_ID, PER_NAME, PER_EMAIL, PER_PASSWORD, PER_ADDRESS, PER_ACCOUNTTYPE
+FROM            EATFAST_DATA.EATFAST_PERSON
+WHERE        (PER_ACCOUNTTYPE = 'Client')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EATFAST_PRODUCTTableAdapter" GeneratorDataComponentClassName="EATFAST_PRODUCTTableAdapter" Name="EATFAST_PRODUCT" UserDataComponentName="EATFAST_PRODUCTTableAdapter">
             <MainSource>

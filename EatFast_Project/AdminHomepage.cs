@@ -29,6 +29,13 @@ namespace EatFast_Project
 
         private void AdminHomepage_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'ordersDataSetEatFast.EATFAST_ORDER' table. You can move, or remove it, as needed.
+            this.ordersTableAdapter.Fill(this.clientDataSetEatFast.EATFAST_ORDER);
+            // TODO: This line of code loads data into the 'dataSetEatFast.EATFAST_PERSON' table. You can move, or remove it, as needed.
+            this.clientTableAdapter.FillByAccountTypeClient(this.clientDataSetEatFast.EATFAST_PERSON);
+            // TODO: This line of code loads data into the 'dataSetEatFast.EATFAST_PERSON' table. You can move, or remove it, as needed.
+            this.adminTableAdapter.FillByAccountTypeAdmin(this.adminDataSetEatFast.EATFAST_PERSON);
+
 
         }
 
@@ -249,5 +256,39 @@ namespace EatFast_Project
                     break;
             }
         }
+
+
+        private void fillByAccountTypeClientToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.clientTableAdapter.FillByAccountTypeClient(this.clientDataSetEatFast.EATFAST_PERSON);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fillByAccountTypeAdminToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.adminTableAdapter.FillByAccountTypeAdmin(this.clientDataSetEatFast.EATFAST_PERSON);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+
     }
 }
