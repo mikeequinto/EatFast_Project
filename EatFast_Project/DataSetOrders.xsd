@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="DataSetEatFast" targetNamespace="http://tempuri.org/DataSetEatFast.xsd" xmlns:mstns="http://tempuri.org/DataSetEatFast.xsd" xmlns="http://tempuri.org/DataSetEatFast.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="DataSetOrders" targetNamespace="http://tempuri.org/DataSetOrders.xsd" xmlns:mstns="http://tempuri.org/DataSetOrders.xsd" xmlns="http://tempuri.org/DataSetOrders.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -7,12 +7,38 @@
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionOdpSystem" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionOdpSystem (Settings)" ParameterPrefix=":" PropertyReference="ApplicationSettings.EatFast_Project.Properties.Settings.GlobalReference.Default.ConnectionOdpSystem" Provider="Oracle.ManagedDataAccess.Client" />
         </Connections>
         <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EATFAST_ORDERTableAdapter" GeneratorDataComponentClassName="EATFAST_ORDERTableAdapter" Name="EATFAST_ORDER" UserDataComponentName="EATFAST_ORDERTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionOdpSystem (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        SYSTEM.EATFAST_ORDER.ORD_ID, SYSTEM.EATFAST_ORDER.PER_ID, SYSTEM.EATFAST_ORDER.ORD_DATE, SYSTEM.EATFAST_ORDER.ORD_STATUS, SYSTEM.EATFAST_ORDER.ORD_DELIVERYADDRESS, 
+                         SYSTEM.EATFAST_ORDER.ORD_TOTAL, SYSTEM.EATFAST_ORDER.ORD_PAYMENTSTATUS, SYSTEM.EATFAST_PERSON.PER_NAME
+FROM            SYSTEM.EATFAST_ORDER INNER JOIN
+                         SYSTEM.EATFAST_PERSON ON SYSTEM.EATFAST_ORDER.PER_ID = SYSTEM.EATFAST_PERSON.PER_ID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ORD_ID" DataSetColumn="ORD_ID" />
+              <Mapping SourceColumn="PER_ID" DataSetColumn="PER_ID" />
+              <Mapping SourceColumn="ORD_DATE" DataSetColumn="ORD_DATE" />
+              <Mapping SourceColumn="ORD_STATUS" DataSetColumn="ORD_STATUS" />
+              <Mapping SourceColumn="ORD_DELIVERYADDRESS" DataSetColumn="ORD_DELIVERYADDRESS" />
+              <Mapping SourceColumn="ORD_TOTAL" DataSetColumn="ORD_TOTAL" />
+              <Mapping SourceColumn="ORD_PAYMENTSTATUS" DataSetColumn="ORD_PAYMENTSTATUS" />
+              <Mapping SourceColumn="PER_NAME" DataSetColumn="PER_NAME" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EATFAST_PERSONTableAdapter" GeneratorDataComponentClassName="EATFAST_PERSONTableAdapter" Name="EATFAST_PERSON" UserDataComponentName="EATFAST_PERSONTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionOdpSystem (Settings)" DbObjectName="EATFAST_DATA.EATFAST_PERSON" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ConnectionOdpSystem (Settings)" DbObjectName="SYSTEM.EATFAST_PERSON" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM "EATFAST_DATA"."EATFAST_PERSON" WHERE (("PER_ID" = :Original_PER_ID) AND ((:IsNull_PER_NAME = 1 AND "PER_NAME" IS NULL) OR ("PER_NAME" = :Original_PER_NAME)) AND ((:IsNull_PER_EMAIL = 1 AND "PER_EMAIL" IS NULL) OR ("PER_EMAIL" = :Original_PER_EMAIL)) AND ((:IsNull_PER_PASSWORD = 1 AND "PER_PASSWORD" IS NULL) OR ("PER_PASSWORD" = :Original_PER_PASSWORD)) AND ((:IsNull_PER_ADDRESS = 1 AND "PER_ADDRESS" IS NULL) OR ("PER_ADDRESS" = :Original_PER_ADDRESS)) AND ((:IsNull_PER_ACCOUNTTYPE = 1 AND "PER_ACCOUNTTYPE" IS NULL) OR ("PER_ACCOUNTTYPE" = :Original_PER_ACCOUNTTYPE)))</CommandText>
+                    <CommandText>DELETE FROM "SYSTEM"."EATFAST_PERSON" WHERE (("PER_ID" = :Original_PER_ID) AND ((:IsNull_PER_NAME = 1 AND "PER_NAME" IS NULL) OR ("PER_NAME" = :Original_PER_NAME)) AND ((:IsNull_PER_EMAIL = 1 AND "PER_EMAIL" IS NULL) OR ("PER_EMAIL" = :Original_PER_EMAIL)) AND ((:IsNull_PER_PASSWORD = 1 AND "PER_PASSWORD" IS NULL) OR ("PER_PASSWORD" = :Original_PER_PASSWORD)) AND ((:IsNull_PER_ADDRESS = 1 AND "PER_ADDRESS" IS NULL) OR ("PER_ADDRESS" = :Original_PER_ADDRESS)) AND ((:IsNull_PER_ACCOUNTTYPE = 1 AND "PER_ACCOUNTTYPE" IS NULL) OR ("PER_ACCOUNTTYPE" = :Original_PER_ACCOUNTTYPE)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_PER_ID" Precision="0" ProviderType="Int32" Scale="0" Size="22" SourceColumn="PER_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_PER_NAME" Precision="0" ProviderType="Int32" Scale="0" Size="32" SourceColumn="PER_NAME" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -30,7 +56,7 @@
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO "EATFAST_DATA"."EATFAST_PERSON" ("PER_ID", "PER_NAME", "PER_EMAIL", "PER_PASSWORD", "PER_ADDRESS", "PER_ACCOUNTTYPE") VALUES (:PER_ID, :PER_NAME, :PER_EMAIL, :PER_PASSWORD, :PER_ADDRESS, :PER_ACCOUNTTYPE)</CommandText>
+                    <CommandText>INSERT INTO "SYSTEM"."EATFAST_PERSON" ("PER_ID", "PER_NAME", "PER_EMAIL", "PER_PASSWORD", "PER_ADDRESS", "PER_ACCOUNTTYPE") VALUES (:PER_ID, :PER_NAME, :PER_EMAIL, :PER_PASSWORD, :PER_ADDRESS, :PER_ACCOUNTTYPE)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="PER_ID" Precision="0" ProviderType="Int32" Scale="0" Size="22" SourceColumn="PER_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="PER_NAME" Precision="0" ProviderType="Varchar2" Scale="0" Size="32" SourceColumn="PER_NAME" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -43,13 +69,13 @@
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT PER_ID, PER_NAME, PER_EMAIL, PER_PASSWORD, PER_ADDRESS, PER_ACCOUNTTYPE FROM EATFAST_DATA.EATFAST_PERSON</CommandText>
+                    <CommandText>SELECT PER_ID, PER_NAME, PER_EMAIL, PER_PASSWORD, PER_ADDRESS, PER_ACCOUNTTYPE FROM SYSTEM.EATFAST_PERSON</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE "EATFAST_DATA"."EATFAST_PERSON" SET "PER_ID" = :PER_ID, "PER_NAME" = :PER_NAME, "PER_EMAIL" = :PER_EMAIL, "PER_PASSWORD" = :PER_PASSWORD, "PER_ADDRESS" = :PER_ADDRESS, "PER_ACCOUNTTYPE" = :PER_ACCOUNTTYPE WHERE (("PER_ID" = :Original_PER_ID) AND ((:IsNull_PER_NAME = 1 AND "PER_NAME" IS NULL) OR ("PER_NAME" = :Original_PER_NAME)) AND ((:IsNull_PER_EMAIL = 1 AND "PER_EMAIL" IS NULL) OR ("PER_EMAIL" = :Original_PER_EMAIL)) AND ((:IsNull_PER_PASSWORD = 1 AND "PER_PASSWORD" IS NULL) OR ("PER_PASSWORD" = :Original_PER_PASSWORD)) AND ((:IsNull_PER_ADDRESS = 1 AND "PER_ADDRESS" IS NULL) OR ("PER_ADDRESS" = :Original_PER_ADDRESS)) AND ((:IsNull_PER_ACCOUNTTYPE = 1 AND "PER_ACCOUNTTYPE" IS NULL) OR ("PER_ACCOUNTTYPE" = :Original_PER_ACCOUNTTYPE)))</CommandText>
+                    <CommandText>UPDATE "SYSTEM"."EATFAST_PERSON" SET "PER_ID" = :PER_ID, "PER_NAME" = :PER_NAME, "PER_EMAIL" = :PER_EMAIL, "PER_PASSWORD" = :PER_PASSWORD, "PER_ADDRESS" = :PER_ADDRESS, "PER_ACCOUNTTYPE" = :PER_ACCOUNTTYPE WHERE (("PER_ID" = :Original_PER_ID) AND ((:IsNull_PER_NAME = 1 AND "PER_NAME" IS NULL) OR ("PER_NAME" = :Original_PER_NAME)) AND ((:IsNull_PER_EMAIL = 1 AND "PER_EMAIL" IS NULL) OR ("PER_EMAIL" = :Original_PER_EMAIL)) AND ((:IsNull_PER_PASSWORD = 1 AND "PER_PASSWORD" IS NULL) OR ("PER_PASSWORD" = :Original_PER_PASSWORD)) AND ((:IsNull_PER_ADDRESS = 1 AND "PER_ADDRESS" IS NULL) OR ("PER_ADDRESS" = :Original_PER_ADDRESS)) AND ((:IsNull_PER_ACCOUNTTYPE = 1 AND "PER_ACCOUNTTYPE" IS NULL) OR ("PER_ACCOUNTTYPE" = :Original_PER_ACCOUNTTYPE)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="PER_ID" Precision="0" ProviderType="Int32" Scale="0" Size="22" SourceColumn="PER_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="PER_NAME" Precision="0" ProviderType="Varchar2" Scale="0" Size="32" SourceColumn="PER_NAME" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -81,46 +107,55 @@
               <Mapping SourceColumn="PER_ADDRESS" DataSetColumn="PER_ADDRESS" />
               <Mapping SourceColumn="PER_ACCOUNTTYPE" DataSetColumn="PER_ACCOUNTTYPE" />
             </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="ConnectionOdpSystem (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillBy">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT PER_ID, PER_NAME, PER_EMAIL, PER_PASSWORD, PER_ADDRESS, PER_ACCOUNTTYPE FROM EATFAST_DATA.EATFAST_PERSON</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="ConnectionOdpSystem (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByAccountTypeAdmin" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByAccountTypeAdmin" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByAccountTypeAdmin">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        PER_ID, PER_NAME, PER_EMAIL, PER_PASSWORD, PER_ADDRESS, PER_ACCOUNTTYPE
-FROM            EATFAST_DATA.EATFAST_PERSON
-WHERE        (PER_ACCOUNTTYPE = 'Admin')</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="ConnectionOdpSystem (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByAccountTypeClient" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByAccountTypeClient" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByAccountTypeClient">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        PER_ID, PER_NAME, PER_EMAIL, PER_PASSWORD, PER_ADDRESS, PER_ACCOUNTTYPE
-FROM            EATFAST_DATA.EATFAST_PERSON
-WHERE        (PER_ACCOUNTTYPE = 'Client')</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </Sources>
+            <Sources />
           </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DataSetEatFast" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetEatFast" msprop:Generator_UserDSName="DataSetEatFast">
+  <xs:element name="DataSetOrders" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetOrders" msprop:Generator_UserDSName="DataSetOrders">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="EATFAST_PERSON" msprop:Generator_TableClassName="EATFAST_PERSONDataTable" msprop:Generator_TableVarName="tableEATFAST_PERSON" msprop:Generator_TablePropName="EATFAST_PERSON" msprop:Generator_RowDeletingName="EATFAST_PERSONRowDeleting" msprop:Generator_RowChangingName="EATFAST_PERSONRowChanging" msprop:Generator_RowEvHandlerName="EATFAST_PERSONRowChangeEventHandler" msprop:Generator_RowDeletedName="EATFAST_PERSONRowDeleted" msprop:Generator_UserTableName="EATFAST_PERSON" msprop:Generator_RowChangedName="EATFAST_PERSONRowChanged" msprop:Generator_RowEvArgName="EATFAST_PERSONRowChangeEvent" msprop:Generator_RowClassName="EATFAST_PERSONRow">
+        <xs:element name="EATFAST_ORDER" msprop:Generator_TableClassName="EATFAST_ORDERDataTable" msprop:Generator_TableVarName="tableEATFAST_ORDER" msprop:Generator_RowChangedName="EATFAST_ORDERRowChanged" msprop:Generator_TablePropName="EATFAST_ORDER" msprop:Generator_RowDeletingName="EATFAST_ORDERRowDeleting" msprop:Generator_RowChangingName="EATFAST_ORDERRowChanging" msprop:Generator_RowEvHandlerName="EATFAST_ORDERRowChangeEventHandler" msprop:Generator_RowDeletedName="EATFAST_ORDERRowDeleted" msprop:Generator_RowClassName="EATFAST_ORDERRow" msprop:Generator_UserTableName="EATFAST_ORDER" msprop:Generator_RowEvArgName="EATFAST_ORDERRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ORD_ID" msprop:Generator_ColumnVarNameInTable="columnORD_ID" msprop:Generator_ColumnPropNameInRow="ORD_ID" msprop:Generator_ColumnPropNameInTable="ORD_IDColumn" msprop:Generator_UserColumnName="ORD_ID" type="xs:int" />
+              <xs:element name="PER_ID" msprop:Generator_ColumnVarNameInTable="columnPER_ID" msprop:Generator_ColumnPropNameInRow="PER_ID" msprop:Generator_ColumnPropNameInTable="PER_IDColumn" msprop:Generator_UserColumnName="PER_ID" type="xs:int" />
+              <xs:element name="ORD_DATE" msprop:Generator_ColumnVarNameInTable="columnORD_DATE" msprop:Generator_ColumnPropNameInRow="ORD_DATE" msprop:Generator_ColumnPropNameInTable="ORD_DATEColumn" msprop:Generator_UserColumnName="ORD_DATE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ORD_STATUS" msprop:Generator_ColumnVarNameInTable="columnORD_STATUS" msprop:Generator_ColumnPropNameInRow="ORD_STATUS" msprop:Generator_ColumnPropNameInTable="ORD_STATUSColumn" msprop:Generator_UserColumnName="ORD_STATUS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_DELIVERYADDRESS" msprop:Generator_ColumnVarNameInTable="columnORD_DELIVERYADDRESS" msprop:Generator_ColumnPropNameInRow="ORD_DELIVERYADDRESS" msprop:Generator_ColumnPropNameInTable="ORD_DELIVERYADDRESSColumn" msprop:Generator_UserColumnName="ORD_DELIVERYADDRESS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ORD_TOTAL" msprop:Generator_ColumnVarNameInTable="columnORD_TOTAL" msprop:Generator_ColumnPropNameInRow="ORD_TOTAL" msprop:Generator_ColumnPropNameInTable="ORD_TOTALColumn" msprop:Generator_UserColumnName="ORD_TOTAL" type="xs:float" minOccurs="0" />
+              <xs:element name="ORD_PAYMENTSTATUS" msprop:Generator_ColumnVarNameInTable="columnORD_PAYMENTSTATUS" msprop:Generator_ColumnPropNameInRow="ORD_PAYMENTSTATUS" msprop:Generator_ColumnPropNameInTable="ORD_PAYMENTSTATUSColumn" msprop:Generator_UserColumnName="ORD_PAYMENTSTATUS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PER_NAME" msprop:Generator_ColumnVarNameInTable="columnPER_NAME" msprop:Generator_ColumnPropNameInRow="PER_NAME" msprop:Generator_ColumnPropNameInTable="PER_NAMEColumn" msprop:Generator_UserColumnName="PER_NAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="32" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EATFAST_PERSON" msprop:Generator_TableClassName="EATFAST_PERSONDataTable" msprop:Generator_TableVarName="tableEATFAST_PERSON" msprop:Generator_RowChangedName="EATFAST_PERSONRowChanged" msprop:Generator_TablePropName="EATFAST_PERSON" msprop:Generator_RowDeletingName="EATFAST_PERSONRowDeleting" msprop:Generator_RowChangingName="EATFAST_PERSONRowChanging" msprop:Generator_RowEvHandlerName="EATFAST_PERSONRowChangeEventHandler" msprop:Generator_RowDeletedName="EATFAST_PERSONRowDeleted" msprop:Generator_RowClassName="EATFAST_PERSONRow" msprop:Generator_UserTableName="EATFAST_PERSON" msprop:Generator_RowEvArgName="EATFAST_PERSONRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PER_ID" msprop:Generator_ColumnVarNameInTable="columnPER_ID" msprop:Generator_ColumnPropNameInRow="PER_ID" msprop:Generator_ColumnPropNameInTable="PER_IDColumn" msprop:Generator_UserColumnName="PER_ID" type="xs:int" />
@@ -165,8 +200,17 @@ WHERE        (PER_ACCOUNTTYPE = 'Client')</CommandText>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:EATFAST_ORDER" />
+      <xs:field xpath="mstns:ORD_ID" />
+    </xs:unique>
+    <xs:unique name="EATFAST_PERSON_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:EATFAST_PERSON" />
       <xs:field xpath="mstns:PER_ID" />
     </xs:unique>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_EATFAST_ORDER_EATFAST_PERSO" msdata:parent="EATFAST_PERSON" msdata:child="EATFAST_ORDER" msdata:parentkey="PER_ID" msdata:childkey="PER_ID" msprop:Generator_UserChildTable="EATFAST_ORDER" msprop:Generator_ChildPropName="GetEATFAST_ORDERRows" msprop:Generator_UserRelationName="FK_EATFAST_ORDER_EATFAST_PERSO" msprop:Generator_ParentPropName="EATFAST_PERSONRow" msprop:Generator_RelationVarName="relationFK_EATFAST_ORDER_EATFAST_PERSO" msprop:Generator_UserParentTable="EATFAST_PERSON" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>

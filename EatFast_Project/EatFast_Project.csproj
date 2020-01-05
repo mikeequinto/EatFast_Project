@@ -92,10 +92,33 @@
     <Compile Include="ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSetCategory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCategory.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetClientOrders.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetClientOrders.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetEatFast.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetEatFast.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetOrders.cs">
+      <DependentUpon>DataSetOrders.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetOrders.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetOrders.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetProducts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetProducts.xsd</DependentUpon>
     </Compile>
     <Compile Include="Homepage.cs">
       <SubType>Form</SubType>
@@ -166,6 +189,28 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="DataSetCategory.xsc">
+      <DependentUpon>DataSetCategory.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCategory.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCategory.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetCategory.xss">
+      <DependentUpon>DataSetCategory.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetClientOrders.xsc">
+      <DependentUpon>DataSetClientOrders.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetClientOrders.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetClientOrders.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetClientOrders.xss">
+      <DependentUpon>DataSetClientOrders.xsd</DependentUpon>
+    </None>
     <None Include="DataSetEatFast.xsc">
       <DependentUpon>DataSetEatFast.xsd</DependentUpon>
     </None>
@@ -175,6 +220,28 @@
     </None>
     <None Include="DataSetEatFast.xss">
       <DependentUpon>DataSetEatFast.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetOrders.xsc">
+      <DependentUpon>DataSetOrders.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetOrders.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetOrders.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetOrders.xss">
+      <DependentUpon>DataSetOrders.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetProducts.xsc">
+      <DependentUpon>DataSetProducts.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetProducts.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetProducts.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetProducts.xss">
+      <DependentUpon>DataSetProducts.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -29,8 +29,14 @@ namespace EatFast_Project
 
         private void AdminHomepage_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'ordersDataSetEatFast.EATFAST_ORDER' table. You can move, or remove it, as needed.
-            this.ordersTableAdapter.Fill(this.clientDataSetEatFast.EATFAST_ORDER);
+            // TODO: This line of code loads data into the 'dataSetCategory.EATFAST_PRODUCT' table. You can move, or remove it, as needed.
+            this.categoryTableAdapter.Fill(this.dataSetCategory.EATFAST_PRODUCT);
+            // TODO: This line of code loads data into the 'dataSetProducts.EATFAST_PRODUCT' table. You can move, or remove it, as needed.
+            this.productsTableAdapter.Fill(this.dataSetProducts.EATFAST_PRODUCT);
+            // TODO: This line of code loads data into the 'dataSetClientOrders.EATFAST_PERSON' table. You can move, or remove it, as needed.
+            this.clientOrdersTableAdapter.Fill(this.dataSetClientOrders.EATFAST_PERSON);
+            // TODO: This line of code loads data into the 'dataSetOrders.EATFAST_ORDER' table. You can move, or remove it, as needed.
+            this.ordersTableAdapter.Fill(this.dataSetOrders.EATFAST_ORDER);
             // TODO: This line of code loads data into the 'dataSetEatFast.EATFAST_PERSON' table. You can move, or remove it, as needed.
             this.clientTableAdapter.FillByAccountTypeClient(this.clientDataSetEatFast.EATFAST_PERSON);
             // TODO: This line of code loads data into the 'dataSetEatFast.EATFAST_PERSON' table. You can move, or remove it, as needed.
@@ -288,7 +294,6 @@ namespace EatFast_Project
             }
 
         }
-
 
     }
 }

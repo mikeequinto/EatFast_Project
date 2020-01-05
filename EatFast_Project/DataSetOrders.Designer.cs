@@ -20,17 +20,21 @@ namespace EatFast_Project {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSetEatFast")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSetOrders")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSetEatFast : global::System.Data.DataSet {
+    public partial class DataSetOrders : global::System.Data.DataSet {
+        
+        private EATFAST_ORDERDataTable tableEATFAST_ORDER;
         
         private EATFAST_PERSONDataTable tableEATFAST_PERSON;
+        
+        private global::System.Data.DataRelation relationFK_EATFAST_ORDER_EATFAST_PERSO;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public DataSetEatFast() {
+        public DataSetOrders() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +45,7 @@ namespace EatFast_Project {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected DataSetEatFast(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSetOrders(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,6 +58,9 @@ namespace EatFast_Project {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
+                if ((ds.Tables["EATFAST_ORDER"] != null)) {
+                    base.Tables.Add(new EATFAST_ORDERDataTable(ds.Tables["EATFAST_ORDER"]));
+                }
                 if ((ds.Tables["EATFAST_PERSON"] != null)) {
                     base.Tables.Add(new EATFAST_PERSONDataTable(ds.Tables["EATFAST_PERSON"]));
                 }
@@ -73,6 +80,16 @@ namespace EatFast_Project {
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
             base.Tables.CollectionChanged += schemaChangedHandler;
             this.Relations.CollectionChanged += schemaChangedHandler;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public EATFAST_ORDERDataTable EATFAST_ORDER {
+            get {
+                return this.tableEATFAST_ORDER;
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -127,7 +144,7 @@ namespace EatFast_Project {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSetEatFast cln = ((DataSetEatFast)(base.Clone()));
+            DataSetOrders cln = ((DataSetOrders)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,6 +169,9 @@ namespace EatFast_Project {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
+                if ((ds.Tables["EATFAST_ORDER"] != null)) {
+                    base.Tables.Add(new EATFAST_ORDERDataTable(ds.Tables["EATFAST_ORDER"]));
+                }
                 if ((ds.Tables["EATFAST_PERSON"] != null)) {
                     base.Tables.Add(new EATFAST_PERSONDataTable(ds.Tables["EATFAST_PERSON"]));
                 }
@@ -188,24 +208,43 @@ namespace EatFast_Project {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
+            this.tableEATFAST_ORDER = ((EATFAST_ORDERDataTable)(base.Tables["EATFAST_ORDER"]));
+            if ((initTable == true)) {
+                if ((this.tableEATFAST_ORDER != null)) {
+                    this.tableEATFAST_ORDER.InitVars();
+                }
+            }
             this.tableEATFAST_PERSON = ((EATFAST_PERSONDataTable)(base.Tables["EATFAST_PERSON"]));
             if ((initTable == true)) {
                 if ((this.tableEATFAST_PERSON != null)) {
                     this.tableEATFAST_PERSON.InitVars();
                 }
             }
+            this.relationFK_EATFAST_ORDER_EATFAST_PERSO = this.Relations["FK_EATFAST_ORDER_EATFAST_PERSO"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSetEatFast";
+            this.DataSetName = "DataSetOrders";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSetEatFast.xsd";
+            this.Namespace = "http://tempuri.org/DataSetOrders.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tableEATFAST_ORDER = new EATFAST_ORDERDataTable();
+            base.Tables.Add(this.tableEATFAST_ORDER);
             this.tableEATFAST_PERSON = new EATFAST_PERSONDataTable();
             base.Tables.Add(this.tableEATFAST_PERSON);
+            this.relationFK_EATFAST_ORDER_EATFAST_PERSO = new global::System.Data.DataRelation("FK_EATFAST_ORDER_EATFAST_PERSO", new global::System.Data.DataColumn[] {
+                        this.tableEATFAST_PERSON.PER_IDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEATFAST_ORDER.PER_IDColumn}, false);
+            this.Relations.Add(this.relationFK_EATFAST_ORDER_EATFAST_PERSO);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeEATFAST_ORDER() {
+            return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -225,7 +264,7 @@ namespace EatFast_Project {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSetEatFast ds = new DataSetEatFast();
+            DataSetOrders ds = new DataSetOrders();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,7 +309,374 @@ namespace EatFast_Project {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void EATFAST_ORDERRowChangeEventHandler(object sender, EATFAST_ORDERRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public delegate void EATFAST_PERSONRowChangeEventHandler(object sender, EATFAST_PERSONRowChangeEvent e);
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class EATFAST_ORDERDataTable : global::System.Data.TypedTableBase<EATFAST_ORDERRow> {
+            
+            private global::System.Data.DataColumn columnORD_ID;
+            
+            private global::System.Data.DataColumn columnPER_ID;
+            
+            private global::System.Data.DataColumn columnORD_DATE;
+            
+            private global::System.Data.DataColumn columnORD_STATUS;
+            
+            private global::System.Data.DataColumn columnORD_DELIVERYADDRESS;
+            
+            private global::System.Data.DataColumn columnORD_TOTAL;
+            
+            private global::System.Data.DataColumn columnORD_PAYMENTSTATUS;
+            
+            private global::System.Data.DataColumn columnPER_NAME;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_ORDERDataTable() {
+                this.TableName = "EATFAST_ORDER";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal EATFAST_ORDERDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected EATFAST_ORDERDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ORD_IDColumn {
+                get {
+                    return this.columnORD_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn PER_IDColumn {
+                get {
+                    return this.columnPER_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ORD_DATEColumn {
+                get {
+                    return this.columnORD_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ORD_STATUSColumn {
+                get {
+                    return this.columnORD_STATUS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ORD_DELIVERYADDRESSColumn {
+                get {
+                    return this.columnORD_DELIVERYADDRESS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ORD_TOTALColumn {
+                get {
+                    return this.columnORD_TOTAL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ORD_PAYMENTSTATUSColumn {
+                get {
+                    return this.columnORD_PAYMENTSTATUS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn PER_NAMEColumn {
+                get {
+                    return this.columnPER_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_ORDERRow this[int index] {
+                get {
+                    return ((EATFAST_ORDERRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event EATFAST_ORDERRowChangeEventHandler EATFAST_ORDERRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event EATFAST_ORDERRowChangeEventHandler EATFAST_ORDERRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event EATFAST_ORDERRowChangeEventHandler EATFAST_ORDERRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event EATFAST_ORDERRowChangeEventHandler EATFAST_ORDERRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddEATFAST_ORDERRow(EATFAST_ORDERRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_ORDERRow AddEATFAST_ORDERRow(int ORD_ID, EATFAST_PERSONRow parentEATFAST_PERSONRowByFK_EATFAST_ORDER_EATFAST_PERSO, System.DateTime ORD_DATE, string ORD_STATUS, string ORD_DELIVERYADDRESS, float ORD_TOTAL, string ORD_PAYMENTSTATUS, string PER_NAME) {
+                EATFAST_ORDERRow rowEATFAST_ORDERRow = ((EATFAST_ORDERRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ORD_ID,
+                        null,
+                        ORD_DATE,
+                        ORD_STATUS,
+                        ORD_DELIVERYADDRESS,
+                        ORD_TOTAL,
+                        ORD_PAYMENTSTATUS,
+                        PER_NAME};
+                if ((parentEATFAST_PERSONRowByFK_EATFAST_ORDER_EATFAST_PERSO != null)) {
+                    columnValuesArray[1] = parentEATFAST_PERSONRowByFK_EATFAST_ORDER_EATFAST_PERSO[0];
+                }
+                rowEATFAST_ORDERRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowEATFAST_ORDERRow);
+                return rowEATFAST_ORDERRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_ORDERRow FindByORD_ID(int ORD_ID) {
+                return ((EATFAST_ORDERRow)(this.Rows.Find(new object[] {
+                            ORD_ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                EATFAST_ORDERDataTable cln = ((EATFAST_ORDERDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new EATFAST_ORDERDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal void InitVars() {
+                this.columnORD_ID = base.Columns["ORD_ID"];
+                this.columnPER_ID = base.Columns["PER_ID"];
+                this.columnORD_DATE = base.Columns["ORD_DATE"];
+                this.columnORD_STATUS = base.Columns["ORD_STATUS"];
+                this.columnORD_DELIVERYADDRESS = base.Columns["ORD_DELIVERYADDRESS"];
+                this.columnORD_TOTAL = base.Columns["ORD_TOTAL"];
+                this.columnORD_PAYMENTSTATUS = base.Columns["ORD_PAYMENTSTATUS"];
+                this.columnPER_NAME = base.Columns["PER_NAME"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            private void InitClass() {
+                this.columnORD_ID = new global::System.Data.DataColumn("ORD_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnORD_ID);
+                this.columnPER_ID = new global::System.Data.DataColumn("PER_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPER_ID);
+                this.columnORD_DATE = new global::System.Data.DataColumn("ORD_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnORD_DATE);
+                this.columnORD_STATUS = new global::System.Data.DataColumn("ORD_STATUS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnORD_STATUS);
+                this.columnORD_DELIVERYADDRESS = new global::System.Data.DataColumn("ORD_DELIVERYADDRESS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnORD_DELIVERYADDRESS);
+                this.columnORD_TOTAL = new global::System.Data.DataColumn("ORD_TOTAL", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnORD_TOTAL);
+                this.columnORD_PAYMENTSTATUS = new global::System.Data.DataColumn("ORD_PAYMENTSTATUS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnORD_PAYMENTSTATUS);
+                this.columnPER_NAME = new global::System.Data.DataColumn("PER_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPER_NAME);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnORD_ID}, true));
+                this.columnORD_ID.AllowDBNull = false;
+                this.columnORD_ID.Unique = true;
+                this.columnPER_ID.AllowDBNull = false;
+                this.columnORD_STATUS.MaxLength = 32;
+                this.columnORD_DELIVERYADDRESS.MaxLength = 128;
+                this.columnORD_PAYMENTSTATUS.MaxLength = 32;
+                this.columnPER_NAME.MaxLength = 32;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_ORDERRow NewEATFAST_ORDERRow() {
+                return ((EATFAST_ORDERRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new EATFAST_ORDERRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(EATFAST_ORDERRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.EATFAST_ORDERRowChanged != null)) {
+                    this.EATFAST_ORDERRowChanged(this, new EATFAST_ORDERRowChangeEvent(((EATFAST_ORDERRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.EATFAST_ORDERRowChanging != null)) {
+                    this.EATFAST_ORDERRowChanging(this, new EATFAST_ORDERRowChangeEvent(((EATFAST_ORDERRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.EATFAST_ORDERRowDeleted != null)) {
+                    this.EATFAST_ORDERRowDeleted(this, new EATFAST_ORDERRowChangeEvent(((EATFAST_ORDERRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.EATFAST_ORDERRowDeleting != null)) {
+                    this.EATFAST_ORDERRowDeleting(this, new EATFAST_ORDERRowChangeEvent(((EATFAST_ORDERRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveEATFAST_ORDERRow(EATFAST_ORDERRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetOrders ds = new DataSetOrders();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "EATFAST_ORDERDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -546,7 +952,7 @@ namespace EatFast_Project {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetEatFast ds = new DataSetEatFast();
+                DataSetOrders ds = new DataSetOrders();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -602,6 +1008,222 @@ namespace EatFast_Project {
                 }
                 xs.Add(dsSchema);
                 return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class EATFAST_ORDERRow : global::System.Data.DataRow {
+            
+            private EATFAST_ORDERDataTable tableEATFAST_ORDER;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal EATFAST_ORDERRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableEATFAST_ORDER = ((EATFAST_ORDERDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ORD_ID {
+                get {
+                    return ((int)(this[this.tableEATFAST_ORDER.ORD_IDColumn]));
+                }
+                set {
+                    this[this.tableEATFAST_ORDER.ORD_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int PER_ID {
+                get {
+                    return ((int)(this[this.tableEATFAST_ORDER.PER_IDColumn]));
+                }
+                set {
+                    this[this.tableEATFAST_ORDER.PER_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime ORD_DATE {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableEATFAST_ORDER.ORD_DATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_DATE\' in table \'EATFAST_ORDER\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEATFAST_ORDER.ORD_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ORD_STATUS {
+                get {
+                    try {
+                        return ((string)(this[this.tableEATFAST_ORDER.ORD_STATUSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_STATUS\' in table \'EATFAST_ORDER\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEATFAST_ORDER.ORD_STATUSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ORD_DELIVERYADDRESS {
+                get {
+                    try {
+                        return ((string)(this[this.tableEATFAST_ORDER.ORD_DELIVERYADDRESSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_DELIVERYADDRESS\' in table \'EATFAST_ORDER\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEATFAST_ORDER.ORD_DELIVERYADDRESSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public float ORD_TOTAL {
+                get {
+                    try {
+                        return ((float)(this[this.tableEATFAST_ORDER.ORD_TOTALColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_TOTAL\' in table \'EATFAST_ORDER\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEATFAST_ORDER.ORD_TOTALColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string ORD_PAYMENTSTATUS {
+                get {
+                    try {
+                        return ((string)(this[this.tableEATFAST_ORDER.ORD_PAYMENTSTATUSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ORD_PAYMENTSTATUS\' in table \'EATFAST_ORDER\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEATFAST_ORDER.ORD_PAYMENTSTATUSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string PER_NAME {
+                get {
+                    try {
+                        return ((string)(this[this.tableEATFAST_ORDER.PER_NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PER_NAME\' in table \'EATFAST_ORDER\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEATFAST_ORDER.PER_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_PERSONRow EATFAST_PERSONRow {
+                get {
+                    return ((EATFAST_PERSONRow)(this.GetParentRow(this.Table.ParentRelations["FK_EATFAST_ORDER_EATFAST_PERSO"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_EATFAST_ORDER_EATFAST_PERSO"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsORD_DATENull() {
+                return this.IsNull(this.tableEATFAST_ORDER.ORD_DATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetORD_DATENull() {
+                this[this.tableEATFAST_ORDER.ORD_DATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsORD_STATUSNull() {
+                return this.IsNull(this.tableEATFAST_ORDER.ORD_STATUSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetORD_STATUSNull() {
+                this[this.tableEATFAST_ORDER.ORD_STATUSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsORD_DELIVERYADDRESSNull() {
+                return this.IsNull(this.tableEATFAST_ORDER.ORD_DELIVERYADDRESSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetORD_DELIVERYADDRESSNull() {
+                this[this.tableEATFAST_ORDER.ORD_DELIVERYADDRESSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsORD_TOTALNull() {
+                return this.IsNull(this.tableEATFAST_ORDER.ORD_TOTALColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetORD_TOTALNull() {
+                this[this.tableEATFAST_ORDER.ORD_TOTALColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsORD_PAYMENTSTATUSNull() {
+                return this.IsNull(this.tableEATFAST_ORDER.ORD_PAYMENTSTATUSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetORD_PAYMENTSTATUSNull() {
+                this[this.tableEATFAST_ORDER.ORD_PAYMENTSTATUSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsPER_NAMENull() {
+                return this.IsNull(this.tableEATFAST_ORDER.PER_NAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetPER_NAMENull() {
+                this[this.tableEATFAST_ORDER.PER_NAMEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -769,6 +1391,51 @@ namespace EatFast_Project {
             public void SetPER_ACCOUNTTYPENull() {
                 this[this.tableEATFAST_PERSON.PER_ACCOUNTTYPEColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_ORDERRow[] GetEATFAST_ORDERRows() {
+                if ((this.Table.ChildRelations["FK_EATFAST_ORDER_EATFAST_PERSO"] == null)) {
+                    return new EATFAST_ORDERRow[0];
+                }
+                else {
+                    return ((EATFAST_ORDERRow[])(base.GetChildRows(this.Table.ChildRelations["FK_EATFAST_ORDER_EATFAST_PERSO"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class EATFAST_ORDERRowChangeEvent : global::System.EventArgs {
+            
+            private EATFAST_ORDERRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_ORDERRowChangeEvent(EATFAST_ORDERRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EATFAST_ORDERRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
         }
         
         /// <summary>
@@ -806,8 +1473,185 @@ namespace EatFast_Project {
         }
     }
 }
-namespace EatFast_Project.DataSetEatFastTableAdapters {
+namespace EatFast_Project.DataSetOrdersTableAdapters {
     
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class EATFAST_ORDERTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleDataAdapter _adapter;
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleConnection _connection;
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleTransaction _transaction;
+        
+        private global::Oracle.ManagedDataAccess.Client.OracleCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public EATFAST_ORDERTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected internal global::Oracle.ManagedDataAccess.Client.OracleDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::Oracle.ManagedDataAccess.Client.OracleConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::Oracle.ManagedDataAccess.Client.OracleCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        internal global::Oracle.ManagedDataAccess.Client.OracleTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        protected global::Oracle.ManagedDataAccess.Client.OracleCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::Oracle.ManagedDataAccess.Client.OracleDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "EATFAST_ORDER";
+            tableMapping.ColumnMappings.Add("ORD_ID", "ORD_ID");
+            tableMapping.ColumnMappings.Add("PER_ID", "PER_ID");
+            tableMapping.ColumnMappings.Add("ORD_DATE", "ORD_DATE");
+            tableMapping.ColumnMappings.Add("ORD_STATUS", "ORD_STATUS");
+            tableMapping.ColumnMappings.Add("ORD_DELIVERYADDRESS", "ORD_DELIVERYADDRESS");
+            tableMapping.ColumnMappings.Add("ORD_TOTAL", "ORD_TOTAL");
+            tableMapping.ColumnMappings.Add("ORD_PAYMENTSTATUS", "ORD_PAYMENTSTATUS");
+            tableMapping.ColumnMappings.Add("PER_NAME", "PER_NAME");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::Oracle.ManagedDataAccess.Client.OracleConnection();
+            this._connection.ConnectionString = global::EatFast_Project.Properties.Settings.Default.ConnectionOdpSystem;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
+            this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        SYSTEM.EATFAST_ORDER.ORD_ID, SYSTEM.EATFAST_ORDER.PER_ID, SYSTEM.EATFAST_ORDER.ORD_DATE, SYSTEM.EATFAST_ORDER.ORD_STATUS, SYSTEM.EATFAST_ORDER.ORD_DELIVERYADDRESS, 
+                         SYSTEM.EATFAST_ORDER.ORD_TOTAL, SYSTEM.EATFAST_ORDER.ORD_PAYMENTSTATUS, SYSTEM.EATFAST_PERSON.PER_NAME
+FROM            SYSTEM.EATFAST_ORDER INNER JOIN
+                         SYSTEM.EATFAST_PERSON ON SYSTEM.EATFAST_ORDER.PER_ID = SYSTEM.EATFAST_PERSON.PER_ID";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSetOrders.EATFAST_ORDERDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSetOrders.EATFAST_ORDERDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSetOrders.EATFAST_ORDERDataTable dataTable = new DataSetOrders.EATFAST_ORDERDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
@@ -939,7 +1783,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""EATFAST_DATA"".""EATFAST_PERSON"" WHERE ((""PER_ID"" = :Original_PER_ID) AND ((:IsNull_PER_NAME = 1 AND ""PER_NAME"" IS NULL) OR (""PER_NAME"" = :Original_PER_NAME)) AND ((:IsNull_PER_EMAIL = 1 AND ""PER_EMAIL"" IS NULL) OR (""PER_EMAIL"" = :Original_PER_EMAIL)) AND ((:IsNull_PER_PASSWORD = 1 AND ""PER_PASSWORD"" IS NULL) OR (""PER_PASSWORD"" = :Original_PER_PASSWORD)) AND ((:IsNull_PER_ADDRESS = 1 AND ""PER_ADDRESS"" IS NULL) OR (""PER_ADDRESS"" = :Original_PER_ADDRESS)) AND ((:IsNull_PER_ACCOUNTTYPE = 1 AND ""PER_ACCOUNTTYPE"" IS NULL) OR (""PER_ACCOUNTTYPE"" = :Original_PER_ACCOUNTTYPE)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""SYSTEM"".""EATFAST_PERSON"" WHERE ((""PER_ID"" = :Original_PER_ID) AND ((:IsNull_PER_NAME = 1 AND ""PER_NAME"" IS NULL) OR (""PER_NAME"" = :Original_PER_NAME)) AND ((:IsNull_PER_EMAIL = 1 AND ""PER_EMAIL"" IS NULL) OR (""PER_EMAIL"" = :Original_PER_EMAIL)) AND ((:IsNull_PER_PASSWORD = 1 AND ""PER_PASSWORD"" IS NULL) OR (""PER_PASSWORD"" = :Original_PER_PASSWORD)) AND ((:IsNull_PER_ADDRESS = 1 AND ""PER_ADDRESS"" IS NULL) OR (""PER_ADDRESS"" = :Original_PER_ADDRESS)) AND ((:IsNull_PER_ACCOUNTTYPE = 1 AND ""PER_ACCOUNTTYPE"" IS NULL) OR (""PER_ACCOUNTTYPE"" = :Original_PER_ACCOUNTTYPE)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_PER_ID";
@@ -1042,9 +1886,9 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"EATFAST_DATA\".\"EATFAST_PERSON\" (\"PER_ID\", \"PER_NAME\", \"PER_EMAIL\", \"" +
-                "PER_PASSWORD\", \"PER_ADDRESS\", \"PER_ACCOUNTTYPE\") VALUES (:PER_ID, :PER_NAME, :PE" +
-                "R_EMAIL, :PER_PASSWORD, :PER_ADDRESS, :PER_ACCOUNTTYPE)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"SYSTEM\".\"EATFAST_PERSON\" (\"PER_ID\", \"PER_NAME\", \"PER_EMAIL\", \"PER_PA" +
+                "SSWORD\", \"PER_ADDRESS\", \"PER_ACCOUNTTYPE\") VALUES (:PER_ID, :PER_NAME, :PER_EMAI" +
+                "L, :PER_PASSWORD, :PER_ADDRESS, :PER_ACCOUNTTYPE)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "PER_ID";
@@ -1091,7 +1935,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""EATFAST_DATA"".""EATFAST_PERSON"" SET ""PER_ID"" = :PER_ID, ""PER_NAME"" = :PER_NAME, ""PER_EMAIL"" = :PER_EMAIL, ""PER_PASSWORD"" = :PER_PASSWORD, ""PER_ADDRESS"" = :PER_ADDRESS, ""PER_ACCOUNTTYPE"" = :PER_ACCOUNTTYPE WHERE ((""PER_ID"" = :Original_PER_ID) AND ((:IsNull_PER_NAME = 1 AND ""PER_NAME"" IS NULL) OR (""PER_NAME"" = :Original_PER_NAME)) AND ((:IsNull_PER_EMAIL = 1 AND ""PER_EMAIL"" IS NULL) OR (""PER_EMAIL"" = :Original_PER_EMAIL)) AND ((:IsNull_PER_PASSWORD = 1 AND ""PER_PASSWORD"" IS NULL) OR (""PER_PASSWORD"" = :Original_PER_PASSWORD)) AND ((:IsNull_PER_ADDRESS = 1 AND ""PER_ADDRESS"" IS NULL) OR (""PER_ADDRESS"" = :Original_PER_ADDRESS)) AND ((:IsNull_PER_ACCOUNTTYPE = 1 AND ""PER_ACCOUNTTYPE"" IS NULL) OR (""PER_ACCOUNTTYPE"" = :Original_PER_ACCOUNTTYPE)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""SYSTEM"".""EATFAST_PERSON"" SET ""PER_ID"" = :PER_ID, ""PER_NAME"" = :PER_NAME, ""PER_EMAIL"" = :PER_EMAIL, ""PER_PASSWORD"" = :PER_PASSWORD, ""PER_ADDRESS"" = :PER_ADDRESS, ""PER_ACCOUNTTYPE"" = :PER_ACCOUNTTYPE WHERE ((""PER_ID"" = :Original_PER_ID) AND ((:IsNull_PER_NAME = 1 AND ""PER_NAME"" IS NULL) OR (""PER_NAME"" = :Original_PER_NAME)) AND ((:IsNull_PER_EMAIL = 1 AND ""PER_EMAIL"" IS NULL) OR (""PER_EMAIL"" = :Original_PER_EMAIL)) AND ((:IsNull_PER_PASSWORD = 1 AND ""PER_PASSWORD"" IS NULL) OR (""PER_PASSWORD"" = :Original_PER_PASSWORD)) AND ((:IsNull_PER_ADDRESS = 1 AND ""PER_ADDRESS"" IS NULL) OR (""PER_ADDRESS"" = :Original_PER_ADDRESS)) AND ((:IsNull_PER_ACCOUNTTYPE = 1 AND ""PER_ACCOUNTTYPE"" IS NULL) OR (""PER_ACCOUNTTYPE"" = :Original_PER_ACCOUNTTYPE)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "PER_ID";
@@ -1247,36 +2091,19 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[4];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PER_ID, PER_NAME, PER_EMAIL, PER_PASSWORD, PER_ADDRESS, PER_ACCOUNTTYPE FR" +
-                "OM EATFAST_DATA.EATFAST_PERSON";
+                "OM SYSTEM.EATFAST_PERSON";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT PER_ID, PER_NAME, PER_EMAIL, PER_PASSWORD, PER_ADDRESS, PER_ACCOUNTTYPE FR" +
-                "OM EATFAST_DATA.EATFAST_PERSON";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        PER_ID, PER_NAME, PER_EMAIL, PER_PASSWORD, PER_ADDRESS, PER_ACCOUNT" +
-                "TYPE\r\nFROM            EATFAST_DATA.EATFAST_PERSON\r\nWHERE        (PER_ACCOUNTTYPE" +
-                " = \'Admin\')";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        PER_ID, PER_NAME, PER_EMAIL, PER_PASSWORD, PER_ADDRESS, PER_ACCOUNT" +
-                "TYPE\r\nFROM            EATFAST_DATA.EATFAST_PERSON\r\nWHERE        (PER_ACCOUNTTYPE" +
-                " = \'Client\')";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetEatFast.EATFAST_PERSONDataTable dataTable) {
+        public virtual int Fill(DataSetOrders.EATFAST_PERSONDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1289,9 +2116,9 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetEatFast.EATFAST_PERSONDataTable GetData() {
+        public virtual DataSetOrders.EATFAST_PERSONDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSetEatFast.EATFAST_PERSONDataTable dataTable = new DataSetEatFast.EATFAST_PERSONDataTable();
+            DataSetOrders.EATFAST_PERSONDataTable dataTable = new DataSetOrders.EATFAST_PERSONDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1299,53 +2126,14 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(DataSetEatFast.EATFAST_PERSONDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByAccountTypeAdmin(DataSetEatFast.EATFAST_PERSONDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByAccountTypeClient(DataSetEatFast.EATFAST_PERSONDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetEatFast.EATFAST_PERSONDataTable dataTable) {
+        public virtual int Update(DataSetOrders.EATFAST_PERSONDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetEatFast dataSet) {
+        public virtual int Update(DataSetOrders dataSet) {
             return this.Adapter.Update(dataSet, "EATFAST_PERSON");
         }
         
@@ -1671,7 +2459,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(DataSetEatFast dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSetOrders dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._eATFAST_PERSONTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.EATFAST_PERSON.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1690,7 +2478,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(DataSetEatFast dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSetOrders dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._eATFAST_PERSONTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.EATFAST_PERSON.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1708,7 +2496,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(DataSetEatFast dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSetOrders dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._eATFAST_PERSONTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.EATFAST_PERSON.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1750,7 +2538,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(DataSetEatFast dataSet) {
+        public virtual int UpdateAll(DataSetOrders dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
