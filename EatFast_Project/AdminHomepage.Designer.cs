@@ -125,6 +125,8 @@
             this.dataSetCategory = new EatFast_Project.DataSetCategory();
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoryTableAdapter = new EatFast_Project.DataSetCategoryTableAdapters.EATFAST_PRODUCTTableAdapter();
+            this.updateBtn = new System.Windows.Forms.Button();
+            this.addProductBtn = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -450,6 +452,8 @@
             // tabMenu
             // 
             this.tabMenu.AutoScroll = true;
+            this.tabMenu.Controls.Add(this.addProductBtn);
+            this.tabMenu.Controls.Add(this.updateBtn);
             this.tabMenu.Controls.Add(this.productsDataGridView);
             this.tabMenu.Controls.Add(this.label28);
             this.tabMenu.Location = new System.Drawing.Point(4, 22);
@@ -1061,6 +1065,7 @@
             // 
             // productsDataGridView
             // 
+            this.productsDataGridView.AllowUserToAddRows = false;
             this.productsDataGridView.AutoGenerateColumns = false;
             this.productsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1075,6 +1080,8 @@
             this.productsDataGridView.Name = "productsDataGridView";
             this.productsDataGridView.Size = new System.Drawing.Size(957, 301);
             this.productsDataGridView.TabIndex = 46;
+            this.productsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productsDataGridView_CellContentClick);
+            this.productsDataGridView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.updateProduct);
             // 
             // dataSetCategory
             // 
@@ -1089,6 +1096,26 @@
             // categoryTableAdapter
             // 
             this.categoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // updateBtn
+            // 
+            this.updateBtn.Location = new System.Drawing.Point(459, 465);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(99, 30);
+            this.updateBtn.TabIndex = 47;
+            this.updateBtn.Text = "Save Changes";
+            this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
+            // 
+            // addProductBtn
+            // 
+            this.addProductBtn.Location = new System.Drawing.Point(459, 75);
+            this.addProductBtn.Name = "addProductBtn";
+            this.addProductBtn.Size = new System.Drawing.Size(99, 30);
+            this.addProductBtn.TabIndex = 48;
+            this.addProductBtn.Text = "Add Product";
+            this.addProductBtn.UseVisualStyleBackColor = true;
+            this.addProductBtn.Click += new System.EventHandler(this.addProductBtn_Click);
             // 
             // dataGridViewTextBoxColumn14
             // 
@@ -1288,6 +1315,8 @@
         private DataSetCategory dataSetCategory;
         private System.Windows.Forms.BindingSource categoryBindingSource;
         private DataSetCategoryTableAdapters.EATFAST_PRODUCTTableAdapter categoryTableAdapter;
+        private System.Windows.Forms.Button updateBtn;
+        private System.Windows.Forms.Button addProductBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;

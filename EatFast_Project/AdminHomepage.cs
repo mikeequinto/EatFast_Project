@@ -295,5 +295,42 @@ namespace EatFast_Project
 
         }
 
+        private void updateProduct(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show("hi");
+            if (e.KeyChar == (Char)Keys.Enter)
+            {
+                int i = productsDataGridView.CurrentRow.Index;
+                MessageBox.Show(i.ToString());
+            }
+        }
+
+        private void updateProduct(object sender, DataGridViewColumnEventArgs e)
+        {
+            MessageBox.Show("heyy");
+        }
+
+        private void productsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void updateBtn_Click(object sender, EventArgs e)
+        {
+            //Update button update dataset after insertion,upadtion or deletion
+            DialogResult dr = MessageBox.Show("Are you sure to save Changes", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dr == DialogResult.Yes)
+            {
+                this.productsTableAdapter.Update(dataSetProducts.EATFAST_PRODUCT);
+                productsDataGridView.Refresh();
+                MessageBox.Show("Menu updated!");
+            }
+        }
+
+        private void addProductBtn_Click(object sender, EventArgs e)
+        {
+            AddProduct addProduct = new AddProduct();
+            addProduct.ShowDialog();
+        }
     }
 }

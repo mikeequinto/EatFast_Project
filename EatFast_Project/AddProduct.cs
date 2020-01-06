@@ -19,9 +19,47 @@ namespace EatFast_Project
 
         private void btnAddProductClicked(object sender, EventArgs e)
         {
-            MessageBox.Show("New product added!");
+            //Initialisation du dateset des produits
+            DataSetProducts dataSetProducts = new DataSetProducts();
 
-            ResetProductInfo();
+            DataSetProductsTableAdapters.EATFAST_PRODUCTTableAdapter productTableAdapter =
+                new DataSetProductsTableAdapters.EATFAST_PRODUCTTableAdapter();
+
+            productTableAdapter.Fill(dataSetProducts.EATFAST_PRODUCT);
+
+            try
+            {
+                //Création de l'id du nouveau produit
+                int id = Decimal.ToInt32((decimal)productTableAdapter.GetMaxId()) + 1;
+
+                //Création d'un nouveau produit avec les valeurs du formulaire
+                DataSetProducts.EATFAST_PRODUCTRow newPRODUCTRow;
+
+                newPRODUCTRow = dataSetProducts.EATFAST_PRODUCT.NewEATFAST_PRODUCTRow();
+                newPRODUCTRow.PRO_NAME = textBoxName.Text;
+                newPRODUCTRow.PRO_PRICE = float.Parse(textBoxPrice.Text);
+                newPRODUCTRow.PRO_DESCRIPTION = textBoxDescription.Text;
+                newPRODUCTRow.PRO_IMAGE = "null";
+                newPRODUCTRow.PRO_CATEGORY = comboBoxCategory.SelectedIndex.ToString();
+
+                //Enregistrement du produit
+                dataSetProducts.EATFAST_PRODUCT.Rows.Add(newPRODUCTRow);
+
+                //Insertion dans la bdd
+                productTableAdapter.Update(dataSetProducts.EATFAST_PRODUCT);
+
+                MessageBox.Show("New product added!");
+
+                ResetProductInfo();
+
+            } catch(Exception o)
+            {
+                MessageBox.Show("Something went wrong, please try again");
+                Console.Write("Exception thrown : ");
+                Console.Write("{0}", o.GetType(), o.Message);
+            }
+
+            
         }
 
         private void ResetProductInfo()

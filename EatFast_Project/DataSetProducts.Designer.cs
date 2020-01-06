@@ -1250,12 +1250,16 @@ namespace EatFast_Project.DataSetProductsTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[2];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PRO_ID, PRO_NAME, PRO_DESCRIPTION, PRO_IMAGE, PRO_PRICE, PRO_CATEGORY FROM" +
                 " SYSTEM.EATFAST_PRODUCT";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        MAX(PRO_ID) AS EXPR1\r\nFROM            SYSTEM.EATFAST_PRODUCT";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1524,6 +1528,34 @@ namespace EatFast_Project.DataSetProductsTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string PRO_NAME, string PRO_DESCRIPTION, string PRO_IMAGE, global::System.Nullable<float> PRO_PRICE, string PRO_CATEGORY, int Original_PRO_ID, string Original_PRO_NAME, string Original_PRO_DESCRIPTION, string Original_PRO_IMAGE, global::System.Nullable<float> Original_PRO_PRICE, string Original_PRO_CATEGORY) {
             return this.Update(Original_PRO_ID, PRO_NAME, PRO_DESCRIPTION, PRO_IMAGE, PRO_PRICE, PRO_CATEGORY, Original_PRO_ID, Original_PRO_NAME, Original_PRO_DESCRIPTION, Original_PRO_IMAGE, Original_PRO_PRICE, Original_PRO_CATEGORY);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<decimal> GetMaxId() {
+            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[1];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<decimal>();
+            }
+            else {
+                return new global::System.Nullable<decimal>(((decimal)(returnValue)));
+            }
         }
     }
     

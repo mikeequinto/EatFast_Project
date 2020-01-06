@@ -81,7 +81,17 @@
               <Mapping SourceColumn="PRO_PRICE" DataSetColumn="PRO_PRICE" />
               <Mapping SourceColumn="PRO_CATEGORY" DataSetColumn="PRO_CATEGORY" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="ConnectionOdpSystem (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="GetMaxId" Modifier="Public" Name="GetMaxId" QueryType="Scalar" ScalarCallRetval="System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="GetMaxId">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        MAX(PRO_ID) AS EXPR1
+FROM            SYSTEM.EATFAST_PRODUCT</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -91,7 +101,7 @@
   <xs:element name="DataSetProducts" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetProducts" msprop:Generator_UserDSName="DataSetProducts">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="EATFAST_PRODUCT" msprop:Generator_TableClassName="EATFAST_PRODUCTDataTable" msprop:Generator_TableVarName="tableEATFAST_PRODUCT" msprop:Generator_TablePropName="EATFAST_PRODUCT" msprop:Generator_RowDeletingName="EATFAST_PRODUCTRowDeleting" msprop:Generator_RowChangingName="EATFAST_PRODUCTRowChanging" msprop:Generator_RowEvHandlerName="EATFAST_PRODUCTRowChangeEventHandler" msprop:Generator_RowDeletedName="EATFAST_PRODUCTRowDeleted" msprop:Generator_UserTableName="EATFAST_PRODUCT" msprop:Generator_RowChangedName="EATFAST_PRODUCTRowChanged" msprop:Generator_RowEvArgName="EATFAST_PRODUCTRowChangeEvent" msprop:Generator_RowClassName="EATFAST_PRODUCTRow">
+        <xs:element name="EATFAST_PRODUCT" msprop:Generator_TableClassName="EATFAST_PRODUCTDataTable" msprop:Generator_TableVarName="tableEATFAST_PRODUCT" msprop:Generator_RowChangedName="EATFAST_PRODUCTRowChanged" msprop:Generator_TablePropName="EATFAST_PRODUCT" msprop:Generator_RowDeletingName="EATFAST_PRODUCTRowDeleting" msprop:Generator_RowChangingName="EATFAST_PRODUCTRowChanging" msprop:Generator_RowEvHandlerName="EATFAST_PRODUCTRowChangeEventHandler" msprop:Generator_RowDeletedName="EATFAST_PRODUCTRowDeleted" msprop:Generator_RowClassName="EATFAST_PRODUCTRow" msprop:Generator_UserTableName="EATFAST_PRODUCT" msprop:Generator_RowEvArgName="EATFAST_PRODUCTRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PRO_ID" msprop:Generator_ColumnVarNameInTable="columnPRO_ID" msprop:Generator_ColumnPropNameInRow="PRO_ID" msprop:Generator_ColumnPropNameInTable="PRO_IDColumn" msprop:Generator_UserColumnName="PRO_ID" type="xs:int" />

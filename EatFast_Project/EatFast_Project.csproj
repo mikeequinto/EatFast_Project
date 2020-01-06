@@ -115,6 +115,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetOrders.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetProducts.cs">
+      <DependentUpon>DataSetProducts.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetProducts.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
