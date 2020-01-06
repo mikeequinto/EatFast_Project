@@ -54,6 +54,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.picBoxRestoBackground = new System.Windows.Forms.PictureBox();
             this.tabMenu = new System.Windows.Forms.TabPage();
+            this.addProductBtn = new System.Windows.Forms.Button();
+            this.updateBtn = new System.Windows.Forms.Button();
+            this.productsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetCategory = new EatFast_Project.DataSetCategory();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetProducts = new EatFast_Project.DataSetProducts();
             this.label28 = new System.Windows.Forms.Label();
             this.tabTransactions = new System.Windows.Forms.TabPage();
             this.ordersDataGridView = new System.Windows.Forms.DataGridView();
@@ -67,9 +80,14 @@
             this.dataSetOrders = new EatFast_Project.DataSetOrders();
             this.label10 = new System.Windows.Forms.Label();
             this.tabClients = new System.Windows.Forms.TabPage();
+            this.eATFAST_PERSONDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientOrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetClientOrders = new EatFast_Project.DataSetClientOrders();
             this.label13 = new System.Windows.Forms.Label();
-            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientDataSetEatFast = new EatFast_Project.DataSetEatFast();
             this.tabAccounts = new System.Windows.Forms.TabPage();
             this.adminDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +97,8 @@
             this.clientDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientDataSetEatFast = new EatFast_Project.DataSetEatFast();
             this.label25 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -109,58 +129,38 @@
             this.clientTableAdapter = new EatFast_Project.DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter();
             this.adminTableAdapter = new EatFast_Project.DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter();
             this.ordersTableAdapter = new EatFast_Project.DataSetOrdersTableAdapters.EATFAST_ORDERTableAdapter();
-            this.dataSetClientOrders = new EatFast_Project.DataSetClientOrders();
-            this.clientOrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientOrdersTableAdapter = new EatFast_Project.DataSetClientOrdersTableAdapters.EATFAST_PERSONTableAdapter();
-            this.eATFAST_PERSONDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataSetProducts = new EatFast_Project.DataSetProducts();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productsTableAdapter = new EatFast_Project.DataSetProductsTableAdapters.EATFAST_PRODUCTTableAdapter();
             this.tableAdapterManager = new EatFast_Project.DataSetProductsTableAdapters.TableAdapterManager();
-            this.productsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataSetCategory = new EatFast_Project.DataSetCategory();
-            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoryTableAdapter = new EatFast_Project.DataSetCategoryTableAdapters.EATFAST_PRODUCTTableAdapter();
-            this.updateBtn = new System.Windows.Forms.Button();
-            this.addProductBtn = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tabControlAdminHomepage.SuspendLayout();
             this.tabGeneral.SuspendLayout();
             this.tabInformation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxRestoBackground)).BeginInit();
             this.tabMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetCategory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetProducts)).BeginInit();
             this.tabTransactions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetOrders)).BeginInit();
             this.tabClients.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientDataSetEatFast)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eATFAST_PERSONDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientOrdersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetClientOrders)).BeginInit();
             this.tabAccounts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminDataSetEatFast)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientDataSetEatFast)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.fillByAccountTypeClientToolStrip.SuspendLayout();
             this.fillByAccountTypeAdminToolStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetClientOrders)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientOrdersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eATFAST_PERSONDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetCategory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // linkLabelLogout
@@ -464,6 +464,113 @@
             this.tabMenu.Text = "Menu";
             this.tabMenu.UseVisualStyleBackColor = true;
             // 
+            // addProductBtn
+            // 
+            this.addProductBtn.Location = new System.Drawing.Point(459, 75);
+            this.addProductBtn.Name = "addProductBtn";
+            this.addProductBtn.Size = new System.Drawing.Size(99, 30);
+            this.addProductBtn.TabIndex = 48;
+            this.addProductBtn.Text = "Add Product";
+            this.addProductBtn.UseVisualStyleBackColor = true;
+            this.addProductBtn.Click += new System.EventHandler(this.addProductBtn_Click);
+            // 
+            // updateBtn
+            // 
+            this.updateBtn.Location = new System.Drawing.Point(459, 465);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(99, 30);
+            this.updateBtn.TabIndex = 47;
+            this.updateBtn.Text = "Save Changes";
+            this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
+            // 
+            // productsDataGridView
+            // 
+            this.productsDataGridView.AllowUserToAddRows = false;
+            this.productsDataGridView.AutoGenerateColumns = false;
+            this.productsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19});
+            this.productsDataGridView.DataSource = this.productsBindingSource;
+            this.productsDataGridView.Location = new System.Drawing.Point(35, 129);
+            this.productsDataGridView.Name = "productsDataGridView";
+            this.productsDataGridView.Size = new System.Drawing.Size(960, 301);
+            this.productsDataGridView.TabIndex = 46;
+            this.productsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productsDataGridView_CellContentClick);
+            this.productsDataGridView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.updateProduct);
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "PRO_ID";
+            this.dataGridViewTextBoxColumn14.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "PRO_NAME";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "PRO_DESCRIPTION";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Description";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "PRO_IMAGE";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Image";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "PRO_PRICE";
+            this.dataGridViewTextBoxColumn18.HeaderText = "Price";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "PRO_CATEGORY";
+            this.dataGridViewTextBoxColumn19.DataSource = this.categoryBindingSource;
+            this.dataGridViewTextBoxColumn19.DisplayMember = "PRO_CATEGORY";
+            this.dataGridViewTextBoxColumn19.FillWeight = 125F;
+            this.dataGridViewTextBoxColumn19.HeaderText = "Category";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn19.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn19.ValueMember = "PRO_CATEGORY";
+            this.dataGridViewTextBoxColumn19.Width = 125;
+            // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataMember = "EATFAST_PRODUCT";
+            this.categoryBindingSource.DataSource = this.dataSetCategory;
+            // 
+            // dataSetCategory
+            // 
+            this.dataSetCategory.DataSetName = "DataSetCategory";
+            this.dataSetCategory.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "EATFAST_PRODUCT";
+            this.productsBindingSource.DataSource = this.dataSetProducts;
+            // 
+            // dataSetProducts
+            // 
+            this.dataSetProducts.DataSetName = "DataSetProducts";
+            this.dataSetProducts.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label28
             // 
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -585,6 +692,65 @@
             this.tabClients.Text = "Clients";
             this.tabClients.UseVisualStyleBackColor = true;
             // 
+            // eATFAST_PERSONDataGridView
+            // 
+            this.eATFAST_PERSONDataGridView.AllowUserToAddRows = false;
+            this.eATFAST_PERSONDataGridView.AllowUserToDeleteRows = false;
+            this.eATFAST_PERSONDataGridView.AutoGenerateColumns = false;
+            this.eATFAST_PERSONDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.eATFAST_PERSONDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13});
+            this.eATFAST_PERSONDataGridView.DataSource = this.clientOrdersBindingSource;
+            this.eATFAST_PERSONDataGridView.Location = new System.Drawing.Point(115, 145);
+            this.eATFAST_PERSONDataGridView.Name = "eATFAST_PERSONDataGridView";
+            this.eATFAST_PERSONDataGridView.ReadOnly = true;
+            this.eATFAST_PERSONDataGridView.Size = new System.Drawing.Size(795, 253);
+            this.eATFAST_PERSONDataGridView.TabIndex = 44;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Client Name";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Client Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Client Address";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Client Address";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 300;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Total orders";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Total orders";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Total paid";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Total paid";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Width = 150;
+            // 
+            // clientOrdersBindingSource
+            // 
+            this.clientOrdersBindingSource.DataMember = "EATFAST_PERSON";
+            this.clientOrdersBindingSource.DataSource = this.dataSetClientOrders;
+            // 
+            // dataSetClientOrders
+            // 
+            this.dataSetClientOrders.DataSetName = "DataSetClientOrders";
+            this.dataSetClientOrders.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -594,16 +760,6 @@
             this.label13.TabIndex = 44;
             this.label13.Text = "Your clients";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // clientBindingSource
-            // 
-            this.clientBindingSource.DataMember = "EATFAST_PERSON";
-            this.clientBindingSource.DataSource = this.clientDataSetEatFast;
-            // 
-            // clientDataSetEatFast
-            // 
-            this.clientDataSetEatFast.DataSetName = "ClientDataSetEatFast";
-            this.clientDataSetEatFast.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabAccounts
             // 
@@ -703,6 +859,16 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 250;
+            // 
+            // clientBindingSource
+            // 
+            this.clientBindingSource.DataMember = "EATFAST_PERSON";
+            this.clientBindingSource.DataSource = this.clientDataSetEatFast;
+            // 
+            // clientDataSetEatFast
+            // 
+            this.clientDataSetEatFast.DataSetName = "ClientDataSetEatFast";
+            this.clientDataSetEatFast.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label25
             // 
@@ -980,78 +1146,9 @@
             // 
             this.ordersTableAdapter.ClearBeforeFill = true;
             // 
-            // dataSetClientOrders
-            // 
-            this.dataSetClientOrders.DataSetName = "DataSetClientOrders";
-            this.dataSetClientOrders.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clientOrdersBindingSource
-            // 
-            this.clientOrdersBindingSource.DataMember = "EATFAST_PERSON";
-            this.clientOrdersBindingSource.DataSource = this.dataSetClientOrders;
-            // 
             // clientOrdersTableAdapter
             // 
             this.clientOrdersTableAdapter.ClearBeforeFill = true;
-            // 
-            // eATFAST_PERSONDataGridView
-            // 
-            this.eATFAST_PERSONDataGridView.AllowUserToAddRows = false;
-            this.eATFAST_PERSONDataGridView.AllowUserToDeleteRows = false;
-            this.eATFAST_PERSONDataGridView.AutoGenerateColumns = false;
-            this.eATFAST_PERSONDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.eATFAST_PERSONDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13});
-            this.eATFAST_PERSONDataGridView.DataSource = this.clientOrdersBindingSource;
-            this.eATFAST_PERSONDataGridView.Location = new System.Drawing.Point(115, 145);
-            this.eATFAST_PERSONDataGridView.Name = "eATFAST_PERSONDataGridView";
-            this.eATFAST_PERSONDataGridView.ReadOnly = true;
-            this.eATFAST_PERSONDataGridView.Size = new System.Drawing.Size(795, 253);
-            this.eATFAST_PERSONDataGridView.TabIndex = 44;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Client Name";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Client Name";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Client Address";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Client Address";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 300;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Total orders";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Total orders";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Total paid";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Total paid";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Width = 150;
-            // 
-            // dataSetProducts
-            // 
-            this.dataSetProducts.DataSetName = "DataSetProducts";
-            this.dataSetProducts.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "EATFAST_PRODUCT";
-            this.productsBindingSource.DataSource = this.dataSetProducts;
             // 
             // productsTableAdapter
             // 
@@ -1063,106 +1160,9 @@
             this.tableAdapterManager.EATFAST_PRODUCTTableAdapter = this.productsTableAdapter;
             this.tableAdapterManager.UpdateOrder = EatFast_Project.DataSetProductsTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // productsDataGridView
-            // 
-            this.productsDataGridView.AllowUserToAddRows = false;
-            this.productsDataGridView.AutoGenerateColumns = false;
-            this.productsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19});
-            this.productsDataGridView.DataSource = this.productsBindingSource;
-            this.productsDataGridView.Location = new System.Drawing.Point(35, 129);
-            this.productsDataGridView.Name = "productsDataGridView";
-            this.productsDataGridView.Size = new System.Drawing.Size(957, 301);
-            this.productsDataGridView.TabIndex = 46;
-            this.productsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productsDataGridView_CellContentClick);
-            this.productsDataGridView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.updateProduct);
-            // 
-            // dataSetCategory
-            // 
-            this.dataSetCategory.DataSetName = "DataSetCategory";
-            this.dataSetCategory.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // categoryBindingSource
-            // 
-            this.categoryBindingSource.DataMember = "EATFAST_PRODUCT";
-            this.categoryBindingSource.DataSource = this.dataSetCategory;
-            // 
             // categoryTableAdapter
             // 
             this.categoryTableAdapter.ClearBeforeFill = true;
-            // 
-            // updateBtn
-            // 
-            this.updateBtn.Location = new System.Drawing.Point(459, 465);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(99, 30);
-            this.updateBtn.TabIndex = 47;
-            this.updateBtn.Text = "Save Changes";
-            this.updateBtn.UseVisualStyleBackColor = true;
-            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
-            // 
-            // addProductBtn
-            // 
-            this.addProductBtn.Location = new System.Drawing.Point(459, 75);
-            this.addProductBtn.Name = "addProductBtn";
-            this.addProductBtn.Size = new System.Drawing.Size(99, 30);
-            this.addProductBtn.TabIndex = 48;
-            this.addProductBtn.Text = "Add Product";
-            this.addProductBtn.UseVisualStyleBackColor = true;
-            this.addProductBtn.Click += new System.EventHandler(this.addProductBtn_Click);
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "PRO_ID";
-            this.dataGridViewTextBoxColumn14.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "PRO_NAME";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "PRO_DESCRIPTION";
-            this.dataGridViewTextBoxColumn16.HeaderText = "Description";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "PRO_IMAGE";
-            this.dataGridViewTextBoxColumn17.HeaderText = "Image";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "PRO_PRICE";
-            this.dataGridViewTextBoxColumn18.HeaderText = "Price";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "PRO_CATEGORY";
-            this.dataGridViewTextBoxColumn19.DataSource = this.categoryBindingSource;
-            this.dataGridViewTextBoxColumn19.DisplayMember = "PRO_CATEGORY";
-            this.dataGridViewTextBoxColumn19.FillWeight = 125F;
-            this.dataGridViewTextBoxColumn19.HeaderText = "Category";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn19.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn19.ValueMember = "PRO_CATEGORY";
-            this.dataGridViewTextBoxColumn19.Width = 125;
             // 
             // AdminHomepage
             // 
@@ -1185,33 +1185,33 @@
             this.tabInformation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxRestoBackground)).EndInit();
             this.tabMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetCategory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetProducts)).EndInit();
             this.tabTransactions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ordersDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetOrders)).EndInit();
             this.tabClients.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientDataSetEatFast)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eATFAST_PERSONDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientOrdersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetClientOrders)).EndInit();
             this.tabAccounts.ResumeLayout(false);
             this.tabAccounts.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adminDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminDataSetEatFast)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientDataSetEatFast)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.fillByAccountTypeClientToolStrip.ResumeLayout(false);
             this.fillByAccountTypeClientToolStrip.PerformLayout();
             this.fillByAccountTypeAdminToolStrip.ResumeLayout(false);
             this.fillByAccountTypeAdminToolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetClientOrders)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientOrdersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eATFAST_PERSONDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetCategory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

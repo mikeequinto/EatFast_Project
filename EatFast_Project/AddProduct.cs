@@ -29,9 +29,6 @@ namespace EatFast_Project
 
             try
             {
-                //Création de l'id du nouveau produit
-                int id = Decimal.ToInt32((decimal)productTableAdapter.GetMaxId()) + 1;
-
                 //Création d'un nouveau produit avec les valeurs du formulaire
                 DataSetProducts.EATFAST_PRODUCTRow newPRODUCTRow;
 
@@ -43,12 +40,15 @@ namespace EatFast_Project
                 newPRODUCTRow.PRO_CATEGORY = comboBoxCategory.SelectedIndex.ToString();
 
                 //Enregistrement du produit
-                dataSetProducts.EATFAST_PRODUCT.Rows.Add(newPRODUCTRow);
+                //dataSetProducts.EATFAST_PRODUCT.Rows.Add(newPRODUCTRow);
+                productTableAdapter.AddProduct(textBoxName.Text, textBoxDescription.Text, "null", (decimal)float.Parse(textBoxPrice.Text),comboBoxCategory.SelectedIndex.ToString());
 
                 //Insertion dans la bdd
                 productTableAdapter.Update(dataSetProducts.EATFAST_PRODUCT);
 
                 MessageBox.Show("New product added!");
+
+
 
                 ResetProductInfo();
 
