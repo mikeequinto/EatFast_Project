@@ -102,6 +102,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetClientOrders.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetEatFast.cs">
+      <DependentUpon>DataSetEatFast.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetEatFast.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

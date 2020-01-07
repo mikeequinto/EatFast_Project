@@ -1451,347 +1451,6 @@ namespace EatFast_Project.DataSetClientOrdersTableAdapters {
             tableMapping.ColumnMappings.Add("ORD_TOTAL", "ORD_TOTAL");
             tableMapping.ColumnMappings.Add("ORD_PAYMENTSTATUS", "ORD_PAYMENTSTATUS");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""SYSTEM"".""EATFAST_ORDER"" WHERE ((""ORD_ID"" = :Original_ORD_ID) AND (""PER_ID"" = :Original_PER_ID) AND ((:IsNull_ORD_DATE = 1 AND ""ORD_DATE"" IS NULL) OR (""ORD_DATE"" = :Original_ORD_DATE)) AND ((:IsNull_ORD_STATUS = 1 AND ""ORD_STATUS"" IS NULL) OR (""ORD_STATUS"" = :Original_ORD_STATUS)) AND ((:IsNull_ORD_DELIVERYADDRESS = 1 AND ""ORD_DELIVERYADDRESS"" IS NULL) OR (""ORD_DELIVERYADDRESS"" = :Original_ORD_DELIVERYADDRESS)) AND ((:IsNull_ORD_TOTAL = 1 AND ""ORD_TOTAL"" IS NULL) OR (""ORD_TOTAL"" = :Original_ORD_TOTAL)) AND ((:IsNull_ORD_PAYMENTSTATUS = 1 AND ""ORD_PAYMENTSTATUS"" IS NULL) OR (""ORD_PAYMENTSTATUS"" = :Original_ORD_PAYMENTSTATUS)))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORD_ID";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PER_ID";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PER_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORD_DATE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_DATE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORD_DATE";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_DATE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORD_STATUS";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_STATUS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORD_STATUS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_STATUS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORD_DELIVERYADDRESS";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 128;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_DELIVERYADDRESS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORD_DELIVERYADDRESS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 128;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_DELIVERYADDRESS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORD_TOTAL";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_TOTAL";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORD_TOTAL";
-            param.DbType = global::System.Data.DbType.Single;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_TOTAL";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORD_PAYMENTSTATUS";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_PAYMENTSTATUS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORD_PAYMENTSTATUS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_PAYMENTSTATUS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"SYSTEM\".\"EATFAST_ORDER\" (\"ORD_ID\", \"PER_ID\", \"ORD_DATE\", \"ORD_STATUS" +
-                "\", \"ORD_DELIVERYADDRESS\", \"ORD_TOTAL\", \"ORD_PAYMENTSTATUS\") VALUES (:ORD_ID, :PE" +
-                "R_ID, :ORD_DATE, :ORD_STATUS, :ORD_DELIVERYADDRESS, :ORD_TOTAL, :ORD_PAYMENTSTAT" +
-                "US)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORD_ID";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_ID";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PER_ID";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PER_ID";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORD_DATE";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_DATE";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORD_STATUS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_STATUS";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORD_DELIVERYADDRESS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 128;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_DELIVERYADDRESS";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORD_TOTAL";
-            param.DbType = global::System.Data.DbType.Single;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_TOTAL";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORD_PAYMENTSTATUS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_PAYMENTSTATUS";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""SYSTEM"".""EATFAST_ORDER"" SET ""ORD_ID"" = :ORD_ID, ""PER_ID"" = :PER_ID, ""ORD_DATE"" = :ORD_DATE, ""ORD_STATUS"" = :ORD_STATUS, ""ORD_DELIVERYADDRESS"" = :ORD_DELIVERYADDRESS, ""ORD_TOTAL"" = :ORD_TOTAL, ""ORD_PAYMENTSTATUS"" = :ORD_PAYMENTSTATUS WHERE ((""ORD_ID"" = :Original_ORD_ID) AND (""PER_ID"" = :Original_PER_ID) AND ((:IsNull_ORD_DATE = 1 AND ""ORD_DATE"" IS NULL) OR (""ORD_DATE"" = :Original_ORD_DATE)) AND ((:IsNull_ORD_STATUS = 1 AND ""ORD_STATUS"" IS NULL) OR (""ORD_STATUS"" = :Original_ORD_STATUS)) AND ((:IsNull_ORD_DELIVERYADDRESS = 1 AND ""ORD_DELIVERYADDRESS"" IS NULL) OR (""ORD_DELIVERYADDRESS"" = :Original_ORD_DELIVERYADDRESS)) AND ((:IsNull_ORD_TOTAL = 1 AND ""ORD_TOTAL"" IS NULL) OR (""ORD_TOTAL"" = :Original_ORD_TOTAL)) AND ((:IsNull_ORD_PAYMENTSTATUS = 1 AND ""ORD_PAYMENTSTATUS"" IS NULL) OR (""ORD_PAYMENTSTATUS"" = :Original_ORD_PAYMENTSTATUS)))";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORD_ID";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_ID";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PER_ID";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PER_ID";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORD_DATE";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_DATE";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORD_STATUS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_STATUS";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORD_DELIVERYADDRESS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 128;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_DELIVERYADDRESS";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORD_TOTAL";
-            param.DbType = global::System.Data.DbType.Single;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_TOTAL";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ORD_PAYMENTSTATUS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_PAYMENTSTATUS";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORD_ID";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PER_ID";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PER_ID";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORD_DATE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_DATE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORD_DATE";
-            param.DbType = global::System.Data.DbType.Date;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
-            param.Size = 7;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_DATE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORD_STATUS";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_STATUS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORD_STATUS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_STATUS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORD_DELIVERYADDRESS";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 128;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_DELIVERYADDRESS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORD_DELIVERYADDRESS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 128;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_DELIVERYADDRESS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORD_TOTAL";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_TOTAL";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORD_TOTAL";
-            param.DbType = global::System.Data.DbType.Single;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_TOTAL";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_ORD_PAYMENTSTATUS";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_PAYMENTSTATUS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_ORD_PAYMENTSTATUS";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_PAYMENTSTATUS";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1808,7 +1467,7 @@ namespace EatFast_Project.DataSetClientOrdersTableAdapters {
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ORD_ID, PER_ID, ORD_DATE, ORD_STATUS, ORD_DELIVERYADDRESS, ORD_TOTAL, ORD_" +
-                "PAYMENTSTATUS FROM SYSTEM.EATFAST_ORDER";
+                "PAYMENTSTATUS FROM EATFAST_DATA.EATFAST_ORDER";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1834,254 +1493,6 @@ namespace EatFast_Project.DataSetClientOrdersTableAdapters {
             DataSetClientOrders.EATFAST_ORDERDataTable dataTable = new DataSetClientOrders.EATFAST_ORDERDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetClientOrders.EATFAST_ORDERDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetClientOrders dataSet) {
-            return this.Adapter.Update(dataSet, "EATFAST_ORDER");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ORD_ID, int Original_PER_ID, global::System.Nullable<global::System.DateTime> Original_ORD_DATE, string Original_ORD_STATUS, string Original_ORD_DELIVERYADDRESS, global::System.Nullable<float> Original_ORD_TOTAL, string Original_ORD_PAYMENTSTATUS) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ORD_ID));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_PER_ID));
-            if ((Original_ORD_DATE.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_ORD_DATE.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ORD_STATUS == null)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_ORD_STATUS));
-            }
-            if ((Original_ORD_DELIVERYADDRESS == null)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_ORD_DELIVERYADDRESS));
-            }
-            if ((Original_ORD_TOTAL.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((float)(Original_ORD_TOTAL.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ORD_PAYMENTSTATUS == null)) {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_ORD_PAYMENTSTATUS));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ORD_ID, int PER_ID, global::System.Nullable<global::System.DateTime> ORD_DATE, string ORD_STATUS, string ORD_DELIVERYADDRESS, global::System.Nullable<float> ORD_TOTAL, string ORD_PAYMENTSTATUS) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ORD_ID));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(PER_ID));
-            if ((ORD_DATE.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(ORD_DATE.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((ORD_STATUS == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ORD_STATUS));
-            }
-            if ((ORD_DELIVERYADDRESS == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(ORD_DELIVERYADDRESS));
-            }
-            if ((ORD_TOTAL.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((float)(ORD_TOTAL.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((ORD_PAYMENTSTATUS == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(ORD_PAYMENTSTATUS));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ORD_ID, int PER_ID, global::System.Nullable<global::System.DateTime> ORD_DATE, string ORD_STATUS, string ORD_DELIVERYADDRESS, global::System.Nullable<float> ORD_TOTAL, string ORD_PAYMENTSTATUS, int Original_ORD_ID, int Original_PER_ID, global::System.Nullable<global::System.DateTime> Original_ORD_DATE, string Original_ORD_STATUS, string Original_ORD_DELIVERYADDRESS, global::System.Nullable<float> Original_ORD_TOTAL, string Original_ORD_PAYMENTSTATUS) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ORD_ID));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(PER_ID));
-            if ((ORD_DATE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(ORD_DATE.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((ORD_STATUS == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(ORD_STATUS));
-            }
-            if ((ORD_DELIVERYADDRESS == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(ORD_DELIVERYADDRESS));
-            }
-            if ((ORD_TOTAL.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((float)(ORD_TOTAL.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((ORD_PAYMENTSTATUS == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(ORD_PAYMENTSTATUS));
-            }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ORD_ID));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_PER_ID));
-            if ((Original_ORD_DATE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_ORD_DATE.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ORD_STATUS == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_ORD_STATUS));
-            }
-            if ((Original_ORD_DELIVERYADDRESS == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_ORD_DELIVERYADDRESS));
-            }
-            if ((Original_ORD_TOTAL.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((float)(Original_ORD_TOTAL.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((Original_ORD_PAYMENTSTATUS == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_ORD_PAYMENTSTATUS));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int PER_ID, global::System.Nullable<global::System.DateTime> ORD_DATE, string ORD_STATUS, string ORD_DELIVERYADDRESS, global::System.Nullable<float> ORD_TOTAL, string ORD_PAYMENTSTATUS, int Original_ORD_ID, int Original_PER_ID, global::System.Nullable<global::System.DateTime> Original_ORD_DATE, string Original_ORD_STATUS, string Original_ORD_DELIVERYADDRESS, global::System.Nullable<float> Original_ORD_TOTAL, string Original_ORD_PAYMENTSTATUS) {
-            return this.Update(Original_ORD_ID, PER_ID, ORD_DATE, ORD_STATUS, ORD_DELIVERYADDRESS, ORD_TOTAL, ORD_PAYMENTSTATUS, Original_ORD_ID, Original_PER_ID, Original_ORD_DATE, Original_ORD_STATUS, Original_ORD_DELIVERYADDRESS, Original_ORD_TOTAL, Original_ORD_PAYMENTSTATUS);
         }
     }
     
@@ -2226,11 +1637,11 @@ namespace EatFast_Project.DataSetClientOrdersTableAdapters {
             this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        SYSTEM.EATFAST_PERSON.PER_NAME AS ""Client Name"", SYSTEM.EATFAST_PERSON.PER_ADDRESS AS ""Client Address"", COUNT(SYSTEM.EATFAST_ORDER.PER_ID) AS ""Total orders"", 
-                         SUM(SYSTEM.EATFAST_ORDER.ORD_TOTAL) AS ""Total paid""
-FROM            SYSTEM.EATFAST_ORDER INNER JOIN
-                         SYSTEM.EATFAST_PERSON ON SYSTEM.EATFAST_ORDER.PER_ID = SYSTEM.EATFAST_PERSON.PER_ID
-GROUP BY SYSTEM.EATFAST_PERSON.PER_NAME, SYSTEM.EATFAST_PERSON.PER_ADDRESS";
+            this._commandCollection[0].CommandText = @"SELECT        EATFAST_DATA.EATFAST_PERSON.PER_NAME AS ""Client Name"", EATFAST_DATA.EATFAST_PERSON.PER_ADDRESS AS ""Client Address"", COUNT(EATFAST_DATA.EATFAST_ORDER.PER_ID) AS ""Total orders"", 
+                         SUM(EATFAST_DATA.EATFAST_ORDER.ORD_TOTAL) AS ""Total paid""
+FROM            EATFAST_DATA.EATFAST_ORDER INNER JOIN
+                         EATFAST_DATA.EATFAST_PERSON ON EATFAST_DATA.EATFAST_ORDER.PER_ID = EATFAST_DATA.EATFAST_PERSON.PER_ID
+GROUP BY EATFAST_DATA.EATFAST_PERSON.PER_NAME, EATFAST_DATA.EATFAST_PERSON.PER_ADDRESS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2271,8 +1682,6 @@ GROUP BY SYSTEM.EATFAST_PERSON.PER_NAME, SYSTEM.EATFAST_PERSON.PER_ADDRESS";
         
         private UpdateOrderOption _updateOrder;
         
-        private EATFAST_ORDERTableAdapter _eATFAST_ORDERTableAdapter;
-        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -2285,20 +1694,6 @@ GROUP BY SYSTEM.EATFAST_PERSON.PER_NAME, SYSTEM.EATFAST_PERSON.PER_ADDRESS";
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public EATFAST_ORDERTableAdapter EATFAST_ORDERTableAdapter {
-            get {
-                return this._eATFAST_ORDERTableAdapter;
-            }
-            set {
-                this._eATFAST_ORDERTableAdapter = value;
             }
         }
         
@@ -2321,10 +1716,6 @@ GROUP BY SYSTEM.EATFAST_PERSON.PER_NAME, SYSTEM.EATFAST_PERSON.PER_ADDRESS";
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._eATFAST_ORDERTableAdapter != null) 
-                            && (this._eATFAST_ORDERTableAdapter.Connection != null))) {
-                    return this._eATFAST_ORDERTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -2338,9 +1729,6 @@ GROUP BY SYSTEM.EATFAST_PERSON.PER_NAME, SYSTEM.EATFAST_PERSON.PER_ADDRESS";
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._eATFAST_ORDERTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -2352,15 +1740,6 @@ GROUP BY SYSTEM.EATFAST_PERSON.PER_NAME, SYSTEM.EATFAST_PERSON.PER_ADDRESS";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateUpdatedRows(DataSetClientOrders dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._eATFAST_ORDERTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.EATFAST_ORDER.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._eATFAST_ORDERTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -2371,14 +1750,6 @@ GROUP BY SYSTEM.EATFAST_PERSON.PER_NAME, SYSTEM.EATFAST_PERSON.PER_ADDRESS";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateInsertedRows(DataSetClientOrders dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._eATFAST_ORDERTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.EATFAST_ORDER.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._eATFAST_ORDERTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -2389,14 +1760,6 @@ GROUP BY SYSTEM.EATFAST_PERSON.PER_NAME, SYSTEM.EATFAST_PERSON.PER_ADDRESS";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(DataSetClientOrders dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._eATFAST_ORDERTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.EATFAST_ORDER.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._eATFAST_ORDERTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -2436,11 +1799,6 @@ GROUP BY SYSTEM.EATFAST_PERSON.PER_NAME, SYSTEM.EATFAST_PERSON.PER_ADDRESS";
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._eATFAST_ORDERTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._eATFAST_ORDERTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -2473,15 +1831,6 @@ GROUP BY SYSTEM.EATFAST_PERSON.PER_NAME, SYSTEM.EATFAST_PERSON.PER_ADDRESS";
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._eATFAST_ORDERTableAdapter != null)) {
-                    revertConnections.Add(this._eATFAST_ORDERTableAdapter, this._eATFAST_ORDERTableAdapter.Connection);
-                    this._eATFAST_ORDERTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
-                    this._eATFAST_ORDERTableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
-                    if (this._eATFAST_ORDERTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._eATFAST_ORDERTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._eATFAST_ORDERTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -2539,10 +1888,6 @@ GROUP BY SYSTEM.EATFAST_PERSON.PER_NAME, SYSTEM.EATFAST_PERSON.PER_ADDRESS";
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._eATFAST_ORDERTableAdapter != null)) {
-                    this._eATFAST_ORDERTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._eATFAST_ORDERTableAdapter]));
-                    this._eATFAST_ORDERTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

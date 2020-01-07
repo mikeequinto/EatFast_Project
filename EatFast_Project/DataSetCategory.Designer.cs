@@ -739,7 +739,7 @@ namespace EatFast_Project.DataSetCategoryTableAdapters {
             this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT DISTINCT PRO_CATEGORY\r\nFROM            SYSTEM.EATFAST_PRODUCT";
+            this._commandCollection[0].CommandText = "SELECT DISTINCT PRO_CATEGORY\r\nFROM            EATFAST_DATA.EATFAST_PRODUCT";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

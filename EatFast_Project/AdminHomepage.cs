@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -45,6 +46,24 @@ namespace EatFast_Project
 
         }
 
+        //Fonction permettant de chiffrer le mot de passe
+        public static string HashCode(string str)
+        {
+            System.Text.ASCIIEncoding encoder = new System.Text.ASCIIEncoding();
+            byte[] buffer = encoder.GetBytes(str);
+            SHA1CryptoServiceProvider cryptoTransformSHA1 =
+            new SHA1CryptoServiceProvider();
+            string hash = BitConverter.ToString(
+                cryptoTransformSHA1.ComputeHash(buffer)).Replace("-", "");
+
+            return hash;
+        }
+
+        public void UpdateProductsDataGridView()
+        {
+            this.productsTableAdapter.Fill(this.dataSetProducts.EATFAST_PRODUCT);
+        }        
+
         private void LinkLogoutClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
@@ -76,14 +95,44 @@ namespace EatFast_Project
                 }
                 else
                 {
-                    MessageBox.Show("New account added!", "Information");
+                    //Information du nouveau compte
+                    String type = comboBoxType.GetItemText(comboBoxType.SelectedItem);
+                    String name = textBoxName.Text;
+                    String email = textBoxEmail.Text;
+                    String password = HashCode(textBoxPassword.Text);
 
-                    //Réinitialisation des champs
-                    comboBoxType.SelectedIndex = 0;
-                    textBoxName.Text = "";
-                    textBoxEmail.Text = "";
-                    textBoxPassword.Text = "";
-                    textBoxPasswordConfirm.Text = "";
+                    try{
+                        //Insertion du nouveau compte
+                        if (type == "Client")
+                        { //Si le compte est de type client
+                            this.clientTableAdapter.AddAccount(name, email, password, "", type);
+                            this.clientTableAdapter.FillByAccountTypeClient(this.clientDataSetEatFast.EATFAST_PERSON);
+                        }
+                        else
+                        { //Si le compte est de type admin
+                            this.adminTableAdapter.AddAccount(name, email, password, "", type);
+                            this.adminTableAdapter.FillByAccountTypeAdmin(this.adminDataSetEatFast.EATFAST_PERSON);
+                        }
+
+
+                        MessageBox.Show("New account added!", "Information");
+
+                        //Réinitialisation des champs
+                        comboBoxType.SelectedIndex = 0;
+                        textBoxName.Text = "";
+                        textBoxEmail.Text = "";
+                        textBoxPassword.Text = "";
+                        textBoxPasswordConfirm.Text = "";
+
+                        //Mise à jour du dataGridView concerné
+                    }
+                    catch (OverflowException o)
+                    {
+                        MessageBox.Show("Something went wrong, please try again");
+                        Console.Write("Exception thrown : ");
+                        Console.Write("{0}", o.GetType(), o.Message);
+                    }
+                    
                 }
 
                 

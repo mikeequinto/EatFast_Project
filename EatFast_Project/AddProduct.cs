@@ -17,6 +17,8 @@ namespace EatFast_Project
             InitializeComponent();
         }
 
+        AdminHomepage adminHomepage = AdminHomepage.getInstance();
+
         private void btnAddProductClicked(object sender, EventArgs e)
         {
             //Initialisation du dateset des produits
@@ -41,14 +43,16 @@ namespace EatFast_Project
 
                 //Enregistrement du produit
                 //dataSetProducts.EATFAST_PRODUCT.Rows.Add(newPRODUCTRow);
-                productTableAdapter.AddProduct(textBoxName.Text, textBoxDescription.Text, "null", (decimal)float.Parse(textBoxPrice.Text),comboBoxCategory.SelectedIndex.ToString());
+                //Insertion dans la bdd
+                productTableAdapter.AddProduct(textBoxName.Text, textBoxDescription.Text, "null", (decimal)float.Parse(textBoxPrice.Text),comboBoxCategory.GetItemText(comboBoxCategory.SelectedItem));
 
                 //Insertion dans la bdd
                 productTableAdapter.Update(dataSetProducts.EATFAST_PRODUCT);
 
                 MessageBox.Show("New product added!");
 
-
+                //Mise à jour du dataGridView dans le form 
+                adminHomepage.UpdateProductsDataGridView();
 
                 ResetProductInfo();
 

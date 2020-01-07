@@ -9,11 +9,11 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EATFAST_PRODUCTTableAdapter" GeneratorDataComponentClassName="EATFAST_PRODUCTTableAdapter" Name="EATFAST_PRODUCT" UserDataComponentName="EATFAST_PRODUCTTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ConnectionOdpSystem (Settings)" DbObjectName="SYSTEM.EATFAST_PRODUCT" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ConnectionOdpSystem (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT DISTINCT PRO_CATEGORY
-FROM            SYSTEM.EATFAST_PRODUCT</CommandText>
+FROM            EATFAST_DATA.EATFAST_PRODUCT</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -32,7 +32,7 @@ FROM            SYSTEM.EATFAST_PRODUCT</CommandText>
   <xs:element name="DataSetCategory" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetCategory" msprop:Generator_UserDSName="DataSetCategory">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="EATFAST_PRODUCT" msprop:Generator_TableClassName="EATFAST_PRODUCTDataTable" msprop:Generator_TableVarName="tableEATFAST_PRODUCT" msprop:Generator_RowChangedName="EATFAST_PRODUCTRowChanged" msprop:Generator_TablePropName="EATFAST_PRODUCT" msprop:Generator_RowDeletingName="EATFAST_PRODUCTRowDeleting" msprop:Generator_RowChangingName="EATFAST_PRODUCTRowChanging" msprop:Generator_RowEvHandlerName="EATFAST_PRODUCTRowChangeEventHandler" msprop:Generator_RowDeletedName="EATFAST_PRODUCTRowDeleted" msprop:Generator_RowClassName="EATFAST_PRODUCTRow" msprop:Generator_UserTableName="EATFAST_PRODUCT" msprop:Generator_RowEvArgName="EATFAST_PRODUCTRowChangeEvent">
+        <xs:element name="EATFAST_PRODUCT" msprop:Generator_TableClassName="EATFAST_PRODUCTDataTable" msprop:Generator_TableVarName="tableEATFAST_PRODUCT" msprop:Generator_TablePropName="EATFAST_PRODUCT" msprop:Generator_RowDeletingName="EATFAST_PRODUCTRowDeleting" msprop:Generator_RowChangingName="EATFAST_PRODUCTRowChanging" msprop:Generator_RowEvHandlerName="EATFAST_PRODUCTRowChangeEventHandler" msprop:Generator_RowDeletedName="EATFAST_PRODUCTRowDeleted" msprop:Generator_UserTableName="EATFAST_PRODUCT" msprop:Generator_RowChangedName="EATFAST_PRODUCTRowChanged" msprop:Generator_RowEvArgName="EATFAST_PRODUCTRowChangeEvent" msprop:Generator_RowClassName="EATFAST_PRODUCTRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PRO_CATEGORY" msprop:Generator_ColumnVarNameInTable="columnPRO_CATEGORY" msprop:Generator_ColumnPropNameInRow="PRO_CATEGORY" msprop:Generator_ColumnPropNameInTable="PRO_CATEGORYColumn" msprop:Generator_UserColumnName="PRO_CATEGORY" minOccurs="0">
