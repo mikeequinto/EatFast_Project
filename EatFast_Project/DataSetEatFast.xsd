@@ -46,7 +46,7 @@
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        PER_ID, PER_NAME, PER_EMAIL, PER_PASSWORD, PER_ADDRESS, PER_ACCOUNTTYPE
 FROM            EATFAST_DATA.EATFAST_PERSON
-WHERE        (PER_ACCOUNTTYPE = 'Admin')</CommandText>
+WHERE        (PER_ACCOUNTTYPE = 'Admin') OR (PER_ACCOUNTTYPE = 'Administrator')</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>

@@ -938,7 +938,8 @@ namespace EatFast_Project.DataSetProductsTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""SYSTEM"".""EATFAST_PRODUCT"" WHERE ((""PRO_ID"" = :Original_PRO_ID) AND ((:IsNull_PRO_NAME = 1 AND ""PRO_NAME"" IS NULL) OR (""PRO_NAME"" = :Original_PRO_NAME)) AND ((:IsNull_PRO_DESCRIPTION = 1 AND ""PRO_DESCRIPTION"" IS NULL) OR (""PRO_DESCRIPTION"" = :Original_PRO_DESCRIPTION)) AND ((:IsNull_PRO_IMAGE = 1 AND ""PRO_IMAGE"" IS NULL) OR (""PRO_IMAGE"" = :Original_PRO_IMAGE)) AND ((:IsNull_PRO_PRICE = 1 AND ""PRO_PRICE"" IS NULL) OR (""PRO_PRICE"" = :Original_PRO_PRICE)) AND ((:IsNull_PRO_CATEGORY = 1 AND ""PRO_CATEGORY"" IS NULL) OR (""PRO_CATEGORY"" = :Original_PRO_CATEGORY)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"EATFAST_DATA\".\"EATFAST_PRODUCT\" WHERE ((\"PRO_ID\" = :Original_PRO_ID)" +
+                ")";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_PRO_ID";
@@ -949,102 +950,11 @@ namespace EatFast_Project.DataSetProductsTableAdapters {
             param.SourceColumn = "PRO_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PRO_NAME";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_NAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PRO_NAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_NAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PRO_DESCRIPTION";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 250;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_DESCRIPTION";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PRO_DESCRIPTION";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 250;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_DESCRIPTION";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PRO_IMAGE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 128;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_IMAGE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PRO_IMAGE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 128;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_IMAGE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PRO_PRICE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_PRICE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PRO_PRICE";
-            param.DbType = global::System.Data.DbType.Single;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_PRICE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PRO_CATEGORY";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_CATEGORY";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PRO_CATEGORY";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_CATEGORY";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"SYSTEM\".\"EATFAST_PRODUCT\" (\"PRO_ID\", \"PRO_NAME\", \"PRO_DESCRIPTION\", " +
-                "\"PRO_IMAGE\", \"PRO_PRICE\", \"PRO_CATEGORY\") VALUES (:PRO_ID, :PRO_NAME, :PRO_DESCR" +
-                "IPTION, :PRO_IMAGE, :PRO_PRICE, :PRO_CATEGORY)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"EATFAST_DATA\".\"EATFAST_PRODUCT\" (\"PRO_ID\", \"PRO_NAME\", \"PRO_DESCRIPT" +
+                "ION\", \"PRO_IMAGE\", \"PRO_PRICE\", \"PRO_CATEGORY\") VALUES (:PRO_ID, :PRO_NAME, :PRO" +
+                "_DESCRIPTION, :PRO_IMAGE, :PRO_PRICE, :PRO_CATEGORY)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "PRO_ID";
@@ -1092,7 +1002,10 @@ namespace EatFast_Project.DataSetProductsTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""SYSTEM"".""EATFAST_PRODUCT"" SET ""PRO_ID"" = :PRO_ID, ""PRO_NAME"" = :PRO_NAME, ""PRO_DESCRIPTION"" = :PRO_DESCRIPTION, ""PRO_IMAGE"" = :PRO_IMAGE, ""PRO_PRICE"" = :PRO_PRICE, ""PRO_CATEGORY"" = :PRO_CATEGORY WHERE ((""PRO_ID"" = :Original_PRO_ID) AND ((:IsNull_PRO_NAME = 1 AND ""PRO_NAME"" IS NULL) OR (""PRO_NAME"" = :Original_PRO_NAME)) AND ((:IsNull_PRO_DESCRIPTION = 1 AND ""PRO_DESCRIPTION"" IS NULL) OR (""PRO_DESCRIPTION"" = :Original_PRO_DESCRIPTION)) AND ((:IsNull_PRO_IMAGE = 1 AND ""PRO_IMAGE"" IS NULL) OR (""PRO_IMAGE"" = :Original_PRO_IMAGE)) AND ((:IsNull_PRO_PRICE = 1 AND ""PRO_PRICE"" IS NULL) OR (""PRO_PRICE"" = :Original_PRO_PRICE)) AND ((:IsNull_PRO_CATEGORY = 1 AND ""PRO_CATEGORY"" IS NULL) OR (""PRO_CATEGORY"" = :Original_PRO_CATEGORY)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"EATFAST_DATA\".\"EATFAST_PRODUCT\" SET \"PRO_ID\" = :PRO_ID, \"PRO_NAME\" = :PRO" +
+                "_NAME, \"PRO_DESCRIPTION\" = :PRO_DESCRIPTION, \"PRO_IMAGE\" = :PRO_IMAGE, \"PRO_PRIC" +
+                "E\" = :PRO_PRICE, \"PRO_CATEGORY\" = :PRO_CATEGORY WHERE ((\"PRO_ID\" = :Original_PRO" +
+                "_ID))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "PRO_ID";
@@ -1147,97 +1060,6 @@ namespace EatFast_Project.DataSetProductsTableAdapters {
             param.SourceColumn = "PRO_ID";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PRO_NAME";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_NAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PRO_NAME";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_NAME";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PRO_DESCRIPTION";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 250;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_DESCRIPTION";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PRO_DESCRIPTION";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 250;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_DESCRIPTION";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PRO_IMAGE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 128;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_IMAGE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PRO_IMAGE";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 128;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_IMAGE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PRO_PRICE";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_PRICE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PRO_PRICE";
-            param.DbType = global::System.Data.DbType.Single;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Single;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_PRICE";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "IsNull_PRO_CATEGORY";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_CATEGORY";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "Original_PRO_CATEGORY";
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 32;
-            param.IsNullable = true;
-            param.SourceColumn = "PRO_CATEGORY";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1250,17 +1072,17 @@ namespace EatFast_Project.DataSetProductsTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[3];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[2];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PRO_ID, PRO_NAME, PRO_DESCRIPTION, PRO_IMAGE, PRO_PRICE, PRO_CATEGORY FROM" +
-                " SYSTEM.EATFAST_PRODUCT";
+                " EATFAST_DATA.EATFAST_PRODUCT";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO \"SYSTEM\".\"EATFAST_PRODUCT\" (\"PRO_NAME\", \"PRO_DESCRIPTION\", \"PRO_IMAGE" +
-                "\", \"PRO_PRICE\", \"PRO_CATEGORY\") VALUES (:PRO_NAME, :PRO_DESCRIPTION, :PRO_IMAGE," +
-                " :PRO_PRICE, :PRO_CATEGORY)";
+            this._commandCollection[1].CommandText = "INSERT INTO \"EATFAST_DATA\".\"EATFAST_PRODUCT\" (\"PRO_NAME\", \"PRO_DESCRIPTION\", \"PRO" +
+                "_IMAGE\", \"PRO_PRICE\", \"PRO_CATEGORY\") VALUES (:PRO_NAME, :PRO_DESCRIPTION, :PRO_" +
+                "IMAGE, :PRO_PRICE, :PRO_CATEGORY)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":PRO_NAME";
@@ -1298,10 +1120,6 @@ namespace EatFast_Project.DataSetProductsTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "PRO_CATEGORY";
             this._commandCollection[1].Parameters.Add(param);
-            this._commandCollection[2] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        MAX(PRO_ID) AS EXPR1\r\nFROM            SYSTEM.EATFAST_PRODUCT";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1360,221 +1178,6 @@ namespace EatFast_Project.DataSetProductsTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_PRO_ID, string Original_PRO_NAME, string Original_PRO_DESCRIPTION, string Original_PRO_IMAGE, global::System.Nullable<float> Original_PRO_PRICE, string Original_PRO_CATEGORY) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PRO_ID));
-            if ((Original_PRO_NAME == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_PRO_NAME));
-            }
-            if ((Original_PRO_DESCRIPTION == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_PRO_DESCRIPTION));
-            }
-            if ((Original_PRO_IMAGE == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_PRO_IMAGE));
-            }
-            if ((Original_PRO_PRICE.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((float)(Original_PRO_PRICE.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_PRO_CATEGORY == null)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_PRO_CATEGORY));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int PRO_ID, string PRO_NAME, string PRO_DESCRIPTION, string PRO_IMAGE, global::System.Nullable<float> PRO_PRICE, string PRO_CATEGORY) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(PRO_ID));
-            if ((PRO_NAME == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(PRO_NAME));
-            }
-            if ((PRO_DESCRIPTION == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PRO_DESCRIPTION));
-            }
-            if ((PRO_IMAGE == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(PRO_IMAGE));
-            }
-            if ((PRO_PRICE.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((float)(PRO_PRICE.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((PRO_CATEGORY == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(PRO_CATEGORY));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int PRO_ID, string PRO_NAME, string PRO_DESCRIPTION, string PRO_IMAGE, global::System.Nullable<float> PRO_PRICE, string PRO_CATEGORY, int Original_PRO_ID, string Original_PRO_NAME, string Original_PRO_DESCRIPTION, string Original_PRO_IMAGE, global::System.Nullable<float> Original_PRO_PRICE, string Original_PRO_CATEGORY) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(PRO_ID));
-            if ((PRO_NAME == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(PRO_NAME));
-            }
-            if ((PRO_DESCRIPTION == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(PRO_DESCRIPTION));
-            }
-            if ((PRO_IMAGE == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(PRO_IMAGE));
-            }
-            if ((PRO_PRICE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((float)(PRO_PRICE.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((PRO_CATEGORY == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(PRO_CATEGORY));
-            }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_PRO_ID));
-            if ((Original_PRO_NAME == null)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_PRO_NAME));
-            }
-            if ((Original_PRO_DESCRIPTION == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_PRO_DESCRIPTION));
-            }
-            if ((Original_PRO_IMAGE == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_PRO_IMAGE));
-            }
-            if ((Original_PRO_PRICE.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((float)(Original_PRO_PRICE.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((Original_PRO_CATEGORY == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_PRO_CATEGORY));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string PRO_NAME, string PRO_DESCRIPTION, string PRO_IMAGE, global::System.Nullable<float> PRO_PRICE, string PRO_CATEGORY, int Original_PRO_ID, string Original_PRO_NAME, string Original_PRO_DESCRIPTION, string Original_PRO_IMAGE, global::System.Nullable<float> Original_PRO_PRICE, string Original_PRO_CATEGORY) {
-            return this.Update(Original_PRO_ID, PRO_NAME, PRO_DESCRIPTION, PRO_IMAGE, PRO_PRICE, PRO_CATEGORY, Original_PRO_ID, Original_PRO_NAME, Original_PRO_DESCRIPTION, Original_PRO_IMAGE, Original_PRO_PRICE, Original_PRO_CATEGORY);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int AddProduct(string PRO_NAME, string PRO_DESCRIPTION, string PRO_IMAGE, global::System.Nullable<decimal> PRO_PRICE, string PRO_CATEGORY) {
             global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[1];
@@ -1623,34 +1226,6 @@ namespace EatFast_Project.DataSetProductsTableAdapters {
                 }
             }
             return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<decimal> GetMaxId() {
-            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[2];
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            object returnValue;
-            try {
-                returnValue = command.ExecuteScalar();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            if (((returnValue == null) 
-                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<decimal>();
-            }
-            else {
-                return new global::System.Nullable<decimal>(((decimal)(returnValue)));
-            }
         }
     }
     

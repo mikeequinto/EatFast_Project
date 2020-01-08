@@ -109,7 +109,7 @@ namespace EatFast_Project
                             this.clientTableAdapter.FillByAccountTypeClient(this.clientDataSetEatFast.EATFAST_PERSON);
                         }
                         else
-                        { //Si le compte est de type admin
+                        { //Si le compte est de type administrator
                             this.adminTableAdapter.AddAccount(name, email, password, "", type);
                             this.adminTableAdapter.FillByAccountTypeAdmin(this.adminDataSetEatFast.EATFAST_PERSON);
                         }

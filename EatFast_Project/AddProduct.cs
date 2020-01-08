@@ -31,23 +31,10 @@ namespace EatFast_Project
 
             try
             {
-                //Création d'un nouveau produit avec les valeurs du formulaire
-                DataSetProducts.EATFAST_PRODUCTRow newPRODUCTRow;
-
-                newPRODUCTRow = dataSetProducts.EATFAST_PRODUCT.NewEATFAST_PRODUCTRow();
-                newPRODUCTRow.PRO_NAME = textBoxName.Text;
-                newPRODUCTRow.PRO_PRICE = float.Parse(textBoxPrice.Text);
-                newPRODUCTRow.PRO_DESCRIPTION = textBoxDescription.Text;
-                newPRODUCTRow.PRO_IMAGE = "null";
-                newPRODUCTRow.PRO_CATEGORY = comboBoxCategory.SelectedIndex.ToString();
-
-                //Enregistrement du produit
-                //dataSetProducts.EATFAST_PRODUCT.Rows.Add(newPRODUCTRow);
                 //Insertion dans la bdd
-                productTableAdapter.AddProduct(textBoxName.Text, textBoxDescription.Text, "null", (decimal)float.Parse(textBoxPrice.Text),comboBoxCategory.GetItemText(comboBoxCategory.SelectedItem));
-
-                //Insertion dans la bdd
-                productTableAdapter.Update(dataSetProducts.EATFAST_PRODUCT);
+                productTableAdapter.AddProduct(textBoxName.Text, textBoxDescription.Text, "null", 
+                    (decimal)float.Parse(textBoxPrice.Text),
+                    comboBoxCategory.GetItemText(comboBoxCategory.SelectedItem));
 
                 MessageBox.Show("New product added!");
 

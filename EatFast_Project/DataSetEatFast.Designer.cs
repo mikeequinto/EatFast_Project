@@ -1000,7 +1000,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT        PER_ID, PER_NAME, PER_EMAIL, PER_PASSWORD, PER_ADDRESS, PER_ACCOUNT" +
                 "TYPE\r\nFROM            EATFAST_DATA.EATFAST_PERSON\r\nWHERE        (PER_ACCOUNTTYPE" +
-                " = \'Admin\')";
+                " = \'Admin\') OR (PER_ACCOUNTTYPE = \'Administrator\')";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[3].Connection = this.Connection;

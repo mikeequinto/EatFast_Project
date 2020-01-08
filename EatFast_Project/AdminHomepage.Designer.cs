@@ -123,16 +123,15 @@
             this.ordersTableAdapter = new EatFast_Project.DataSetOrdersTableAdapters.EATFAST_ORDERTableAdapter();
             this.clientOrdersTableAdapter = new EatFast_Project.DataSetClientOrdersTableAdapters.EATFAST_PERSONTableAdapter();
             this.categoryTableAdapter = new EatFast_Project.DataSetCategoryTableAdapters.EATFAST_PRODUCTTableAdapter();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetProducts = new EatFast_Project.DataSetProducts();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetProducts = new EatFast_Project.DataSetProducts();
             this.productsTableAdapter = new EatFast_Project.DataSetProductsTableAdapters.EATFAST_PRODUCTTableAdapter();
-            this.tableAdapterManager = new EatFast_Project.DataSetProductsTableAdapters.TableAdapterManager();
             this.tabControlAdminHomepage.SuspendLayout();
             this.tabGeneral.SuspendLayout();
             this.tabInformation.SuspendLayout();
@@ -166,9 +165,10 @@
             // linkLabelLogout
             // 
             this.linkLabelLogout.AutoSize = true;
-            this.linkLabelLogout.Location = new System.Drawing.Point(1035, 28);
+            this.linkLabelLogout.Location = new System.Drawing.Point(1380, 34);
+            this.linkLabelLogout.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabelLogout.Name = "linkLabelLogout";
-            this.linkLabelLogout.Size = new System.Drawing.Size(43, 13);
+            this.linkLabelLogout.Size = new System.Drawing.Size(56, 17);
             this.linkLabelLogout.TabIndex = 0;
             this.linkLabelLogout.TabStop = true;
             this.linkLabelLogout.Text = "Log out";
@@ -184,10 +184,11 @@
             this.tabControlAdminHomepage.Controls.Add(this.tabClients);
             this.tabControlAdminHomepage.Controls.Add(this.tabAccounts);
             this.tabControlAdminHomepage.Controls.Add(this.tabPage1);
-            this.tabControlAdminHomepage.Location = new System.Drawing.Point(41, 61);
+            this.tabControlAdminHomepage.Location = new System.Drawing.Point(55, 75);
+            this.tabControlAdminHomepage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControlAdminHomepage.Name = "tabControlAdminHomepage";
             this.tabControlAdminHomepage.SelectedIndex = 0;
-            this.tabControlAdminHomepage.Size = new System.Drawing.Size(1041, 590);
+            this.tabControlAdminHomepage.Size = new System.Drawing.Size(1388, 726);
             this.tabControlAdminHomepage.TabIndex = 5;
             // 
             // tabGeneral
@@ -200,10 +201,11 @@
             this.tabGeneral.Controls.Add(this.label31);
             this.tabGeneral.Controls.Add(this.label29);
             this.tabGeneral.Controls.Add(this.label30);
-            this.tabGeneral.Location = new System.Drawing.Point(4, 22);
+            this.tabGeneral.Location = new System.Drawing.Point(4, 25);
+            this.tabGeneral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabGeneral.Name = "tabGeneral";
-            this.tabGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGeneral.Size = new System.Drawing.Size(1033, 564);
+            this.tabGeneral.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabGeneral.Size = new System.Drawing.Size(1380, 697);
             this.tabGeneral.TabIndex = 0;
             this.tabGeneral.Text = "General";
             this.tabGeneral.UseVisualStyleBackColor = true;
@@ -212,7 +214,7 @@
             // 
             this.listBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 16;
+            this.listBox3.ItemHeight = 20;
             this.listBox3.Items.AddRange(new object[] {
             "order1",
             "order2",
@@ -221,16 +223,17 @@
             ".",
             ".",
             "."});
-            this.listBox3.Location = new System.Drawing.Point(711, 223);
+            this.listBox3.Location = new System.Drawing.Point(948, 274);
+            this.listBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(292, 212);
+            this.listBox3.Size = new System.Drawing.Size(388, 244);
             this.listBox3.TabIndex = 60;
             // 
             // listBox2
             // 
             this.listBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 16;
+            this.listBox2.ItemHeight = 20;
             this.listBox2.Items.AddRange(new object[] {
             "client1",
             "client2",
@@ -239,16 +242,17 @@
             ".",
             ".",
             "."});
-            this.listBox2.Location = new System.Drawing.Point(372, 223);
+            this.listBox2.Location = new System.Drawing.Point(496, 274);
+            this.listBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(292, 212);
+            this.listBox2.Size = new System.Drawing.Size(388, 244);
             this.listBox2.TabIndex = 59;
             // 
             // listBox1
             // 
             this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
+            this.listBox1.ItemHeight = 20;
             this.listBox1.Items.AddRange(new object[] {
             "product1",
             "product2",
@@ -257,17 +261,19 @@
             ".",
             ".",
             "."});
-            this.listBox1.Location = new System.Drawing.Point(29, 223);
+            this.listBox1.Location = new System.Drawing.Point(39, 274);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(292, 212);
+            this.listBox1.Size = new System.Drawing.Size(388, 244);
             this.listBox1.TabIndex = 58;
             // 
             // label33
             // 
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(694, 173);
+            this.label33.Location = new System.Drawing.Point(925, 213);
+            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(341, 47);
+            this.label33.Size = new System.Drawing.Size(455, 58);
             this.label33.TabIndex = 57;
             this.label33.Text = "Top 10 orders";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -276,9 +282,10 @@
             // label32
             // 
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(347, 173);
+            this.label32.Location = new System.Drawing.Point(463, 213);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(341, 47);
+            this.label32.Size = new System.Drawing.Size(455, 58);
             this.label32.TabIndex = 56;
             this.label32.Text = "Top 10 clients";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -286,9 +293,10 @@
             // label31
             // 
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(0, 173);
+            this.label31.Location = new System.Drawing.Point(0, 213);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(341, 47);
+            this.label31.Size = new System.Drawing.Size(455, 58);
             this.label31.TabIndex = 55;
             this.label31.Text = "Top 10 products";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -296,9 +304,10 @@
             // label29
             // 
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(0, 84);
+            this.label29.Location = new System.Drawing.Point(0, 103);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(1030, 47);
+            this.label29.Size = new System.Drawing.Size(1373, 58);
             this.label29.TabIndex = 54;
             this.label29.Text = "Welcome back!";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -306,9 +315,10 @@
             // label30
             // 
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(0, 3);
+            this.label30.Location = new System.Drawing.Point(0, 4);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(1030, 47);
+            this.label30.Size = new System.Drawing.Size(1373, 58);
             this.label30.TabIndex = 53;
             this.label30.Text = "Overview";
             this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -327,10 +337,11 @@
             this.tabInformation.Controls.Add(this.label4);
             this.tabInformation.Controls.Add(this.label2);
             this.tabInformation.Controls.Add(this.picBoxRestoBackground);
-            this.tabInformation.Location = new System.Drawing.Point(4, 22);
+            this.tabInformation.Location = new System.Drawing.Point(4, 25);
+            this.tabInformation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabInformation.Name = "tabInformation";
-            this.tabInformation.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformation.Size = new System.Drawing.Size(1033, 564);
+            this.tabInformation.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabInformation.Size = new System.Drawing.Size(1380, 697);
             this.tabInformation.TabIndex = 5;
             this.tabInformation.Text = "Information";
             this.tabInformation.UseVisualStyleBackColor = true;
@@ -338,9 +349,10 @@
             // 
             // btnClearRestauInfo
             // 
-            this.btnClearRestauInfo.Location = new System.Drawing.Point(521, 524);
+            this.btnClearRestauInfo.Location = new System.Drawing.Point(695, 645);
+            this.btnClearRestauInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClearRestauInfo.Name = "btnClearRestauInfo";
-            this.btnClearRestauInfo.Size = new System.Drawing.Size(111, 23);
+            this.btnClearRestauInfo.Size = new System.Drawing.Size(148, 28);
             this.btnClearRestauInfo.TabIndex = 59;
             this.btnClearRestauInfo.Text = "Clear";
             this.btnClearRestauInfo.UseVisualStyleBackColor = true;
@@ -349,25 +361,28 @@
             // lblFileName
             // 
             this.lblFileName.AutoSize = true;
-            this.lblFileName.Location = new System.Drawing.Point(542, 292);
+            this.lblFileName.Location = new System.Drawing.Point(723, 359);
+            this.lblFileName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(52, 13);
+            this.lblFileName.Size = new System.Drawing.Size(69, 17);
             this.lblFileName.TabIndex = 58;
             this.lblFileName.Text = "File name";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(542, 292);
+            this.label26.Location = new System.Drawing.Point(723, 359);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(0, 13);
+            this.label26.Size = new System.Drawing.Size(0, 17);
             this.label26.TabIndex = 57;
             // 
             // btnRestaurantBackground
             // 
-            this.btnRestaurantBackground.Location = new System.Drawing.Point(416, 287);
+            this.btnRestaurantBackground.Location = new System.Drawing.Point(555, 353);
+            this.btnRestaurantBackground.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRestaurantBackground.Name = "btnRestaurantBackground";
-            this.btnRestaurantBackground.Size = new System.Drawing.Size(111, 23);
+            this.btnRestaurantBackground.Size = new System.Drawing.Size(148, 28);
             this.btnRestaurantBackground.TabIndex = 55;
             this.btnRestaurantBackground.Text = "Choose file";
             this.btnRestaurantBackground.UseVisualStyleBackColor = true;
@@ -376,18 +391,20 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(216, 292);
+            this.label21.Location = new System.Drawing.Point(288, 359);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(150, 13);
+            this.label21.Size = new System.Drawing.Size(199, 17);
             this.label21.TabIndex = 54;
             this.label21.Text = "Restaurant background image";
             // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(0, 3);
+            this.label5.Location = new System.Drawing.Point(0, 4);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1030, 47);
+            this.label5.Size = new System.Drawing.Size(1373, 58);
             this.label5.TabIndex = 53;
             this.label5.Text = "Edit information";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -395,9 +412,10 @@
             // btnSaveRestaurantInfo
             // 
             this.btnSaveRestaurantInfo.Enabled = false;
-            this.btnSaveRestaurantInfo.Location = new System.Drawing.Point(404, 524);
+            this.btnSaveRestaurantInfo.Location = new System.Drawing.Point(539, 645);
+            this.btnSaveRestaurantInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSaveRestaurantInfo.Name = "btnSaveRestaurantInfo";
-            this.btnSaveRestaurantInfo.Size = new System.Drawing.Size(111, 23);
+            this.btnSaveRestaurantInfo.Size = new System.Drawing.Size(148, 28);
             this.btnSaveRestaurantInfo.TabIndex = 52;
             this.btnSaveRestaurantInfo.Text = "Save changes";
             this.btnSaveRestaurantInfo.UseVisualStyleBackColor = true;
@@ -405,45 +423,49 @@
             // 
             // textBoxRestaurantDescription
             // 
-            this.textBoxRestaurantDescription.Location = new System.Drawing.Point(416, 151);
+            this.textBoxRestaurantDescription.Location = new System.Drawing.Point(555, 186);
+            this.textBoxRestaurantDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxRestaurantDescription.Multiline = true;
             this.textBoxRestaurantDescription.Name = "textBoxRestaurantDescription";
-            this.textBoxRestaurantDescription.Size = new System.Drawing.Size(300, 80);
+            this.textBoxRestaurantDescription.Size = new System.Drawing.Size(399, 98);
             this.textBoxRestaurantDescription.TabIndex = 51;
             this.textBoxRestaurantDescription.TextChanged += new System.EventHandler(this.CheckRestaurantInfo);
             // 
             // textBoxRestaurantName
             // 
-            this.textBoxRestaurantName.Location = new System.Drawing.Point(416, 81);
+            this.textBoxRestaurantName.Location = new System.Drawing.Point(555, 100);
+            this.textBoxRestaurantName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxRestaurantName.Name = "textBoxRestaurantName";
-            this.textBoxRestaurantName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxRestaurantName.Size = new System.Drawing.Size(132, 22);
             this.textBoxRestaurantName.TabIndex = 50;
             this.textBoxRestaurantName.TextChanged += new System.EventHandler(this.CheckRestaurantInfo);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(216, 158);
+            this.label4.Location = new System.Drawing.Point(288, 194);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 13);
+            this.label4.Size = new System.Drawing.Size(151, 17);
             this.label4.TabIndex = 49;
             this.label4.Text = "Restaurant description";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(216, 84);
+            this.label2.Location = new System.Drawing.Point(288, 103);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 13);
+            this.label2.Size = new System.Drawing.Size(117, 17);
             this.label2.TabIndex = 48;
             this.label2.Text = "Restaurant name";
             // 
             // picBoxRestoBackground
             // 
-            this.picBoxRestoBackground.Location = new System.Drawing.Point(384, 353);
-            this.picBoxRestoBackground.Margin = new System.Windows.Forms.Padding(2);
+            this.picBoxRestoBackground.Location = new System.Drawing.Point(512, 434);
+            this.picBoxRestoBackground.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picBoxRestoBackground.Name = "picBoxRestoBackground";
-            this.picBoxRestoBackground.Size = new System.Drawing.Size(263, 150);
+            this.picBoxRestoBackground.Size = new System.Drawing.Size(351, 185);
             this.picBoxRestoBackground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxRestoBackground.TabIndex = 56;
             this.picBoxRestoBackground.TabStop = false;
@@ -456,19 +478,21 @@
             this.tabMenu.Controls.Add(this.updateBtn);
             this.tabMenu.Controls.Add(this.productsDataGridView);
             this.tabMenu.Controls.Add(this.label28);
-            this.tabMenu.Location = new System.Drawing.Point(4, 22);
+            this.tabMenu.Location = new System.Drawing.Point(4, 25);
+            this.tabMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabMenu.Name = "tabMenu";
-            this.tabMenu.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMenu.Size = new System.Drawing.Size(1033, 564);
+            this.tabMenu.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabMenu.Size = new System.Drawing.Size(1380, 697);
             this.tabMenu.TabIndex = 1;
             this.tabMenu.Text = "Menu";
             this.tabMenu.UseVisualStyleBackColor = true;
             // 
             // addProductBtn
             // 
-            this.addProductBtn.Location = new System.Drawing.Point(459, 75);
+            this.addProductBtn.Location = new System.Drawing.Point(612, 92);
+            this.addProductBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addProductBtn.Name = "addProductBtn";
-            this.addProductBtn.Size = new System.Drawing.Size(99, 30);
+            this.addProductBtn.Size = new System.Drawing.Size(132, 37);
             this.addProductBtn.TabIndex = 48;
             this.addProductBtn.Text = "Add Product";
             this.addProductBtn.UseVisualStyleBackColor = true;
@@ -476,9 +500,10 @@
             // 
             // updateBtn
             // 
-            this.updateBtn.Location = new System.Drawing.Point(459, 465);
+            this.updateBtn.Location = new System.Drawing.Point(612, 572);
+            this.updateBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(99, 30);
+            this.updateBtn.Size = new System.Drawing.Size(132, 37);
             this.updateBtn.TabIndex = 47;
             this.updateBtn.Text = "Save Changes";
             this.updateBtn.UseVisualStyleBackColor = true;
@@ -497,9 +522,10 @@
             this.dataGridViewTextBoxColumn18,
             this.dataGridViewTextBoxColumn19});
             this.productsDataGridView.DataSource = this.productsBindingSource;
-            this.productsDataGridView.Location = new System.Drawing.Point(35, 129);
+            this.productsDataGridView.Location = new System.Drawing.Point(47, 159);
+            this.productsDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.productsDataGridView.Name = "productsDataGridView";
-            this.productsDataGridView.Size = new System.Drawing.Size(960, 301);
+            this.productsDataGridView.Size = new System.Drawing.Size(1280, 370);
             this.productsDataGridView.TabIndex = 46;
             this.productsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productsDataGridView_CellContentClick);
             this.productsDataGridView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.updateProduct);
@@ -517,9 +543,10 @@
             // label28
             // 
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(0, 3);
+            this.label28.Location = new System.Drawing.Point(0, 4);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(1030, 47);
+            this.label28.Size = new System.Drawing.Size(1373, 58);
             this.label28.TabIndex = 46;
             this.label28.Text = "Menu";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -529,10 +556,11 @@
             this.tabTransactions.AutoScroll = true;
             this.tabTransactions.Controls.Add(this.ordersDataGridView);
             this.tabTransactions.Controls.Add(this.label10);
-            this.tabTransactions.Location = new System.Drawing.Point(4, 22);
+            this.tabTransactions.Location = new System.Drawing.Point(4, 25);
+            this.tabTransactions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabTransactions.Name = "tabTransactions";
-            this.tabTransactions.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTransactions.Size = new System.Drawing.Size(1033, 564);
+            this.tabTransactions.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabTransactions.Size = new System.Drawing.Size(1380, 697);
             this.tabTransactions.TabIndex = 2;
             this.tabTransactions.Text = "Transactions";
             this.tabTransactions.UseVisualStyleBackColor = true;
@@ -552,10 +580,11 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11});
             this.ordersDataGridView.DataSource = this.ordersBindingSource;
-            this.ordersDataGridView.Location = new System.Drawing.Point(90, 133);
+            this.ordersDataGridView.Location = new System.Drawing.Point(120, 164);
+            this.ordersDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ordersDataGridView.Name = "ordersDataGridView";
             this.ordersDataGridView.ReadOnly = true;
-            this.ordersDataGridView.Size = new System.Drawing.Size(847, 255);
+            this.ordersDataGridView.Size = new System.Drawing.Size(1129, 314);
             this.ordersDataGridView.TabIndex = 45;
             // 
             // dataGridViewTextBoxColumn6
@@ -615,9 +644,10 @@
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(3, 3);
+            this.label10.Location = new System.Drawing.Point(4, 4);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(1030, 47);
+            this.label10.Size = new System.Drawing.Size(1373, 58);
             this.label10.TabIndex = 45;
             this.label10.Text = "Transactions";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -627,10 +657,11 @@
             this.tabClients.AutoScroll = true;
             this.tabClients.Controls.Add(this.eATFAST_PERSONDataGridView);
             this.tabClients.Controls.Add(this.label13);
-            this.tabClients.Location = new System.Drawing.Point(4, 22);
+            this.tabClients.Location = new System.Drawing.Point(4, 25);
+            this.tabClients.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabClients.Name = "tabClients";
-            this.tabClients.Padding = new System.Windows.Forms.Padding(3);
-            this.tabClients.Size = new System.Drawing.Size(1033, 564);
+            this.tabClients.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabClients.Size = new System.Drawing.Size(1380, 697);
             this.tabClients.TabIndex = 3;
             this.tabClients.Text = "Clients";
             this.tabClients.UseVisualStyleBackColor = true;
@@ -647,10 +678,11 @@
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13});
             this.eATFAST_PERSONDataGridView.DataSource = this.clientOrdersBindingSource;
-            this.eATFAST_PERSONDataGridView.Location = new System.Drawing.Point(115, 145);
+            this.eATFAST_PERSONDataGridView.Location = new System.Drawing.Point(153, 178);
+            this.eATFAST_PERSONDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.eATFAST_PERSONDataGridView.Name = "eATFAST_PERSONDataGridView";
             this.eATFAST_PERSONDataGridView.ReadOnly = true;
-            this.eATFAST_PERSONDataGridView.Size = new System.Drawing.Size(795, 253);
+            this.eATFAST_PERSONDataGridView.Size = new System.Drawing.Size(1060, 311);
             this.eATFAST_PERSONDataGridView.TabIndex = 44;
             // 
             // dataGridViewTextBoxColumn1
@@ -697,9 +729,10 @@
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(0, 3);
+            this.label13.Location = new System.Drawing.Point(0, 4);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(1030, 47);
+            this.label13.Size = new System.Drawing.Size(1373, 58);
             this.label13.TabIndex = 44;
             this.label13.Text = "Your clients";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -723,10 +756,11 @@
             this.tabAccounts.Controls.Add(this.textBoxName);
             this.tabAccounts.Controls.Add(this.label16);
             this.tabAccounts.Controls.Add(this.comboBoxType);
-            this.tabAccounts.Location = new System.Drawing.Point(4, 22);
+            this.tabAccounts.Location = new System.Drawing.Point(4, 25);
+            this.tabAccounts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabAccounts.Name = "tabAccounts";
-            this.tabAccounts.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAccounts.Size = new System.Drawing.Size(1033, 564);
+            this.tabAccounts.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAccounts.Size = new System.Drawing.Size(1380, 697);
             this.tabAccounts.TabIndex = 4;
             this.tabAccounts.Text = "Accounts";
             this.tabAccounts.UseVisualStyleBackColor = true;
@@ -741,10 +775,11 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn7});
             this.adminDataGridView.DataSource = this.adminBindingSource;
-            this.adminDataGridView.Location = new System.Drawing.Point(539, 206);
+            this.adminDataGridView.Location = new System.Drawing.Point(719, 254);
+            this.adminDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.adminDataGridView.Name = "adminDataGridView";
             this.adminDataGridView.ReadOnly = true;
-            this.adminDataGridView.Size = new System.Drawing.Size(473, 307);
+            this.adminDataGridView.Size = new System.Drawing.Size(631, 378);
             this.adminDataGridView.TabIndex = 45;
             // 
             // dataGridViewTextBoxColumn4
@@ -783,10 +818,11 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
             this.clientDataGridView.DataSource = this.clientBindingSource;
-            this.clientDataGridView.Location = new System.Drawing.Point(17, 206);
+            this.clientDataGridView.Location = new System.Drawing.Point(23, 254);
+            this.clientDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clientDataGridView.Name = "clientDataGridView";
             this.clientDataGridView.ReadOnly = true;
-            this.clientDataGridView.Size = new System.Drawing.Size(477, 307);
+            this.clientDataGridView.Size = new System.Drawing.Size(636, 378);
             this.clientDataGridView.TabIndex = 45;
             // 
             // dataGridViewTextBoxColumn2
@@ -818,9 +854,10 @@
             // label25
             // 
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(0, 3);
+            this.label25.Location = new System.Drawing.Point(0, 4);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(1030, 47);
+            this.label25.Size = new System.Drawing.Size(1373, 58);
             this.label25.TabIndex = 45;
             this.label25.Text = "Accounts";
             this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -828,54 +865,60 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(536, 171);
+            this.label19.Location = new System.Drawing.Point(715, 210);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(72, 13);
+            this.label19.Size = new System.Drawing.Size(98, 17);
             this.label19.TabIndex = 34;
             this.label19.Text = "Administrators";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(13, 171);
+            this.label18.Location = new System.Drawing.Point(17, 210);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(38, 13);
+            this.label18.Size = new System.Drawing.Size(50, 17);
             this.label18.TabIndex = 33;
             this.label18.Text = "Clients";
             // 
             // textBoxPasswordConfirm
             // 
-            this.textBoxPasswordConfirm.Location = new System.Drawing.Point(760, 104);
+            this.textBoxPasswordConfirm.Location = new System.Drawing.Point(1013, 128);
+            this.textBoxPasswordConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxPasswordConfirm.Name = "textBoxPasswordConfirm";
             this.textBoxPasswordConfirm.PasswordChar = '*';
-            this.textBoxPasswordConfirm.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPasswordConfirm.Size = new System.Drawing.Size(132, 22);
             this.textBoxPasswordConfirm.TabIndex = 4;
             this.textBoxPasswordConfirm.TextChanged += new System.EventHandler(this.CheckAccountInfo);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(474, 106);
+            this.label17.Location = new System.Drawing.Point(632, 130);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(59, 13);
+            this.label17.Size = new System.Drawing.Size(77, 17);
             this.label17.TabIndex = 31;
             this.label17.Text = "Password :";
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(538, 104);
+            this.textBoxPassword.Location = new System.Drawing.Point(717, 128);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(132, 22);
             this.textBoxPassword.TabIndex = 3;
             this.textBoxPassword.TextChanged += new System.EventHandler(this.CheckAccountInfo);
             // 
             // btnAddAccount
             // 
             this.btnAddAccount.Enabled = false;
-            this.btnAddAccount.Location = new System.Drawing.Point(876, 102);
+            this.btnAddAccount.Location = new System.Drawing.Point(1168, 126);
+            this.btnAddAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddAccount.Name = "btnAddAccount";
-            this.btnAddAccount.Size = new System.Drawing.Size(88, 23);
+            this.btnAddAccount.Size = new System.Drawing.Size(117, 28);
             this.btnAddAccount.TabIndex = 5;
             this.btnAddAccount.Text = "Add account";
             this.btnAddAccount.UseVisualStyleBackColor = true;
@@ -884,52 +927,58 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(658, 106);
+            this.label3.Location = new System.Drawing.Point(877, 130);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 13);
+            this.label3.Size = new System.Drawing.Size(128, 17);
             this.label3.TabIndex = 27;
             this.label3.Text = "Confirm password :";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(312, 106);
+            this.label14.Location = new System.Drawing.Point(416, 130);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(38, 13);
+            this.label14.Size = new System.Drawing.Size(50, 17);
             this.label14.TabIndex = 26;
             this.label14.Text = "Email :";
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(356, 104);
+            this.textBoxEmail.Location = new System.Drawing.Point(475, 128);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(100, 20);
+            this.textBoxEmail.Size = new System.Drawing.Size(132, 22);
             this.textBoxEmail.TabIndex = 2;
             this.textBoxEmail.TextChanged += new System.EventHandler(this.CheckAccountInfo);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(151, 106);
+            this.label15.Location = new System.Drawing.Point(201, 130);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 13);
+            this.label15.Size = new System.Drawing.Size(53, 17);
             this.label15.TabIndex = 24;
             this.label15.Text = "Name :";
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(196, 104);
+            this.textBoxName.Location = new System.Drawing.Point(261, 128);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxName.Size = new System.Drawing.Size(132, 22);
             this.textBoxName.TabIndex = 1;
             this.textBoxName.TextChanged += new System.EventHandler(this.CheckAccountInfo);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(14, 79);
+            this.label16.Location = new System.Drawing.Point(19, 97);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(91, 13);
+            this.label16.Size = new System.Drawing.Size(116, 17);
             this.label16.TabIndex = 22;
             this.label16.Text = "Add new account";
             // 
@@ -940,9 +989,10 @@
             "- Select type -",
             "Client",
             "Administrator"});
-            this.comboBoxType.Location = new System.Drawing.Point(16, 104);
+            this.comboBoxType.Location = new System.Drawing.Point(21, 128);
+            this.comboBoxType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxType.Name = "comboBoxType";
-            this.comboBoxType.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxType.Size = new System.Drawing.Size(160, 24);
             this.comboBoxType.TabIndex = 0;
             this.comboBoxType.Text = "- Select type -";
             this.comboBoxType.SelectedIndexChanged += new System.EventHandler(this.CheckAccountInfo);
@@ -956,11 +1006,11 @@
             this.tabPage1.Controls.Add(this.lblUsername);
             this.tabPage1.Controls.Add(this.textBoxAccountEmail);
             this.tabPage1.Controls.Add(this.lblEmail);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage1.Size = new System.Drawing.Size(1033, 564);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Size = new System.Drawing.Size(1380, 697);
             this.tabPage1.TabIndex = 6;
             this.tabPage1.Text = "Your account";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -968,9 +1018,10 @@
             // btnSaveAccount
             // 
             this.btnSaveAccount.Enabled = false;
-            this.btnSaveAccount.Location = new System.Drawing.Point(476, 280);
+            this.btnSaveAccount.Location = new System.Drawing.Point(635, 345);
+            this.btnSaveAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSaveAccount.Name = "btnSaveAccount";
-            this.btnSaveAccount.Size = new System.Drawing.Size(87, 23);
+            this.btnSaveAccount.Size = new System.Drawing.Size(116, 28);
             this.btnSaveAccount.TabIndex = 45;
             this.btnSaveAccount.Text = "Save";
             this.btnSaveAccount.UseVisualStyleBackColor = true;
@@ -978,9 +1029,10 @@
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.Location = new System.Drawing.Point(327, 215);
+            this.btnChangePassword.Location = new System.Drawing.Point(436, 265);
+            this.btnChangePassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(107, 23);
+            this.btnChangePassword.Size = new System.Drawing.Size(143, 28);
             this.btnChangePassword.TabIndex = 44;
             this.btnChangePassword.Text = "Change password";
             this.btnChangePassword.UseVisualStyleBackColor = true;
@@ -989,53 +1041,59 @@
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(5, 2);
+            this.label6.Location = new System.Drawing.Point(7, 2);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1024, 47);
+            this.label6.Size = new System.Drawing.Size(1365, 58);
             this.label6.TabIndex = 43;
             this.label6.Text = "Your account";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxAccountName
             // 
-            this.textBoxAccountName.Location = new System.Drawing.Point(438, 102);
+            this.textBoxAccountName.Location = new System.Drawing.Point(584, 126);
+            this.textBoxAccountName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxAccountName.Name = "textBoxAccountName";
-            this.textBoxAccountName.Size = new System.Drawing.Size(163, 20);
+            this.textBoxAccountName.Size = new System.Drawing.Size(216, 22);
             this.textBoxAccountName.TabIndex = 42;
             this.textBoxAccountName.TextChanged += new System.EventHandler(this.CheckUserAccountInfo);
             // 
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(325, 104);
+            this.lblUsername.Location = new System.Drawing.Point(433, 128);
+            this.lblUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(41, 13);
+            this.lblUsername.Size = new System.Drawing.Size(53, 17);
             this.lblUsername.TabIndex = 41;
             this.lblUsername.Text = "Name :";
             // 
             // textBoxAccountEmail
             // 
-            this.textBoxAccountEmail.Location = new System.Drawing.Point(438, 156);
+            this.textBoxAccountEmail.Location = new System.Drawing.Point(584, 192);
+            this.textBoxAccountEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxAccountEmail.Name = "textBoxAccountEmail";
-            this.textBoxAccountEmail.Size = new System.Drawing.Size(163, 20);
+            this.textBoxAccountEmail.Size = new System.Drawing.Size(216, 22);
             this.textBoxAccountEmail.TabIndex = 38;
             this.textBoxAccountEmail.TextChanged += new System.EventHandler(this.CheckUserAccountInfo);
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(325, 158);
+            this.lblEmail.Location = new System.Drawing.Point(433, 194);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(38, 13);
+            this.lblEmail.Size = new System.Drawing.Size(50, 17);
             this.lblEmail.TabIndex = 37;
             this.lblEmail.Text = "Email :";
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(218, 11);
+            this.label1.Location = new System.Drawing.Point(291, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(689, 47);
+            this.label1.Size = new System.Drawing.Size(919, 58);
             this.label1.TabIndex = 45;
             this.label1.Text = "Manage your restaurant";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1043,11 +1101,12 @@
             // 
             // fillByAccountTypeClientToolStrip
             // 
+            this.fillByAccountTypeClientToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.fillByAccountTypeClientToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fillByAccountTypeClientToolStripButton});
-            this.fillByAccountTypeClientToolStrip.Location = new System.Drawing.Point(0, 25);
+            this.fillByAccountTypeClientToolStrip.Location = new System.Drawing.Point(0, 0);
             this.fillByAccountTypeClientToolStrip.Name = "fillByAccountTypeClientToolStrip";
-            this.fillByAccountTypeClientToolStrip.Size = new System.Drawing.Size(1121, 25);
+            this.fillByAccountTypeClientToolStrip.Size = new System.Drawing.Size(1495, 27);
             this.fillByAccountTypeClientToolStrip.TabIndex = 46;
             this.fillByAccountTypeClientToolStrip.Text = "fillByAccountTypeClientToolStrip";
             this.fillByAccountTypeClientToolStrip.Visible = false;
@@ -1056,7 +1115,7 @@
             // 
             this.fillByAccountTypeClientToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.fillByAccountTypeClientToolStripButton.Name = "fillByAccountTypeClientToolStripButton";
-            this.fillByAccountTypeClientToolStripButton.Size = new System.Drawing.Size(139, 22);
+            this.fillByAccountTypeClientToolStripButton.Size = new System.Drawing.Size(171, 24);
             this.fillByAccountTypeClientToolStripButton.Text = "FillByAccountTypeClient";
             this.fillByAccountTypeClientToolStripButton.Click += new System.EventHandler(this.fillByAccountTypeClientToolStripButton_Click);
             // 
@@ -1064,17 +1123,18 @@
             // 
             this.fillByAccountTypeAdminToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.fillByAccountTypeAdminToolStripButton.Name = "fillByAccountTypeAdminToolStripButton";
-            this.fillByAccountTypeAdminToolStripButton.Size = new System.Drawing.Size(144, 22);
+            this.fillByAccountTypeAdminToolStripButton.Size = new System.Drawing.Size(177, 28);
             this.fillByAccountTypeAdminToolStripButton.Text = "FillByAccountTypeAdmin";
             this.fillByAccountTypeAdminToolStripButton.Click += new System.EventHandler(this.fillByAccountTypeAdminToolStripButton_Click);
             // 
             // fillByAccountTypeAdminToolStrip
             // 
+            this.fillByAccountTypeAdminToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.fillByAccountTypeAdminToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fillByAccountTypeAdminToolStripButton});
             this.fillByAccountTypeAdminToolStrip.Location = new System.Drawing.Point(0, 0);
             this.fillByAccountTypeAdminToolStrip.Name = "fillByAccountTypeAdminToolStrip";
-            this.fillByAccountTypeAdminToolStrip.Size = new System.Drawing.Size(1121, 25);
+            this.fillByAccountTypeAdminToolStrip.Size = new System.Drawing.Size(1495, 31);
             this.fillByAccountTypeAdminToolStrip.TabIndex = 47;
             this.fillByAccountTypeAdminToolStrip.Text = "fillByAccountTypeAdminToolStrip";
             this.fillByAccountTypeAdminToolStrip.Visible = false;
@@ -1098,6 +1158,16 @@
             // categoryTableAdapter
             // 
             this.categoryTableAdapter.ClearBeforeFill = true;
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "EATFAST_PRODUCT";
+            this.productsBindingSource.DataSource = this.dataSetProducts;
+            // 
+            // dataSetProducts
+            // 
+            this.dataSetProducts.DataSetName = "DataSetProducts";
+            this.dataSetProducts.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridViewTextBoxColumn14
             // 
@@ -1146,36 +1216,21 @@
             this.dataGridViewTextBoxColumn19.ValueMember = "PRO_CATEGORY";
             this.dataGridViewTextBoxColumn19.Width = 125;
             // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "EATFAST_PRODUCT";
-            this.productsBindingSource.DataSource = this.dataSetProducts;
-            // 
-            // dataSetProducts
-            // 
-            this.dataSetProducts.DataSetName = "DataSetProducts";
-            this.dataSetProducts.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // productsTableAdapter
             // 
             this.productsTableAdapter.ClearBeforeFill = true;
             // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.EATFAST_PRODUCTTableAdapter = this.productsTableAdapter;
-            this.tableAdapterManager.UpdateOrder = EatFast_Project.DataSetProductsTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // AdminHomepage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1121, 671);
+            this.ClientSize = new System.Drawing.Size(1495, 826);
             this.Controls.Add(this.fillByAccountTypeClientToolStrip);
             this.Controls.Add(this.fillByAccountTypeAdminToolStrip);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControlAdminHomepage);
             this.Controls.Add(this.linkLabelLogout);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AdminHomepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Homepage";
@@ -1312,7 +1367,6 @@
         private DataSetProducts dataSetProducts;
         private System.Windows.Forms.BindingSource productsBindingSource;
         private DataSetProductsTableAdapters.EATFAST_PRODUCTTableAdapter productsTableAdapter;
-        private DataSetProductsTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView productsDataGridView;
         private DataSetCategory dataSetCategory;
         private System.Windows.Forms.BindingSource categoryBindingSource;
