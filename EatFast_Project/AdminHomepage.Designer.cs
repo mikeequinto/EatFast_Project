@@ -55,7 +55,7 @@
             this.picBoxRestoBackground = new System.Windows.Forms.PictureBox();
             this.tabMenu = new System.Windows.Forms.TabPage();
             this.addProductBtn = new System.Windows.Forms.Button();
-            this.updateBtn = new System.Windows.Forms.Button();
+            this.updateMenuBtn = new System.Windows.Forms.Button();
             this.productsDataGridView = new System.Windows.Forms.DataGridView();
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetCategory = new EatFast_Project.DataSetCategory();
@@ -123,15 +123,16 @@
             this.ordersTableAdapter = new EatFast_Project.DataSetOrdersTableAdapters.EATFAST_ORDERTableAdapter();
             this.clientOrdersTableAdapter = new EatFast_Project.DataSetClientOrdersTableAdapters.EATFAST_PERSONTableAdapter();
             this.categoryTableAdapter = new EatFast_Project.DataSetCategoryTableAdapters.EATFAST_PRODUCTTableAdapter();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetProducts = new EatFast_Project.DataSetProducts();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetProducts = new EatFast_Project.DataSetProducts();
             this.productsTableAdapter = new EatFast_Project.DataSetProductsTableAdapters.EATFAST_PRODUCTTableAdapter();
+            this.updateAccountsBtn = new System.Windows.Forms.Button();
             this.tabControlAdminHomepage.SuspendLayout();
             this.tabGeneral.SuspendLayout();
             this.tabInformation.SuspendLayout();
@@ -475,7 +476,7 @@
             // 
             this.tabMenu.AutoScroll = true;
             this.tabMenu.Controls.Add(this.addProductBtn);
-            this.tabMenu.Controls.Add(this.updateBtn);
+            this.tabMenu.Controls.Add(this.updateMenuBtn);
             this.tabMenu.Controls.Add(this.productsDataGridView);
             this.tabMenu.Controls.Add(this.label28);
             this.tabMenu.Location = new System.Drawing.Point(4, 25);
@@ -498,16 +499,16 @@
             this.addProductBtn.UseVisualStyleBackColor = true;
             this.addProductBtn.Click += new System.EventHandler(this.addProductBtn_Click);
             // 
-            // updateBtn
+            // updateMenuBtn
             // 
-            this.updateBtn.Location = new System.Drawing.Point(612, 572);
-            this.updateBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(132, 37);
-            this.updateBtn.TabIndex = 47;
-            this.updateBtn.Text = "Save Changes";
-            this.updateBtn.UseVisualStyleBackColor = true;
-            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
+            this.updateMenuBtn.Location = new System.Drawing.Point(612, 572);
+            this.updateMenuBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.updateMenuBtn.Name = "updateMenuBtn";
+            this.updateMenuBtn.Size = new System.Drawing.Size(132, 37);
+            this.updateMenuBtn.TabIndex = 47;
+            this.updateMenuBtn.Text = "Save Changes";
+            this.updateMenuBtn.UseVisualStyleBackColor = true;
+            this.updateMenuBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // productsDataGridView
             // 
@@ -740,6 +741,7 @@
             // tabAccounts
             // 
             this.tabAccounts.AutoScroll = true;
+            this.tabAccounts.Controls.Add(this.updateAccountsBtn);
             this.tabAccounts.Controls.Add(this.adminDataGridView);
             this.tabAccounts.Controls.Add(this.clientDataGridView);
             this.tabAccounts.Controls.Add(this.label25);
@@ -768,7 +770,6 @@
             // adminDataGridView
             // 
             this.adminDataGridView.AllowUserToAddRows = false;
-            this.adminDataGridView.AllowUserToDeleteRows = false;
             this.adminDataGridView.AutoGenerateColumns = false;
             this.adminDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adminDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -778,7 +779,6 @@
             this.adminDataGridView.Location = new System.Drawing.Point(719, 254);
             this.adminDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.adminDataGridView.Name = "adminDataGridView";
-            this.adminDataGridView.ReadOnly = true;
             this.adminDataGridView.Size = new System.Drawing.Size(631, 378);
             this.adminDataGridView.TabIndex = 45;
             // 
@@ -811,7 +811,6 @@
             // clientDataGridView
             // 
             this.clientDataGridView.AllowUserToAddRows = false;
-            this.clientDataGridView.AllowUserToDeleteRows = false;
             this.clientDataGridView.AutoGenerateColumns = false;
             this.clientDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.clientDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -821,7 +820,6 @@
             this.clientDataGridView.Location = new System.Drawing.Point(23, 254);
             this.clientDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.clientDataGridView.Name = "clientDataGridView";
-            this.clientDataGridView.ReadOnly = true;
             this.clientDataGridView.Size = new System.Drawing.Size(636, 378);
             this.clientDataGridView.TabIndex = 45;
             // 
@@ -1159,16 +1157,6 @@
             // 
             this.categoryTableAdapter.ClearBeforeFill = true;
             // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "EATFAST_PRODUCT";
-            this.productsBindingSource.DataSource = this.dataSetProducts;
-            // 
-            // dataSetProducts
-            // 
-            this.dataSetProducts.DataSetName = "DataSetProducts";
-            this.dataSetProducts.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // dataGridViewTextBoxColumn14
             // 
             this.dataGridViewTextBoxColumn14.DataPropertyName = "PRO_ID";
@@ -1216,9 +1204,30 @@
             this.dataGridViewTextBoxColumn19.ValueMember = "PRO_CATEGORY";
             this.dataGridViewTextBoxColumn19.Width = 125;
             // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "EATFAST_PRODUCT";
+            this.productsBindingSource.DataSource = this.dataSetProducts;
+            // 
+            // dataSetProducts
+            // 
+            this.dataSetProducts.DataSetName = "DataSetProducts";
+            this.dataSetProducts.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // productsTableAdapter
             // 
             this.productsTableAdapter.ClearBeforeFill = true;
+            // 
+            // updateAccountsBtn
+            // 
+            this.updateAccountsBtn.Location = new System.Drawing.Point(621, 652);
+            this.updateAccountsBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.updateAccountsBtn.Name = "updateAccountsBtn";
+            this.updateAccountsBtn.Size = new System.Drawing.Size(132, 37);
+            this.updateAccountsBtn.TabIndex = 48;
+            this.updateAccountsBtn.Text = "Save Changes";
+            this.updateAccountsBtn.UseVisualStyleBackColor = true;
+            this.updateAccountsBtn.Click += new System.EventHandler(this.updateAccountsBtn_Click);
             // 
             // AdminHomepage
             // 
@@ -1371,7 +1380,7 @@
         private DataSetCategory dataSetCategory;
         private System.Windows.Forms.BindingSource categoryBindingSource;
         private DataSetCategoryTableAdapters.EATFAST_PRODUCTTableAdapter categoryTableAdapter;
-        private System.Windows.Forms.Button updateBtn;
+        private System.Windows.Forms.Button updateMenuBtn;
         private System.Windows.Forms.Button addProductBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
@@ -1379,5 +1388,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.Button updateAccountsBtn;
     }
 }

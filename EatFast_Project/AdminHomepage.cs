@@ -381,5 +381,21 @@ namespace EatFast_Project
             AddProduct addProduct = new AddProduct();
             addProduct.ShowDialog();
         }
+
+        private void updateAccountsBtn_Click(object sender, EventArgs e)
+        {
+            //Update button update dataset after insertion,upadtion or deletion
+            DialogResult dr = MessageBox.Show("Are you sure to save Changes", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dr == DialogResult.Yes)
+            {
+                //Mise à jour de la table des clients
+                this.clientTableAdapter.Update(clientDataSetEatFast.EATFAST_PERSON);
+                clientDataGridView.Refresh();
+                //Mise à jour de la table des administrateurs
+                this.adminTableAdapter.Update(adminDataSetEatFast.EATFAST_PERSON);
+                adminDataGridView.Refresh();
+                MessageBox.Show("Accounts updated!");
+            }
+        }
     }
 }
