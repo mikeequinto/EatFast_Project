@@ -13,6 +13,10 @@ namespace EatFast_Project
 {
     public partial class AdminHomepage : Form
     {
+        //Informations de l'utilisateur connecté
+        int id;
+        string name;
+
         private static AdminHomepage instance;
         public AdminHomepage()
         {
@@ -42,8 +46,13 @@ namespace EatFast_Project
             this.clientTableAdapter.FillByAccountTypeClient(this.clientDataSetEatFast.EATFAST_PERSON);
             // TODO: This line of code loads data into the 'dataSetEatFast.EATFAST_PERSON' table. You can move, or remove it, as needed.
             this.adminTableAdapter.FillByAccountTypeAdmin(this.adminDataSetEatFast.EATFAST_PERSON);
+        }
 
-
+        //Fonction pour initialiser l'utilisateur connecté
+        public void initializeUser(int id,string name)
+        {
+            this.id = id;
+            this.name = name;
         }
 
         //Fonction permettant de chiffrer le mot de passe
@@ -284,6 +293,7 @@ namespace EatFast_Project
             if(textBoxAccountName.Text != "")
             {
                 //Update changes
+
             }
 
             if (textBoxAccountEmail.Text != "")
