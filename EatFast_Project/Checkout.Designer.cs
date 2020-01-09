@@ -39,7 +39,7 @@
             this.numericUpDownYear = new System.Windows.Forms.NumericUpDown();
             this.textBoxCardCVV = new System.Windows.Forms.TextBox();
             this.btnSubmitPayment = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelCartTotal = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMonth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYear)).BeginInit();
@@ -103,7 +103,7 @@
             // textBoxCardName
             // 
             this.textBoxCardName.Location = new System.Drawing.Point(127, 130);
-            this.textBoxCardName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCardName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCardName.Name = "textBoxCardName";
             this.textBoxCardName.Size = new System.Drawing.Size(277, 22);
             this.textBoxCardName.TabIndex = 49;
@@ -112,7 +112,7 @@
             // textBoxCardNumber
             // 
             this.textBoxCardNumber.Location = new System.Drawing.Point(127, 220);
-            this.textBoxCardNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCardNumber.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCardNumber.Name = "textBoxCardNumber";
             this.textBoxCardNumber.Size = new System.Drawing.Size(277, 22);
             this.textBoxCardNumber.TabIndex = 50;
@@ -121,7 +121,7 @@
             // numericUpDownMonth
             // 
             this.numericUpDownMonth.Location = new System.Drawing.Point(209, 311);
-            this.numericUpDownMonth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownMonth.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownMonth.Name = "numericUpDownMonth";
             this.numericUpDownMonth.Size = new System.Drawing.Size(53, 22);
             this.numericUpDownMonth.TabIndex = 51;
@@ -135,7 +135,7 @@
             // numericUpDownYear
             // 
             this.numericUpDownYear.Location = new System.Drawing.Point(271, 311);
-            this.numericUpDownYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownYear.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownYear.Name = "numericUpDownYear";
             this.numericUpDownYear.Size = new System.Drawing.Size(53, 22);
             this.numericUpDownYear.TabIndex = 52;
@@ -149,7 +149,7 @@
             // textBoxCardCVV
             // 
             this.textBoxCardCVV.Location = new System.Drawing.Point(229, 412);
-            this.textBoxCardCVV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCardCVV.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCardCVV.Name = "textBoxCardCVV";
             this.textBoxCardCVV.Size = new System.Drawing.Size(77, 22);
             this.textBoxCardCVV.TabIndex = 53;
@@ -159,7 +159,7 @@
             // 
             this.btnSubmitPayment.Enabled = false;
             this.btnSubmitPayment.Location = new System.Drawing.Point(173, 502);
-            this.btnSubmitPayment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubmitPayment.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmitPayment.Name = "btnSubmitPayment";
             this.btnSubmitPayment.Size = new System.Drawing.Size(192, 28);
             this.btnSubmitPayment.TabIndex = 54;
@@ -167,21 +167,21 @@
             this.btnSubmitPayment.UseVisualStyleBackColor = true;
             this.btnSubmitPayment.Click += new System.EventHandler(this.BtnSubmitClicked);
             // 
-            // label5
+            // labelCartTotal
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(16, 441);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(511, 58);
-            this.label5.TabIndex = 55;
-            this.label5.Text = "Total : 25.50 CHF";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelCartTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCartTotal.Location = new System.Drawing.Point(16, 441);
+            this.labelCartTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCartTotal.Name = "labelCartTotal";
+            this.labelCartTotal.Size = new System.Drawing.Size(514, 58);
+            this.labelCartTotal.TabIndex = 55;
+            this.labelCartTotal.Text = "Total (CHF) : 0.0";
+            this.labelCartTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(173, 538);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(192, 28);
             this.button2.TabIndex = 56;
@@ -195,7 +195,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(543, 585);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.labelCartTotal);
             this.Controls.Add(this.btnSubmitPayment);
             this.Controls.Add(this.textBoxCardCVV);
             this.Controls.Add(this.numericUpDownYear);
@@ -207,10 +207,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label16);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Checkout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Checkout";
+            this.Load += new System.EventHandler(this.Checkout_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMonth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownYear)).EndInit();
             this.ResumeLayout(false);
@@ -231,7 +232,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDownYear;
         private System.Windows.Forms.TextBox textBoxCardCVV;
         private System.Windows.Forms.Button btnSubmitPayment;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelCartTotal;
         private System.Windows.Forms.Button button2;
     }
 }

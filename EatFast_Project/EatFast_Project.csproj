@@ -80,6 +80,7 @@
     <Compile Include="AdminHomepage.Designer.cs">
       <DependentUpon>AdminHomepage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CartProduct.cs" />
     <Compile Include="Checkout.cs">
       <SubType>Form</SubType>
     </Compile>

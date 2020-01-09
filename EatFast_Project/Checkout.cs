@@ -86,6 +86,11 @@ namespace EatFast_Project
                 cardOk = false;
             }
 
+            if(Homepage.getInstance().CalculateCartTotal() == 0)
+            {
+                cardOk = false;
+            }
+
             if (cardOk)
             {
                 btnSubmitPayment.Enabled = true;
@@ -94,6 +99,11 @@ namespace EatFast_Project
             {
                 btnSubmitPayment.Enabled = false;
             }
+        }
+
+        private void Checkout_Load(object sender, EventArgs e)
+        {
+            labelCartTotal.Text = "Total (CHF) : " + Homepage.getInstance().CalculateCartTotal().ToString();
         }
     }
 }
