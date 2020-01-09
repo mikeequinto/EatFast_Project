@@ -45,25 +45,6 @@ namespace EatFast_Project
             this.Close();
         }
 
-        public void setNewUser(String email)
-        {
-            //Accès à la table eatfast_person dans la bdd
-            DataSetEatFast personDataSet = new DataSetEatFast();
-            DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter listePerson = new DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter();
-
-            try
-            {
-                //Récupération du nouvel utilisateur inséré dans la bdd
-                int id = (int)listePerson.FillByEmail(email);
-                DataSetEatFast.EATFAST_PERSONRow personRow = personDataSet.EATFAST_PERSON.FindByPER_ID(id);
-                initializeUser(personRow);
-            }
-            catch (Exception e){
-                MessageBox.Show("Something went wrong");
-            }
-            
-        }
-
         private void Homepage_Load(object sender, EventArgs e)
         {
             
@@ -119,13 +100,35 @@ namespace EatFast_Project
             clientPassword.ShowDialog();
         }
 
-        internal void initializeUser(DataSetEatFast.EATFAST_PERSONRow personRow)
+        public void InitializeNewUser(string email)
+        {
+            //Accès à la table eatfast_person dans la bdd
+            DataSetEatFast personDataSet = new DataSetEatFast();
+            DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter listePerson = new DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter();
+
+            try
+            {
+                //Récupération du nouvel utilisateur 
+                int id = (int)listePerson.FillByEmail(email);
+                DataSetEatFast.EATFAST_PERSONRow personRow = personDataSet.EATFAST_PERSON.FindByPER_ID(id);
+                NewUser newUser = new NewUser(id);
+                newUser.ShowDialog();
+            }
+            catch (Exception o)
+            {
+                MessageBox.Show("Something went wrong");
+                Console.Write(o);
+            }
+        }
+
+        public void initializeUser(DataSetEatFast.EATFAST_PERSONRow personRow)
         {
             this.personRow = personRow;
             //On demande d'insérer une adresse de livraison si non connue
-            if (personRow.PER_ADDRESS == "")
+            //MessageBox.Show("address : " + (string)personRow.PER_ADDRESS);
+            if (personRow.IsPER_ADDRESSNull())
             {
-                NewUser newUser = new NewUser();
+                NewUser newUser = new NewUser(personRow.PER_ID);
                 newUser.ShowDialog();
             }
 

@@ -1071,7 +1071,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[5];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[6];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PER_ID, PER_NAME, PER_EMAIL, PER_PASSWORD, PER_ADDRESS, PER_ACCOUNTTYPE FR" +
@@ -1079,9 +1079,9 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO \"EATFAST_DATA\".\"EATFAST_PERSON\" (\"PER_NAME\", \"PER_EMAIL\", \"PER_PASSWO" +
-                "RD\", \"PER_ADDRESS\", \"PER_ACCOUNTTYPE\") VALUES (:PER_NAME, :PER_EMAIL, :PER_PASSW" +
-                "ORD, :PER_ADDRESS, :PER_ACCOUNTTYPE)";
+            this._commandCollection[1].CommandText = "INSERT INTO EATFAST_DATA.EATFAST_PERSON\r\n                  (PER_NAME, PER_EMAIL, " +
+                "PER_PASSWORD, PER_ADDRESS, PER_ACCOUNTTYPE)\r\nVALUES     (:PER_NAME, :PER_EMAIL, " +
+                ":PER_PASSWORD, :PER_ADDRESS, :PER_ACCOUNTTYPE)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":PER_NAME";
@@ -1141,6 +1141,27 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "PER_EMAIL";
             this._commandCollection[4].Parameters.Add(param);
+            this._commandCollection[5] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "UPDATE    EATFAST_DATA.EATFAST_PERSON\r\nSET           PER_ADDRESS = :PER_ADDRESS\r\n" +
+                "WHERE     (PER_ID = :PER_ID)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PER_ADDRESS";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 250;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_ADDRESS";
+            this._commandCollection[5].Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PER_ID";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_ID";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._commandCollection[5].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1442,6 +1463,36 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
             else {
                 return ((object)(returnValue));
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateAddress(string PER_ADDRESS, decimal PER_ID) {
+            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[5];
+            if ((PER_ADDRESS == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(PER_ADDRESS));
+            }
+            command.Parameters[1].Value = ((decimal)(PER_ID));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

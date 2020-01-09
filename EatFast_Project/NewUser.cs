@@ -12,14 +12,36 @@ namespace EatFast_Project
 {
     public partial class NewUser : Form
     {
-        public NewUser()
+        decimal id;
+
+        public NewUser(decimal id)
         {
             InitializeComponent();
+            this.id = id;
+        }
+
+        private void UpdateUserAddress()
+        {
+            //Accès à la table eatfast_person dans la bdd
+            DataSetEatFast personDataSet = new DataSetEatFast();
+            DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter listePerson = new DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter();
+
+            try
+            {
+                //Mise à jour de l'adresse de livraison
+                listePerson.UpdateAddress(textBoxAddress.Text, id);
+                this.Close();
+            }
+            catch (Exception o)
+            {
+                MessageBox.Show("Something went wrong");
+                Console.Write(o);
+            }
         }
 
         private void BtnSubmitClicked(object sender, EventArgs e)
         {
-            this.Close();
+            UpdateUserAddress();
         }
 
         private void CheckAddress(object sender, EventArgs e)
@@ -32,6 +54,11 @@ namespace EatFast_Project
             {
                 btnSubmit.Enabled = false;
             }
+        }
+
+        private void NewUser_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

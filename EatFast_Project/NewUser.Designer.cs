@@ -74,6 +74,7 @@
             this.Name = "NewUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Delivery address";
+            this.Load += new System.EventHandler(this.NewUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

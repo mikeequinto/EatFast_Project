@@ -72,15 +72,17 @@ namespace EatFast_Project
                         { //Si compte client
                             this.Hide();
                             Homepage homePage = Homepage.getInstance();
-                            homePage.initializeUser(personRow);
                             homePage.Show();
+                            homePage.initializeUser(personRow);
+                            
                         }
                         else
                         { //Si compte administrateur
                             this.Hide();
                             AdminHomepage adminHomepage = AdminHomepage.getInstance();
-                            adminHomepage.initializeUser(personRow);
                             adminHomepage.Show();
+                            adminHomepage.initializeUser(personRow);
+                            
                         }
                     }
                     else
@@ -135,7 +137,8 @@ namespace EatFast_Project
                 this.Hide();
                 Homepage homepage = Homepage.getInstance();
                 homepage.Show();
-                homepage.setNewUser(email);
+                //Pour que le nouvel utilisateur indique son adresse de livraison
+                homepage.InitializeNewUser(email);
             }
             else
             { //Sinon informer que l'utilisateur existe déjà
