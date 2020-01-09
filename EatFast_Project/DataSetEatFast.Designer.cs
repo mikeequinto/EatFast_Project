@@ -1071,7 +1071,7 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[4];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[5];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PER_ID, PER_NAME, PER_EMAIL, PER_PASSWORD, PER_ADDRESS, PER_ACCOUNTTYPE FR" +
@@ -1129,6 +1129,18 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
             this._commandCollection[3].CommandText = "SELECT PER_ACCOUNTTYPE, PER_ADDRESS, PER_EMAIL, PER_ID, PER_NAME, PER_PASSWORD FR" +
                 "OM EATFAST_DATA.EATFAST_PERSON WHERE (PER_ACCOUNTTYPE = \'Client\')";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT     PER_ID\r\nFROM        EATFAST_DATA.EATFAST_PERSON\r\nWHERE     (PER_EMAIL " +
+                "= :PER_EMAIL)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PER_EMAIL";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 128;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_EMAIL";
+            this._commandCollection[4].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1396,6 +1408,40 @@ namespace EatFast_Project.DataSetEatFastTableAdapters {
                 }
             }
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object FillByEmail(string PER_EMAIL) {
+            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[4];
+            if ((PER_EMAIL == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(PER_EMAIL));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
     }
     

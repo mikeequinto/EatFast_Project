@@ -14,8 +14,7 @@ namespace EatFast_Project
     public partial class AdminHomepage : Form
     {
         //Informations de l'utilisateur connecté
-        int id;
-        string name;
+        DataSetEatFast.EATFAST_PERSONRow personRow;
 
         private static AdminHomepage instance;
         public AdminHomepage()
@@ -49,10 +48,9 @@ namespace EatFast_Project
         }
 
         //Fonction pour initialiser l'utilisateur connecté
-        public void initializeUser(int id,string name)
+        public void initializeUser(DataSetEatFast.EATFAST_PERSONRow personRow)
         {
-            this.id = id;
-            this.name = name;
+            this.personRow = personRow;
         }
 
         //Fonction permettant de chiffrer le mot de passe

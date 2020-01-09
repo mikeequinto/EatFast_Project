@@ -14,6 +14,7 @@ namespace EatFast_Project
     public partial class Homepage : Form
     {
         private static Homepage instance;
+        private DataSetEatFast.EATFAST_PERSONRow personRow;
 
         public Homepage()
         {
@@ -44,9 +45,28 @@ namespace EatFast_Project
             this.Close();
         }
 
+        public void setNewUser(String email)
+        {
+            //Accès à la table eatfast_person dans la bdd
+            DataSetEatFast personDataSet = new DataSetEatFast();
+            DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter listePerson = new DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter();
+
+            try
+            {
+                //Récupération du nouvel utilisateur inséré dans la bdd
+                int id = (int)listePerson.FillByEmail(email);
+                DataSetEatFast.EATFAST_PERSONRow personRow = personDataSet.EATFAST_PERSON.FindByPER_ID(id);
+                initializeUser(personRow);
+            }
+            catch (Exception e){
+                MessageBox.Show("Something went wrong");
+            }
+            
+        }
+
         private void Homepage_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Homepage_FormClosing(object sender, FormClosingEventArgs e)
@@ -97,6 +117,18 @@ namespace EatFast_Project
         {
             ChangePassword clientPassword = new ChangePassword();
             clientPassword.ShowDialog();
+        }
+
+        internal void initializeUser(DataSetEatFast.EATFAST_PERSONRow personRow)
+        {
+            this.personRow = personRow;
+            //On demande d'insérer une adresse de livraison si non connue
+            if (personRow.PER_ADDRESS == "")
+            {
+                NewUser newUser = new NewUser();
+                newUser.ShowDialog();
+            }
+
         }
 
         private void BtnSaveAccountClicked(object sender, EventArgs e)

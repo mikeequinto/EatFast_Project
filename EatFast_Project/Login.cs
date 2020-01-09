@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,7 +34,19 @@ namespace EatFast_Project
         {
 
         }
-      
+
+        public static string HashCode(string str)
+        {
+            System.Text.ASCIIEncoding encoder = new System.Text.ASCIIEncoding();
+            byte[] buffer = encoder.GetBytes(str);
+            SHA1CryptoServiceProvider cryptoTransformSHA1 =
+            new SHA1CryptoServiceProvider();
+            string hash = BitConverter.ToString(
+                cryptoTransformSHA1.ComputeHash(buffer)).Replace("-", "");
+
+            return hash;
+        }
+
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             if(textBoxLoginEmail.Text == "" || textBoxLoginPassword.Text == "")
@@ -42,20 +55,46 @@ namespace EatFast_Project
             }
             else
             {
-                if (textBoxLoginEmail.Text == "client")
+
+                //Accès à la table eatfast_person dans la bdd
+                DataSetEatFast personDataSet = new DataSetEatFast();
+                DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter listePerson = new DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter();
+                listePerson.Fill(personDataSet.EATFAST_PERSON);
+
+                try
                 {
-                    this.Hide();
-                    Homepage.getInstance().Show();
+                    //Récupération de l'utilisateur
+                    int id = (int)listePerson.FillByEmail(textBoxLoginEmail.Text);
+                    DataSetEatFast.EATFAST_PERSONRow personRow = personDataSet.EATFAST_PERSON.FindByPER_ID(id);
+
+                    if (personRow.PER_PASSWORD.Equals(HashCode(textBoxLoginPassword.Text))){
+                        if (personRow.PER_ACCOUNTTYPE == "Client")
+                        { //Si compte client
+                            this.Hide();
+                            Homepage homePage = Homepage.getInstance();
+                            homePage.initializeUser(personRow);
+                            homePage.Show();
+                        }
+                        else
+                        { //Si compte administrateur
+                            this.Hide();
+                            AdminHomepage adminHomepage = AdminHomepage.getInstance();
+                            adminHomepage.initializeUser(personRow);
+                            adminHomepage.Show();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("The username or password is incorrect", "Information");
+                    }
+                    
                 }
-                else if (textBoxLoginEmail.Text == "admin")
-                {
-                    this.Hide();
-                    AdminHomepage.getInstance().Show();
-                }
-                else
+                catch(Exception o)
                 {
                     MessageBox.Show("The username or password is incorrect", "Information");
+                    Console.Write(o);
                 }
+           
             }
 
         }
@@ -73,16 +112,36 @@ namespace EatFast_Project
                     MessageBox.Show("Your password needs to be at least 8 characters long", "Information");
                 }
                 else
-                {
-                    this.Hide();
-                    Homepage.getInstance().Show();
-
-                    NewUser newUser = new NewUser();
-                    newUser.ShowDialog();
+                { //Enregistrer le nouvel utilisateur
+                    RegisterUser();
                 }
             
             }
             //this.Close();
+        }
+
+        private void RegisterUser()
+        {
+            //Accès à la table eatfast_person dans la bdd
+            DataSetEatFast personDataSet = new DataSetEatFast();
+            DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter listePerson = new DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter();
+            String name = textBoxSignupName.Text;
+            String email = textBoxSignupEmail.Text;
+            String password = HashCode(textBoxSignupPassword.Text);
+
+            if(listePerson.FillByEmail(email) == null)
+            { //Si le compte n'existe pas encore
+                listePerson.AddAccount(name,email,password,"","Client");
+                this.Hide();
+                Homepage homepage = Homepage.getInstance();
+                homepage.Show();
+                homepage.setNewUser(email);
+            }
+            else
+            { //Sinon informer que l'utilisateur existe déjà
+                MessageBox.Show("A user with this email already exists");
+            }
+            
         }
 
         private void Login_Load(object sender, EventArgs e)
