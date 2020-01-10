@@ -23,10 +23,10 @@ namespace EatFast_Project
         private void BtnSubmitClicked(object sender, EventArgs e)
         {
             // On initialise notre dataset
-            DataSetOrders ordersDataSet = new DataSetOrders();
+            DataSetCart cartDataSet = new DataSetCart();
 
-            DataSetOrdersTableAdapters.EATFAST_ORDERTableAdapter ordersTableAdapter =
-                new DataSetOrdersTableAdapters.EATFAST_ORDERTableAdapter();
+            DataSetCartTableAdapters.EATFAST_ORDERTableAdapter cartTableAdapter =
+                new DataSetCartTableAdapters.EATFAST_ORDERTableAdapter();
             //Création d'une nouvelle commande
             //string date = DateTime.Now.ToString("yyyy-MM-dd");
             //MessageBox.Show(user.PER_ID + " " + user.PER_ADDRESS + " " + this.total);
@@ -34,11 +34,9 @@ namespace EatFast_Project
             string address = user.PER_ADDRESS;
             string status = "Delivered";
             string paymentStatus = "Paid";
-            int total = (int)this.total;
 
-
-
-            ordersTableAdapter.AddOrder(id);
+            //cartTableAdapter.AddOrder(id, DateTime.Now,status,address,this.total,paymentStatus);
+            cartTableAdapter.AddOrder2(status);
             //Ajout de la commande dans la bdd
             ConfirmOrder();
 

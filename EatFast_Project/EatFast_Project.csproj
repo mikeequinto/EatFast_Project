@@ -93,6 +93,11 @@
     <Compile Include="ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSetCart.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCart.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetCategory.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -201,6 +206,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="DataSetCart.xsc">
+      <DependentUpon>DataSetCart.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCart.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCart.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetCart.xss">
+      <DependentUpon>DataSetCart.xsd</DependentUpon>
+    </None>
     <None Include="DataSetCategory.xsc">
       <DependentUpon>DataSetCategory.xsd</DependentUpon>
     </None>
