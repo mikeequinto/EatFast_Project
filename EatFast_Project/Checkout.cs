@@ -12,6 +12,9 @@ namespace EatFast_Project
 {
     public partial class Checkout : Form
     {
+        DataSetEatFast.EATFAST_PERSONRow user;
+        decimal total;
+
         public Checkout()
         {
             InitializeComponent();
@@ -19,8 +22,45 @@ namespace EatFast_Project
 
         private void BtnSubmitClicked(object sender, EventArgs e)
         {
+            // On initialise notre dataset
+            DataSetOrders ordersDataSet = new DataSetOrders();
+
+            DataSetOrdersTableAdapters.EATFAST_ORDERTableAdapter ordersTableAdapter =
+                new DataSetOrdersTableAdapters.EATFAST_ORDERTableAdapter();
+            //Création d'une nouvelle commande
+            //string date = DateTime.Now.ToString("yyyy-MM-dd");
+            //MessageBox.Show(user.PER_ID + " " + user.PER_ADDRESS + " " + this.total);
+            int id = user.PER_ID;
+            string address = user.PER_ADDRESS;
+            string status = "Delivered";
+            string paymentStatus = "Paid";
+            int total = (int)this.total;
+
+
+
+            ordersTableAdapter.AddOrder(id);
+            //Ajout de la commande dans la bdd
+            ConfirmOrder();
+
             MessageBox.Show("Your order is on the way!", "Payment successful");
             this.Close();
+        }
+
+        private void ConfirmOrder()
+        {
+            
+
+            //Récupération du panier
+            SortedList<int, CartProduct> cart = Homepage.getInstance().GetCart();
+
+            foreach (KeyValuePair<int, CartProduct> cartProduct in cart)
+            {
+                CartProduct product = (CartProduct)cartProduct.Value;
+                
+                //Ajout de chaque produit dans la commande
+
+                
+            }
         }
 
         private void BtnBackClicked(object sender, EventArgs e)
@@ -103,7 +143,9 @@ namespace EatFast_Project
 
         private void Checkout_Load(object sender, EventArgs e)
         {
-            labelCartTotal.Text = "Total (CHF) : " + Homepage.getInstance().CalculateCartTotal().ToString();
+            this.total = Homepage.getInstance().CalculateCartTotal();
+            labelCartTotal.Text = "Total (CHF) : " + this.total;
+            this.user = Homepage.getInstance().GetUser();
         }
     }
 }

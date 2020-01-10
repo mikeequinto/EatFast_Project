@@ -7,9 +7,12 @@
     }
 }
 
-namespace EatFast_Project.DataSetOrdersTableAdapters {
-    
-    
+namespace EatFast_Project.DataSetOrdersTableAdapters
+{
+    partial class EATFAST_PERSONTableAdapter
+    {
+    }
+
     public partial class EATFAST_ORDERTableAdapter {
     }
 }

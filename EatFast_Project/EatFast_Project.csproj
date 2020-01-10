@@ -103,6 +103,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetClientOrders.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetContains.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetContains.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetEatFast.cs">
       <DependentUpon>DataSetEatFast.xsd</DependentUpon>
     </Compile>
@@ -217,6 +222,17 @@
     </None>
     <None Include="DataSetClientOrders.xss">
       <DependentUpon>DataSetClientOrders.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetContains.xsc">
+      <DependentUpon>DataSetContains.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetContains.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetContains.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetContains.xss">
+      <DependentUpon>DataSetContains.xsd</DependentUpon>
     </None>
     <None Include="DataSetEatFast.xsc">
       <DependentUpon>DataSetEatFast.xsd</DependentUpon>

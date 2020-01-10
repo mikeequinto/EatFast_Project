@@ -1618,7 +1618,7 @@ namespace EatFast_Project.DataSetOrdersTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[2];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        EATFAST_DATA.EATFAST_ORDER.ORD_ID, EATFAST_DATA.EATFAST_ORDER.PER_ID, EATFAST_DATA.EATFAST_ORDER.ORD_DATE, EATFAST_DATA.EATFAST_ORDER.ORD_STATUS, EATFAST_DATA.EATFAST_ORDER.ORD_DELIVERYADDRESS, 
@@ -1626,6 +1626,18 @@ namespace EatFast_Project.DataSetOrdersTableAdapters {
 FROM            EATFAST_DATA.EATFAST_ORDER INNER JOIN
                          EATFAST_DATA.EATFAST_PERSON ON EATFAST_DATA.EATFAST_ORDER.PER_ID = EATFAST_DATA.EATFAST_PERSON.PER_ID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "INSERT INTO EATFAST_DATA.EATFAST_ORDER\r\n                  (PER_ID)\r\nVALUES     (:" +
+                "PER_ID)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":PER_ID";
+            param.DbType = global::System.Data.DbType.Object;
+            param.Size = 1024;
+            param.IsNullable = true;
+            param.SourceColumn = "PER_ID";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1650,6 +1662,35 @@ FROM            EATFAST_DATA.EATFAST_ORDER INNER JOIN
             DataSetOrders.EATFAST_ORDERDataTable dataTable = new DataSetOrders.EATFAST_ORDERDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int AddOrder(object PER_ID) {
+            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[1];
+            if ((PER_ID == null)) {
+                throw new global::System.ArgumentNullException("PER_ID");
+            }
+            else {
+                command.Parameters[0].Value = ((object)(PER_ID));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

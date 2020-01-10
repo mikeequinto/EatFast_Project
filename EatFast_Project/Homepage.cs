@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace EatFast_Project
 {
     
-    public partial class Homepage : Form
+    internal partial class Homepage : Form
     {
         private static Homepage instance;
         private DataSetEatFast.EATFAST_PERSONRow personRow;
@@ -32,7 +32,15 @@ namespace EatFast_Project
             return instance;
         }
 
-        
+        public DataSetEatFast.EATFAST_PERSONRow GetUser()
+        {
+            return this.personRow;
+        }
+
+        public SortedList<int,CartProduct> GetCart()
+        {
+            return this.cart;
+        }
 
         private void Label1_Click(object sender, EventArgs e)
         {
