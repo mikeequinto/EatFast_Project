@@ -35,24 +35,8 @@ namespace EatFast_Project
             this.linkLabelLogout = new System.Windows.Forms.LinkLabel();
             this.tabControlHomepage = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnAddToCart = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelRestaurantInfo = new System.Windows.Forms.Label();
+            this.labelRestaurantName = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.productsDataGridView = new System.Windows.Forms.DataGridView();
             this.pro_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +52,13 @@ namespace EatFast_Project
             this.labelCartTotal = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.cartDataGridView = new System.Windows.Forms.DataGridView();
+            this.productId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IncreaseProduct = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.DecreaseProduct = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.RemoveProduct = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label16 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -75,10 +66,14 @@ namespace EatFast_Project
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label17 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.OrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oRDDATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oRDSTATUSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oRDDELIVERYADDRESSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oRDTOTALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oRDPAYMENTSTATUSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eATFASTORDERBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetOrdersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetOrders = new EatFast_Project.DataSetOrders();
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.btnSaveAccount = new System.Windows.Forms.Button();
             this.btnChangePassword = new System.Windows.Forms.Button();
@@ -87,25 +82,11 @@ namespace EatFast_Project
             this.lblUsername = new System.Windows.Forms.Label();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
             this.eATFAST_PRODUCTTableAdapter = new EatFast_Project.DataSetProductsTableAdapters.EATFAST_PRODUCTTableAdapter();
             this.tableAdapterManager = new EatFast_Project.DataSetProductsTableAdapters.TableAdapterManager();
-            this.productId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IncreaseProduct = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.DecreaseProduct = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.RemoveProduct = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.eATFAST_ORDERTableAdapter = new EatFast_Project.DataSetOrdersTableAdapters.EATFAST_ORDERTableAdapter();
             this.tabControlHomepage.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eATFAST_PRODUCTBindingSource)).BeginInit();
@@ -114,6 +95,9 @@ namespace EatFast_Project
             ((System.ComponentModel.ISupportInitialize)(this.cartDataGridView)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eATFASTORDERBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetOrdersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetOrders)).BeginInit();
             this.tabPage9.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -145,12 +129,8 @@ namespace EatFast_Project
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.labelRestaurantInfo);
+            this.tabPage1.Controls.Add(this.labelRestaurantName);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
@@ -160,201 +140,27 @@ namespace EatFast_Project
             this.tabPage1.Text = "Home";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // groupBox3
+            // labelRestaurantInfo
             // 
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.pictureBox3);
-            this.groupBox3.Location = new System.Drawing.Point(745, 279);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(267, 167);
-            this.groupBox3.TabIndex = 19;
-            this.groupBox3.TabStop = false;
+            this.labelRestaurantInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRestaurantInfo.Location = new System.Drawing.Point(0, 203);
+            this.labelRestaurantInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelRestaurantInfo.Name = "labelRestaurantInfo";
+            this.labelRestaurantInfo.Size = new System.Drawing.Size(1140, 97);
+            this.labelRestaurantInfo.TabIndex = 15;
+            this.labelRestaurantInfo.Text = "restaurant_info";
+            this.labelRestaurantInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label8
+            // labelRestaurantName
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(103, 20);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 17);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "product_3";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(80, 130);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 28);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Add to cart";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.BtnAddCartClicked);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(103, 111);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 17);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "25.00 CHF";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Location = new System.Drawing.Point(71, 46);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(133, 62);
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.pictureBox2);
-            this.groupBox2.Location = new System.Drawing.Point(431, 279);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(267, 167);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(103, 20);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 17);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "product_2";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(80, 130);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Add to cart";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.BtnAddCartClicked);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(103, 111);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 17);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "25.00 CHF";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(71, 46);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(133, 62);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.btnAddToCart);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Location = new System.Drawing.Point(120, 279);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(267, 167);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(103, 20);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 17);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "product_1";
-            // 
-            // btnAddToCart
-            // 
-            this.btnAddToCart.Location = new System.Drawing.Point(80, 130);
-            this.btnAddToCart.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddToCart.Name = "btnAddToCart";
-            this.btnAddToCart.Size = new System.Drawing.Size(100, 28);
-            this.btnAddToCart.TabIndex = 6;
-            this.btnAddToCart.Text = "Add to cart";
-            this.btnAddToCart.UseVisualStyleBackColor = true;
-            this.btnAddToCart.Click += new System.EventHandler(this.BtnAddCartClicked);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(103, 111);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 17);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "25.00 CHF";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(71, 46);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 62);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 243);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1120, 32);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Our top products";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 112);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1120, 97);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "restaurant_info";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1121, 94);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Welcome to restaurant_name";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelRestaurantName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRestaurantName.Location = new System.Drawing.Point(0, 18);
+            this.labelRestaurantName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelRestaurantName.Name = "labelRestaurantName";
+            this.labelRestaurantName.Size = new System.Drawing.Size(1138, 94);
+            this.labelRestaurantName.TabIndex = 14;
+            this.labelRestaurantName.Text = "Welcome to restaurant_name";
+            this.labelRestaurantName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tabPage2
             // 
@@ -520,6 +326,66 @@ namespace EatFast_Project
             this.cartDataGridView.TabIndex = 44;
             this.cartDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cartDataGridView_CellContentClick);
             // 
+            // productId
+            // 
+            this.productId.HeaderText = "Product id";
+            this.productId.Name = "productId";
+            this.productId.ReadOnly = true;
+            // 
+            // ProductName
+            // 
+            this.ProductName.HeaderText = "Product name";
+            this.ProductName.MinimumWidth = 6;
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
+            this.ProductName.Width = 200;
+            // 
+            // ProductPrice
+            // 
+            this.ProductPrice.HeaderText = "Product price";
+            this.ProductPrice.MinimumWidth = 6;
+            this.ProductPrice.Name = "ProductPrice";
+            this.ProductPrice.ReadOnly = true;
+            this.ProductPrice.Width = 75;
+            // 
+            // ProductQuantity
+            // 
+            this.ProductQuantity.HeaderText = "Product quantity";
+            this.ProductQuantity.MinimumWidth = 6;
+            this.ProductQuantity.Name = "ProductQuantity";
+            this.ProductQuantity.ReadOnly = true;
+            this.ProductQuantity.Width = 75;
+            // 
+            // IncreaseProduct
+            // 
+            this.IncreaseProduct.HeaderText = "Increase";
+            this.IncreaseProduct.MinimumWidth = 6;
+            this.IncreaseProduct.Name = "IncreaseProduct";
+            this.IncreaseProduct.ReadOnly = true;
+            this.IncreaseProduct.Text = "+";
+            this.IncreaseProduct.UseColumnTextForButtonValue = true;
+            this.IncreaseProduct.Width = 75;
+            // 
+            // DecreaseProduct
+            // 
+            this.DecreaseProduct.HeaderText = "Decrease";
+            this.DecreaseProduct.MinimumWidth = 6;
+            this.DecreaseProduct.Name = "DecreaseProduct";
+            this.DecreaseProduct.ReadOnly = true;
+            this.DecreaseProduct.Text = "-";
+            this.DecreaseProduct.UseColumnTextForButtonValue = true;
+            this.DecreaseProduct.Width = 75;
+            // 
+            // RemoveProduct
+            // 
+            this.RemoveProduct.HeaderText = "Remove";
+            this.RemoveProduct.MinimumWidth = 6;
+            this.RemoveProduct.Name = "RemoveProduct";
+            this.RemoveProduct.ReadOnly = true;
+            this.RemoveProduct.Text = "Remove";
+            this.RemoveProduct.UseColumnTextForButtonValue = true;
+            this.RemoveProduct.Width = 125;
+            // 
             // label16
             // 
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -589,12 +455,15 @@ namespace EatFast_Project
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.OrderDate,
-            this.OrderAddress,
-            this.OrderTotal,
-            this.Status});
+            this.oRDDATEDataGridViewTextBoxColumn,
+            this.oRDSTATUSDataGridViewTextBoxColumn,
+            this.oRDDELIVERYADDRESSDataGridViewTextBoxColumn,
+            this.oRDTOTALDataGridViewTextBoxColumn,
+            this.oRDPAYMENTSTATUSDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.eATFASTORDERBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(105, 138);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
@@ -603,37 +472,57 @@ namespace EatFast_Project
             this.dataGridView1.Size = new System.Drawing.Size(919, 278);
             this.dataGridView1.TabIndex = 3;
             // 
-            // OrderDate
+            // oRDDATEDataGridViewTextBoxColumn
             // 
-            this.OrderDate.HeaderText = "Date";
-            this.OrderDate.MinimumWidth = 6;
-            this.OrderDate.Name = "OrderDate";
-            this.OrderDate.ReadOnly = true;
-            this.OrderDate.Width = 125;
+            this.oRDDATEDataGridViewTextBoxColumn.DataPropertyName = "ORD_DATE";
+            this.oRDDATEDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.oRDDATEDataGridViewTextBoxColumn.Name = "oRDDATEDataGridViewTextBoxColumn";
+            this.oRDDATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.oRDDATEDataGridViewTextBoxColumn.Width = 150;
             // 
-            // OrderAddress
+            // oRDSTATUSDataGridViewTextBoxColumn
             // 
-            this.OrderAddress.HeaderText = "Address";
-            this.OrderAddress.MinimumWidth = 6;
-            this.OrderAddress.Name = "OrderAddress";
-            this.OrderAddress.ReadOnly = true;
-            this.OrderAddress.Width = 250;
+            this.oRDSTATUSDataGridViewTextBoxColumn.DataPropertyName = "ORD_STATUS";
+            this.oRDSTATUSDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.oRDSTATUSDataGridViewTextBoxColumn.Name = "oRDSTATUSDataGridViewTextBoxColumn";
+            this.oRDSTATUSDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // OrderTotal
+            // oRDDELIVERYADDRESSDataGridViewTextBoxColumn
             // 
-            this.OrderTotal.HeaderText = "Total";
-            this.OrderTotal.MinimumWidth = 6;
-            this.OrderTotal.Name = "OrderTotal";
-            this.OrderTotal.ReadOnly = true;
-            this.OrderTotal.Width = 125;
+            this.oRDDELIVERYADDRESSDataGridViewTextBoxColumn.DataPropertyName = "ORD_DELIVERYADDRESS";
+            this.oRDDELIVERYADDRESSDataGridViewTextBoxColumn.HeaderText = "Delivery Address";
+            this.oRDDELIVERYADDRESSDataGridViewTextBoxColumn.Name = "oRDDELIVERYADDRESSDataGridViewTextBoxColumn";
+            this.oRDDELIVERYADDRESSDataGridViewTextBoxColumn.ReadOnly = true;
+            this.oRDDELIVERYADDRESSDataGridViewTextBoxColumn.Width = 250;
             // 
-            // Status
+            // oRDTOTALDataGridViewTextBoxColumn
             // 
-            this.Status.HeaderText = "Delivery status";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            this.Status.Width = 125;
+            this.oRDTOTALDataGridViewTextBoxColumn.DataPropertyName = "ORD_TOTAL";
+            this.oRDTOTALDataGridViewTextBoxColumn.HeaderText = "Total (CHF)";
+            this.oRDTOTALDataGridViewTextBoxColumn.Name = "oRDTOTALDataGridViewTextBoxColumn";
+            this.oRDTOTALDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // oRDPAYMENTSTATUSDataGridViewTextBoxColumn
+            // 
+            this.oRDPAYMENTSTATUSDataGridViewTextBoxColumn.DataPropertyName = "ORD_PAYMENTSTATUS";
+            this.oRDPAYMENTSTATUSDataGridViewTextBoxColumn.HeaderText = "Payment Status";
+            this.oRDPAYMENTSTATUSDataGridViewTextBoxColumn.Name = "oRDPAYMENTSTATUSDataGridViewTextBoxColumn";
+            this.oRDPAYMENTSTATUSDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // eATFASTORDERBindingSource
+            // 
+            this.eATFASTORDERBindingSource.DataMember = "EATFAST_ORDER";
+            this.eATFASTORDERBindingSource.DataSource = this.dataSetOrdersBindingSource;
+            // 
+            // dataSetOrdersBindingSource
+            // 
+            this.dataSetOrdersBindingSource.DataSource = this.dataSetOrders;
+            this.dataSetOrdersBindingSource.Position = 0;
+            // 
+            // dataSetOrders
+            // 
+            this.dataSetOrders.DataSetName = "DataSetOrders";
+            this.dataSetOrders.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabPage9
             // 
@@ -644,8 +533,6 @@ namespace EatFast_Project
             this.tabPage9.Controls.Add(this.lblUsername);
             this.tabPage9.Controls.Add(this.textBoxAddress);
             this.tabPage9.Controls.Add(this.lblAddress);
-            this.tabPage9.Controls.Add(this.textBoxEmail);
-            this.tabPage9.Controls.Add(this.lblEmail);
             this.tabPage9.Location = new System.Drawing.Point(4, 25);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
@@ -657,7 +544,7 @@ namespace EatFast_Project
             // btnSaveAccount
             // 
             this.btnSaveAccount.Enabled = false;
-            this.btnSaveAccount.Location = new System.Drawing.Point(507, 434);
+            this.btnSaveAccount.Location = new System.Drawing.Point(507, 373);
             this.btnSaveAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveAccount.Name = "btnSaveAccount";
             this.btnSaveAccount.Size = new System.Drawing.Size(116, 28);
@@ -668,7 +555,7 @@ namespace EatFast_Project
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.Location = new System.Drawing.Point(300, 340);
+            this.btnChangePassword.Location = new System.Drawing.Point(300, 279);
             this.btnChangePassword.Margin = new System.Windows.Forms.Padding(4);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(143, 28);
@@ -709,7 +596,7 @@ namespace EatFast_Project
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(448, 266);
+            this.textBoxAddress.Location = new System.Drawing.Point(448, 205);
             this.textBoxAddress.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
@@ -720,31 +607,12 @@ namespace EatFast_Project
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(297, 269);
+            this.lblAddress.Location = new System.Drawing.Point(297, 208);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(122, 17);
             this.lblAddress.TabIndex = 20;
             this.lblAddress.Text = "Delivery address :";
-            // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.Location = new System.Drawing.Point(448, 197);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(216, 22);
-            this.textBoxEmail.TabIndex = 19;
-            this.textBoxEmail.TextChanged += new System.EventHandler(this.CheckAccountInfo);
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(297, 200);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(50, 17);
-            this.lblEmail.TabIndex = 18;
-            this.lblEmail.Text = "Email :";
             // 
             // eATFAST_PRODUCTTableAdapter
             // 
@@ -756,65 +624,9 @@ namespace EatFast_Project
             this.tableAdapterManager.EATFAST_PRODUCTTableAdapter = this.eATFAST_PRODUCTTableAdapter;
             this.tableAdapterManager.UpdateOrder = EatFast_Project.DataSetProductsTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // productId
+            // eATFAST_ORDERTableAdapter
             // 
-            this.productId.HeaderText = "Product id";
-            this.productId.Name = "productId";
-            this.productId.ReadOnly = true;
-            // 
-            // ProductName
-            // 
-            this.ProductName.HeaderText = "Product name";
-            this.ProductName.MinimumWidth = 6;
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
-            this.ProductName.Width = 200;
-            // 
-            // ProductPrice
-            // 
-            this.ProductPrice.HeaderText = "Product price";
-            this.ProductPrice.MinimumWidth = 6;
-            this.ProductPrice.Name = "ProductPrice";
-            this.ProductPrice.ReadOnly = true;
-            this.ProductPrice.Width = 75;
-            // 
-            // ProductQuantity
-            // 
-            this.ProductQuantity.HeaderText = "Product quantity";
-            this.ProductQuantity.MinimumWidth = 6;
-            this.ProductQuantity.Name = "ProductQuantity";
-            this.ProductQuantity.ReadOnly = true;
-            this.ProductQuantity.Width = 75;
-            // 
-            // IncreaseProduct
-            // 
-            this.IncreaseProduct.HeaderText = "Increase";
-            this.IncreaseProduct.MinimumWidth = 6;
-            this.IncreaseProduct.Name = "IncreaseProduct";
-            this.IncreaseProduct.ReadOnly = true;
-            this.IncreaseProduct.Text = "+";
-            this.IncreaseProduct.UseColumnTextForButtonValue = true;
-            this.IncreaseProduct.Width = 75;
-            // 
-            // DecreaseProduct
-            // 
-            this.DecreaseProduct.HeaderText = "Decrease";
-            this.DecreaseProduct.MinimumWidth = 6;
-            this.DecreaseProduct.Name = "DecreaseProduct";
-            this.DecreaseProduct.ReadOnly = true;
-            this.DecreaseProduct.Text = "-";
-            this.DecreaseProduct.UseColumnTextForButtonValue = true;
-            this.DecreaseProduct.Width = 75;
-            // 
-            // RemoveProduct
-            // 
-            this.RemoveProduct.HeaderText = "Remove";
-            this.RemoveProduct.MinimumWidth = 6;
-            this.RemoveProduct.Name = "RemoveProduct";
-            this.RemoveProduct.ReadOnly = true;
-            this.RemoveProduct.Text = "Remove";
-            this.RemoveProduct.UseColumnTextForButtonValue = true;
-            this.RemoveProduct.Width = 125;
+            this.eATFAST_ORDERTableAdapter.ClearBeforeFill = true;
             // 
             // Homepage
             // 
@@ -831,15 +643,6 @@ namespace EatFast_Project
             this.Load += new System.EventHandler(this.Homepage_Load);
             this.tabControlHomepage.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eATFAST_PRODUCTBindingSource)).EndInit();
@@ -849,6 +652,9 @@ namespace EatFast_Project
             ((System.ComponentModel.ISupportInitialize)(this.cartDataGridView)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eATFASTORDERBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetOrdersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetOrders)).EndInit();
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
             this.ResumeLayout(false);
@@ -865,24 +671,8 @@ namespace EatFast_Project
         private System.Windows.Forms.LinkLabel linkLabelLogout;
         private TabControl tabControlHomepage;
         private TabPage tabPage1;
-        private GroupBox groupBox3;
-        private Label label8;
-        private Button button3;
-        private Label label9;
-        private PictureBox pictureBox3;
-        private GroupBox groupBox2;
-        private Label label5;
-        private Button button2;
-        private Label label7;
-        private PictureBox pictureBox2;
-        private GroupBox groupBox1;
-        private Label label3;
-        private Button btnAddToCart;
-        private Label label4;
-        private PictureBox pictureBox1;
-        private Label label6;
-        private Label label2;
-        private Label label1;
+        private Label labelRestaurantInfo;
+        private Label labelRestaurantName;
         private TabPage tabPage2;
         private TabPage tabPage3;
         private TabPage tabPage4;
@@ -899,17 +689,10 @@ namespace EatFast_Project
         private Label lblUsername;
         private TextBox textBoxAddress;
         private Label lblAddress;
-        private TextBox textBoxEmail;
-        private Label lblEmail;
         private Button btnSaveAccount;
-        private Button btnChangePassword;
         private DataGridView cartDataGridView;
         private Label labelCartTotal;
         private Label label13;
-        private DataGridViewTextBoxColumn OrderDate;
-        private DataGridViewTextBoxColumn OrderAddress;
-        private DataGridViewTextBoxColumn OrderTotal;
-        private DataGridViewTextBoxColumn Status;
         private DataSetProducts dataSetProducts;
         private BindingSource eATFAST_PRODUCTBindingSource;
         private DataSetProductsTableAdapters.EATFAST_PRODUCTTableAdapter eATFAST_PRODUCTTableAdapter;
@@ -928,6 +711,16 @@ namespace EatFast_Project
         private DataGridViewButtonColumn IncreaseProduct;
         private DataGridViewButtonColumn DecreaseProduct;
         private DataGridViewButtonColumn RemoveProduct;
+        private BindingSource dataSetOrdersBindingSource;
+        private DataSetOrders dataSetOrders;
+        private BindingSource eATFASTORDERBindingSource;
+        private DataSetOrdersTableAdapters.EATFAST_ORDERTableAdapter eATFAST_ORDERTableAdapter;
+        private DataGridViewTextBoxColumn oRDDATEDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn oRDSTATUSDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn oRDDELIVERYADDRESSDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn oRDTOTALDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn oRDPAYMENTSTATUSDataGridViewTextBoxColumn;
+        private Button btnChangePassword;
     }
 }
 

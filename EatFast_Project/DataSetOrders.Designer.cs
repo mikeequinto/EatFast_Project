@@ -1628,13 +1628,15 @@ FROM            EATFAST_DATA.EATFAST_ORDER INNER JOIN
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "INSERT INTO EATFAST_DATA.EATFAST_ORDER\r\n                  (PER_ID)\r\nVALUES     (:" +
+            this._commandCollection[1].CommandText = "SELECT     ORD_ID, PER_ID, ORD_DATE, ORD_STATUS, ORD_DELIVERYADDRESS, ORD_TOTAL, " +
+                "ORD_PAYMENTSTATUS\r\nFROM        EATFAST_DATA.EATFAST_ORDER\r\nWHERE     (PER_ID = :" +
                 "PER_ID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":PER_ID";
-            param.DbType = global::System.Data.DbType.Object;
-            param.Size = 1024;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "PER_ID";
             this._commandCollection[1].Parameters.Add(param);
@@ -1667,30 +1669,27 @@ FROM            EATFAST_DATA.EATFAST_ORDER INNER JOIN
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int AddOrder(object PER_ID) {
-            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[1];
-            if ((PER_ID == null)) {
-                throw new global::System.ArgumentNullException("PER_ID");
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByClient(DataSetOrders.EATFAST_ORDERDataTable dataTable, decimal PER_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(PER_ID));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
             }
-            else {
-                command.Parameters[0].Value = ((object)(PER_ID));
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
+            int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSetOrders.EATFAST_ORDERDataTable GetDataByClient(decimal PER_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(PER_ID));
+            DataSetOrders.EATFAST_ORDERDataTable dataTable = new DataSetOrders.EATFAST_ORDERDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     

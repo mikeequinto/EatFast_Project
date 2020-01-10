@@ -42,6 +42,17 @@ namespace EatFast_Project
             return this.cart;
         }
 
+        public void ClearCart()
+        {
+            this.cart.Clear();
+            UpdateCart();
+        }
+
+        public void UpdateOrders()
+        {
+            eATFAST_ORDERTableAdapter.FillByClient(this.dataSetOrders.EATFAST_ORDER, personRow.PER_ID);
+        }
+
         private void Label1_Click(object sender, EventArgs e)
         {
 
@@ -58,13 +69,9 @@ namespace EatFast_Project
         }
 
         private void Homepage_Load(object sender, EventArgs e)
-        {
+        {    
             // TODO: This line of code loads data into the 'dataSetProducts.EATFAST_PRODUCT' table. You can move, or remove it, as needed.
             this.eATFAST_PRODUCTTableAdapter.Fill(this.dataSetProducts.EATFAST_PRODUCT);
-
-            //Initialisation du datagridview du panier
-            //cartDataGridView.DataSource = new BindingSource(cart, null);
-            //cartDataGridView.DataSource = cart.Values;
 
         }
 
@@ -102,7 +109,7 @@ namespace EatFast_Project
 
         private void CheckAccountInfo(object sender, EventArgs e)
         {
-            if(textBoxName.Text != "" || textBoxEmail.Text != "" || textBoxAddress.Text != "")
+            if(textBoxName.Text != "" || textBoxAddress.Text != "")
             {
                 btnSaveAccount.Enabled = true;
             }
@@ -129,6 +136,7 @@ namespace EatFast_Project
                 //Récupération du nouvel utilisateur 
                 int id = (int)listePerson.FillByEmail(email);
                 DataSetEatFast.EATFAST_PERSONRow personRow = personDataSet.EATFAST_PERSON.FindByPER_ID(id);
+                this.personRow = personRow;
                 NewUser newUser = new NewUser(id);
                 newUser.ShowDialog();
             }
@@ -150,12 +158,34 @@ namespace EatFast_Project
                 newUser.ShowDialog();
             }
 
+            // TODO: This line of code loads data into the 'dataSetOrders.EATFAST_ORDER' table. You can move, or remove it, as needed.
+            this.eATFAST_ORDERTableAdapter.FillByClient(this.dataSetOrders.EATFAST_ORDER, personRow.PER_ID);
+
         }
 
         private void BtnSaveAccountClicked(object sender, EventArgs e)
         {
+            string name = textBoxName.Text;
+            string address = textBoxAddress.Text;
+
+            //Accès à la table eatfast_person dans la bdd
+            DataSetEatFast personDataSet = new DataSetEatFast();
+            DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter personTableAdapter = new DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter();
+
+            if (name != "")
+            {
+                //Update name
+                personTableAdapter.UpdateName(name, personRow.PER_ID);
+
+            }
+
+            if(address != "")
+            {
+                //Update address
+                personTableAdapter.UpdateAddress(address, personRow.PER_ID);
+            }
+
             textBoxName.Text = "";
-            textBoxEmail.Text = "";
             textBoxAddress.Text = "";
 
             MessageBox.Show("Your account information has been saved!", "Information");

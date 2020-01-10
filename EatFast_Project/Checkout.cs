@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,31 +23,61 @@ namespace EatFast_Project
 
         private void BtnSubmitClicked(object sender, EventArgs e)
         {
-            // On initialise notre dataset
-            DataSetCart cartDataSet = new DataSetCart();
+            AddOrder();
+        }
 
-            DataSetCartTableAdapters.EATFAST_ORDERTableAdapter cartTableAdapter =
-                new DataSetCartTableAdapters.EATFAST_ORDERTableAdapter();
-            //Création d'une nouvelle commande
-            //string date = DateTime.Now.ToString("yyyy-MM-dd");
-            //MessageBox.Show(user.PER_ID + " " + user.PER_ADDRESS + " " + this.total);
-            int id = user.PER_ID;
-            string address = user.PER_ADDRESS;
-            string status = "Delivered";
-            string paymentStatus = "Paid";
+        private void AddOrder()
+        {
+            //Insertion dans la base de données
+            OracleConnection con = new OracleConnection("DATA SOURCE=127.0.0.1:1521/HEGLOCAL;PASSWORD=manager;USER ID=SYSTEM");
 
-            int orderId = cartTableAdapter.AddOrder(id, DateTime.Now,status,address,this.total,paymentStatus);
-            //cartTableAdapter.AddOrder2(status);
-            //Ajout de la commande dans la bdd
-            ConfirmOrder(orderId);
+            // Open a database connection
+            con.Open();
 
-            MessageBox.Show("Your order is on the way!", "Payment successful");
+            OracleCommand cmd = new OracleCommand();
+
+            // INSERT statement with RETURNING clause to get the generated ID 
+            cmd.CommandText = "INSERT INTO eatfast_data.eatfast_order (per_id,ord_date,ord_status,ord_deliveryaddress,ord_total,ord_paymentstatus)" +
+                " VALUES (:per_id, :ord_date, 'Delivered', :ord_deliveryaddress, :ord_total, 'Paid') RETURNING ord_id INTO :orderId";
+            cmd.Connection = con;
+
+            cmd.Parameters.Add(new OracleParameter("per_id", user.PER_ID));
+            cmd.Parameters.Add(new OracleParameter("ord_date", DateTime.Now));
+            cmd.Parameters.Add(new OracleParameter("ord_deliveryaddress", user.PER_ADDRESS));
+            cmd.Parameters.Add(new OracleParameter("ord_total", total));
+
+            cmd.Parameters.Add(new OracleParameter
+            {
+                ParameterName = ":orderId",
+                OracleDbType = OracleDbType.Int32,
+                Direction = ParameterDirection.Output
+            });
+
+            // Execute INSERT statement
+            cmd.ExecuteNonQuery();
+
+            //Ajout des produits dans la commande
+            Int32 newId = Convert.ToInt32(cmd.Parameters[":orderId"].Value.ToString());
+            ConfirmOrder(newId);
+
+            //Ajout de la commande dans le datagridview des commandes
+            Homepage.getInstance().UpdateOrders();
+
+            //Réinitialisation du panier
+            Homepage.getInstance().ClearCart();
+
+            MessageBox.Show("Your order is on the way!");
+
             this.Close();
         }
 
-        private void ConfirmOrder(int id)
+        private void ConfirmOrder(Int32 id)
         {
-            
+            // On initialise notre dataset
+            DataSetContains containsDataSet = new DataSetContains();
+
+            DataSetContainsTableAdapters.EATFAST_CONTAINSTableAdapter containsTableAdapter =
+                new DataSetContainsTableAdapters.EATFAST_CONTAINSTableAdapter();
 
             //Récupération du panier
             SortedList<int, CartProduct> cart = Homepage.getInstance().GetCart();
@@ -54,11 +85,11 @@ namespace EatFast_Project
             foreach (KeyValuePair<int, CartProduct> cartProduct in cart)
             {
                 CartProduct product = (CartProduct)cartProduct.Value;
-                
-                //Ajout de chaque produit dans la commande
 
-                
+                //Ajout de chaque produit dans la commande
+                containsTableAdapter.AddToOrder(id, product.getId(), product.getPrice(), product.getQuantity());             
             }
+            
         }
 
         private void BtnBackClicked(object sender, EventArgs e)

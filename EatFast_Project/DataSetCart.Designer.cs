@@ -1324,36 +1324,36 @@ namespace EatFast_Project.DataSetCartTableAdapters {
             this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "INSERT INTO \"EATFAST_DATA\".\"EATFAST_ORDER\" (\"PER_ID\", \"ORD_DATE\", \"ORD_STATUS\", \"" +
-                "ORD_DELIVERYADDRESS\", \"ORD_TOTAL\", \"ORD_PAYMENTSTATUS\") VALUES (:PER_ID, :ORD_DA" +
-                "TE, :ORD_STATUS, :ORD_DELIVERYADDRESS, :ORD_TOTAL, :ORD_PAYMENTSTATUS)";
+                "ORD_DELIVERYADDRESS\", \"ORD_TOTAL\", \"ORD_PAYMENTSTATUS\") \r\nVALUES (:PER_ID, :ORD_" +
+                "DATE, :ORD_STATUS, :ORD_DELIVERYADDRESS, :ORD_TOTAL, :ORD_PAYMENTSTATUS)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":PER_ID";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
-            param.Size = 1024;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "PER_ID";
             this._commandCollection[1].Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":ORD_DATE";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.TimeStamp;
-            param.Size = 1024;
+            param.DbType = global::System.Data.DbType.Date;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Date;
+            param.Size = 7;
             param.IsNullable = true;
             param.SourceColumn = "ORD_DATE";
             this._commandCollection[1].Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":ORD_STATUS";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 1024;
+            param.Size = 32;
             param.IsNullable = true;
             param.SourceColumn = "ORD_STATUS";
             this._commandCollection[1].Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":ORD_DELIVERYADDRESS";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 1024;
+            param.Size = 128;
             param.IsNullable = true;
             param.SourceColumn = "ORD_DELIVERYADDRESS";
             this._commandCollection[1].Parameters.Add(param);
@@ -1361,14 +1361,14 @@ namespace EatFast_Project.DataSetCartTableAdapters {
             param.ParameterName = ":ORD_TOTAL";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
-            param.Size = 1024;
+            param.Size = 22;
             param.IsNullable = true;
             param.SourceColumn = "ORD_TOTAL";
             this._commandCollection[1].Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":ORD_PAYMENTSTATUS";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 1024;
+            param.Size = 32;
             param.IsNullable = true;
             param.SourceColumn = "ORD_PAYMENTSTATUS";
             this._commandCollection[1].Parameters.Add(param);
@@ -1650,25 +1650,35 @@ namespace EatFast_Project.DataSetCartTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int AddOrder(int PER_ID, System.DateTime ORD_DATE, string ORD_STATUS, string ORD_DELIVERYADDRESS, decimal ORD_TOTAL, string ORD_PAYMENTSTATUS) {
+        public virtual int AddOrder(decimal PER_ID, global::System.Nullable<global::System.DateTime> ORD_DATE, string ORD_STATUS, string ORD_DELIVERYADDRESS, global::System.Nullable<decimal> ORD_TOTAL, string ORD_PAYMENTSTATUS) {
             global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[1];
-            command.Parameters[0].Value = ((int)(PER_ID));
-            command.Parameters[1].Value = ((System.DateTime)(ORD_DATE));
+            command.Parameters[0].Value = ((decimal)(PER_ID));
+            if ((ORD_DATE.HasValue == true)) {
+                command.Parameters[1].Value = ((System.DateTime)(ORD_DATE.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((ORD_STATUS == null)) {
-                throw new global::System.ArgumentNullException("ORD_STATUS");
+                command.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
                 command.Parameters[2].Value = ((string)(ORD_STATUS));
             }
             if ((ORD_DELIVERYADDRESS == null)) {
-                throw new global::System.ArgumentNullException("ORD_DELIVERYADDRESS");
+                command.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
                 command.Parameters[3].Value = ((string)(ORD_DELIVERYADDRESS));
             }
-            command.Parameters[4].Value = ((decimal)(ORD_TOTAL));
+            if ((ORD_TOTAL.HasValue == true)) {
+                command.Parameters[4].Value = ((decimal)(ORD_TOTAL.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
             if ((ORD_PAYMENTSTATUS == null)) {
-                throw new global::System.ArgumentNullException("ORD_PAYMENTSTATUS");
+                command.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
                 command.Parameters[5].Value = ((string)(ORD_PAYMENTSTATUS));
