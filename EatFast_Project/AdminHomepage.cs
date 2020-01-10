@@ -179,19 +179,28 @@ namespace EatFast_Project
 
         private void btnSaveRestaurantInfoClicked(object sender, EventArgs e)
         {
-            if(textBoxRestaurantName.Text != "")
+            // On initialise notre dataset
+
+            DataSetRestaurant restaurantDataSet = new DataSetRestaurant();
+
+            DataSetRestaurantTableAdapters.EATFAST_RESTAURANTTableAdapter restaurantTableAdapter =
+                new DataSetRestaurantTableAdapters.EATFAST_RESTAURANTTableAdapter();
+
+            restaurantTableAdapter.Fill(restaurantDataSet.EATFAST_RESTAURANT);
+
+            DataSetRestaurant.EATFAST_RESTAURANTRow restaurantRow =
+                restaurantDataSet.EATFAST_RESTAURANT.FindByRES_ID(1);
+
+            if (textBoxRestaurantName.Text != "")
             {
-                //Mise à jour des informations
+                //Mise à jour du nom du restaurant
+                restaurantTableAdapter.UpdateName(textBoxRestaurantName.Text);
             }
 
             if (textBoxRestaurantDescription.Text != "")
             {
-                //Mise à jour des informations
-            }
-
-            if (lblFileName.Text != "File name")
-            {
-                //Mise à jour des informations 
+                //Mise à jour de la description du restaurant
+                restaurantTableAdapter.UpdateDescription(textBoxRestaurantDescription.Text);
             }
 
             ResetRestaurantInfo();
@@ -203,8 +212,6 @@ namespace EatFast_Project
         {
             textBoxRestaurantName.Text = "";
             textBoxRestaurantDescription.Text = "";
-            lblFileName.Text = "File name";
-            picBoxRestoBackground.ImageLocation = "";
             btnSaveRestaurantInfo.Enabled = false;
         }
 
@@ -220,25 +227,6 @@ namespace EatFast_Project
             {
                 btnAddAccount.Enabled = false;
             } 
-        }
-
-        private void btnRestaurantBackground_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-
-            //openFileDialog1.InitialDirectory = "c:\\";
-            openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
-            //openFileDialog1.FilterIndex = 0;
-            //openFileDialog1.RestoreDirectory = true;
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                string selectedFileName = openFileDialog1.FileName;
-                //...
-                lblFileName.Text = selectedFileName;
-                picBoxRestoBackground.ImageLocation = selectedFileName;
-                btnSaveRestaurantInfo.Enabled = true;
-            }
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
