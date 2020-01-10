@@ -73,6 +73,26 @@ namespace EatFast_Project
             // TODO: This line of code loads data into the 'dataSetProducts.EATFAST_PRODUCT' table. You can move, or remove it, as needed.
             this.eATFAST_PRODUCTTableAdapter.Fill(this.dataSetProducts.EATFAST_PRODUCT);
 
+            //Get restaurant information
+            GetRestaurantInfo();
+
+        }
+
+        private void GetRestaurantInfo()
+        {
+            // On initialise notre dataset
+
+            /*DataSetRestaurant scottDataSet = new DataSet1();
+
+            DataSet1TableAdapters.EMPTableAdapter scottEmployesTableAdapter =
+                new DataSet1TableAdapters.EMPTableAdapter();
+
+            scottEmployesTableAdapter.Fill(scottDataSet.EMP);
+
+            // On lit un enregistrement
+
+            DataSet1.EMPRow empRow =
+                scottDataSet.EMP.FindByEMPNO(7369);*/
         }
 
         private void Homepage_FormClosing(object sender, FormClosingEventArgs e)
