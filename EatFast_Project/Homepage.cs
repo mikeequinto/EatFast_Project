@@ -82,17 +82,21 @@ namespace EatFast_Project
         {
             // On initialise notre dataset
 
-            /*DataSetRestaurant scottDataSet = new DataSet1();
+            DataSetRestaurant restaurantDataSet = new DataSetRestaurant();
 
-            DataSet1TableAdapters.EMPTableAdapter scottEmployesTableAdapter =
-                new DataSet1TableAdapters.EMPTableAdapter();
+            DataSetRestaurantTableAdapters.EATFAST_RESTAURANTTableAdapter restaurantTableAdapter =
+                new DataSetRestaurantTableAdapters.EATFAST_RESTAURANTTableAdapter();
 
-            scottEmployesTableAdapter.Fill(scottDataSet.EMP);
+            restaurantTableAdapter.Fill(restaurantDataSet.EATFAST_RESTAURANT);
 
-            // On lit un enregistrement
+            DataSetRestaurant.EATFAST_RESTAURANTRow restaurantRow =
+                restaurantDataSet.EATFAST_RESTAURANT.FindByRES_ID(1);
 
-            DataSet1.EMPRow empRow =
-                scottDataSet.EMP.FindByEMPNO(7369);*/
+            // On met à jour les informations du restaurant
+
+            labelRestaurantName.Text = restaurantRow.RES_NAME;
+            labelRestaurantInfo.Text = restaurantRow.RES_DESCRIPTION;
+
         }
 
         private void Homepage_FormClosing(object sender, FormClosingEventArgs e)
@@ -171,7 +175,6 @@ namespace EatFast_Project
         {
             this.personRow = personRow;
             //On demande d'insérer une adresse de livraison si non connue
-            //MessageBox.Show("address : " + (string)personRow.PER_ADDRESS);
             if (personRow.IsPER_ADDRESSNull())
             {
                 NewUser newUser = new NewUser(personRow.PER_ID);

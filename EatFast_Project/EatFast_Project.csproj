@@ -137,6 +137,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetProducts.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetRestaurant.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRestaurant.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Homepage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +286,17 @@
     </None>
     <None Include="DataSetProducts.xss">
       <DependentUpon>DataSetProducts.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRestaurant.xsc">
+      <DependentUpon>DataSetRestaurant.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRestaurant.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRestaurant.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetRestaurant.xss">
+      <DependentUpon>DataSetRestaurant.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

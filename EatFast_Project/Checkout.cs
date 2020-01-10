@@ -176,5 +176,10 @@ namespace EatFast_Project
             labelCartTotal.Text = "Total (CHF) : " + this.total;
             this.user = Homepage.getInstance().GetUser();
         }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
