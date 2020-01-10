@@ -102,6 +102,10 @@ namespace EatFast_Project
                 }
                 else
                 {
+                    //Accès à la table eatfast_person dans la bdd
+                    DataSetEatFast personDataSet = new DataSetEatFast();
+                    DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter listePerson = new DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter();
+
                     //Information du nouveau compte
                     String type = comboBoxType.GetItemText(comboBoxType.SelectedItem);
                     String name = textBoxName.Text;
@@ -109,20 +113,27 @@ namespace EatFast_Project
                     String password = HashCode(textBoxPassword.Text);
 
                     try{
-                        //Insertion du nouveau compte
-                        if (type == "Client")
-                        { //Si le compte est de type client
-                            this.clientTableAdapter.AddAccount(name, email, password, "", type);
-                            this.clientTableAdapter.FillByAccountTypeClient(this.clientDataSetEatFast.EATFAST_PERSON);
+                        if (listePerson.FillByEmail(email) == null)
+                        { //Si le compte n'existe pas encore
+                            
+                            //Insertion du nouveau compte
+                            if (type == "Client")
+                            { //Si le compte est de type client
+                                this.clientTableAdapter.AddAccount(name, email, password, "", type);
+                                this.clientTableAdapter.FillByAccountTypeClient(this.clientDataSetEatFast.EATFAST_PERSON);
+                            }
+                            else
+                            { //Si le compte est de type administrator
+                                this.adminTableAdapter.AddAccount(name, email, password, "", type);
+                                this.adminTableAdapter.FillByAccountTypeAdmin(this.adminDataSetEatFast.EATFAST_PERSON);
+                            }
+
+                            MessageBox.Show("New account added!", "Information");
                         }
                         else
-                        { //Si le compte est de type administrator
-                            this.adminTableAdapter.AddAccount(name, email, password, "", type);
-                            this.adminTableAdapter.FillByAccountTypeAdmin(this.adminDataSetEatFast.EATFAST_PERSON);
+                        { //Sinon informer que l'utilisateur existe déjà
+                            MessageBox.Show("A user with this email already exists");
                         }
-
-
-                        MessageBox.Show("New account added!", "Information");
 
                         //Réinitialisation des champs
                         comboBoxType.SelectedIndex = 0;
@@ -130,8 +141,6 @@ namespace EatFast_Project
                         textBoxEmail.Text = "";
                         textBoxPassword.Text = "";
                         textBoxPasswordConfirm.Text = "";
-
-                        //Mise à jour du dataGridView concerné
                     }
                     catch (OverflowException o)
                     {
