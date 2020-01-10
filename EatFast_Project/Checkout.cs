@@ -35,16 +35,16 @@ namespace EatFast_Project
             string status = "Delivered";
             string paymentStatus = "Paid";
 
-            //cartTableAdapter.AddOrder(id, DateTime.Now,status,address,this.total,paymentStatus);
-            cartTableAdapter.AddOrder2(status);
+            int orderId = cartTableAdapter.AddOrder(id, DateTime.Now,status,address,this.total,paymentStatus);
+            //cartTableAdapter.AddOrder2(status);
             //Ajout de la commande dans la bdd
-            ConfirmOrder();
+            ConfirmOrder(orderId);
 
             MessageBox.Show("Your order is on the way!", "Payment successful");
             this.Close();
         }
 
-        private void ConfirmOrder()
+        private void ConfirmOrder(int id)
         {
             
 

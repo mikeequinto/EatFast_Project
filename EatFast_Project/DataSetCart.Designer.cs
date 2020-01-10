@@ -1315,7 +1315,7 @@ namespace EatFast_Project.DataSetCartTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[3];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[2];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ORD_ID, PER_ID, ORD_DATE, ORD_STATUS, ORD_DELIVERYADDRESS, ORD_TOTAL, ORD_" +
@@ -1329,58 +1329,49 @@ namespace EatFast_Project.DataSetCartTableAdapters {
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":PER_ID";
-            param.DbType = global::System.Data.DbType.Object;
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
             param.Size = 1024;
             param.IsNullable = true;
             param.SourceColumn = "PER_ID";
             this._commandCollection[1].Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":ORD_DATE";
-            param.DbType = global::System.Data.DbType.Object;
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.TimeStamp;
             param.Size = 1024;
             param.IsNullable = true;
             param.SourceColumn = "ORD_DATE";
             this._commandCollection[1].Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":ORD_STATUS";
-            param.DbType = global::System.Data.DbType.Object;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 1024;
             param.IsNullable = true;
             param.SourceColumn = "ORD_STATUS";
             this._commandCollection[1].Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":ORD_DELIVERYADDRESS";
-            param.DbType = global::System.Data.DbType.Object;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 1024;
             param.IsNullable = true;
             param.SourceColumn = "ORD_DELIVERYADDRESS";
             this._commandCollection[1].Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":ORD_TOTAL";
-            param.DbType = global::System.Data.DbType.Object;
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
             param.Size = 1024;
             param.IsNullable = true;
             param.SourceColumn = "ORD_TOTAL";
             this._commandCollection[1].Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":ORD_PAYMENTSTATUS";
-            param.DbType = global::System.Data.DbType.Object;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 1024;
             param.IsNullable = true;
             param.SourceColumn = "ORD_PAYMENTSTATUS";
             this._commandCollection[1].Parameters.Add(param);
-            this._commandCollection[2] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO \"EATFAST_DATA\".\"EATFAST_ORDER\" (\"ORD_STATUS\")\r\n VALUES ( :ORD_STATUS)" +
-                "";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = ":ORD_STATUS";
-            param.DbType = global::System.Data.DbType.Object;
-            param.Size = 1024;
-            param.IsNullable = true;
-            param.SourceColumn = "ORD_STATUS";
-            this._commandCollection[2].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1659,72 +1650,28 @@ namespace EatFast_Project.DataSetCartTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int AddOrder(object PER_ID, object ORD_DATE, object ORD_STATUS, object ORD_DELIVERYADDRESS, object ORD_TOTAL, object ORD_PAYMENTSTATUS) {
+        public virtual int AddOrder(int PER_ID, System.DateTime ORD_DATE, string ORD_STATUS, string ORD_DELIVERYADDRESS, decimal ORD_TOTAL, string ORD_PAYMENTSTATUS) {
             global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[1];
-            if ((PER_ID == null)) {
-                throw new global::System.ArgumentNullException("PER_ID");
-            }
-            else {
-                command.Parameters[0].Value = ((object)(PER_ID));
-            }
-            if ((ORD_DATE == null)) {
-                throw new global::System.ArgumentNullException("ORD_DATE");
-            }
-            else {
-                command.Parameters[1].Value = ((object)(ORD_DATE));
-            }
+            command.Parameters[0].Value = ((int)(PER_ID));
+            command.Parameters[1].Value = ((System.DateTime)(ORD_DATE));
             if ((ORD_STATUS == null)) {
                 throw new global::System.ArgumentNullException("ORD_STATUS");
             }
             else {
-                command.Parameters[2].Value = ((object)(ORD_STATUS));
+                command.Parameters[2].Value = ((string)(ORD_STATUS));
             }
             if ((ORD_DELIVERYADDRESS == null)) {
                 throw new global::System.ArgumentNullException("ORD_DELIVERYADDRESS");
             }
             else {
-                command.Parameters[3].Value = ((object)(ORD_DELIVERYADDRESS));
+                command.Parameters[3].Value = ((string)(ORD_DELIVERYADDRESS));
             }
-            if ((ORD_TOTAL == null)) {
-                throw new global::System.ArgumentNullException("ORD_TOTAL");
-            }
-            else {
-                command.Parameters[4].Value = ((object)(ORD_TOTAL));
-            }
+            command.Parameters[4].Value = ((decimal)(ORD_TOTAL));
             if ((ORD_PAYMENTSTATUS == null)) {
                 throw new global::System.ArgumentNullException("ORD_PAYMENTSTATUS");
             }
             else {
-                command.Parameters[5].Value = ((object)(ORD_PAYMENTSTATUS));
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int AddOrder2(object ORD_STATUS) {
-            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[2];
-            if ((ORD_STATUS == null)) {
-                throw new global::System.ArgumentNullException("ORD_STATUS");
-            }
-            else {
-                command.Parameters[0].Value = ((object)(ORD_STATUS));
+                command.Parameters[5].Value = ((string)(ORD_PAYMENTSTATUS));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
