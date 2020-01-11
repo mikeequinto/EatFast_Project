@@ -13,12 +13,12 @@ namespace EatFast_Project
 {
     public partial class ChangePassword : Form
     {
+        Int32 userId;
 
-        DataSetEatFast.EATFAST_PERSONRow user;
-
-        public ChangePassword()
+        public ChangePassword(Int32 userId)
         {
             InitializeComponent();
+            this.userId = userId;
         }
 
         private void CheckPasswordInfo(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace EatFast_Project
                 else
                 {
                     //Update password
-                    personTableAdapter.UpdatePassword(HashCode(textBoxPassword.Text) , user.PER_ID);
+                    personTableAdapter.UpdatePassword(HashCode(textBoxPassword.Text) , userId);
                     this.Close();
                     MessageBox.Show("Your password has been updated!", "Information");
                 }
@@ -75,7 +75,6 @@ namespace EatFast_Project
 
         private void ClientPassword_Load(object sender, EventArgs e)
         {
-            this.user = Homepage.getInstance().GetUser();
         }
     }
 }

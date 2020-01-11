@@ -266,7 +266,7 @@ namespace EatFast_Project
 
         private void CheckUserAccountInfo(object sender, EventArgs e)
         {
-            if (textBoxAccountName.Text != "" || textBoxAccountEmail.Text != "")
+            if (textBoxAccountName.Text != "")
             {
                 btnSaveAccount.Enabled = true;
             }
@@ -278,26 +278,26 @@ namespace EatFast_Project
 
         private void BtnChangePasswordClicked(object sender, EventArgs e)
         {
-            ChangePassword changePassword = new ChangePassword();
+            ChangePassword changePassword = new ChangePassword(personRow.PER_ID);
             changePassword.ShowDialog();
         }
 
         private void BtnSaveClicked(object sender, EventArgs e)
         {
+            string name = textBoxAccountName.Text;
 
-            if(textBoxAccountName.Text != "")
+            //Accès à la table eatfast_person dans la bdd
+            DataSetEatFast personDataSet = new DataSetEatFast();
+            DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter personTableAdapter = new DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter();
+
+            if (textBoxAccountName.Text != "")
             {
-                //Update changes
+                //Update name
+                personTableAdapter.UpdateName(name, personRow.PER_ID);
 
-            }
-
-            if (textBoxAccountEmail.Text != "")
-            {
-                //Update changes
             }
 
             textBoxAccountName.Text = "";
-            textBoxAccountEmail.Text = "";
 
             MessageBox.Show("Your account information has been saved!", "Information");
         }

@@ -37,6 +37,11 @@ namespace EatFast_Project
             return this.personRow;
         }
 
+        public void UpdateAddress(string address)
+        {
+            this.personRow.SetField(4,address);
+        }
+
         public SortedList<int,CartProduct> GetCart()
         {
             return this.cart;
@@ -145,7 +150,7 @@ namespace EatFast_Project
 
         private void BtnChangePasswordClicked(object sender, EventArgs e)
         {
-            ChangePassword clientPassword = new ChangePassword();
+            ChangePassword clientPassword = new ChangePassword(personRow.PER_ID);
             clientPassword.ShowDialog();
         }
 
@@ -154,6 +159,7 @@ namespace EatFast_Project
             //Accès à la table eatfast_person dans la bdd
             DataSetEatFast personDataSet = new DataSetEatFast();
             DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter listePerson = new DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter();
+            listePerson.Fill(personDataSet.EATFAST_PERSON);
 
             try
             {

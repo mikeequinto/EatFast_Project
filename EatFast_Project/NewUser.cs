@@ -30,6 +30,7 @@ namespace EatFast_Project
             {
                 //Mise à jour de l'adresse de livraison
                 listePerson.UpdateAddress(textBoxAddress.Text, id);
+                Homepage.getInstance().UpdateAddress(textBoxAddress.Text);
                 this.Close();
             }
             catch (Exception o)

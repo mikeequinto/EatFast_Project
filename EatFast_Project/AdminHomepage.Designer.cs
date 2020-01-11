@@ -110,8 +110,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxAccountName = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.textBoxAccountEmail = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.fillByAccountTypeClientToolStrip = new System.Windows.Forms.ToolStrip();
             this.fillByAccountTypeClientToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -873,8 +871,6 @@
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.textBoxAccountName);
             this.tabPage1.Controls.Add(this.lblUsername);
-            this.tabPage1.Controls.Add(this.textBoxAccountEmail);
-            this.tabPage1.Controls.Add(this.lblEmail);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tabPage1.Name = "tabPage1";
@@ -887,7 +883,7 @@
             // btnSaveAccount
             // 
             this.btnSaveAccount.Enabled = false;
-            this.btnSaveAccount.Location = new System.Drawing.Point(476, 280);
+            this.btnSaveAccount.Location = new System.Drawing.Point(477, 232);
             this.btnSaveAccount.Name = "btnSaveAccount";
             this.btnSaveAccount.Size = new System.Drawing.Size(87, 23);
             this.btnSaveAccount.TabIndex = 45;
@@ -897,7 +893,7 @@
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.Location = new System.Drawing.Point(327, 215);
+            this.btnChangePassword.Location = new System.Drawing.Point(328, 167);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(107, 23);
             this.btnChangePassword.TabIndex = 44;
@@ -931,23 +927,6 @@
             this.lblUsername.Size = new System.Drawing.Size(41, 13);
             this.lblUsername.TabIndex = 41;
             this.lblUsername.Text = "Name :";
-            // 
-            // textBoxAccountEmail
-            // 
-            this.textBoxAccountEmail.Location = new System.Drawing.Point(438, 156);
-            this.textBoxAccountEmail.Name = "textBoxAccountEmail";
-            this.textBoxAccountEmail.Size = new System.Drawing.Size(163, 20);
-            this.textBoxAccountEmail.TabIndex = 38;
-            this.textBoxAccountEmail.TextChanged += new System.EventHandler(this.CheckUserAccountInfo);
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(325, 158);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(38, 13);
-            this.lblEmail.TabIndex = 37;
-            this.lblEmail.Text = "Email :";
             // 
             // label1
             // 
@@ -1120,8 +1099,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxAccountName;
         private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.TextBox textBoxAccountEmail;
-        private System.Windows.Forms.Label lblEmail;
         private DataSetEatFast clientDataSetEatFast;
         private System.Windows.Forms.BindingSource clientBindingSource;
         private DataSetEatFastTableAdapters.EATFAST_PERSONTableAdapter clientTableAdapter;
