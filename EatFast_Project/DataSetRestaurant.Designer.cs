@@ -968,12 +968,12 @@ namespace EatFast_Project.DataSetRestaurantTableAdapters {
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        RES_NAME, RES_DESCRIPTION, RES_ID\r\nFROM            EATFAST_DATA.EAT" +
-                "FAST_RESTAURANT\r\nWHERE        (RES_ID = 1)";
+                "FAST_RESTAURANT\r\nWHERE        (RES_ID = 6)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "UPDATE \"EATFAST_DATA\".\"EATFAST_RESTAURANT\" SET \"RES_DESCRIPTION\" = :RES_DESCRIPTI" +
-                "ON\r\nWHERE (RES_ID = 1)";
+                "ON\r\nWHERE (RES_ID = 6)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":RES_DESCRIPTION";
@@ -985,7 +985,7 @@ namespace EatFast_Project.DataSetRestaurantTableAdapters {
             this._commandCollection[2] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "UPDATE \"EATFAST_DATA\".\"EATFAST_RESTAURANT\" SET \"RES_NAME\" = :RES_NAME\r\nWHERE (RES" +
-                "_ID = 1)";
+                "_ID = 6)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":RES_NAME";

@@ -95,7 +95,7 @@ namespace EatFast_Project
             restaurantTableAdapter.Fill(restaurantDataSet.EATFAST_RESTAURANT);
 
             DataSetRestaurant.EATFAST_RESTAURANTRow restaurantRow =
-                restaurantDataSet.EATFAST_RESTAURANT.FindByRES_ID(1);
+                restaurantDataSet.EATFAST_RESTAURANT.FindByRES_ID(6);
 
             // On met à jour les informations du restaurant
 

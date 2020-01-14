@@ -137,6 +137,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetProducts.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetRestaurant.cs">
+      <DependentUpon>DataSetRestaurant.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetRestaurant.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
